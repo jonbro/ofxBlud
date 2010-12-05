@@ -25,6 +25,7 @@
 		5E2C656912AC01C900FAC7F3 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C655F12AC01C900FAC7F3 /* HTTPConnection.m */; };
 		5E2C656A12AC01C900FAC7F3 /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C656112AC01C900FAC7F3 /* HTTPResponse.m */; };
 		5E2C656B12AC01C900FAC7F3 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C656312AC01C900FAC7F3 /* HTTPServer.m */; };
+		5E2C663412AC096A00FAC7F3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2C663312AC096A00FAC7F3 /* CFNetwork.framework */; };
 		5E8E5DAF12AB1F7C0037DFAD /* localhostAddresses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */; };
 		5E8E5DB012AB1F7C0037DFAD /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC612AB1F7B0037DFAD /* MyHTTPConnection.m */; };
 		5E8E5DB112AB1F7C0037DFAD /* WebServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC812AB1F7B0037DFAD /* WebServer.mm */; };
@@ -67,7 +68,6 @@
 		5E99E50012A5CD56000217A6 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4DE12A5CD56000217A6 /* lzio.c */; };
 		5E99E50112A5CD56000217A6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E012A5CD56000217A6 /* Makefile */; };
 		5E99E50212A5CD56000217A6 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E112A5CD56000217A6 /* print.c */; };
-		5E99E66A12A5E13B000217A6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E66912A5E13B000217A6 /* CFNetwork.framework */; };
 		5EE8762912A8874900B89589 /* boot.lua in Resources */ = {isa = PBXBuildFile; fileRef = 5EE8762812A8874900B89589 /* boot.lua */; };
 		BB24DD8F10DA77E000E9C588 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8C10DA77E000E9C588 /* Default.png */; };
 		BB24DD9010DA77E000E9C588 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8D10DA77E000E9C588 /* Icon.png */; };
@@ -129,6 +129,7 @@
 		5E2C656112AC01C900FAC7F3 /* HTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPResponse.m; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver_v1/HTTPResponse.m; sourceTree = DEVELOPER_DIR; };
 		5E2C656212AC01C900FAC7F3 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPServer.h; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver_v1/HTTPServer.h; sourceTree = DEVELOPER_DIR; };
 		5E2C656312AC01C900FAC7F3 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPServer.m; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver_v1/HTTPServer.m; sourceTree = DEVELOPER_DIR; };
+		5E2C663312AC096A00FAC7F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5E8E5CC312AB1F7B0037DFAD /* localhostAddresses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = localhostAddresses.h; path = src/webserver/localhostAddresses.h; sourceTree = SOURCE_ROOT; };
 		5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = localhostAddresses.m; path = src/webserver/localhostAddresses.m; sourceTree = SOURCE_ROOT; };
 		5E8E5CC512AB1F7B0037DFAD /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyHTTPConnection.h; path = src/webserver/MyHTTPConnection.h; sourceTree = SOURCE_ROOT; };
@@ -197,7 +198,6 @@
 		5E99E4E012A5CD56000217A6 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../../addons/ofxLua/libs/src/Makefile; sourceTree = SOURCE_ROOT; };
 		5E99E4E112A5CD56000217A6 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = ../../../addons/ofxLua/libs/src/print.c; sourceTree = SOURCE_ROOT; };
 		5E99E5FD12A5D807000217A6 /* luna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luna.h; path = of_preRelease_v0062_iphone_FAT/addons/ofxLua/luna.h; sourceTree = DEVELOPER_DIR; };
-		5E99E66912A5E13B000217A6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5EE8762812A8874900B89589 /* boot.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; name = boot.lua; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/bin/data/boot.lua; sourceTree = DEVELOPER_DIR; };
 		BB24DD8C10DA77E000E9C588 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BB24DD8D10DA77E000E9C588 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 				5E99E47012A5CD0A000217A6 /* OpenGLES.framework in Frameworks */,
 				5E99E47E12A5CD1C000217A6 /* QuartzCore.framework in Frameworks */,
 				5E99E48212A5CD29000217A6 /* UIKit.framework in Frameworks */,
-				5E99E66A12A5E13B000217A6 /* CFNetwork.framework in Frameworks */,
+				5E2C663412AC096A00FAC7F3 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +317,6 @@
 				BB16F26B0F2B646B00518274 /* addons */,
 				BB16E9930F2B1E5900518274 /* libs */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				5E99E66912A5E13B000217A6 /* CFNetwork.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -341,6 +340,7 @@
 				5E99E46F12A5CD0A000217A6 /* OpenGLES.framework */,
 				5E99E47D12A5CD1C000217A6 /* QuartzCore.framework */,
 				5E99E48112A5CD29000217A6 /* UIKit.framework */,
+				5E2C663312AC096A00FAC7F3 /* CFNetwork.framework */,
 			);
 			name = "core frameworks";
 			sourceTree = "<group>";

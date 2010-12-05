@@ -61,8 +61,11 @@ void testApp::setup(){
 	
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setConnectionClass:[MyHTTPConnection class]];
-	[httpServer setDocumentRoot:[[NSBundle mainBundle] bundleURL]];
-	
+
+//	[httpServer setDocumentRoot:[[NSBundle mainBundle] bundleURL]];
+	NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
+	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
+
 	NSError *httpError;
 	if(![httpServer start:&httpError])
 	{

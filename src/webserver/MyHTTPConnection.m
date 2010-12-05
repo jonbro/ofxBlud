@@ -32,10 +32,10 @@
     
     NSMutableString *outdata = [NSMutableString new];
 	[outdata appendString:@"<html><head>"];
-	//[outdata appendFormat:@"<title>Files from %@</title>", config.name];
+	[outdata appendFormat:@"<title>Files from %@</title>", server.name];
     [outdata appendString:@"<style>html {background-color:#eeeeee} body { background-color:#FFFFFF; font-family:Tahoma,Arial,Helvetica,sans-serif; font-size:18x; margin-left:15%; margin-right:15%; border:3px groove #006600; padding:15px; } </style>"];
     [outdata appendString:@"</head><body>"];
-	//[outdata appendFormat:@"<h1>Files from %@</h1>", server.name];
+	[outdata appendFormat:@"<h1>Files from %@</h1>", server.name];
     [outdata appendString:@"<bq>The following files are hosted live from the iPhone's Docs folder.</bq>"];
     [outdata appendString:@"<p>"];
 	[outdata appendFormat:@"<a href=\"..\">..</a><br />\n"];
@@ -49,15 +49,9 @@
     }
     [outdata appendString:@"</p>"];
 	
-	//if ([self supportsPOST:path withSize:0])
-	//{
+	if ([self supportsPOST:path withSize:0])
+	{
 		[outdata appendString:@"<form action=\"\" method=\"post\" enctype=\"multipart/form-data\" name=\"form1\" id=\"form1\">"];
-
-		/*
-		[outdata appendString:@"<form action=\""];
-		[outdata appendString:path];
-		[outdata appendString:@"\" method=\"post\" enctype=\"multipart/form-data\" name=\"form1\" id=\"form1\">"];
-		 */
 		[outdata appendString:@"<label>upload file"];
 		[outdata appendString:@"<input type=\"file\" name=\"file\" id=\"file\" />"];
 		[outdata appendString:@"</label>"];
@@ -65,7 +59,7 @@
 		[outdata appendString:@"<input type=\"submit\" name=\"button\" id=\"button\" value=\"Submit\" />"];
 		[outdata appendString:@"</label>"];
 		[outdata appendString:@"</form>"];
-	//}
+	}
 	
 	[outdata appendString:@"</body></html>"];
     
@@ -74,27 +68,30 @@
 }
 
 
-- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
+- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)relativePath
 {
-	// Add support for POST
-	NSLog(@"supportsMethod:%@, path:%@", method, path);
-	if ([method isEqualToString:@"POST"])
-	{		
-		dataStartIndex = 0;
-		multipartData = [[NSMutableArray alloc] init];
-		postHeaderOK = FALSE;		
-		return TRUE;
+	if ([@"POST" isEqualToString:method])
+	{
+		return YES;
 	}
 	
-	return [super supportsMethod:method atPath:path];
+	return [super supportsMethod:method atPath:relativePath];
 }
 
 
-- (void)prepareForBodyWithSize:(UInt64)contentLength
+/**
+ * Returns whether or not the server will accept POSTs.
+ * That is, whether the server will accept uploaded data for the given URI.
+ **/
+- (BOOL)supportsPOST:(NSString *)path withSize:(UInt64)contentLength
 {
+	//	NSLog(@"POST:%@", path);
+	
 	dataStartIndex = 0;
-	if (multipartData == nil ) multipartData = [[NSMutableArray alloc] init];   //jlz
-	postHeaderOK = FALSE ;
+	multipartData = [[NSMutableArray alloc] init];
+	postHeaderOK = FALSE;
+	
+	return YES;
 }
 
 
@@ -108,9 +105,7 @@
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
 	NSLog(@"httpResponseForURI: method:%@ path:%@", method, path);
-
-	//NSData *requestData = [request body];
-
+	
 	NSData *requestData = [(NSData *)CFHTTPMessageCopySerializedMessage(request) autorelease];
 	
 	NSString *requestStr = [[[NSString alloc] initWithData:requestData encoding:NSASCIIStringEncoding] autorelease];
@@ -153,29 +148,6 @@
 				}
 			}
 			
-			// setup the paths to move the files to
-			NSMutableString *tmpPath = [[NSMutableString alloc] initWithString:[[server documentRoot] path]];;
-			[tmpPath appendString:@"/"];
-			[tmpPath appendString:filename];
-			
-			NSMutableString *fullPath = [[NSMutableString alloc] initWithString:[[server documentRoot] path]];
-			[fullPath appendString:path];
-			[fullPath appendString:filename];
-			
-			NSFileManager *filemgr = [NSFileManager defaultManager];
-			
-			// remove the item at the path first			
-			
-			// move the new item into place
-			if (![tmpPath isEqualToString:fullPath]) {
-				[filemgr removeItemAtPath:fullPath error:NULL];
-				NSError *moveError;
-				if ([filemgr moveItemAtPath:tmpPath toPath:fullPath error:&moveError]  == YES){
-					NSLog (@"Move successful");
-				}else {
-					NSLog(@"Error moving file: %@", moveError);
-				}
-			}
 			NSLog(@"NewFileUploaded");
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"NewFileUploaded" object:nil];
 		}
@@ -188,6 +160,7 @@
 		requestContentLength = 0;
 		
 	}
+	
 	NSString *filePath = [self filePathForURI:path];
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
@@ -209,6 +182,7 @@
 	return nil;
 }
 
+
 /**
  * This method is called to handle data read from a POST.
  * The given data is part of the POST body.
@@ -224,7 +198,7 @@
 	// The size of the chunks are limited by the POST_CHUNKSIZE definition.
 	// Therefore, this method may be called multiple times for the same POST request.
 	
-	//NSLog(@"processPostDataChunk");
+	NSLog(@"processPostDataChunk");
 	
 	if (!postHeaderOK)
 	{
@@ -252,21 +226,23 @@
 				{
 					postHeaderOK = TRUE;
 					
-					
-					
-					NSString* postInfo = [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:1] bytes] length:[[multipartData objectAtIndex:1] length] encoding: NSWindowsCP1251StringEncoding];
-					
-					
+					NSString* postInfo = [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:1] bytes] length:[[multipartData objectAtIndex:1] length] encoding:NSUTF8StringEncoding];
+					NSLog(@"post info:%@", postInfo);
 					NSArray* postInfoComponents = [postInfo componentsSeparatedByString:@"; filename="];
-					
 					postInfoComponents = [[postInfoComponents lastObject] componentsSeparatedByString:@"\""];
 					postInfoComponents = [[postInfoComponents objectAtIndex:1] componentsSeparatedByString:@"\\"];
-					
 					NSString* filename = [[[server documentRoot] path] stringByAppendingPathComponent:[postInfoComponents lastObject]];
 					NSRange fileDataRange = {dataStartIndex, [postDataChunk length] - dataStartIndex};
 					
-					[[NSFileManager defaultManager] createFileAtPath:filename contents:[postDataChunk subdataWithRange:fileDataRange] attributes:nil];
-					NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:filename];
+					NSLog(@"filename: %@", filename);
+					
+					if([[NSFileManager defaultManager] createFileAtPath:filename contents:[postDataChunk subdataWithRange:fileDataRange] attributes:nil]){
+						NSLog(@"file created sucessfully");
+					}else {
+						NSLog(@"file could not be created");
+					}
+
+					NSFileHandle *file = [[NSFileHandle fileHandleForUpdatingAtPath:filename] retain];
 					
 					if (file)
 					{
