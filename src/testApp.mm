@@ -56,16 +56,16 @@ void testApp::setup(){
 	
 	
 	
-	httpServer = [HTTPServer new];
+	httpServer = [luaHTTPServer new];
 	[httpServer setPort:1073];
+	[httpServer setLua:luaVM];
 	
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setConnectionClass:[MyHTTPConnection class]];
 
-//	[httpServer setDocumentRoot:[[NSBundle mainBundle] bundleURL]];
 	NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
 	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
-
+	
 	NSError *httpError;
 	if(![httpServer start:&httpError])
 	{

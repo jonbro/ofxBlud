@@ -7,6 +7,7 @@
 #import "HTTPServer.h"
 #import "HTTPResponse.h"
 #import "AsyncSocket.h"
+#import <lualib.h>
 
 @implementation MyHTTPConnection
 
@@ -45,7 +46,8 @@
 		//NSLog(@"fileDict: %@", fileDict);
         NSString *modDate = [[fileDict objectForKey:NSFileModificationDate] description];
 		if ([[fileDict objectForKey:NSFileType] isEqualToString: @"NSFileTypeDirectory"]) fname = [fname stringByAppendingString:@"/"];
-		[outdata appendFormat:@"<a href=\"%@\">%@</a>		(%8.1f Kb, %@)<br />\n", fname, fname, [[fileDict objectForKey:NSFileSize] floatValue] / 1024, modDate];
+		[outdata appendFormat:@"<a href=\"%@\">%@</a>		(%8.1f Kb, %@)\n", fname, fname, [[fileDict objectForKey:NSFileSize] floatValue] / 1024, modDate];
+		[outdata appendFormat:@"<a href=\"%@?execute=true\">execute</a><br />\n", fname];
     }
     [outdata appendString:@"</p>"];
 	
@@ -173,7 +175,6 @@
 		
 		if ([self isBrowseable:folder])
 		{
-			//NSLog(@"folder: %@", folder);
 			NSData *browseData = [[self createBrowseableIndex:folder] dataUsingEncoding:NSUTF8StringEncoding];
 			return [[[HTTPDataResponse alloc] initWithData:browseData] autorelease];
 		}

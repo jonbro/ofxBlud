@@ -5,7 +5,7 @@
 #include "ofxiPhoneExtras.h"
 #import "luna.h"
 
-#import "HTTPServer.h"
+#import "luaHTTPServer.h"
 #import "MyHTTPConnection.h"
 #import "localhostAddresses.h"
 
@@ -29,6 +29,6 @@ public:
 
 	lua_State* luaVM;
 
-	HTTPServer *httpServer;
+	luaHTTPServer *httpServer;
 	NSDictionary *addresses;
 };
