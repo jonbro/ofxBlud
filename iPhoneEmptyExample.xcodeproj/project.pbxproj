@@ -28,7 +28,6 @@
 		5E2C663412AC096A00FAC7F3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2C663312AC096A00FAC7F3 /* CFNetwork.framework */; };
 		5E8A04E012AC4F47005D8D38 /* luaHTTPServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A04DF12AC4F47005D8D38 /* luaHTTPServer.mm */; };
 		5E8E5DAF12AB1F7C0037DFAD /* localhostAddresses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */; };
-		5E8E5DB012AB1F7C0037DFAD /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC612AB1F7B0037DFAD /* MyHTTPConnection.m */; };
 		5E8E5DB112AB1F7C0037DFAD /* WebServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E5CC812AB1F7B0037DFAD /* WebServer.mm */; };
 		5E99E46612A5CD0A000217A6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E46512A5CD0A000217A6 /* AudioToolbox.framework */; };
 		5E99E46812A5CD0A000217A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E46712A5CD0A000217A6 /* CoreGraphics.framework */; };
@@ -69,6 +68,7 @@
 		5E99E50012A5CD56000217A6 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4DE12A5CD56000217A6 /* lzio.c */; };
 		5E99E50112A5CD56000217A6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E012A5CD56000217A6 /* Makefile */; };
 		5E99E50212A5CD56000217A6 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E112A5CD56000217A6 /* print.c */; };
+		5EA0A7DC12AC54CB00B72808 /* MyHTTPConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */; };
 		5EE8762912A8874900B89589 /* boot.lua in Resources */ = {isa = PBXBuildFile; fileRef = 5EE8762812A8874900B89589 /* boot.lua */; };
 		BB24DD8F10DA77E000E9C588 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8C10DA77E000E9C588 /* Default.png */; };
 		BB24DD9010DA77E000E9C588 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8D10DA77E000E9C588 /* Icon.png */; };
@@ -136,7 +136,6 @@
 		5E8E5CC312AB1F7B0037DFAD /* localhostAddresses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = localhostAddresses.h; path = src/webserver/localhostAddresses.h; sourceTree = SOURCE_ROOT; };
 		5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = localhostAddresses.m; path = src/webserver/localhostAddresses.m; sourceTree = SOURCE_ROOT; };
 		5E8E5CC512AB1F7B0037DFAD /* MyHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyHTTPConnection.h; path = src/webserver/MyHTTPConnection.h; sourceTree = SOURCE_ROOT; };
-		5E8E5CC612AB1F7B0037DFAD /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyHTTPConnection.m; path = src/webserver/MyHTTPConnection.m; sourceTree = SOURCE_ROOT; };
 		5E8E5CC712AB1F7B0037DFAD /* WebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServer.h; path = src/webserver/WebServer.h; sourceTree = SOURCE_ROOT; };
 		5E8E5CC812AB1F7B0037DFAD /* WebServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WebServer.mm; path = src/webserver/WebServer.mm; sourceTree = SOURCE_ROOT; };
 		5E99E46512A5CD0A000217A6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -201,6 +200,7 @@
 		5E99E4E012A5CD56000217A6 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../../addons/ofxLua/libs/src/Makefile; sourceTree = SOURCE_ROOT; };
 		5E99E4E112A5CD56000217A6 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = ../../../addons/ofxLua/libs/src/print.c; sourceTree = SOURCE_ROOT; };
 		5E99E5FD12A5D807000217A6 /* luna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luna.h; path = of_preRelease_v0062_iphone_FAT/addons/ofxLua/luna.h; sourceTree = DEVELOPER_DIR; };
+		5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyHTTPConnection.mm; path = src/webserver/MyHTTPConnection.mm; sourceTree = SOURCE_ROOT; };
 		5EE8762812A8874900B89589 /* boot.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; name = boot.lua; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/bin/data/boot.lua; sourceTree = DEVELOPER_DIR; };
 		BB24DD8C10DA77E000E9C588 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BB24DD8D10DA77E000E9C588 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 				5E8E5CC312AB1F7B0037DFAD /* localhostAddresses.h */,
 				5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */,
 				5E8E5CC512AB1F7B0037DFAD /* MyHTTPConnection.h */,
-				5E8E5CC612AB1F7B0037DFAD /* MyHTTPConnection.m */,
+				5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */,
 				5E8E5CC712AB1F7B0037DFAD /* WebServer.h */,
 				5E8E5CC812AB1F7B0037DFAD /* WebServer.mm */,
 				5E8A049A12AC4D2A005D8D38 /* luaHTTPServer.h */,
@@ -912,7 +912,6 @@
 				5E99E50112A5CD56000217A6 /* Makefile in Sources */,
 				5E99E50212A5CD56000217A6 /* print.c in Sources */,
 				5E8E5DAF12AB1F7C0037DFAD /* localhostAddresses.m in Sources */,
-				5E8E5DB012AB1F7C0037DFAD /* MyHTTPConnection.m in Sources */,
 				5E8E5DB112AB1F7C0037DFAD /* WebServer.mm in Sources */,
 				5E2C656412AC01C900FAC7F3 /* AsyncSocket.m in Sources */,
 				5E2C656512AC01C900FAC7F3 /* DDData.m in Sources */,
@@ -923,6 +922,7 @@
 				5E2C656A12AC01C900FAC7F3 /* HTTPResponse.m in Sources */,
 				5E2C656B12AC01C900FAC7F3 /* HTTPServer.m in Sources */,
 				5E8A04E012AC4F47005D8D38 /* luaHTTPServer.mm in Sources */,
+				5EA0A7DC12AC54CB00B72808 /* MyHTTPConnection.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

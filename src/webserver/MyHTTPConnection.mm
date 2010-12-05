@@ -7,7 +7,7 @@
 #import "HTTPServer.h"
 #import "HTTPResponse.h"
 #import "AsyncSocket.h"
-#import <lualib.h>
+#import "luna.h"
 
 @implementation MyHTTPConnection
 
@@ -162,6 +162,15 @@
 		requestContentLength = 0;
 		
 	}
+	
+	NSArray *chunks = [path componentsSeparatedByString: @"?"];
+	for (int i = 0; i < [chunks count]; i++) {
+		if([[chunks objectAtIndex:i] isEqualToString:@"execute=true"]){
+			luaL_dofile((lua_State*)[server lua], [[self filePathForURI:path] cString]);
+			NSLog(@"executing");
+		}
+	}
+	
 	
 	NSString *filePath = [self filePathForURI:path];
 	
