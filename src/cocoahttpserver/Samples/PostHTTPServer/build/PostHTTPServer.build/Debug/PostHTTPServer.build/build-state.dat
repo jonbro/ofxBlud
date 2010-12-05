@@ -1,0 +1,1077 @@
+TPostHTTPServer
+v7
+r0
+t313204846.279869
+cCheck dependencies
+cProcessInfoPlistFile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Info.plist Info.plist
+cCopyStringsFile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib
+cProcessPCH /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch.gch PostHTTPServer_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/main.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/AppDelegate.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/MyHTTPConnection.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDData.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDNumber.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDRange.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAsyncFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAuthenticationRequest.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPConnection.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDynamicFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPServer.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/WebSocket.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPMessage.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/GCDAsyncSocket.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDASLLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDFileLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDLog.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDTTYLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDataResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPRedirectResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer normal x86_64
+cPBXCp build/Debug/PostHTTPServer.app/Contents/Resources/Web Web
+cTouch /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C23AA0400000000000013E6
+t1277405700
+s5094
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h
+c000000004C23AA0500000000000021D3
+t1277405701
+s8659
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h
+c000000004C23AA060000000000000BDA
+t1277405702
+s3034
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Security.framework/Headers/Security.h
+c000000004C23A06400000000000009CB
+t1277403236
+s2507
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Security.framework/Security
+c000000004CAA7405000000000006611C
+t1286239237
+s418076
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/CommonCrypto/CommonDigest.h
+c000000004A11E8210000000000002407
+t1242687521
+s9223
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/arpa/inet.h
+c000000004BBD2CC60000000000001533
+t1270688966
+s5427
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/asl.h
+c000000004BBD2CE9000000000000359D
+t1270689001
+s13725
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/dispatch/dispatch.h
+c000000004B738B07000000000000054D
+t1265863431
+s1357
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/fcntl.h
+c000000004BBD2CE900000000000003EA
+t1270689001
+s1002
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/ifaddrs.h
+c000000004BBD2CCE0000000000000782
+t1270688974
+s1922
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/libkern/OSAtomic.h
+c000000004BBD2CE90000000000002519
+t1270689001
+s9497
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/host_info.h
+c000000004C2399470000000000001E6B
+t1277401415
+s7787
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/mach_host.h
+c000000004BD247AA0000000000004F74
+t1272072106
+s20340
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/net/if.h
+c000000004C23994300000000000035E3
+t1277401411
+s13795
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/netdb.h
+c000000004BBD2D1D000000000000307F
+t1270689053
+s12415
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/netinet/in.h
+c000000004C2399440000000000005414
+t1277401412
+s21524
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/objc/runtime.h
+c000000004C239B2C000000000000530A
+t1277401900
+s21258
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/pthread.h
+c000000004BBD2CE900000000000038F0
+t1270689001
+s14576
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/attr.h
+c000000004C2399460000000000004362
+t1277401414
+s17250
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/ioctl.h
+c000000004C239946000000000000116C
+t1277401414
+s4460
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/poll.h
+c000000004C239947000000000000123C
+t1277401415
+s4668
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/socket.h
+c000000004C23994800000000000059BC
+t1277401416
+s22972
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/types.h
+c000000004C2399480000000000002905
+t1277401416
+s10501
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/uio.h
+c000000004C2399480000000000001126
+t1277401416
+s4390
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/sys/xattr.h
+c000000004C2399490000000000000BCB
+t1277401417
+s3019
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004BBD2CE9000000000000563E
+t1270689001
+s22078
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/DDData.h
+c000000004CFAE76600000000000000CD
+t1291511654
+s205
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/DDNumber.h
+c000000004CFAE7660000000000000155
+t1291511654
+s341
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/DDRange.h
+c000000004CFAE766000000000000066A
+t1291511654
+s1642
+i<Foundation/NSValue.h>
+i<Foundation/NSObjCRuntime.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPAsyncFileResponse.h
+c000000004CFAE7660000000000000A4B
+t1291511654
+s2635
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPAuthenticationRequest.h
+c000000004CFAE76600000000000002FA
+t1291511654
+s762
+i<Foundation/Foundation.h>
+i<CFNetwork/CFNetwork.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPConnection.h
+c000000004CFAE7660000000000000C82
+t1291511654
+s3202
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPDataResponse.h
+c000000004CFAE76600000000000000C4
+t1291511654
+s196
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPDynamicFileResponse.h
+c000000004CFAE7660000000000000586
+t1291511654
+s1414
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+i"HTTPAsyncFileResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPFileResponse.h
+c000000004CFAE76600000000000001A9
+t1291511654
+s425
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPLogging.h
+c000000004CFAE7660000000000001089
+t1291511654
+s4233
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPMessage.h
+c000000004CFAE7660000000000000442
+t1291511654
+s1090
+i<Foundation/Foundation.h>
+i<CFNetwork/CFNetwork.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPRedirectResponse.h
+c000000004CFAE76600000000000000C8
+t1291511654
+s200
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPResponse.h
+c000000004CFAE76600000000000014B7
+t1291511654
+s5303
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/HTTPServer.h
+c000000004CFAE76600000000000014A0
+t1291511654
+s5280
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m
+c000000004CFAE7660000000000000EEB
+t1291511654
+s3819
+i"DDData.h"
+i<CommonCrypto/CommonDigest.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.h
+c000000004CFAE7660000000000000155
+t1291511654
+s341
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m
+c000000004CFAE766000000000000052F
+t1291511654
+s1327
+i"DDNumber.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m
+c000000004CFAE76600000000000009E3
+t1291511654
+s2531
+i"DDRange.h"
+i"DDNumber.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m
+c000000004CFAE76600000000000024B7
+t1291511654
+s9399
+i"HTTPAsyncFileResponse.h"
+i"HTTPConnection.h"
+i"HTTPLogging.h"
+i<unistd.h>
+i<fcntl.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m
+c000000004CFAE76600000000000018C0
+t1291511654
+s6336
+i"HTTPAuthenticationRequest.h"
+i"HTTPMessage.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.h
+c000000004CFAE7660000000000000C82
+t1291511654
+s3202
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m
+c000000004CFAE7660000000000012C76
+t1291511654
+s76918
+i"GCDAsyncSocket.h"
+i"HTTPServer.h"
+i"HTTPConnection.h"
+i"HTTPMessage.h"
+i"HTTPResponse.h"
+i"HTTPAuthenticationRequest.h"
+i"DDNumber.h"
+i"DDRange.h"
+i"DDData.h"
+i"HTTPFileResponse.h"
+i"HTTPAsyncFileResponse.h"
+i"WebSocket.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.h
+c000000004CFAE76600000000000000C4
+t1291511654
+s196
+i<Foundation/Foundation.h>
+i"HTTPResponse.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m
+c000000004CFAE766000000000000059A
+t1291511654
+s1434
+i"HTTPDataResponse.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m
+c000000004CFAE7660000000000001E35
+t1291511654
+s7733
+i"HTTPDynamicFileResponse.h"
+i"HTTPConnection.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m
+c000000004CFAE7660000000000001209
+t1291511654
+s4617
+i"HTTPFileResponse.h"
+i"HTTPConnection.h"
+i"HTTPLogging.h"
+i<unistd.h>
+i<fcntl.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPLogging.h
+c000000004CFAE7660000000000001089
+t1291511654
+s4233
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.h
+c000000004CFAE7660000000000000442
+t1291511654
+s1090
+i<Foundation/Foundation.h>
+i<CFNetwork/CFNetwork.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m
+c000000004CFAE766000000000000086B
+t1291511654
+s2155
+i"HTTPMessage.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m
+c000000004CFAE7660000000000000383
+t1291511654
+s899
+i"HTTPRedirectResponse.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.h
+c000000004CFAE76600000000000014A0
+t1291511654
+s5280
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m
+c000000004CFAE7660000000000004B91
+t1291511654
+s19345
+i"HTTPServer.h"
+i"GCDAsyncSocket.h"
+i"HTTPConnection.h"
+i"WebSocket.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.h
+c000000004CFAE7660000000000009095
+t1291511654
+s37013
+i<Foundation/Foundation.h>
+i<Security/Security.h>
+i<dispatch/dispatch.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m
+c000000004CFAE7660000000000023A14
+t1291511654
+s145940
+i"GCDAsyncSocket.h"
+i<CFNetwork/CFNetwork.h>
+i<arpa/inet.h>
+i<fcntl.h>
+i<ifaddrs.h>
+i<netdb.h>
+i<netinet/in.h>
+i<net/if.h>
+i<sys/socket.h>
+i<sys/types.h>
+i<sys/ioctl.h>
+i<sys/poll.h>
+i<sys/uio.h>
+i<unistd.h>
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m
+c000000004CFAE766000000000000076D
+t1291511654
+s1901
+i"DDASLLogger.h"
+i<libkern/OSAtomic.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m
+c000000004CFAE76600000000000094AF
+t1291511654
+s38063
+i"DDFileLogger.h"
+i<unistd.h>
+i<sys/attr.h>
+i<sys/xattr.h>
+i<libkern/OSAtomic.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.h
+c000000004CFAE766000000000000479D
+t1291511654
+s18333
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m
+c000000004CFAE76600000000000097EC
+t1291511654
+s38892
+i"DDLog.h"
+i<pthread.h>
+i<objc/runtime.h>
+i<mach/mach_host.h>
+i<mach/host_info.h>
+i<libkern/OSAtomic.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.h
+c000000004CFAE766000000000000056B
+t1291511654
+s1387
+i<Foundation/Foundation.h>
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m
+c000000004CFAE7660000000000000F28
+t1291511654
+s3880
+i"DDTTYLogger.h"
+i<unistd.h>
+i<sys/uio.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m
+c000000004CFAE7660000000000003608
+t1291511654
+s13832
+i"WebSocket.h"
+i"HTTPMessage.h"
+i"GCDAsyncSocket.h"
+i"DDNumber.h"
+i"DDData.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.h
+c000000004CFAE7660000000000000073
+t1291511654
+s115
+i<Cocoa/Cocoa.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m
+c000000004CFAE766000000000000064C
+t1291511654
+s1612
+i"AppDelegate.h"
+i"HTTPServer.h"
+i"MyHTTPConnection.h"
+i"DDLog.h"
+i"DDTTYLogger.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/InfoPlist.strings
+c000000004CFAE766000000000000005C
+t1291511654
+s92
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib
+c000000004CFAE76600000000000201A8
+t1291511654
+s131496
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.h
+c000000004CFAE7660000000000000067
+t1291511654
+s103
+i<Cocoa/Cocoa.h>
+i"HTTPConnection.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m
+c000000004CFAE7660000000000000B18
+t1291511654
+s2840
+i"MyHTTPConnection.h"
+i"HTTPMessage.h"
+i"HTTPDataResponse.h"
+i"DDNumber.h"
+i"HTTPLogging.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/PostHTTPServer_Prefix.pch
+c000000004CFAE766000000000000009F
+t1291511654
+s159
+i<Cocoa/Cocoa.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/Web
+c000000004CFAE7660000000000000066
+t1291511654
+s102
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app
+t1291512046
+s102
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Info.plist
+t1291512037
+s790
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer
+t1291512046
+s515712
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/PkgInfo
+t1291512037
+s8
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1291512037
+s92
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/MainMenu.nib
+t1291512038
+s28556
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/Web
+t1291512046
+s102
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/AppDelegate.o
+t1291512042
+s14824
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDASLLogger.o
+t1291512044
+s16852
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDData.o
+t1291512042
+s14100
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDFileLogger.o
+t1291512044
+s101604
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDLog.o
+t1291512045
+s70944
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDNumber.o
+t1291512043
+s9912
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDRange.o
+t1291512043
+s15628
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDTTYLogger.o
+t1291512045
+s23576
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/GCDAsyncSocket.o
+t1291512045
+s360860
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAsyncFileResponse.o
+t1291512043
+s50512
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAuthenticationRequest.o
+t1291512043
+s27352
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPConnection.o
+t1291512043
+s141836
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDataResponse.o
+t1291512045
+s18672
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDynamicFileResponse.o
+t1291512043
+s27936
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPFileResponse.o
+t1291512045
+s30564
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPMessage.o
+t1291512044
+s20688
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPRedirectResponse.o
+t1291512046
+s17828
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPServer.o
+t1291512044
+s120020
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/MyHTTPConnection.o
+t1291512042
+s19688
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/PostHTTPServer.LinkFileList
+c000000004CFAE8E50000000000000FE7
+t1291512037
+s4071
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/WebSocket.o
+t1291512044
+s51316
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/main.o
+t1291512042
+s5112
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m
+c000000004CFAE7660000000000000109
+t1291511654
+s265
+i<Cocoa/Cocoa.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Vendor/CocoaAsyncSocket/GCDAsyncSocket.h
+c000000004CFAE7660000000000009095
+t1291511654
+s37013
+i<Foundation/Foundation.h>
+i<Security/Security.h>
+i<dispatch/dispatch.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Vendor/CocoaLumberjack/DDASLLogger.h
+c000000004CFAE7660000000000000491
+t1291511654
+s1169
+i<Foundation/Foundation.h>
+i<asl.h>
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Vendor/CocoaLumberjack/DDFileLogger.h
+c000000004CFAE766000000000000265B
+t1291511654
+s9819
+i<Foundation/Foundation.h>
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Vendor/CocoaLumberjack/DDLog.h
+c000000004CFAE766000000000000479D
+t1291511654
+s18333
+i<Foundation/Foundation.h>
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Vendor/CocoaLumberjack/DDTTYLogger.h
+c000000004CFAE766000000000000056B
+t1291511654
+s1387
+i<Foundation/Foundation.h>
+i"DDLog.h"
+
+N/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/WebSocket.h
+c000000004CFAE7660000000000000257
+t1291511654
+s599
+i<Foundation/Foundation.h>
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch.gch
+t1291512042
+s54257424
+
+NInfo.plist
+c000000004CFAE7660000000000000357
+t1291511654
+s855
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies313204837#313204837#0(0"0(0#1#0"8622976864#0"0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/AppDelegate.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.340839
+e313204842.594459
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/AppDelegate.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@123"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m313204842#313204842#0(0"0(0#0#115"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m8626366112#2295"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/AppDelegate.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/AppDelegate.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDASLLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204844.331002
+e313204844.529858
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDASLLogger.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@152"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m313204844#313204844#0(0"0(0#0#144"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m8623219744#2324"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDASLLogger.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDASLLogger.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDData.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.594576
+e313204842.853760
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDData.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@124"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m313204842#313204842#0(0"0(0#0#116"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m8622878560#2291"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDData.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDData.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDFileLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204844.529960
+e313204844.889101
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDFileLogger.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@153"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m313204844#313204844#0(0"0(0#0#145"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m8625677792#2326"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDFileLogger.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDFileLogger.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDLog.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204844.889230
+e313204845.443342
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDLog.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@146"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m313204844#313204845#0(0"0(0#0#138"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m8622879936#2312"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDLog.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDLog.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDNumber.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.810313
+e313204843.074475
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDNumber.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@126"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m313204842#313204843#0(0"0(0#0#118"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m8617793760#2295"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDNumber.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDNumber.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDRange.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.853861
+e313204843.106108
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDRange.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@125"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m313204842#313204843#0(0"0(0#0#117"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m8607383264#2293"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../DDRange.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDRange.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDTTYLogger.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204845.443714
+e313204845.669548
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDTTYLogger.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@152"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m313204845#313204845#0(0"0(0#0#144"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m8614614272#2324"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaLumberjack/DDTTYLogger.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/DDTTYLogger.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/GCDAsyncSocket.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204844.273097
+e313204845.650944
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/GCDAsyncSocket.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@156"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m313204844#313204845#0(0"0(0#0#148"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m8623362080#2331"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../Vendor/CocoaAsyncSocket/GCDAsyncSocket.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/GCDAsyncSocket.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAsyncFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.074592
+e313204843.400668
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAsyncFileResponse.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@139"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m313204843#313204843#0(0"0(0#0#131"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m8624370272#2321"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAsyncFileResponse.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAsyncFileResponse.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAuthenticationRequest.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.106218
+e313204843.350282
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAuthenticationRequest.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@143"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m313204843#313204843#0(0"0(0#0#135"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m8622984000#2329"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPAuthenticationRequest.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPAuthenticationRequest.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPConnection.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.350422
+e313204843.970161
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPConnection.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@132"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m313204843#313204843#0(0"0(0#0#124"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m8618333056#2307"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPConnection.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPConnection.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDataResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204845.651277
+e313204845.886461
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDataResponse.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@134"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m313204845#313204845#0(0"0(0#0#126"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m8618318688#2311"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDataResponse.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDataResponse.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDynamicFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.400786
+e313204843.630193
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDynamicFileResponse.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@141"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m313204843#313204843#0(0"0(0#0#133"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m8616338784#2325"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPDynamicFileResponse.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPDynamicFileResponse.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPFileResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204845.669663
+e313204845.939236
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPFileResponse.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@134"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m313204845#313204845#0(0"0(0#0#126"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m8609927168#2311"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPFileResponse.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPFileResponse.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPMessage.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204844.092864
+e313204844.330875
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPMessage.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@129"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m313204844#313204844#0(0"0(0#0#121"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m8618665216#2301"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPMessage.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPMessage.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPRedirectResponse.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204845.886583
+e313204846.070360
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPRedirectResponse.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@138"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m313204845#313204846#0(0"0(0#0#130"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m8623343072#2319"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPRedirectResponse.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPRedirectResponse.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPServer.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.630315
+e313204844.092747
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPServer.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@128"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m313204843#313204844#0(0"0(0#0#120"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m8624748960#2299"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../HTTPServer.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/HTTPServer.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/MyHTTPConnection.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.553014
+e313204842.810193
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/MyHTTPConnection.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@128"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m313204842#313204842#0(0"0(0#0#120"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m8624329408#2305"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/MyHTTPConnection.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/MyHTTPConnection.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/WebSocket.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204843.970425
+e313204844.272974
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/WebSocket.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@127"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m313204843#313204844#0(0"0(0#0#119"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m8622027808#2297"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/../../WebSocket.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/WebSocket.o0#
+
+CCompileC build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/main.o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204842.336855
+e313204842.552890
+r1
+xCompileC
+xbuild/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/main.o
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@116"Compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m313204842#313204842#0(0"0(0#0#108"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m8617443328#2281"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -include /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/main.m -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/main.o0#
+
+CCompileXIB /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib
+s313204837.793901
+e313204838.117807
+r1
+xCompileXIB
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib313204837#313204838#0(0"0(0#0#128"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib8625863328#560"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/MainMenu.nib /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/MainMenu.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s313204837.791635
+e313204837.889854
+r1
+xCopyStringsFile
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings313204837#313204837#0(0"0(0#0#133"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/English.lproj/InfoPlist.strings8626008608#499"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources/English.lproj0#
+
+CLd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer normal x86_64
+s313204846.070481
+e313204846.268004
+r1
+xLd
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer
+xnormal
+xx86_64
+lSLF07#2@167"Link /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer313204846#313204846#0(0"0(0#0#0"8617242784#912"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -filelist /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/Objects-normal/x86_64/PostHTTPServer.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework Security -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/MacOS/PostHTTPServer0#
+
+CPBXCp build/Debug/PostHTTPServer.app/Contents/Resources/Web Web
+s313204846.268130
+e313204846.274985
+r1
+xPBXCp
+xbuild/Debug/PostHTTPServer.app/Contents/Resources/Web
+xWeb
+lSLF07#2@8"Copy Web313204846#313204846#0(0"0(0#0#105"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/Web8624638752#529"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/Web /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Resources0#
+
+CProcessInfoPlistFile /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Info.plist Info.plist
+s313204837.788432
+e313204837.791537
+r1
+xProcessInfoPlistFile
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist313204837#313204837#0(0"0(0#0#112"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/Info.plist8619339136#505"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    builtin-infoPlistUtility Info.plist -genpkginfo /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch.gch PostHTTPServer_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s313204838.117988
+e313204842.336621
+r1
+xProcessPCH
+x/var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch.gch
+xPostHTTPServer_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile PostHTTPServer_Prefix.pch313204838#313204842#0(0"0(0#0#127"/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/PostHTTPServer_Prefix.pch8620316672#2117"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-generated-files.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-own-target-headers.hmap -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-all-target-headers.hmap -iquote /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/PostHTTPServer-project-headers.hmap -F/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/include -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources/x86_64 -I/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/PostHTTPServer.build/Debug/PostHTTPServer.build/DerivedSources -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/PostHTTPServer_Prefix.pch -o /var/folders/US/USJjJM7IHyKzVOrmEfJAdE+++TM/-Caches-/com.apple.Xcode.502/SharedPrecompiledHeaders/PostHTTPServer_Prefix-goiqlvoshojketajuuzjyuvypnve/PostHTTPServer_Prefix.pch.gch0#
+
+CTouch /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app
+s313204846.275093
+e313204846.279809
+r1
+xTouch
+x/Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app
+lSLF07#2@138"Touch /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app313204846#313204846#0(0"0(0#0#0"8624166784#264"    cd /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer    /usr/bin/touch -c /Developer/of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/cocoahttpserver/Samples/PostHTTPServer/build/Debug/PostHTTPServer.app0#
+
