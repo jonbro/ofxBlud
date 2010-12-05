@@ -6,8 +6,7 @@
 #import "MyHTTPConnection.h"
 #import "HTTPServer.h"
 #import "HTTPResponse.h"
-#import "HTTPFileResponse.h"
-#import "HTTPDataResponse.h"
+#import "AsyncSocket.h"
 
 @implementation MyHTTPConnection
 
@@ -91,6 +90,12 @@
 }
 
 
+- (void)prepareForBodyWithSize:(UInt64)contentLength
+{
+	dataStartIndex = 0;
+	if (multipartData == nil ) multipartData = [[NSMutableArray alloc] init];   //jlz
+	postHeaderOK = FALSE ;
+}
 
 
 /**
@@ -104,9 +109,9 @@
 {
 	NSLog(@"httpResponseForURI: method:%@ path:%@", method, path);
 
-	NSData *requestData = [request body];
+	//NSData *requestData = [request body];
 
-	//NSData *requestData = [(NSData *)CFHTTPMessageCopySerializedMessage(request) autorelease];
+	NSData *requestData = [(NSData *)CFHTTPMessageCopySerializedMessage(request) autorelease];
 	
 	NSString *requestStr = [[[NSString alloc] initWithData:requestData encoding:NSASCIIStringEncoding] autorelease];
 	NSLog(@"\n=== Request ====================\n%@\n================================", requestStr);
@@ -149,27 +154,28 @@
 			}
 			
 			// setup the paths to move the files to
-			NSMutableString *tmpPath = [[NSMutableString alloc] initWithString:[config documentRoot]];;
+			NSMutableString *tmpPath = [[NSMutableString alloc] initWithString:[[server documentRoot] path]];;
 			[tmpPath appendString:@"/"];
 			[tmpPath appendString:filename];
 			
-			NSMutableString *fullPath = [[NSMutableString alloc] initWithString:[config documentRoot]];
+			NSMutableString *fullPath = [[NSMutableString alloc] initWithString:[[server documentRoot] path]];
 			[fullPath appendString:path];
 			[fullPath appendString:filename];
 			
 			NSFileManager *filemgr = [NSFileManager defaultManager];
 			
 			// remove the item at the path first			
-			[filemgr removeItemAtPath:fullPath error:NULL];
 			
 			// move the new item into place
-			NSError *moveError;
-			if ([filemgr moveItemAtPath:tmpPath toPath:fullPath error:&moveError]  == YES){
-				NSLog (@"Move successful");
-			}else {
-				NSLog(@"Error moving file: %@", moveError);
+			if (![tmpPath isEqualToString:fullPath]) {
+				[filemgr removeItemAtPath:fullPath error:NULL];
+				NSError *moveError;
+				if ([filemgr moveItemAtPath:tmpPath toPath:fullPath error:&moveError]  == YES){
+					NSLog (@"Move successful");
+				}else {
+					NSLog(@"Error moving file: %@", moveError);
+				}
 			}
-
 			NSLog(@"NewFileUploaded");
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"NewFileUploaded" object:nil];
 		}
@@ -182,40 +188,25 @@
 		requestContentLength = 0;
 		
 	}
-	
 	NSString *filePath = [self filePathForURI:path];
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
 	{
-		return [[[HTTPFileResponse alloc] initWithFilePath:filePath forConnection:self] autorelease];
+		return [[[HTTPFileResponse alloc] initWithFilePath:filePath] autorelease];
 	}
 	else
 	{
-		NSString *folder = [[config documentRoot] stringByAppendingString:path];
+		NSString *folder = [path isEqualToString:@"/"] ? [[server documentRoot] path] : [NSString stringWithFormat: @"%@%@", [[server documentRoot] path], path];
+		
 		if ([self isBrowseable:folder])
 		{
-			NSLog(@"folder: %@", folder);
+			//NSLog(@"folder: %@", folder);
 			NSData *browseData = [[self createBrowseableIndex:folder] dataUsingEncoding:NSUTF8StringEncoding];
 			return [[[HTTPDataResponse alloc] initWithData:browseData] autorelease];
 		}
 	}
 	
 	return nil;
-}
-- (void)prepareForBodyWithSize:(UInt64)contentLength
-{
-	NSLog(@"filesize: %i", contentLength);
-}
-
-- (BOOL)expectsRequestBodyFromMethod:(NSString *)method atPath:(NSString *)path
-{
-	
-	// Inform HTTP server that we expect a body to accompany a POST request
-	NSLog(@"expectsRequestBodyFromMethod");
-	if([method isEqualToString:@"POST"])
-		return YES;
-	
-	return [super expectsRequestBodyFromMethod:method atPath:path];
 }
 
 /**
@@ -233,7 +224,7 @@
 	// The size of the chunks are limited by the POST_CHUNKSIZE definition.
 	// Therefore, this method may be called multiple times for the same POST request.
 	
-	NSLog(@"processPostDataChunk");
+	//NSLog(@"processPostDataChunk");
 	
 	if (!postHeaderOK)
 	{
@@ -259,14 +250,19 @@
 				}
 				else
 				{
-					NSLog(@"");
 					postHeaderOK = TRUE;
 					
-					NSString* postInfo = [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:1] bytes] length:[[multipartData objectAtIndex:1] length] encoding:NSUTF8StringEncoding];
+					
+					
+					NSString* postInfo = [[NSString alloc] initWithBytes:[[multipartData objectAtIndex:1] bytes] length:[[multipartData objectAtIndex:1] length] encoding: NSWindowsCP1251StringEncoding];
+					
+					
 					NSArray* postInfoComponents = [postInfo componentsSeparatedByString:@"; filename="];
+					
 					postInfoComponents = [[postInfoComponents lastObject] componentsSeparatedByString:@"\""];
 					postInfoComponents = [[postInfoComponents objectAtIndex:1] componentsSeparatedByString:@"\\"];
-					NSString* filename = [[config documentRoot] stringByAppendingPathComponent:[postInfoComponents lastObject]];
+					
+					NSString* filename = [[[server documentRoot] path] stringByAppendingPathComponent:[postInfoComponents lastObject]];
 					NSRange fileDataRange = {dataStartIndex, [postDataChunk length] - dataStartIndex};
 					
 					[[NSFileManager defaultManager] createFileAtPath:filename contents:[postDataChunk subdataWithRange:fileDataRange] attributes:nil];

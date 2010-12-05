@@ -1,6 +1,4 @@
 #include "testApp.h"
-#import "HTTPLogging.h"
-static const int httpLogLevel = LOG_LEVEL_VERBOSE;
 
 #define method(class, name) {#name, &class::name}
 
@@ -63,7 +61,7 @@ void testApp::setup(){
 	
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setConnectionClass:[MyHTTPConnection class]];
-	[httpServer setDocumentRoot:[[NSBundle mainBundle] bundlePath]];
+	[httpServer setDocumentRoot:[[NSBundle mainBundle] bundleURL]];
 	
 	NSError *httpError;
 	if(![httpServer start:&httpError])
