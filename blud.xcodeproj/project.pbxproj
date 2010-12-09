@@ -69,6 +69,7 @@
 		5E99E50112A5CD56000217A6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E012A5CD56000217A6 /* Makefile */; };
 		5E99E50212A5CD56000217A6 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E99E4E112A5CD56000217A6 /* print.c */; };
 		5EA0A7DC12AC54CB00B72808 /* MyHTTPConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */; };
+		5EA0A82812AC5AEC00B72808 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5EA0A82712AC5AEC00B72808 /* testApp.mm */; };
 		5EE8762912A8874900B89589 /* boot.lua in Resources */ = {isa = PBXBuildFile; fileRef = 5EE8762812A8874900B89589 /* boot.lua */; };
 		BB24DD8F10DA77E000E9C588 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8C10DA77E000E9C588 /* Default.png */; };
 		BB24DD9010DA77E000E9C588 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BB24DD8D10DA77E000E9C588 /* Icon.png */; };
@@ -81,7 +82,6 @@
 		E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */; };
 		E4A8229F12560AFE002F86A2 /* freetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A8229E12560AFE002F86A2 /* freetype.a */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
-		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D6058910D05DD3D006BFB54 /* emptyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emptyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* BLUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
 		5E25687010ED26CC00A9501C /* CppUnit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = CppUnit.a; path = ../../../libs/poco/lib/iphone/CppUnit.a; sourceTree = SOURCE_ROOT; };
 		5E25687110ED26CC00A9501C /* PocoFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoFoundation.a; path = ../../../libs/poco/lib/iphone/PocoFoundation.a; sourceTree = SOURCE_ROOT; };
@@ -201,6 +201,10 @@
 		5E99E4E112A5CD56000217A6 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = ../../../addons/ofxLua/libs/src/print.c; sourceTree = SOURCE_ROOT; };
 		5E99E5FD12A5D807000217A6 /* luna.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luna.h; path = of_preRelease_v0062_iphone_FAT/addons/ofxLua/luna.h; sourceTree = DEVELOPER_DIR; };
 		5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyHTTPConnection.mm; path = src/webserver/MyHTTPConnection.mm; sourceTree = SOURCE_ROOT; };
+		5EA0A82712AC5AEC00B72808 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
+		5EA0A9E312AC832500B72808 /* bludImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bludImage.h; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/wrappers/bludImage.h; sourceTree = DEVELOPER_DIR; };
+		5EA0AA1C12AC89A100B72808 /* bludGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bludGraphics.h; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/wrappers/bludGraphics.h; sourceTree = DEVELOPER_DIR; };
+		5EA0AA4E12AC916E00B72808 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/defines.h; sourceTree = DEVELOPER_DIR; };
 		5EE8762812A8874900B89589 /* boot.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; name = boot.lua; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/bin/data/boot.lua; sourceTree = DEVELOPER_DIR; };
 		BB24DD8C10DA77E000E9C588 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BB24DD8D10DA77E000E9C588 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -262,7 +266,6 @@
 		E4A8229E12560AFE002F86A2 /* freetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = freetype.a; path = ../../../libs/freetype/lib/osx/freetype.a; sourceTree = SOURCE_ROOT; };
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
-		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +308,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* emptyExample.app */,
+				1D6058910D05DD3D006BFB54 /* BLUD.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -510,6 +513,16 @@
 			);
 			name = src;
 			path = ../../../addons/ofxLua/libs/src;
+			sourceTree = SOURCE_ROOT;
+		};
+		5EA0A9E212AC831000B72808 /* wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				5EA0A9E312AC832500B72808 /* bludImage.h */,
+				5EA0AA1C12AC89A100B72808 /* bludGraphics.h */,
+			);
+			name = wrappers;
+			path = src/wrappers;
 			sourceTree = SOURCE_ROOT;
 		};
 		BB16E9930F2B1E5900518274 /* libs */ = {
@@ -771,11 +784,13 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5EA0A9E212AC831000B72808 /* wrappers */,
 				5E2C655312AC01C900FAC7F3 /* cocoahttpserver_v1 */,
 				5E8E5CC212AB1F7B0037DFAD /* webserver */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
-				E4D8936D11527B74007E1F53 /* testApp.mm */,
+				5EA0A82712AC5AEC00B72808 /* testApp.mm */,
 				E4D8936C11527B74007E1F53 /* testApp.h */,
+				5EA0AA4E12AC916E00B72808 /* defines.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -783,9 +798,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* emptyExample */ = {
+		1D6058900D05DD3D006BFB54 /* BLUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "emptyExample" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BLUD" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -797,9 +812,9 @@
 			dependencies = (
 				E49BCC6E12554C6C009F19D0 /* PBXTargetDependency */,
 			);
-			name = emptyExample;
+			name = BLUD;
 			productName = iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* emptyExample.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* BLUD.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -828,7 +843,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* emptyExample */,
+				1D6058900D05DD3D006BFB54 /* BLUD */,
 			);
 		};
 /* End PBXProject section */
@@ -879,7 +894,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
-				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
 				5E99E4E212A5CD56000217A6 /* lapi.c in Sources */,
 				5E99E4E312A5CD56000217A6 /* lauxlib.c in Sources */,
 				5E99E4E412A5CD56000217A6 /* lbaselib.c in Sources */,
@@ -923,6 +937,7 @@
 				5E2C656B12AC01C900FAC7F3 /* HTTPServer.m in Sources */,
 				5E8A04E012AC4F47005D8D38 /* luaHTTPServer.mm in Sources */,
 				5EA0A7DC12AC54CB00B72808 /* MyHTTPConnection.mm in Sources */,
+				5EA0A82812AC5AEC00B72808 /* testApp.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1013,7 @@
 				GCC_WARN_PROTOTYPE_CONVERSION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					../../../addons/ofxLua/libs/luabridge/include,
 					../../../addons/ofxLua/libs/src,
 					../../../libs/poco/include,
 					"../../../addons/ofxAccelerometer/**",
@@ -1144,7 +1160,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "emptyExample" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BLUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,

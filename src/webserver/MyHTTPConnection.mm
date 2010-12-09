@@ -166,7 +166,11 @@
 	NSArray *chunks = [path componentsSeparatedByString: @"?"];
 	for (int i = 0; i < [chunks count]; i++) {
 		if([[chunks objectAtIndex:i] isEqualToString:@"execute=true"]){
-			luaL_dofile((lua_State*)[server lua], [[self filePathForURI:path] cString]);
+			int error = luaL_dofile((lua_State*)[server lua], [[self filePathForURI:path] cString]);
+			if (error) {
+				printf("error executing: %s\n", lua_tostring((lua_State*)[server lua], -1));
+				// would be nice if you got an error back from the compiler
+			}			
 			NSLog(@"executing");
 		}
 	}

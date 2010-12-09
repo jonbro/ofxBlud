@@ -1,26 +1,6 @@
 #include "testApp.h"
-
-#define method(class, name) {#name, &class::name}
-
-class bludImage {
-	lua_Number m_balance;
-public:
-	static const char className[];
-	static Luna<bludImage>::RegType methods[];
-	ofImage _image;
-	bludImage(lua_State *L) { }
-	int load (lua_State *L) { _image.loadImage(luaL_checkstring(L, 1)); return 0; }
-	int draw(lua_State *L) { _image.draw(luaL_checknumber(L, 1), luaL_checknumber(L, 2)); return 0; }
-	~bludImage() { printf("deleted image (%p)\n", this); }
-};
-
-const char bludImage::className[] = "bludImage";
-
-Luna<bludImage>::RegType bludImage::methods[] = {
-	method(bludImage, load),
-	method(bludImage, draw),
-	{0,0}
-};
+#include "bludImage.h"
+#include "bludGraphics.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){	
@@ -47,14 +27,12 @@ void testApp::setup(){
 	
 	luaL_openlibs(luaVM);
 	Luna<bludImage>::Register(luaVM);
+	Luna<bludGraphics>::Register(luaVM);
 	
 	int error = luaL_dofile(luaVM, [[[NSBundle mainBundle] pathForResource:@"boot" ofType:@"lua"] cString]);
 	if (error) {
 		printf("%s\n", lua_tostring(luaVM, -1));
 	}
-	
-	
-	
 	
 	httpServer = [luaHTTPServer new];
 	[httpServer setPort:1073];
@@ -65,18 +43,32 @@ void testApp::setup(){
 
 	NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
 	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
+	string s = "blud.doc_root = '";
+	s += [root cString];
+	s += "'";
+	error = luaL_dostring(luaVM, s.c_str());
+	if (error) {
+		printf("%s\n", lua_tostring(luaVM, -1));
+	}
+	
 	
 	NSError *httpError;
 	if(![httpServer start:&httpError])
 	{
 		NSLog(@"Error starting HTTP Server: %@", httpError);
 	}
-	
+	ofEnableAlphaBlending();
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-	
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "update"); /* function to be called */
+	lua_pushnumber(luaVM, ofGetElapsedTimeMillis()-lastTime);
+	lastTime = ofGetElapsedTimeMillis();
+	if(lua_pcall(luaVM, 1, 0, 0) != 0){
+		printf("error in update: %s\n", lua_tostring(luaVM, -1));
+	}
 }
 
 //--------------------------------------------------------------
@@ -96,17 +88,41 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch){
-	
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "touch"); /* function to be called */
+	lua_getfield(luaVM, -1, "touchdown"); /* function to be called */
+	lua_pushnumber(luaVM, touch.x);
+	lua_pushnumber(luaVM, touch.y);
+	lua_pushnumber(luaVM, touch.id);
+	if(lua_pcall(luaVM, 3, 0, 0) != 0){
+		printf("error in touchdown: %s\n", lua_tostring(luaVM, -1));
+	}	
 }
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch){
-	
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "touch"); /* function to be called */
+	lua_getfield(luaVM, -1, "touchmoved"); /* function to be called */
+	lua_pushnumber(luaVM, touch.x);
+	lua_pushnumber(luaVM, touch.y);
+	lua_pushnumber(luaVM, touch.id);
+	if(lua_pcall(luaVM, 3, 0, 0) != 0){
+		printf("error in touchmoved: %s\n", lua_tostring(luaVM, -1));
+	}		
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch){
-	
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "touch"); /* function to be called */
+	lua_getfield(luaVM, -1, "touchup"); /* function to be called */
+	lua_pushnumber(luaVM, touch.x);
+	lua_pushnumber(luaVM, touch.y);
+	lua_pushnumber(luaVM, touch.id);
+	if(lua_pcall(luaVM, 3, 0, 0) != 0){
+		printf("error in touchup: %s\n", lua_tostring(luaVM, -1));
+	}	
 }
 
 //--------------------------------------------------------------

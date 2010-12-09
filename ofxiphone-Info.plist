@@ -6,6 +6,8 @@
 	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>CFBundleIdentifier</key>
 	<string>${PRODUCT_NAME:identifier}</string>
 	<key>UIStatusBarHidden</key>

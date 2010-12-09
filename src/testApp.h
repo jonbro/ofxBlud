@@ -4,7 +4,6 @@
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 #import "luna.h"
-
 #import "luaHTTPServer.h"
 #import "MyHTTPConnection.h"
 #import "localhostAddresses.h"
@@ -31,4 +30,5 @@ public:
 
 	luaHTTPServer *httpServer;
 	NSDictionary *addresses;
+	int lastTime;
 };
