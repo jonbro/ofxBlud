@@ -40,13 +40,28 @@ void testApp::setup(){
 	
 	[httpServer setType:@"_http._tcp."];
 	[httpServer setConnectionClass:[MyHTTPConnection class]];
-
+	
 	NSString *root = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0];
 	[httpServer setDocumentRoot:[NSURL fileURLWithPath:root]];
+	
 	string s = "blud.doc_root = '";
 	s += [root cString];
 	s += "'";
 	error = luaL_dostring(luaVM, s.c_str());
+	if (error) {
+		printf("%s\n", lua_tostring(luaVM, -1));
+	}
+	
+	s = "blud.bundle_root = '";
+	s += [[[NSBundle mainBundle] bundlePath]cString];
+	s += "'";
+	error = luaL_dostring(luaVM, s.c_str());
+	if (error) {
+		printf("%s\n", lua_tostring(luaVM, -1));
+	}
+	
+	
+	error = luaL_dofile(luaVM, [[[NSBundle mainBundle] pathForResource:@"include_test" ofType:@"lua" inDirectory:@"test_scripts/include_test"] cString]);
 	if (error) {
 		printf("%s\n", lua_tostring(luaVM, -1));
 	}

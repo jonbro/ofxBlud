@@ -23,11 +23,12 @@ public:
 	int translate(lua_State *L)  {ofTranslate(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
 
 	int setColor(lua_State *L)  {ofSetColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
+	int drawRect(lua_State *L)  {ofRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
 
 	~bludGraphics() { printf("deleted graphics (%p)\n", this); }
 };
 
-const char bludGraphics::className[] = "bludImage";
+const char bludGraphics::className[] = "bludGraphics";
 
 Luna<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, push),
@@ -35,5 +36,6 @@ Luna<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, rotate),
 	method(bludGraphics, translate),
 	method(bludGraphics, setColor),
+	method(bludGraphics, drawRect),
 	{0,0}
 };

@@ -16,6 +16,7 @@
 		5E0FA6D712B06D9800D6E308 /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FA6CE12B06D9800D6E308 /* HTTPResponse.m */; };
 		5E0FA6D812B06D9800D6E308 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FA6D012B06D9800D6E308 /* HTTPServer.m */; };
 		5E0FA6DB12B06DB100D6E308 /* boot.lua in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FA6DA12B06DB100D6E308 /* boot.lua */; };
+		5E0FA72412B5330700D6E308 /* test_scripts in Resources */ = {isa = PBXBuildFile; fileRef = 5E0FA71212B5330700D6E308 /* test_scripts */; };
 		5E25689710ED26CC00A9501C /* CppUnit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687010ED26CC00A9501C /* CppUnit.a */; };
 		5E25689810ED26CC00A9501C /* PocoFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687110ED26CC00A9501C /* PocoFoundation.a */; };
 		5E25689910ED26CC00A9501C /* PocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687210ED26CC00A9501C /* PocoNet.a */; };
@@ -124,6 +125,8 @@
 		5E0FA6D012B06D9800D6E308 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPServer.m; path = src/cocoahttpserver_v1/HTTPServer.m; sourceTree = SOURCE_ROOT; };
 		5E0FA6D912B06DA100D6E308 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = src/defines.h; sourceTree = SOURCE_ROOT; };
 		5E0FA6DA12B06DB100D6E308 /* boot.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; name = boot.lua; path = bin/data/boot.lua; sourceTree = SOURCE_ROOT; };
+		5E0FA6DF12B06E2F00D6E308 /* luaHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaHTTPServer.h; path = src/webserver/luaHTTPServer.h; sourceTree = SOURCE_ROOT; };
+		5E0FA71212B5330700D6E308 /* test_scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = test_scripts; path = bin/data/test_scripts; sourceTree = SOURCE_ROOT; };
 		5E25687010ED26CC00A9501C /* CppUnit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = CppUnit.a; path = ../../../libs/poco/lib/iphone/CppUnit.a; sourceTree = SOURCE_ROOT; };
 		5E25687110ED26CC00A9501C /* PocoFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoFoundation.a; path = ../../../libs/poco/lib/iphone/PocoFoundation.a; sourceTree = SOURCE_ROOT; };
 		5E25687210ED26CC00A9501C /* PocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoNet.a; path = ../../../libs/poco/lib/iphone/PocoNet.a; sourceTree = SOURCE_ROOT; };
@@ -135,7 +138,6 @@
 		5E25688310ED26CC00A9501C /* PocoUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoUtil.a; path = ../../../libs/poco/lib/osx/PocoUtil.a; sourceTree = SOURCE_ROOT; };
 		5E25688410ED26CC00A9501C /* PocoXML.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoXML.a; path = ../../../libs/poco/lib/osx/PocoXML.a; sourceTree = SOURCE_ROOT; };
 		5E2C663312AC096A00FAC7F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		5E8A049A12AC4D2A005D8D38 /* luaHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaHTTPServer.h; path = of_preRelease_v0062_iphone_FAT/apps/my_apps/lua/src/webserver/luaHTTPServer.h; sourceTree = DEVELOPER_DIR; };
 		5E8A04DF12AC4F47005D8D38 /* luaHTTPServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = luaHTTPServer.mm; path = src/webserver/luaHTTPServer.mm; sourceTree = SOURCE_ROOT; };
 		5E8E5CC312AB1F7B0037DFAD /* localhostAddresses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = localhostAddresses.h; path = src/webserver/localhostAddresses.h; sourceTree = SOURCE_ROOT; };
 		5E8E5CC412AB1F7B0037DFAD /* localhostAddresses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = localhostAddresses.m; path = src/webserver/localhostAddresses.m; sourceTree = SOURCE_ROOT; };
@@ -428,7 +430,7 @@
 				5EA0A7DB12AC54CB00B72808 /* MyHTTPConnection.mm */,
 				5E8E5CC712AB1F7B0037DFAD /* WebServer.h */,
 				5E8E5CC812AB1F7B0037DFAD /* WebServer.mm */,
-				5E8A049A12AC4D2A005D8D38 /* luaHTTPServer.h */,
+				5E0FA6DF12B06E2F00D6E308 /* luaHTTPServer.h */,
 				5E8A04DF12AC4F47005D8D38 /* luaHTTPServer.mm */,
 			);
 			name = webserver;
@@ -544,6 +546,7 @@
 		BB24DD8B10DA77E000E9C588 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				5E0FA71212B5330700D6E308 /* test_scripts */,
 				5E0FA6DA12B06DB100D6E308 /* boot.lua */,
 				BB24DD8C10DA77E000E9C588 /* Default.png */,
 				BB24DD8D10DA77E000E9C588 /* Icon.png */,
@@ -866,6 +869,7 @@
 				BB24DD8F10DA77E000E9C588 /* Default.png in Resources */,
 				BB24DD9010DA77E000E9C588 /* Icon.png in Resources */,
 				BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */,
+				5E0FA72412B5330700D6E308 /* test_scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
