@@ -61,7 +61,7 @@ void testApp::setup(){
 	}
 	
 	
-	error = luaL_dofile(luaVM, [[[NSBundle mainBundle] pathForResource:@"include_test" ofType:@"lua" inDirectory:@"test_scripts/include_test"] cString]);
+	error = luaL_dofile(luaVM, [[[NSBundle mainBundle] pathForResource:@"breakout" ofType:@"lua" inDirectory:@"test_scripts/breakout"] cString]);
 	if (error) {
 		printf("%s\n", lua_tostring(luaVM, -1));
 	}
