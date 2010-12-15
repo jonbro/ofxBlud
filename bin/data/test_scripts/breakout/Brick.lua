@@ -23,3 +23,7 @@ function Brick:refresh()
 	  end
 	end
 end
+function Brick:die()
+  self.alive = false;
+  self.frame = 0;
+end

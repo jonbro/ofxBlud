@@ -2,14 +2,22 @@ dofile(blud.bundle_root .. "/test_scripts/breakout/class.lua")
 dofile(blud.bundle_root .. "/test_scripts/breakout/Rectangle.lua")
 
 dofile(blud.bundle_root .. "/test_scripts/breakout/Brick.lua")
+dofile(blud.bundle_root .. "/test_scripts/breakout/Ball.lua")
 dofile(blud.bundle_root .. "/test_scripts/breakout/Paddle.lua")
 
 g = bludGraphics();
 
 gameFrame = Rectangle(g:getWidth(), g:getHeight())
+
 bricks = {};
+balls = {};
 
 gameFrame:setPosition(0,0);
+paddle = Paddle(gameFrame)
+
+function constrain(val,low,high)
+  return math.min(math.max(val,low),high)
+end
 
 function createBricks()
   -- BRICK GROUP PROPERTIES --
@@ -35,13 +43,32 @@ function createBricks()
   end
 end
 
-createBricks()
+function createBalls()
+  numberOfBalls = 1;
+  yBalls = 150;
+  for i=0,numberOfBalls, 1 do
+    x = i*20;
+    balls[i] = Ball(x, yBalls, 5, 5, gameFrame, bricks, paddle);
+  end
+end
 
---  createBalls()
---  paddle = Paddle()
+createBricks()
+createBalls()
 
 function blud.draw()
   for i,v in ipairs(bricks) do
     v:refresh()
   end
+  for i,v in ipairs(balls) do
+    v:refresh()
+  end
+  paddle:refresh()
 end
+
+function blud.touch.touchdown(x, y, id)
+  paddle.x = x
+end
+
+function blud.touch.touchmoved(x, y, id)
+  paddle.x = x
+end 

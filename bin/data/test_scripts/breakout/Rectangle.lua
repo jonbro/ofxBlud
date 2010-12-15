@@ -69,31 +69,31 @@ function Rectangle:doesPointTouch(v)
       return true
     end
   end
-  return true
+  return false
 end
 
 function Rectangle:whatSideDoesLineTouch(line, velocity)
   -- check the top and bottom intersections
   if velocity.y > 0 then
-    side = Line2d(self.x1,self.y1,self.x2,self.y2)
-    if(line.check_intersection(side)) then
+    side = Line2d(self.x1,self.y1,self.x2,self.y1)
+    if(line:check_intersection(side)) then
       return 1
     end
   elseif velocity.y < 0 then
     side = Line2d(self.x1,self.y2,self.x2,self.y2)
-    if(line.check_intersection(side)) then
+    if(line:check_intersection(side)) then
       return 3
     end
   end 
   -- check the left and right intersections
   if velocity.x > 0 then
     side = Line2d(self.x1,self.y1,self.x1,self.y2)
-    if(line.check_intersection(side)) then
+    if(line:check_intersection(side)) then
       return 4
     end
   elseif velocity.x < 0 then
-    side = Line2d(self.x2,self.y2,self.x2,self.y2)
-    if(line.check_intersection(side)) then 
+    side = Line2d(self.x2,self.y1,self.x2,self.y2)
+    if(line:check_intersection(side)) then 
       return 2
     end
   end 
