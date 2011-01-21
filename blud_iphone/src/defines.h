@@ -1,1 +1,0 @@
-#define method(class, name) {#name, &class::name}
