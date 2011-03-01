@@ -21,12 +21,14 @@ class ofxBlud{
 		void update();
 	
 		std::string execute(std::string code); // returns an error if there is one
-		
+		std::string executeFile(std::string filename); // executes a file, returns error if there is one
+	
 		// event callbacks
 		void mouseMoved(ofMouseEventArgs &e);
 		void mouseDragged(ofMouseEventArgs &e);
 		void mousePressed(ofMouseEventArgs &e);
 		void mouseReleased(ofMouseEventArgs &e);
+		void audioRequested(ofAudioEventArgs &e);
 
 	private:
 		lua_State* luaVM;
