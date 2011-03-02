@@ -19,8 +19,11 @@ class testApp : public ofBaseApp{
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);
-	
+		
+		void audioRequested( float * output, int bufferSize, int nChannels );
+
 		ofxBlud blud;
+		ofAudioEventArgs e; // required for audio passing, poco does not currently work
 };
 
 #endif

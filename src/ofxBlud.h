@@ -13,6 +13,7 @@ extern "C" {
 #include "ofLog.h"
 #include "ofUtils.h"
 #include "ofEvents.h"
+#include "bludMixer.h"
 
 class ofxBlud{
 	public:
@@ -29,8 +30,8 @@ class ofxBlud{
 		void mousePressed(ofMouseEventArgs &e);
 		void mouseReleased(ofMouseEventArgs &e);
 		void audioRequested(ofAudioEventArgs &e);
-
+		
 	private:
 		lua_State* luaVM;
-
+		bludMixer *mixer;
 };

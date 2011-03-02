@@ -37,6 +37,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.mouseDragged, this, &ofxBlud::mouseDragged);	
 	ofAddListener(ofEvents.audioRequested, this, &ofxBlud::audioRequested);
 	
+	mixer = bludMixer::getInstance();
 }
 
 void ofxBlud::draw(){
@@ -126,9 +127,12 @@ void ofxBlud::mouseReleased(ofMouseEventArgs &e){
 #include "ofMath.h"
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
-	ofLog(OF_LOG_ERROR, "here");
+	
+	mixer->audioRequested(e);
+	
 	for (int i = 0; i < e.bufferSize; i++){
 		e.buffer[i*e.nChannels    ] = ofRandomf() * 0.5;
 		e.buffer[i*e.nChannels + 1] = ofRandomf() * 0.5;
-	}	
+	}
+	
 }
