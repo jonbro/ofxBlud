@@ -1,31 +1,36 @@
 #pragma once
 
-#include "bludMixer.h"
+#include "ofSoundUnit.h"
 
 // need to write the sampler class
+// currently just using a test tone
 
 class bludSynth {
 
 	public:
 		static const char className[];
-		static Lunar<bludImage>::RegType methods[];
-		bludSynth(lua_State *L) {
+		static Lunar<bludSynth>::RegType methods[];
+		bludSynth(lua_State *L){
 			mixer = bludMixer::getInstance();
+			mixer->addInputFrom(&tone);
 		}
-		int load (lua_State *L) {
-		
+		int load (lua_State *L){
+			return 1;
 		}
-		int trigger(lua_State *L) { }	
-		int setLoop(lua_State *L){ }
-		int setNote(lua_State *L){ }
+		int trigger(lua_State *L){	return 1; }	
+		int setLoop(lua_State *L){ return 1; }
+		int setNote(lua_State *L){ return 1; }
 		
-		~bludSynth() { printf("deleted synth (%p)\n", this); }
+		~bludSynth() {
+			printf("deleted synth (%p)\n", this);
+		}
 	private:
-		bludMixer *mixer;
+		ofSoundMixer *mixer;
+		ofSoundSourceTestTone tone;
 };
 
-const char bludImage::className[] = "bludSynth";
+const char bludSynth::className[] = "bludSynth";
 
-Lunar<bludImage>::RegType bludImage::methods[] = {
+Lunar<bludSynth>::RegType bludSynth::methods[] = {
 	{0,0}
 };

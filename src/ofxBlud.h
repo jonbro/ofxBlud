@@ -33,5 +33,5 @@ class ofxBlud{
 		
 	private:
 		lua_State* luaVM;
-		bludMixer *mixer;
+		ofSoundMixer *mixer;
 };

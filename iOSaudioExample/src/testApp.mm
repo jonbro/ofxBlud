@@ -8,6 +8,7 @@ void testApp::setup(){
 	
 	cout << blud.execute("bg = bludGraphics(); bg:setColor(0,0,0,255);") << endl; // add a graphics object
 	cout << blud.execute("function blud.draw() bg:drawRect(10,10,100,100); end") << endl; // setup the draw loop
+	cout << blud.execute("s = bludSynth();") << endl; // setup the draw loop
 }
 
 //--------------------------------------------------------------

@@ -3,6 +3,7 @@
 #define method(class, name) {#name, &class::name}
 #include "bludImage.h"
 #include "bludGraphics.h"
+#include "bludSynth.h"
 
 #include "blud_boot.h"
 
@@ -22,6 +23,7 @@ void ofxBlud::setup(){
 	// load the wrappers
 	Lunar<bludImage>::Register(luaVM);
 	Lunar<bludGraphics>::Register(luaVM);
+	Lunar<bludSynth>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
@@ -127,12 +129,5 @@ void ofxBlud::mouseReleased(ofMouseEventArgs &e){
 #include "ofMath.h"
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
-	
-	mixer->audioRequested(e);
-	
-	for (int i = 0; i < e.bufferSize; i++){
-		e.buffer[i*e.nChannels    ] = ofRandomf() * 0.5;
-		e.buffer[i*e.nChannels + 1] = ofRandomf() * 0.5;
-	}
-	
+	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
 }
