@@ -13,3 +13,8 @@ function blud.mouse.moved(x, y)
 function blud.mouse.dragged(x, y, button)
 function blud.mouse.pressed(x, y, button)
 function blud.mouse.released(x, y, button)
+
+dependencies:
+
+[of0062](https://github.com/openframeworks/openFrameworks/tree/0062)
+[ofxDspChain](https://github.com/jonbro/ofxDspChain)
