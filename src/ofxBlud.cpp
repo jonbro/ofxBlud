@@ -70,7 +70,7 @@ string ofxBlud::execute(string code){
 }
 
 std::string ofxBlud::executeFile(std::string filename){
-	int error = luaL_dofile(luaVM, filename.c_str());
+	int error = luaL_dofile(luaVM, ofToDataPath(filename).c_str());
 	if (error) {
 		return lua_tostring(luaVM, -1);
 	}

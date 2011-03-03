@@ -5,10 +5,7 @@ void testApp::setup(){
 	blud.setup();
 	
 	ofSoundStreamSetup(2,0,this, 44100,256, 4);
-	
-	cout << blud.execute("bg = bludGraphics(); bg:setColor(0,0,0,255);") << endl; // add a graphics object
-	cout << blud.execute("function blud.draw() bg:drawRect(10,10,100,100); end") << endl; // setup the draw loop
-	cout << blud.execute("s = bludSynth();") << endl; // setup the draw loop
+	blud.executeFile("audioExample.lua");
 }
 
 //--------------------------------------------------------------
