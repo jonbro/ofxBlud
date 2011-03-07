@@ -18,8 +18,8 @@ extern "C" {
 class ofxBlud{
 	public:
 		void setup();
-		void draw();
-		void update();
+		void draw(ofEventArgs &e);
+		void update(ofEventArgs &e);
 	
 		std::string execute(std::string code); // returns an error if there is one
 		std::string executeFile(std::string filename); // executes a file, returns error if there is one

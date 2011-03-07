@@ -47,10 +47,14 @@ void ofxBlud::setup(){
 	// audio events
 	ofAddListener(ofEvents.audioRequested, this, &ofxBlud::audioRequested);
 	
+	// sys events
+	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
+	ofAddListener(ofEvents.update, this, &ofxBlud::update);
+	
 	mixer = bludMixer::getInstance();
 }
 
-void ofxBlud::draw(){
+void ofxBlud::draw(ofEventArgs &e){
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
 	if(lua_pcall(luaVM, 0, 0, 0) != 0){
@@ -59,7 +63,7 @@ void ofxBlud::draw(){
 	}
 }
 
-void ofxBlud::update(){
+void ofxBlud::update(ofEventArgs &e){
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "update"); /* function to be called */
 	lua_pushnumber(luaVM, ofGetElapsedTimeMillis());
