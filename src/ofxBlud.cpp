@@ -1,9 +1,9 @@
 #include "ofxBlud.h"
 
-#define method(class, name) {#name, &class::name}
 #include "bludImage.h"
 #include "bludGraphics.h"
 #include "bludSynth.h"
+#include "bludAudioSync.h"
 
 #include "blud_boot.h"
 
@@ -24,6 +24,7 @@ void ofxBlud::setup(){
 	Lunar<bludImage>::Register(luaVM);
 	Lunar<bludGraphics>::Register(luaVM);
 	Lunar<bludSynth>::Register(luaVM);
+	Lunar<bludAudioSync>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
@@ -188,5 +189,6 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 #include "ofMath.h"
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
+	// getting called
 	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
 }

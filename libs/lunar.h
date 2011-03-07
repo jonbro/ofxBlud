@@ -1,13 +1,5 @@
 #pragma once
 
-#ifdef check
-#undef check
-#endif
-
-#ifdef nil
-#undef nil
-#endif
-
 extern "C" {
 #include "lua.h"
 #include "lauxlib.h"
@@ -221,4 +213,4 @@ private:
 	}
 };
 
-#define LUNAR_DECLARE_METHOD(Class, Name) {#Name, &Class::Name}
+#define method(class, name) {#name, &class::name}

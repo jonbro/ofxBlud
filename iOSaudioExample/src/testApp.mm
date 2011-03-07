@@ -6,7 +6,7 @@ void testApp::setup(){
 	ofxRegisterMultitouch(this);
 
 	ofSoundStreamSetup(2,0,this, 44100,256, 4);
-	blud.executeFile("audioExample.lua");
+	cout << blud.executeFile("audioExample.lua") << endl; // this returns an error code for the compiled code
 }
 
 //--------------------------------------------------------------
