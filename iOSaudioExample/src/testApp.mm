@@ -3,8 +3,9 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	blud.setup();
-	
-	ofSoundStreamSetup(2,0,this, 44100,256, 4);
+	ofxRegisterMultitouch(this);
+
+	//ofSoundStreamSetup(2,0,this, 44100,256, 4);
 	blud.executeFile("audioExample.lua");
 }
 
@@ -15,7 +16,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	blud.draw();
+	//blud.draw();
 }
 void testApp::audioRequested(float * output, int bufferSize, int nChannels){
 	e.buffer = output;
@@ -23,39 +24,49 @@ void testApp::audioRequested(float * output, int bufferSize, int nChannels){
 	e.nChannels = nChannels;
 	blud.audioRequested(e);
 }
+
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
+void testApp::exit(){
 	
-
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){
-
+void testApp::touchDown(ofTouchEventArgs &touch){
+	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
-
+void testApp::touchMoved(ofTouchEventArgs &touch){
+	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
-
+void testApp::touchUp(ofTouchEventArgs &touch){
+	
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
-
+void testApp::touchDoubleTap(ofTouchEventArgs &touch){
+	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
-
+void testApp::lostFocus(){
+	
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
+void testApp::gotFocus(){
+	
+}
 
+//--------------------------------------------------------------
+void testApp::gotMemoryWarning(){
+	
+}
+
+//--------------------------------------------------------------
+void testApp::deviceOrientationChanged(int newOrientation){
+	
 }
 

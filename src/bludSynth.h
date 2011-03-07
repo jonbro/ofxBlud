@@ -19,7 +19,7 @@ class bludSynth {
 			sampler.loadFile(luaL_checkstring(L, 1));
 			return 1;
 		}
-		int trigger(lua_State *L){	return 1; }	
+		int trigger(lua_State *L){	sampler.trigger(); return 1; }	
 		int setLoop(lua_State *L){ return 1; }
 		int setNote(lua_State *L){ return 1; }
 		

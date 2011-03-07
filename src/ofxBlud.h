@@ -25,10 +25,16 @@ class ofxBlud{
 		std::string executeFile(std::string filename); // executes a file, returns error if there is one
 	
 		// event callbacks
+		void mousePressed(ofMouseEventArgs &e);
 		void mouseMoved(ofMouseEventArgs &e);
 		void mouseDragged(ofMouseEventArgs &e);
-		void mousePressed(ofMouseEventArgs &e);
 		void mouseReleased(ofMouseEventArgs &e);
+		
+		void touchDown(ofTouchEventArgs &e);
+		void touchMoved(ofTouchEventArgs &e);
+		void touchUp(ofTouchEventArgs &e);
+		void touchDoubleTap(ofTouchEventArgs &e);
+		
 		void audioRequested(ofAudioEventArgs &e);
 		
 	private:

@@ -8,6 +8,11 @@ end
 
 s = bludSynth();
 s:load('low_bell.wav');
+s:trigger();
+
+function blud.touch.down(x, y, id)
+	print(id)
+end
 
 -- target code
 

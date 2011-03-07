@@ -4,22 +4,27 @@
 
 #include "ofMain.h"
 #include "ofxBlud.h"
+#include "ofxiPhone.h"
+#include "ofxiPhoneExtras.h"
 
-class testApp : public ofBaseApp{
+class testApp : public ofxiPhoneApp{
 
 	public:
 		void setup();
 		void update();
 		void draw();
-
-		void keyPressed  (int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
-		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void windowResized(int w, int h);
+		void exit();
 		
+		void touchDown(ofTouchEventArgs &touch);
+		void touchMoved(ofTouchEventArgs &touch);
+		void touchUp(ofTouchEventArgs &touch);
+		void touchDoubleTap(ofTouchEventArgs &touch);
+		
+		void lostFocus();
+		void gotFocus();
+		void gotMemoryWarning();
+		void deviceOrientationChanged(int newOrientation);
+	
 		void audioRequested( float * output, int bufferSize, int nChannels );
 
 		ofxBlud blud;
