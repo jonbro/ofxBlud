@@ -1,17 +1,15 @@
 
 bg = bludGraphics();
-bg:setColor(0,0,0,255);
 
-function blud.draw()
-	bg:drawRect(10,10,100,100);
-end
+print("test")
 
 s = bludSynth();
 s:load('low_bell.wav');
 s:trigger();
 
 function blud.touch.down(x, y, id)
-	print(id)
+	s:setNote(y/bg:getHeight()*30+45)
+	s:trigger();
 end
 
 -- target code

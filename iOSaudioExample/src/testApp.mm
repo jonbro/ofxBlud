@@ -5,7 +5,7 @@ void testApp::setup(){
 	blud.setup();
 	ofxRegisterMultitouch(this);
 
-	//ofSoundStreamSetup(2,0,this, 44100,256, 4);
+	ofSoundStreamSetup(2,0,this, 44100,256, 4);
 	blud.executeFile("audioExample.lua");
 }
 

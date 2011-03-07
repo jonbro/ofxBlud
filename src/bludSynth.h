@@ -19,9 +19,15 @@ class bludSynth {
 			sampler.loadFile(luaL_checkstring(L, 1));
 			return 1;
 		}
-		int trigger(lua_State *L){	sampler.trigger(); return 1; }	
+		int trigger(lua_State *L){
+			sampler.trigger();
+			return 1;
+		}
 		int setLoop(lua_State *L){ return 1; }
-		int setNote(lua_State *L){ return 1; }
+		int setNote(lua_State *L){
+			sampler.setFrequencyMidiNote(luaL_checknumber(L, 1));
+			return 1;
+		}
 		
 		~bludSynth() {
 			printf("deleted synth (%p)\n", this);
@@ -35,5 +41,7 @@ const char bludSynth::className[] = "bludSynth";
 
 Lunar<bludSynth>::RegType bludSynth::methods[] = {
 	method(bludSynth, load),
+	method(bludSynth, trigger),
+	method(bludSynth, setNote),
 	{0,0}
 };

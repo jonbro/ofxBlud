@@ -77,7 +77,7 @@ string ofxBlud::execute(string code){
 	return "";
 }
 
-std::string ofxBlud::executeFile(std::string filename){
+string ofxBlud::executeFile(std::string filename){
 	cout << ofToDataPath(filename).c_str() << endl;
 	int error = luaL_dofile(luaVM, ofToDataPath(filename).c_str());
 	if (error) {
