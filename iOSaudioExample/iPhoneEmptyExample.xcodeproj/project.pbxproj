@@ -12,6 +12,66 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		5326AEA810A23A0500278DE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
 		53F323EB10A20EDB00E0DAE4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */; };
+		5E175E571339924A00234482 /* config in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E241339924A00234482 /* config */; };
+		5E175E581339924A00234482 /* description in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E251339924A00234482 /* description */; };
+		5E175E591339924A00234482 /* FETCH_HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E261339924A00234482 /* FETCH_HEAD */; };
+		5E175E5A1339924A00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E271339924A00234482 /* HEAD */; };
+		5E175E5B1339924A00234482 /* applypatch-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E291339924A00234482 /* applypatch-msg.sample */; };
+		5E175E5C1339924A00234482 /* commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2A1339924A00234482 /* commit-msg.sample */; };
+		5E175E5D1339924A00234482 /* post-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2B1339924A00234482 /* post-commit.sample */; };
+		5E175E5E1339924A00234482 /* post-receive.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2C1339924A00234482 /* post-receive.sample */; };
+		5E175E5F1339924A00234482 /* post-update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2D1339924A00234482 /* post-update.sample */; };
+		5E175E601339924A00234482 /* pre-applypatch.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2E1339924A00234482 /* pre-applypatch.sample */; };
+		5E175E611339924A00234482 /* pre-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E2F1339924A00234482 /* pre-commit.sample */; };
+		5E175E621339924A00234482 /* pre-rebase.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E301339924A00234482 /* pre-rebase.sample */; };
+		5E175E631339924A00234482 /* prepare-commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E311339924A00234482 /* prepare-commit-msg.sample */; };
+		5E175E641339924A00234482 /* update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E321339924A00234482 /* update.sample */; };
+		5E175E651339924A00234482 /* index in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E331339924A00234482 /* index */; };
+		5E175E661339924A00234482 /* exclude in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E351339924A00234482 /* exclude */; };
+		5E175E671339924A00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E371339924A00234482 /* HEAD */; };
+		5E175E681339924A00234482 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E3A1339924A00234482 /* master */; };
+		5E175E691339924A00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E3D1339924A00234482 /* HEAD */; };
+		5E175E6A1339924A00234482 /* dbcaeb49053111524e0abab95f390c70301b27 in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E401339924A00234482 /* dbcaeb49053111524e0abab95f390c70301b27 */; };
+		5E175E6B1339924A00234482 /* 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E421339924A00234482 /* 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de */; };
+		5E175E6C1339924A00234482 /* b628ad170818d093b50ff7fa6dc8f0d8d0685d in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E431339924A00234482 /* b628ad170818d093b50ff7fa6dc8f0d8d0685d */; };
+		5E175E6D1339924A00234482 /* fb2477d6a53c89d5479ebfed27f75b315f2986 in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E451339924A00234482 /* fb2477d6a53c89d5479ebfed27f75b315f2986 */; };
+		5E175E6E1339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E481339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx */; };
+		5E175E6F1339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E491339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack */; };
+		5E175E701339924A00234482 /* ORIG_HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E4A1339924A00234482 /* ORIG_HEAD */; };
+		5E175E711339924A00234482 /* packed-refs in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E4B1339924A00234482 /* packed-refs */; };
+		5E175E721339924A00234482 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E4E1339924A00234482 /* master */; };
+		5E175E731339924A00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E511339924A00234482 /* HEAD */; };
+		5E175E741339924A00234482 /* ofSoundEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175E531339924A00234482 /* ofSoundEffect.cpp */; };
+		5E175E751339924A00234482 /* ofSoundUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175E551339924A00234482 /* ofSoundUnit.cpp */; };
+		5E175EC3133992BE00234482 /* config in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E90133992BE00234482 /* config */; };
+		5E175EC4133992BE00234482 /* description in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E91133992BE00234482 /* description */; };
+		5E175EC5133992BE00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E92133992BE00234482 /* HEAD */; };
+		5E175EC6133992BE00234482 /* applypatch-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E94133992BE00234482 /* applypatch-msg.sample */; };
+		5E175EC7133992BE00234482 /* commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E95133992BE00234482 /* commit-msg.sample */; };
+		5E175EC8133992BE00234482 /* post-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E96133992BE00234482 /* post-commit.sample */; };
+		5E175EC9133992BE00234482 /* post-receive.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E97133992BE00234482 /* post-receive.sample */; };
+		5E175ECA133992BE00234482 /* post-update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E98133992BE00234482 /* post-update.sample */; };
+		5E175ECB133992BE00234482 /* pre-applypatch.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E99133992BE00234482 /* pre-applypatch.sample */; };
+		5E175ECC133992BE00234482 /* pre-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E9A133992BE00234482 /* pre-commit.sample */; };
+		5E175ECD133992BE00234482 /* pre-rebase.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E9B133992BE00234482 /* pre-rebase.sample */; };
+		5E175ECE133992BE00234482 /* prepare-commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E9C133992BE00234482 /* prepare-commit-msg.sample */; };
+		5E175ECF133992BE00234482 /* update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E9D133992BE00234482 /* update.sample */; };
+		5E175ED0133992BE00234482 /* index in Resources */ = {isa = PBXBuildFile; fileRef = 5E175E9E133992BE00234482 /* index */; };
+		5E175ED1133992BE00234482 /* exclude in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EA0133992BE00234482 /* exclude */; };
+		5E175ED2133992BE00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EA2133992BE00234482 /* HEAD */; };
+		5E175ED3133992BE00234482 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EA5133992BE00234482 /* master */; };
+		5E175ED4133992BE00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EA8133992BE00234482 /* HEAD */; };
+		5E175ED5133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EAC133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx */; };
+		5E175ED6133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EAD133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack */; };
+		5E175ED7133992BE00234482 /* packed-refs in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EAE133992BE00234482 /* packed-refs */; };
+		5E175ED8133992BE00234482 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EB1133992BE00234482 /* master */; };
+		5E175ED9133992BE00234482 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 5E175EB4133992BE00234482 /* HEAD */; };
+		5E175EDA133992BE00234482 /* ofxSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EB7133992BE00234482 /* ofxSynth.cpp */; };
+		5E175EDB133992BE00234482 /* ofxSynthDelayLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EB9133992BE00234482 /* ofxSynthDelayLine.cpp */; };
+		5E175EDC133992BE00234482 /* ofxSynthEnvelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EBB133992BE00234482 /* ofxSynthEnvelope.cpp */; };
+		5E175EDD133992BE00234482 /* ofxSynthFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EBD133992BE00234482 /* ofxSynthFilter.cpp */; };
+		5E175EDE133992BE00234482 /* ofxSynthSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EBF133992BE00234482 /* ofxSynthSampler.cpp */; };
+		5E175EDF133992BE00234482 /* ofxSynthWaveWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E175EC1133992BE00234482 /* ofxSynthWaveWriter.cpp */; };
 		5E25689810ED26CC00A9501C /* PocoFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687110ED26CC00A9501C /* PocoFoundation.a */; };
 		5E25689910ED26CC00A9501C /* PocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687210ED26CC00A9501C /* PocoNet.a */; };
 		5E25689A10ED26CC00A9501C /* PocoUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25687310ED26CC00A9501C /* PocoUtil.a */; };
@@ -20,15 +80,7 @@
 		5E2568A610ED26CD00A9501C /* PocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688210ED26CC00A9501C /* PocoNet.a */; };
 		5E2568A710ED26CD00A9501C /* PocoUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688310ED26CC00A9501C /* PocoUtil.a */; };
 		5E2568A810ED26CD00A9501C /* PocoXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688410ED26CC00A9501C /* PocoXML.a */; };
-		71059FA0132006900060EAAA /* ofSoundUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059F9E132006900060EAAA /* ofSoundUnit.cpp */; };
 		71059FF013202A150060EAAA /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 71059FEF13202A150060EAAA /* readme.md */; };
-		71059FFF13202BD50060EAAA /* ofxSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FF313202BD50060EAAA /* ofxSynth.cpp */; };
-		7105A00013202BD50060EAAA /* ofxSynthDelayLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FF513202BD50060EAAA /* ofxSynthDelayLine.cpp */; };
-		7105A00113202BD50060EAAA /* ofxSynthEnvelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FF713202BD50060EAAA /* ofxSynthEnvelope.cpp */; };
-		7105A00213202BD50060EAAA /* ofxSynthFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FF913202BD50060EAAA /* ofxSynthFilter.cpp */; };
-		7105A00313202BD50060EAAA /* ofxSynthSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FFB13202BD50060EAAA /* ofxSynthSampler.cpp */; };
-		7105A00413202BD50060EAAA /* ofxSynthWaveWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71059FFD13202BD50060EAAA /* ofxSynthWaveWriter.cpp */; };
-		7105A03613202D710060EAAA /* ofSoundEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7105A03413202D710060EAAA /* ofSoundEffect.cpp */; };
 		7105A05F132032620060EAAA /* low_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7105A05E132032620060EAAA /* low_bell.wav */; };
 		7105A09413203CE70060EAAA /* audioExample.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7105A09313203CE70060EAAA /* audioExample.lua */; };
 		7105A39B13257A090060EAAA /* bludAudioSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7105A39A13257A090060EAAA /* bludAudioSync.cpp */; };
@@ -108,6 +160,74 @@
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
 		5326AEA710A23A0500278DE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		5E175E241339924A00234482 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config; path = ../../ofxDspChain/.git/config; sourceTree = SOURCE_ROOT; };
+		5E175E251339924A00234482 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = description; path = ../../ofxDspChain/.git/description; sourceTree = SOURCE_ROOT; };
+		5E175E261339924A00234482 /* FETCH_HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FETCH_HEAD; path = ../../ofxDspChain/.git/FETCH_HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E271339924A00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxDspChain/.git/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E291339924A00234482 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "applypatch-msg.sample"; path = "../../ofxDspChain/.git/hooks/applypatch-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2A1339924A00234482 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "commit-msg.sample"; path = "../../ofxDspChain/.git/hooks/commit-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2B1339924A00234482 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-commit.sample"; path = "../../ofxDspChain/.git/hooks/post-commit.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2C1339924A00234482 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-receive.sample"; path = "../../ofxDspChain/.git/hooks/post-receive.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2D1339924A00234482 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-update.sample"; path = "../../ofxDspChain/.git/hooks/post-update.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2E1339924A00234482 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-applypatch.sample"; path = "../../ofxDspChain/.git/hooks/pre-applypatch.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E2F1339924A00234482 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-commit.sample"; path = "../../ofxDspChain/.git/hooks/pre-commit.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E301339924A00234482 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-rebase.sample"; path = "../../ofxDspChain/.git/hooks/pre-rebase.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E311339924A00234482 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "prepare-commit-msg.sample"; path = "../../ofxDspChain/.git/hooks/prepare-commit-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E321339924A00234482 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update.sample; path = ../../ofxDspChain/.git/hooks/update.sample; sourceTree = SOURCE_ROOT; };
+		5E175E331339924A00234482 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; name = index; path = ../../ofxDspChain/.git/index; sourceTree = SOURCE_ROOT; };
+		5E175E351339924A00234482 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = exclude; path = ../../ofxDspChain/.git/info/exclude; sourceTree = SOURCE_ROOT; };
+		5E175E371339924A00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxDspChain/.git/logs/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E3A1339924A00234482 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = master; path = ../../ofxDspChain/.git/logs/refs/heads/master; sourceTree = SOURCE_ROOT; };
+		5E175E3D1339924A00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxDspChain/.git/logs/refs/remotes/origin/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E401339924A00234482 /* dbcaeb49053111524e0abab95f390c70301b27 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dbcaeb49053111524e0abab95f390c70301b27; path = ../../ofxDspChain/.git/objects/16/dbcaeb49053111524e0abab95f390c70301b27; sourceTree = SOURCE_ROOT; };
+		5E175E421339924A00234482 /* 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de; path = ../../ofxDspChain/.git/objects/1e/2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de; sourceTree = SOURCE_ROOT; };
+		5E175E431339924A00234482 /* b628ad170818d093b50ff7fa6dc8f0d8d0685d */ = {isa = PBXFileReference; lastKnownFileType = file; name = b628ad170818d093b50ff7fa6dc8f0d8d0685d; path = ../../ofxDspChain/.git/objects/1e/b628ad170818d093b50ff7fa6dc8f0d8d0685d; sourceTree = SOURCE_ROOT; };
+		5E175E451339924A00234482 /* fb2477d6a53c89d5479ebfed27f75b315f2986 */ = {isa = PBXFileReference; lastKnownFileType = file; name = fb2477d6a53c89d5479ebfed27f75b315f2986; path = ../../ofxDspChain/.git/objects/59/fb2477d6a53c89d5479ebfed27f75b315f2986; sourceTree = SOURCE_ROOT; };
+		5E175E481339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx"; path = "../../ofxDspChain/.git/objects/pack/pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx"; sourceTree = SOURCE_ROOT; };
+		5E175E491339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack"; path = "../../ofxDspChain/.git/objects/pack/pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack"; sourceTree = SOURCE_ROOT; };
+		5E175E4A1339924A00234482 /* ORIG_HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ORIG_HEAD; path = ../../ofxDspChain/.git/ORIG_HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E4B1339924A00234482 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "packed-refs"; path = "../../ofxDspChain/.git/packed-refs"; sourceTree = SOURCE_ROOT; };
+		5E175E4E1339924A00234482 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = master; path = ../../ofxDspChain/.git/refs/heads/master; sourceTree = SOURCE_ROOT; };
+		5E175E511339924A00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxDspChain/.git/refs/remotes/origin/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E531339924A00234482 /* ofSoundEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundEffect.cpp; path = ../../ofxDspChain/ofSoundEffect.cpp; sourceTree = SOURCE_ROOT; };
+		5E175E541339924A00234482 /* ofSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofSoundEffect.h; path = ../../ofxDspChain/ofSoundEffect.h; sourceTree = SOURCE_ROOT; };
+		5E175E551339924A00234482 /* ofSoundUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundUnit.cpp; path = ../../ofxDspChain/ofSoundUnit.cpp; sourceTree = SOURCE_ROOT; };
+		5E175E561339924A00234482 /* ofSoundUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofSoundUnit.h; path = ../../ofxDspChain/ofSoundUnit.h; sourceTree = SOURCE_ROOT; };
+		5E175E90133992BE00234482 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config; path = ../../ofxSynthDev/.git/config; sourceTree = SOURCE_ROOT; };
+		5E175E91133992BE00234482 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = description; path = ../../ofxSynthDev/.git/description; sourceTree = SOURCE_ROOT; };
+		5E175E92133992BE00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxSynthDev/.git/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175E94133992BE00234482 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "applypatch-msg.sample"; path = "../../ofxSynthDev/.git/hooks/applypatch-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E95133992BE00234482 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "commit-msg.sample"; path = "../../ofxSynthDev/.git/hooks/commit-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E96133992BE00234482 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-commit.sample"; path = "../../ofxSynthDev/.git/hooks/post-commit.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E97133992BE00234482 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-receive.sample"; path = "../../ofxSynthDev/.git/hooks/post-receive.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E98133992BE00234482 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "post-update.sample"; path = "../../ofxSynthDev/.git/hooks/post-update.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E99133992BE00234482 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-applypatch.sample"; path = "../../ofxSynthDev/.git/hooks/pre-applypatch.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E9A133992BE00234482 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-commit.sample"; path = "../../ofxSynthDev/.git/hooks/pre-commit.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E9B133992BE00234482 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "pre-rebase.sample"; path = "../../ofxSynthDev/.git/hooks/pre-rebase.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E9C133992BE00234482 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "prepare-commit-msg.sample"; path = "../../ofxSynthDev/.git/hooks/prepare-commit-msg.sample"; sourceTree = SOURCE_ROOT; };
+		5E175E9D133992BE00234482 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = update.sample; path = ../../ofxSynthDev/.git/hooks/update.sample; sourceTree = SOURCE_ROOT; };
+		5E175E9E133992BE00234482 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; name = index; path = ../../ofxSynthDev/.git/index; sourceTree = SOURCE_ROOT; };
+		5E175EA0133992BE00234482 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = exclude; path = ../../ofxSynthDev/.git/info/exclude; sourceTree = SOURCE_ROOT; };
+		5E175EA2133992BE00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxSynthDev/.git/logs/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175EA5133992BE00234482 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = master; path = ../../ofxSynthDev/.git/logs/refs/heads/master; sourceTree = SOURCE_ROOT; };
+		5E175EA8133992BE00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxSynthDev/.git/logs/refs/remotes/origin/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175EAC133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx"; path = "../../ofxSynthDev/.git/objects/pack/pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx"; sourceTree = SOURCE_ROOT; };
+		5E175EAD133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack"; path = "../../ofxSynthDev/.git/objects/pack/pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack"; sourceTree = SOURCE_ROOT; };
+		5E175EAE133992BE00234482 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "packed-refs"; path = "../../ofxSynthDev/.git/packed-refs"; sourceTree = SOURCE_ROOT; };
+		5E175EB1133992BE00234482 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = master; path = ../../ofxSynthDev/.git/refs/heads/master; sourceTree = SOURCE_ROOT; };
+		5E175EB4133992BE00234482 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HEAD; path = ../../ofxSynthDev/.git/refs/remotes/origin/HEAD; sourceTree = SOURCE_ROOT; };
+		5E175EB7133992BE00234482 /* ofxSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynth.cpp; path = ../../ofxSynthDev/src/ofxSynth.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EB8133992BE00234482 /* ofxSynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynth.h; path = ../../ofxSynthDev/src/ofxSynth.h; sourceTree = SOURCE_ROOT; };
+		5E175EB9133992BE00234482 /* ofxSynthDelayLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthDelayLine.cpp; path = ../../ofxSynthDev/src/ofxSynthDelayLine.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EBA133992BE00234482 /* ofxSynthDelayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthDelayLine.h; path = ../../ofxSynthDev/src/ofxSynthDelayLine.h; sourceTree = SOURCE_ROOT; };
+		5E175EBB133992BE00234482 /* ofxSynthEnvelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthEnvelope.cpp; path = ../../ofxSynthDev/src/ofxSynthEnvelope.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EBC133992BE00234482 /* ofxSynthEnvelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthEnvelope.h; path = ../../ofxSynthDev/src/ofxSynthEnvelope.h; sourceTree = SOURCE_ROOT; };
+		5E175EBD133992BE00234482 /* ofxSynthFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthFilter.cpp; path = ../../ofxSynthDev/src/ofxSynthFilter.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EBE133992BE00234482 /* ofxSynthFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthFilter.h; path = ../../ofxSynthDev/src/ofxSynthFilter.h; sourceTree = SOURCE_ROOT; };
+		5E175EBF133992BE00234482 /* ofxSynthSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthSampler.cpp; path = ../../ofxSynthDev/src/ofxSynthSampler.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EC0133992BE00234482 /* ofxSynthSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthSampler.h; path = ../../ofxSynthDev/src/ofxSynthSampler.h; sourceTree = SOURCE_ROOT; };
+		5E175EC1133992BE00234482 /* ofxSynthWaveWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthWaveWriter.cpp; path = ../../ofxSynthDev/src/ofxSynthWaveWriter.cpp; sourceTree = SOURCE_ROOT; };
+		5E175EC2133992BE00234482 /* ofxSynthWaveWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthWaveWriter.h; path = ../../ofxSynthDev/src/ofxSynthWaveWriter.h; sourceTree = SOURCE_ROOT; };
 		5E25687110ED26CC00A9501C /* PocoFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoFoundation.a; path = ../../../libs/poco/lib/iphone/PocoFoundation.a; sourceTree = SOURCE_ROOT; };
 		5E25687210ED26CC00A9501C /* PocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoNet.a; path = ../../../libs/poco/lib/iphone/PocoNet.a; sourceTree = SOURCE_ROOT; };
 		5E25687310ED26CC00A9501C /* PocoUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoUtil.a; path = ../../../libs/poco/lib/iphone/PocoUtil.a; sourceTree = SOURCE_ROOT; };
@@ -116,23 +236,7 @@
 		5E25688210ED26CC00A9501C /* PocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoNet.a; path = ../../../libs/poco/lib/osx/PocoNet.a; sourceTree = SOURCE_ROOT; };
 		5E25688310ED26CC00A9501C /* PocoUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoUtil.a; path = ../../../libs/poco/lib/osx/PocoUtil.a; sourceTree = SOURCE_ROOT; };
 		5E25688410ED26CC00A9501C /* PocoXML.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoXML.a; path = ../../../libs/poco/lib/osx/PocoXML.a; sourceTree = SOURCE_ROOT; };
-		71059F9E132006900060EAAA /* ofSoundUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundUnit.cpp; path = openFrameworks/addons/ofxDspChain/ofSoundUnit.cpp; sourceTree = DEVELOPER_DIR; };
-		71059F9F132006900060EAAA /* ofSoundUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofSoundUnit.h; path = openFrameworks/addons/ofxDspChain/ofSoundUnit.h; sourceTree = DEVELOPER_DIR; };
 		71059FEF13202A150060EAAA /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = SOURCE_ROOT; };
-		71059FF313202BD50060EAAA /* ofxSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynth.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynth.cpp; sourceTree = SOURCE_ROOT; };
-		71059FF413202BD50060EAAA /* ofxSynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynth.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynth.h; sourceTree = SOURCE_ROOT; };
-		71059FF513202BD50060EAAA /* ofxSynthDelayLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthDelayLine.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynthDelayLine.cpp; sourceTree = SOURCE_ROOT; };
-		71059FF613202BD50060EAAA /* ofxSynthDelayLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthDelayLine.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynthDelayLine.h; sourceTree = SOURCE_ROOT; };
-		71059FF713202BD50060EAAA /* ofxSynthEnvelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthEnvelope.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynthEnvelope.cpp; sourceTree = SOURCE_ROOT; };
-		71059FF813202BD50060EAAA /* ofxSynthEnvelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthEnvelope.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynthEnvelope.h; sourceTree = SOURCE_ROOT; };
-		71059FF913202BD50060EAAA /* ofxSynthFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthFilter.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynthFilter.cpp; sourceTree = SOURCE_ROOT; };
-		71059FFA13202BD50060EAAA /* ofxSynthFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthFilter.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynthFilter.h; sourceTree = SOURCE_ROOT; };
-		71059FFB13202BD50060EAAA /* ofxSynthSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthSampler.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynthSampler.cpp; sourceTree = SOURCE_ROOT; };
-		71059FFC13202BD50060EAAA /* ofxSynthSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthSampler.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynthSampler.h; sourceTree = SOURCE_ROOT; };
-		71059FFD13202BD50060EAAA /* ofxSynthWaveWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSynthWaveWriter.cpp; path = ../../../addonsHEI/ofxSynth/src/ofxSynthWaveWriter.cpp; sourceTree = SOURCE_ROOT; };
-		71059FFE13202BD50060EAAA /* ofxSynthWaveWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSynthWaveWriter.h; path = ../../../addonsHEI/ofxSynth/src/ofxSynthWaveWriter.h; sourceTree = SOURCE_ROOT; };
-		7105A03413202D710060EAAA /* ofSoundEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundEffect.cpp; path = ../../ofxDspChain/ofSoundEffect.cpp; sourceTree = SOURCE_ROOT; };
-		7105A03513202D710060EAAA /* ofSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofSoundEffect.h; path = ../../ofxDspChain/ofSoundEffect.h; sourceTree = SOURCE_ROOT; };
 		7105A05E132032620060EAAA /* low_bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = low_bell.wav; path = bin/data/low_bell.wav; sourceTree = SOURCE_ROOT; };
 		7105A09313203CE70060EAAA /* audioExample.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = audioExample.lua; path = bin/data/audioExample.lua; sourceTree = SOURCE_ROOT; };
 		7105A39913257A090060EAAA /* bludAudioSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bludAudioSync.h; path = openFrameworks/addons/ofxBlud/src/bludAudioSync.h; sourceTree = DEVELOPER_DIR; };
@@ -348,6 +452,414 @@
 			name = "core frameworks";
 			sourceTree = "<group>";
 		};
+		5E175E221339924A00234482 /* ofxDspChain */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E231339924A00234482 /* .git */,
+				5E175E531339924A00234482 /* ofSoundEffect.cpp */,
+				5E175E541339924A00234482 /* ofSoundEffect.h */,
+				5E175E551339924A00234482 /* ofSoundUnit.cpp */,
+				5E175E561339924A00234482 /* ofSoundUnit.h */,
+			);
+			name = ofxDspChain;
+			path = ../../ofxDspChain;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E231339924A00234482 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E241339924A00234482 /* config */,
+				5E175E251339924A00234482 /* description */,
+				5E175E261339924A00234482 /* FETCH_HEAD */,
+				5E175E271339924A00234482 /* HEAD */,
+				5E175E281339924A00234482 /* hooks */,
+				5E175E331339924A00234482 /* index */,
+				5E175E341339924A00234482 /* info */,
+				5E175E361339924A00234482 /* logs */,
+				5E175E3E1339924A00234482 /* objects */,
+				5E175E4A1339924A00234482 /* ORIG_HEAD */,
+				5E175E4B1339924A00234482 /* packed-refs */,
+				5E175E4C1339924A00234482 /* refs */,
+			);
+			name = .git;
+			path = ../../ofxDspChain/.git;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E281339924A00234482 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E291339924A00234482 /* applypatch-msg.sample */,
+				5E175E2A1339924A00234482 /* commit-msg.sample */,
+				5E175E2B1339924A00234482 /* post-commit.sample */,
+				5E175E2C1339924A00234482 /* post-receive.sample */,
+				5E175E2D1339924A00234482 /* post-update.sample */,
+				5E175E2E1339924A00234482 /* pre-applypatch.sample */,
+				5E175E2F1339924A00234482 /* pre-commit.sample */,
+				5E175E301339924A00234482 /* pre-rebase.sample */,
+				5E175E311339924A00234482 /* prepare-commit-msg.sample */,
+				5E175E321339924A00234482 /* update.sample */,
+			);
+			name = hooks;
+			path = ../../ofxDspChain/.git/hooks;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E341339924A00234482 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E351339924A00234482 /* exclude */,
+			);
+			name = info;
+			path = ../../ofxDspChain/.git/info;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E361339924A00234482 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E371339924A00234482 /* HEAD */,
+				5E175E381339924A00234482 /* refs */,
+			);
+			name = logs;
+			path = ../../ofxDspChain/.git/logs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E381339924A00234482 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E391339924A00234482 /* heads */,
+				5E175E3B1339924A00234482 /* remotes */,
+			);
+			name = refs;
+			path = ../../ofxDspChain/.git/logs/refs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E391339924A00234482 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E3A1339924A00234482 /* master */,
+			);
+			name = heads;
+			path = ../../ofxDspChain/.git/logs/refs/heads;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E3B1339924A00234482 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E3C1339924A00234482 /* origin */,
+			);
+			name = remotes;
+			path = ../../ofxDspChain/.git/logs/refs/remotes;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E3C1339924A00234482 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E3D1339924A00234482 /* HEAD */,
+			);
+			name = origin;
+			path = ../../ofxDspChain/.git/logs/refs/remotes/origin;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E3E1339924A00234482 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E3F1339924A00234482 /* 16 */,
+				5E175E411339924A00234482 /* 1e */,
+				5E175E441339924A00234482 /* 59 */,
+				5E175E461339924A00234482 /* info */,
+				5E175E471339924A00234482 /* pack */,
+			);
+			name = objects;
+			path = ../../ofxDspChain/.git/objects;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E3F1339924A00234482 /* 16 */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E401339924A00234482 /* dbcaeb49053111524e0abab95f390c70301b27 */,
+			);
+			name = 16;
+			path = ../../ofxDspChain/.git/objects/16;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E411339924A00234482 /* 1e */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E421339924A00234482 /* 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de */,
+				5E175E431339924A00234482 /* b628ad170818d093b50ff7fa6dc8f0d8d0685d */,
+			);
+			name = 1e;
+			path = ../../ofxDspChain/.git/objects/1e;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E441339924A00234482 /* 59 */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E451339924A00234482 /* fb2477d6a53c89d5479ebfed27f75b315f2986 */,
+			);
+			name = 59;
+			path = ../../ofxDspChain/.git/objects/59;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E461339924A00234482 /* info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = info;
+			path = ../../ofxDspChain/.git/objects/info;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E471339924A00234482 /* pack */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E481339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx */,
+				5E175E491339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack */,
+			);
+			name = pack;
+			path = ../../ofxDspChain/.git/objects/pack;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E4C1339924A00234482 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E4D1339924A00234482 /* heads */,
+				5E175E4F1339924A00234482 /* remotes */,
+				5E175E521339924A00234482 /* tags */,
+			);
+			name = refs;
+			path = ../../ofxDspChain/.git/refs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E4D1339924A00234482 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E4E1339924A00234482 /* master */,
+			);
+			name = heads;
+			path = ../../ofxDspChain/.git/refs/heads;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E4F1339924A00234482 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E501339924A00234482 /* origin */,
+			);
+			name = remotes;
+			path = ../../ofxDspChain/.git/refs/remotes;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E501339924A00234482 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E511339924A00234482 /* HEAD */,
+			);
+			name = origin;
+			path = ../../ofxDspChain/.git/refs/remotes/origin;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E521339924A00234482 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tags;
+			path = ../../ofxDspChain/.git/refs/tags;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E8E133992BE00234482 /* ofxSynthDev */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E8F133992BE00234482 /* .git */,
+				5E175EB6133992BE00234482 /* src */,
+			);
+			name = ofxSynthDev;
+			path = ../../ofxSynthDev;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E8F133992BE00234482 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E90133992BE00234482 /* config */,
+				5E175E91133992BE00234482 /* description */,
+				5E175E92133992BE00234482 /* HEAD */,
+				5E175E93133992BE00234482 /* hooks */,
+				5E175E9E133992BE00234482 /* index */,
+				5E175E9F133992BE00234482 /* info */,
+				5E175EA1133992BE00234482 /* logs */,
+				5E175EA9133992BE00234482 /* objects */,
+				5E175EAE133992BE00234482 /* packed-refs */,
+				5E175EAF133992BE00234482 /* refs */,
+			);
+			name = .git;
+			path = ../../ofxSynthDev/.git;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E93133992BE00234482 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				5E175E94133992BE00234482 /* applypatch-msg.sample */,
+				5E175E95133992BE00234482 /* commit-msg.sample */,
+				5E175E96133992BE00234482 /* post-commit.sample */,
+				5E175E97133992BE00234482 /* post-receive.sample */,
+				5E175E98133992BE00234482 /* post-update.sample */,
+				5E175E99133992BE00234482 /* pre-applypatch.sample */,
+				5E175E9A133992BE00234482 /* pre-commit.sample */,
+				5E175E9B133992BE00234482 /* pre-rebase.sample */,
+				5E175E9C133992BE00234482 /* prepare-commit-msg.sample */,
+				5E175E9D133992BE00234482 /* update.sample */,
+			);
+			name = hooks;
+			path = ../../ofxSynthDev/.git/hooks;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175E9F133992BE00234482 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA0133992BE00234482 /* exclude */,
+			);
+			name = info;
+			path = ../../ofxSynthDev/.git/info;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA1133992BE00234482 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA2133992BE00234482 /* HEAD */,
+				5E175EA3133992BE00234482 /* refs */,
+			);
+			name = logs;
+			path = ../../ofxSynthDev/.git/logs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA3133992BE00234482 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA4133992BE00234482 /* heads */,
+				5E175EA6133992BE00234482 /* remotes */,
+			);
+			name = refs;
+			path = ../../ofxSynthDev/.git/logs/refs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA4133992BE00234482 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA5133992BE00234482 /* master */,
+			);
+			name = heads;
+			path = ../../ofxSynthDev/.git/logs/refs/heads;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA6133992BE00234482 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA7133992BE00234482 /* origin */,
+			);
+			name = remotes;
+			path = ../../ofxSynthDev/.git/logs/refs/remotes;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA7133992BE00234482 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EA8133992BE00234482 /* HEAD */,
+			);
+			name = origin;
+			path = ../../ofxSynthDev/.git/logs/refs/remotes/origin;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EA9133992BE00234482 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EAA133992BE00234482 /* info */,
+				5E175EAB133992BE00234482 /* pack */,
+			);
+			name = objects;
+			path = ../../ofxSynthDev/.git/objects;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EAA133992BE00234482 /* info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = info;
+			path = ../../ofxSynthDev/.git/objects/info;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EAB133992BE00234482 /* pack */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EAC133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx */,
+				5E175EAD133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack */,
+			);
+			name = pack;
+			path = ../../ofxSynthDev/.git/objects/pack;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EAF133992BE00234482 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EB0133992BE00234482 /* heads */,
+				5E175EB2133992BE00234482 /* remotes */,
+				5E175EB5133992BE00234482 /* tags */,
+			);
+			name = refs;
+			path = ../../ofxSynthDev/.git/refs;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EB0133992BE00234482 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EB1133992BE00234482 /* master */,
+			);
+			name = heads;
+			path = ../../ofxSynthDev/.git/refs/heads;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EB2133992BE00234482 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EB3133992BE00234482 /* origin */,
+			);
+			name = remotes;
+			path = ../../ofxSynthDev/.git/refs/remotes;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EB3133992BE00234482 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EB4133992BE00234482 /* HEAD */,
+			);
+			name = origin;
+			path = ../../ofxSynthDev/.git/refs/remotes/origin;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EB5133992BE00234482 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tags;
+			path = ../../ofxSynthDev/.git/refs/tags;
+			sourceTree = SOURCE_ROOT;
+		};
+		5E175EB6133992BE00234482 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5E175EB7133992BE00234482 /* ofxSynth.cpp */,
+				5E175EB8133992BE00234482 /* ofxSynth.h */,
+				5E175EB9133992BE00234482 /* ofxSynthDelayLine.cpp */,
+				5E175EBA133992BE00234482 /* ofxSynthDelayLine.h */,
+				5E175EBB133992BE00234482 /* ofxSynthEnvelope.cpp */,
+				5E175EBC133992BE00234482 /* ofxSynthEnvelope.h */,
+				5E175EBD133992BE00234482 /* ofxSynthFilter.cpp */,
+				5E175EBE133992BE00234482 /* ofxSynthFilter.h */,
+				5E175EBF133992BE00234482 /* ofxSynthSampler.cpp */,
+				5E175EC0133992BE00234482 /* ofxSynthSampler.h */,
+				5E175EC1133992BE00234482 /* ofxSynthWaveWriter.cpp */,
+				5E175EC2133992BE00234482 /* ofxSynthWaveWriter.h */,
+			);
+			name = src;
+			path = ../../ofxSynthDev/src;
+			sourceTree = SOURCE_ROOT;
+		};
 		5E25686A10ED26BE00A9501C /* poco */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,47 +900,6 @@
 			);
 			name = osx;
 			path = ../../../libs/poco/lib/osx;
-			sourceTree = SOURCE_ROOT;
-		};
-		71059F9D132006900060EAAA /* ofxDspChain */ = {
-			isa = PBXGroup;
-			children = (
-				7105A03413202D710060EAAA /* ofSoundEffect.cpp */,
-				7105A03513202D710060EAAA /* ofSoundEffect.h */,
-				71059F9E132006900060EAAA /* ofSoundUnit.cpp */,
-				71059F9F132006900060EAAA /* ofSoundUnit.h */,
-			);
-			name = ofxDspChain;
-			path = openFrameworks/addons/ofxDspChain;
-			sourceTree = DEVELOPER_DIR;
-		};
-		71059FF113202BD50060EAAA /* ofxSynth */ = {
-			isa = PBXGroup;
-			children = (
-				71059FF213202BD50060EAAA /* src */,
-			);
-			name = ofxSynth;
-			path = ../../../addonsHEI/ofxSynth;
-			sourceTree = SOURCE_ROOT;
-		};
-		71059FF213202BD50060EAAA /* src */ = {
-			isa = PBXGroup;
-			children = (
-				71059FF313202BD50060EAAA /* ofxSynth.cpp */,
-				71059FF413202BD50060EAAA /* ofxSynth.h */,
-				71059FF513202BD50060EAAA /* ofxSynthDelayLine.cpp */,
-				71059FF613202BD50060EAAA /* ofxSynthDelayLine.h */,
-				71059FF713202BD50060EAAA /* ofxSynthEnvelope.cpp */,
-				71059FF813202BD50060EAAA /* ofxSynthEnvelope.h */,
-				71059FF913202BD50060EAAA /* ofxSynthFilter.cpp */,
-				71059FFA13202BD50060EAAA /* ofxSynthFilter.h */,
-				71059FFB13202BD50060EAAA /* ofxSynthSampler.cpp */,
-				71059FFC13202BD50060EAAA /* ofxSynthSampler.h */,
-				71059FFD13202BD50060EAAA /* ofxSynthWaveWriter.cpp */,
-				71059FFE13202BD50060EAAA /* ofxSynthWaveWriter.h */,
-			);
-			name = src;
-			path = ../../../addonsHEI/ofxSynth/src;
 			sourceTree = SOURCE_ROOT;
 		};
 		71804E0D131DDD5F009C406C /* ofxBlud */ = {
@@ -543,8 +1014,8 @@
 		BB16F26B0F2B646B00518274 /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				71059FF113202BD50060EAAA /* ofxSynth */,
-				71059F9D132006900060EAAA /* ofxDspChain */,
+				5E175E8E133992BE00234482 /* ofxSynthDev */,
+				5E175E221339924A00234482 /* ofxDspChain */,
 				71804E0D131DDD5F009C406C /* ofxBlud */,
 			);
 			name = addons;
@@ -874,6 +1345,58 @@
 				71059FF013202A150060EAAA /* readme.md in Resources */,
 				7105A05F132032620060EAAA /* low_bell.wav in Resources */,
 				7105A09413203CE70060EAAA /* audioExample.lua in Resources */,
+				5E175E571339924A00234482 /* config in Resources */,
+				5E175E581339924A00234482 /* description in Resources */,
+				5E175E591339924A00234482 /* FETCH_HEAD in Resources */,
+				5E175E5A1339924A00234482 /* HEAD in Resources */,
+				5E175E5B1339924A00234482 /* applypatch-msg.sample in Resources */,
+				5E175E5C1339924A00234482 /* commit-msg.sample in Resources */,
+				5E175E5D1339924A00234482 /* post-commit.sample in Resources */,
+				5E175E5E1339924A00234482 /* post-receive.sample in Resources */,
+				5E175E5F1339924A00234482 /* post-update.sample in Resources */,
+				5E175E601339924A00234482 /* pre-applypatch.sample in Resources */,
+				5E175E611339924A00234482 /* pre-commit.sample in Resources */,
+				5E175E621339924A00234482 /* pre-rebase.sample in Resources */,
+				5E175E631339924A00234482 /* prepare-commit-msg.sample in Resources */,
+				5E175E641339924A00234482 /* update.sample in Resources */,
+				5E175E651339924A00234482 /* index in Resources */,
+				5E175E661339924A00234482 /* exclude in Resources */,
+				5E175E671339924A00234482 /* HEAD in Resources */,
+				5E175E681339924A00234482 /* master in Resources */,
+				5E175E691339924A00234482 /* HEAD in Resources */,
+				5E175E6A1339924A00234482 /* dbcaeb49053111524e0abab95f390c70301b27 in Resources */,
+				5E175E6B1339924A00234482 /* 2aa4eb44d82a5ecf44dcd9e5cc0a474a47c2de in Resources */,
+				5E175E6C1339924A00234482 /* b628ad170818d093b50ff7fa6dc8f0d8d0685d in Resources */,
+				5E175E6D1339924A00234482 /* fb2477d6a53c89d5479ebfed27f75b315f2986 in Resources */,
+				5E175E6E1339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.idx in Resources */,
+				5E175E6F1339924A00234482 /* pack-e015f9013c623c7f1c2e9293a748c04164d16f4a.pack in Resources */,
+				5E175E701339924A00234482 /* ORIG_HEAD in Resources */,
+				5E175E711339924A00234482 /* packed-refs in Resources */,
+				5E175E721339924A00234482 /* master in Resources */,
+				5E175E731339924A00234482 /* HEAD in Resources */,
+				5E175EC3133992BE00234482 /* config in Resources */,
+				5E175EC4133992BE00234482 /* description in Resources */,
+				5E175EC5133992BE00234482 /* HEAD in Resources */,
+				5E175EC6133992BE00234482 /* applypatch-msg.sample in Resources */,
+				5E175EC7133992BE00234482 /* commit-msg.sample in Resources */,
+				5E175EC8133992BE00234482 /* post-commit.sample in Resources */,
+				5E175EC9133992BE00234482 /* post-receive.sample in Resources */,
+				5E175ECA133992BE00234482 /* post-update.sample in Resources */,
+				5E175ECB133992BE00234482 /* pre-applypatch.sample in Resources */,
+				5E175ECC133992BE00234482 /* pre-commit.sample in Resources */,
+				5E175ECD133992BE00234482 /* pre-rebase.sample in Resources */,
+				5E175ECE133992BE00234482 /* prepare-commit-msg.sample in Resources */,
+				5E175ECF133992BE00234482 /* update.sample in Resources */,
+				5E175ED0133992BE00234482 /* index in Resources */,
+				5E175ED1133992BE00234482 /* exclude in Resources */,
+				5E175ED2133992BE00234482 /* HEAD in Resources */,
+				5E175ED3133992BE00234482 /* master in Resources */,
+				5E175ED4133992BE00234482 /* HEAD in Resources */,
+				5E175ED5133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.idx in Resources */,
+				5E175ED6133992BE00234482 /* pack-ff53bc0a62d48befef626873d5e80905a1dbb1ee.pack in Resources */,
+				5E175ED7133992BE00234482 /* packed-refs in Resources */,
+				5E175ED8133992BE00234482 /* master in Resources */,
+				5E175ED9133992BE00234482 /* HEAD in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,15 +1458,15 @@
 				71804EFB131DDD5F009C406C /* print.c in Sources */,
 				71804EFD131DDD5F009C406C /* ofxBlud.cpp in Sources */,
 				71804F2C131DE12D009C406C /* bludMixer.cpp in Sources */,
-				71059FA0132006900060EAAA /* ofSoundUnit.cpp in Sources */,
-				71059FFF13202BD50060EAAA /* ofxSynth.cpp in Sources */,
-				7105A00013202BD50060EAAA /* ofxSynthDelayLine.cpp in Sources */,
-				7105A00113202BD50060EAAA /* ofxSynthEnvelope.cpp in Sources */,
-				7105A00213202BD50060EAAA /* ofxSynthFilter.cpp in Sources */,
-				7105A00313202BD50060EAAA /* ofxSynthSampler.cpp in Sources */,
-				7105A00413202BD50060EAAA /* ofxSynthWaveWriter.cpp in Sources */,
-				7105A03613202D710060EAAA /* ofSoundEffect.cpp in Sources */,
 				7105A39B13257A090060EAAA /* bludAudioSync.cpp in Sources */,
+				5E175E741339924A00234482 /* ofSoundEffect.cpp in Sources */,
+				5E175E751339924A00234482 /* ofSoundUnit.cpp in Sources */,
+				5E175EDA133992BE00234482 /* ofxSynth.cpp in Sources */,
+				5E175EDB133992BE00234482 /* ofxSynthDelayLine.cpp in Sources */,
+				5E175EDC133992BE00234482 /* ofxSynthEnvelope.cpp in Sources */,
+				5E175EDD133992BE00234482 /* ofxSynthFilter.cpp in Sources */,
+				5E175EDE133992BE00234482 /* ofxSynthSampler.cpp in Sources */,
+				5E175EDF133992BE00234482 /* ofxSynthWaveWriter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,12 +1554,12 @@
 					"\"$(SRCROOT)/../../../libs/poco/lib/osx\"",
 					"\"$(SRCROOT)/../../../libs/poco/lib/iphone\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_LDFLAGS = "";
 			};

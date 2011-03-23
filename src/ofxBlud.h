@@ -40,4 +40,5 @@ class ofxBlud{
 	private:
 		lua_State* luaVM;
 		ofSoundMixer *mixer;
+		ofMutex mutex;
 };

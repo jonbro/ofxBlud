@@ -56,15 +56,18 @@ void ofxBlud::setup(){
 }
 
 void ofxBlud::draw(ofEventArgs &e){
+	mutex.lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
 	if(lua_pcall(luaVM, 0, 0, 0) != 0){
 		ofLog(OF_LOG_ERROR, "Blud draw error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
+	mutex.unlock();
 }
 
 void ofxBlud::update(ofEventArgs &e){
+	mutex.lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "update"); /* function to be called */
 	lua_pushnumber(luaVM, ofGetElapsedTimeMillis());
@@ -72,6 +75,7 @@ void ofxBlud::update(ofEventArgs &e){
 		ofLog(OF_LOG_ERROR, "Blud update error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
+	mutex.unlock();
 }
 
 string ofxBlud::execute(string code){
@@ -189,6 +193,8 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 #include "ofMath.h"
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
+	mutex.lock();
 	// getting called
 	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
+	mutex.unlock();
 }

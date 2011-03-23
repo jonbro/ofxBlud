@@ -11,18 +11,20 @@ end
 
 function blud.touch.down(x, y, id)
 	s:setNote(y/bg:getHeight()*30+45)
-	s:trigger();
+	-- s:trigger();
 end
 
 triggerCallback = function()
-	if(subdivision%8 == 0) then
-		s:trigger()
-	end
+	print("inside callback")
+	s:trigger()
 end
 
-rate 		= 44100 * 120 / 60; 	-- takes a rate in bpm
-trigger = bludAudioSync:new(44100);
-trigger:setCallback(triggerCallback);
+rate 		= 44100 * 120 / 60 / 8; 	-- takes a rate in bpm
+trigger = bludAudioSync(rate);
+trigger:setCallback(triggerCallback, 1);
+
+
+print("loading the code, just proving that print works\n")
 
 -- target code
 

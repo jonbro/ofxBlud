@@ -25,7 +25,12 @@ void bludSyncContainer::audioRequested( float* buffer, int numFrames, int numCha
 			if (counter%triggers[i]->rate == 0) {
 				// trigger the callback
 				lua_rawgeti( L, LUA_REGISTRYINDEX, triggers[i]->callback );
-				lua_call(L, 0, 0);
+				cout << "callback index: " << triggers[i]->callback << endl;
+				cout << "top of the stack index: " << lua_gettop(L) << endl;
+				if(lua_pcall(L, 0, 0, 0) != 0){
+					ofLog(OF_LOG_ERROR, "Blud audio sync error");
+					ofLog(OF_LOG_ERROR, lua_tostring(L, -1));
+				}
 			}
 		}
 	}

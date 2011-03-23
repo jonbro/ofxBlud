@@ -28,7 +28,7 @@ private:
 	{
 		int rate;
 		int callback;
-		Trigger( int r, int c )
+		Trigger( int c, int r )
 		{
 			rate = r;
 			callback = c;
@@ -58,11 +58,13 @@ public:
 	}
 	int setCallback(lua_State *L){
 		// check to make sure that we are about to pull a function off the stack
-		luaL_checktype(L, 1, LUA_TFUNCTION);
-		
-		// store the function callback
-		callback = luaL_ref(L, LUA_REGISTRYINDEX);
-		container->addTrigger(callback, rate);		
+		if(lua_isfunction(L, 1)){
+			// push the value of the function (that is at position 1), onto the top of the stack
+			lua_pushvalue(L, 1);
+			// store this stack position in the registry index
+			callback = luaL_ref(L, LUA_REGISTRYINDEX);
+			container->addTrigger(callback, rate);			
+		}
 		return 0;
 	}
 	~bludAudioSync() {
