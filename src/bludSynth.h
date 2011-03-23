@@ -30,6 +30,8 @@ class bludSynth {
 		}
 		
 		~bludSynth() {
+			// remove the connection to the sampler
+			mixer->removeInputFrom(&sampler);
 			printf("deleted synth (%p)\n", this);
 		}
 	private:

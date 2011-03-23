@@ -1,8 +1,11 @@
 bg = bludGraphics();
 
-s = bludSynth();
-s:load('low_bell.wav');
-s:trigger();
+function test()
+    local s;
+    s = bludSynth()
+    s:load('low_bell.wav');
+    s:trigger();
+end
 
 function blud.draw()
 	bg:setColor(0,0,0,255)
@@ -10,13 +13,14 @@ function blud.draw()
 end
 
 function blud.touch.down(x, y, id)
-	s:setNote(y/bg:getHeight()*30+45)
+	-- s:setNote(y/bg:getHeight()*30+45)
 	-- s:trigger();
 end
 
 triggerCallback = function()
+    print("garbage amount" .. collectgarbage("count"))
 	print("inside callback")
-	s:trigger()
+	-- s:trigger()
 end
 
 rate 		= 44100 * 120 / 60 / 8; 	-- takes a rate in bpm
