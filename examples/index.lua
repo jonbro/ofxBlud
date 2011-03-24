@@ -1,0 +1,2 @@
+-- #ofxBlud
+-- ## a set of lua wrappers around a chunk of openframeworks

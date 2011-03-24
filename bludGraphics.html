@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>bludGraphics.lua</title>
+  <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <a href="http://github.com/jonbro/ofxBlud"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="jump_to">
+    Jump To &hellip;
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source" href="bludGraphics.html">bludGraphics.lua</a>
+          <a class="source" href="index.html">index.lua</a>
+      </div>
+    </div>
+  </div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        <p>bludGraphics is a wrapper around all the openframeworks global functions that are useful for drawing
+some of these are in turn just wrappers around opengl functions</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>The bludGraphics object first needs to be initialized</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">bludGraphics</span><span class="p">()</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>because the bludGraphics object is just a thin wrapper around opengl, all of its functions must be run inside of the draw method of blud</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p>set the color <code>(red, green, blue, alpha)</code>, this one will be black</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">bg</span><span class="p">:</span><span class="n">setColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-5">&#182;</a>
+        </div>
+        <p>draw a square
+takes parameters in the order
+<code>(top, left, width, height)</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">bg</span><span class="p">:</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-6">&#182;</a>
+        </div>
+        <p>push the current transformation matrix to the stack</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">bg</span><span class="p">:</span><span class="n">push</span><span class="p">()</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-7'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-7">&#182;</a>
+        </div>
+        <p>translate to the center of the screen <code>(x, y, z)</code>
+rotate 45 degrees <code>degrees and amounts (degrees, x, y, z)</code>, and translate back out a quarter</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">bg</span><span class="p">:</span><span class="n">translate</span><span class="p">(</span><span class="n">bg</span><span class="p">:</span><span class="n">getWidth</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">bg</span><span class="p">:</span><span class="n">getHeight</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">bg</span><span class="p">:</span><span class="n">rotate</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">bg</span><span class="p">:</span><span class="n">translate</span><span class="p">(</span><span class="o">-</span><span class="n">bg</span><span class="p">:</span><span class="n">getWidth</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="n">bg</span><span class="p">:</span><span class="n">getHeight</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    </pre></div>
+      </td>
+    </tr>
+    <tr id='section-8'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-8">&#182;</a>
+        </div>
+        <p>draw a red square</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="n">bg</span><span class="p">:</span><span class="n">setColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">bg</span><span class="p">:</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+	<tr>
+      <td class=docs>
+	    <h2>Download</h2>
+	    <p>
+	      You can download this project in either
+	      <a href="http://github.com/jonbro/ofxBlud/zipball/master">zip</a> or
+	      <a href="http://github.com/jonbro/ofxBlud/tarball/master">tar</a> formats.
+	    </p>
+	    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+	      by running:
+	      <pre>$ git clone git://github.com/jonbro/ofxBlud</pre>
+	    </p>
+
+	    <div class="footer">
+	      get the source code on GitHub : <a href="http://github.com/jonbro/ofxBlud">jonbro/ofxBlud</a>
+	    </div>
+      </td>
+      <td class=code>
+      </td>
+	</tr>
+  </table>
+</div>
+</body>

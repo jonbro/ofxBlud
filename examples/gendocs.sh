@@ -1,0 +1,1 @@
+rocco *.lua --language=lua --comment-chars='--' --output=.. --template=../layout.mustache
