@@ -16,7 +16,6 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	//blud.draw();
 }
 void testApp::audioRequested(float * output, int bufferSize, int nChannels){
 	e.buffer = output;

@@ -80,6 +80,10 @@
 		5E2568A610ED26CD00A9501C /* PocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688210ED26CC00A9501C /* PocoNet.a */; };
 		5E2568A710ED26CD00A9501C /* PocoUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688310ED26CC00A9501C /* PocoUtil.a */; };
 		5E2568A810ED26CD00A9501C /* PocoXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E25688410ED26CC00A9501C /* PocoXML.a */; };
+		5EBBC415133AD8A800B0CE3D /* CollageTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBC3EF133AD8A800B0CE3D /* CollageTexture.cpp */; };
+		5EBBC416133AD8A800B0CE3D /* LinearTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBC3F1133AD8A800B0CE3D /* LinearTexture.cpp */; };
+		5EBBC417133AD8A800B0CE3D /* ofxSpriteSheetRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBC3F3133AD8A800B0CE3D /* ofxSpriteSheetRenderer.cpp */; };
+		5EBBC418133AD8A800B0CE3D /* PixelTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBC3F5133AD8A800B0CE3D /* PixelTexture.cpp */; };
 		71059FF013202A150060EAAA /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 71059FEF13202A150060EAAA /* readme.md */; };
 		7105A05F132032620060EAAA /* low_bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7105A05E132032620060EAAA /* low_bell.wav */; };
 		7105A09413203CE70060EAAA /* audioExample.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7105A09313203CE70060EAAA /* audioExample.lua */; };
@@ -128,7 +132,7 @@
 		E434BF7312477FBA00452519 /* freetype-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E434BF7212477FBA00452519 /* freetype-iphone.a */; };
 		E496D5B11252C8210098A2B3 /* glu-iphone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5AF1252C8210098A2B3 /* glu-iphone.a */; };
 		E496D5B21252C8210098A2B3 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E496D5B01252C8210098A2B3 /* glu.a */; };
-		E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */; };
+		E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Release.a */; };
 		E4A8229F12560AFE002F86A2 /* freetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A8229E12560AFE002F86A2 /* freetype.a */; };
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
@@ -236,6 +240,15 @@
 		5E25688210ED26CC00A9501C /* PocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoNet.a; path = ../../../libs/poco/lib/osx/PocoNet.a; sourceTree = SOURCE_ROOT; };
 		5E25688310ED26CC00A9501C /* PocoUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoUtil.a; path = ../../../libs/poco/lib/osx/PocoUtil.a; sourceTree = SOURCE_ROOT; };
 		5E25688410ED26CC00A9501C /* PocoXML.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = PocoXML.a; path = ../../../libs/poco/lib/osx/PocoXML.a; sourceTree = SOURCE_ROOT; };
+		5EBBC37C133AD60200B0CE3D /* bludEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bludEntity.h; path = openFrameworks/addons/ofxBlud/src/bludEntity.h; sourceTree = DEVELOPER_DIR; };
+		5EBBC3EF133AD8A800B0CE3D /* CollageTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollageTexture.cpp; path = ../../ofxSpriteSheetRenderer/src/CollageTexture.cpp; sourceTree = SOURCE_ROOT; };
+		5EBBC3F0133AD8A800B0CE3D /* CollageTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollageTexture.h; path = ../../ofxSpriteSheetRenderer/src/CollageTexture.h; sourceTree = SOURCE_ROOT; };
+		5EBBC3F1133AD8A800B0CE3D /* LinearTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinearTexture.cpp; path = ../../ofxSpriteSheetRenderer/src/LinearTexture.cpp; sourceTree = SOURCE_ROOT; };
+		5EBBC3F2133AD8A800B0CE3D /* LinearTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinearTexture.h; path = ../../ofxSpriteSheetRenderer/src/LinearTexture.h; sourceTree = SOURCE_ROOT; };
+		5EBBC3F3133AD8A800B0CE3D /* ofxSpriteSheetRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxSpriteSheetRenderer.cpp; path = ../../ofxSpriteSheetRenderer/src/ofxSpriteSheetRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		5EBBC3F4133AD8A800B0CE3D /* ofxSpriteSheetRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxSpriteSheetRenderer.h; path = ../../ofxSpriteSheetRenderer/src/ofxSpriteSheetRenderer.h; sourceTree = SOURCE_ROOT; };
+		5EBBC3F5133AD8A800B0CE3D /* PixelTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PixelTexture.cpp; path = ../../ofxSpriteSheetRenderer/src/PixelTexture.cpp; sourceTree = SOURCE_ROOT; };
+		5EBBC3F6133AD8A800B0CE3D /* PixelTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PixelTexture.h; path = ../../ofxSpriteSheetRenderer/src/PixelTexture.h; sourceTree = SOURCE_ROOT; };
 		71059FEF13202A150060EAAA /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.md; path = ../readme.md; sourceTree = SOURCE_ROOT; };
 		7105A05E132032620060EAAA /* low_bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = low_bell.wav; path = bin/data/low_bell.wav; sourceTree = SOURCE_ROOT; };
 		7105A09313203CE70060EAAA /* audioExample.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = audioExample.lua; path = bin/data/audioExample.lua; sourceTree = SOURCE_ROOT; };
@@ -376,7 +389,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E49BCC7A12554CD6009F19D0 /* libofxiPhone_iphoneos_Debug.a in Frameworks */,
+				E49BCC7A12554CD6009F19D0 /* libofxiPhone_macosx_Release.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -902,6 +915,31 @@
 			path = ../../../libs/poco/lib/osx;
 			sourceTree = SOURCE_ROOT;
 		};
+		5EBBC3C1133AD8A800B0CE3D /* ofxSpriteSheetRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				5EBBC3EE133AD8A800B0CE3D /* src */,
+			);
+			name = ofxSpriteSheetRenderer;
+			path = ../../ofxSpriteSheetRenderer;
+			sourceTree = SOURCE_ROOT;
+		};
+		5EBBC3EE133AD8A800B0CE3D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5EBBC3EF133AD8A800B0CE3D /* CollageTexture.cpp */,
+				5EBBC3F0133AD8A800B0CE3D /* CollageTexture.h */,
+				5EBBC3F1133AD8A800B0CE3D /* LinearTexture.cpp */,
+				5EBBC3F2133AD8A800B0CE3D /* LinearTexture.h */,
+				5EBBC3F3133AD8A800B0CE3D /* ofxSpriteSheetRenderer.cpp */,
+				5EBBC3F4133AD8A800B0CE3D /* ofxSpriteSheetRenderer.h */,
+				5EBBC3F5133AD8A800B0CE3D /* PixelTexture.cpp */,
+				5EBBC3F6133AD8A800B0CE3D /* PixelTexture.h */,
+			);
+			name = src;
+			path = ../../ofxSpriteSheetRenderer/src;
+			sourceTree = SOURCE_ROOT;
+		};
 		71804E0D131DDD5F009C406C /* ofxBlud */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1036,7 @@
 				71804F2B131DE12D009C406C /* bludMixer.cpp */,
 				7105A39913257A090060EAAA /* bludAudioSync.h */,
 				7105A39A13257A090060EAAA /* bludAudioSync.cpp */,
+				5EBBC37C133AD60200B0CE3D /* bludEntity.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1014,6 +1053,7 @@
 		BB16F26B0F2B646B00518274 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				5EBBC3C1133AD8A800B0CE3D /* ofxSpriteSheetRenderer */,
 				5E175E8E133992BE00234482 /* ofxSynthDev */,
 				5E175E221339924A00234482 /* ofxDspChain */,
 				71804E0D131DDD5F009C406C /* ofxBlud */,
@@ -1248,7 +1288,7 @@
 		E49BCC4912554B69009F19D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */,
+				E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Release.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1325,10 +1365,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E49BCC5012554B6A009F19D0 /* libofxiPhone_iphoneos_Debug.a */ = {
+		E49BCC5012554B6A009F19D0 /* libofxiPhone_macosx_Release.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libofxiPhone_iphoneos_Debug.a;
+			path = libofxiPhone_macosx_Release.a;
 			remoteRef = E49BCC4F12554B6A009F19D0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1467,6 +1507,10 @@
 				5E175EDD133992BE00234482 /* ofxSynthFilter.cpp in Sources */,
 				5E175EDE133992BE00234482 /* ofxSynthSampler.cpp in Sources */,
 				5E175EDF133992BE00234482 /* ofxSynthWaveWriter.cpp in Sources */,
+				5EBBC415133AD8A800B0CE3D /* CollageTexture.cpp in Sources */,
+				5EBBC416133AD8A800B0CE3D /* LinearTexture.cpp in Sources */,
+				5EBBC417133AD8A800B0CE3D /* ofxSpriteSheetRenderer.cpp in Sources */,
+				5EBBC418133AD8A800B0CE3D /* PixelTexture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

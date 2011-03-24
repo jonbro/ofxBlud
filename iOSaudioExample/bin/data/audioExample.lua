@@ -22,7 +22,7 @@ function blud.touch.down(x, y, id)
 end
 
 triggerCallback = function()
-    print("garbage amount" .. collectgarbage("count"))
+-- print("garbage amount" .. collectgarbage("count"))
  -- s:trigger()
 end
 
