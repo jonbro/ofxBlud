@@ -122,7 +122,7 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <p>sort the table so that the lower sprites are drawn last</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="nb">table.sort</span><span class="p">(</span><span class="n">sprites</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="n">y</span> <span class="k">end</span><span class="p">)</span>
+        <div class='highlight'><pre>    <span class="nb">table.sort</span><span class="p">(</span><span class="n">sprites</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">&gt;</span><span class="n">b</span><span class="p">.</span><span class="n">y</span> <span class="k">end</span><span class="p">)</span>
     </pre></div>
       </td>
     </tr>
@@ -134,7 +134,8 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <p>loop through the sprite table</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">sprites</span><span class="p">)</span> <span class="k">do</span></pre></div>
+        <div class='highlight'><pre>    <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="nb">table.maxn</span><span class="p">(</span><span class="n">sprites</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span> <span class="k">do</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">sprites</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></pre></div>
       </td>
     </tr>
     <tr id='section-10'>
@@ -147,7 +148,7 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
       <td class=code>
         <div class='highlight'><pre>        <span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="o">+</span><span class="n">v</span><span class="p">.</span><span class="n">speed</span>
         
-        <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">bg</span><span class="p">:</span><span class="n">getHeight</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span></pre></div>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">bg</span><span class="p">:</span><span class="n">getHeight</span><span class="p">()</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span> <span class="k">then</span></pre></div>
       </td>
     </tr>
     <tr id='section-11'>
@@ -158,7 +159,7 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <p>if the sprite is off the screen, remove it from the array</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>            <span class="n">v</span> <span class="o">=</span> <span class="kc">nil</span>
+        <div class='highlight'><pre>            <span class="nb">table.remove</span><span class="p">(</span><span class="n">sprites</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
         <span class="k">else</span></pre></div>
       </td>
     </tr>
@@ -184,7 +185,7 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <p>every frame add a whole bunch of sprites so that the screen fills with an army</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>    <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span> <span class="k">do</span>
+        <div class='highlight'><pre>    <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="k">do</span>
         </pre></div>
       </td>
     </tr>
@@ -208,8 +209,7 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <p>the animation length in frames</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="n">sprite</span><span class="p">:</span><span class="n">setTotalFrames</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-        </pre></div>
+        <div class='highlight'><pre>        <span class="n">sprite</span><span class="p">:</span><span class="n">setTotalFrames</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></pre></div>
       </td>
     </tr>
     <tr id='section-16'>
@@ -242,11 +242,11 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class="pilwrap">
           <a class="pilcrow" href="#section-18">&#182;</a>
         </div>
-        <p>how many times the animation plays</p>
+        <p>change the start index of our sprite. we have 4 rows of animations and our spritesheet is 8 tiles wide, so our possible start indicies are 0, 8, 16, and 24</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="n">sprite</span><span class="p">:</span><span class="n">setLoops</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-                </pre></div>
+        <div class='highlight'><pre>        <span class="n">sprite</span><span class="p">:</span><span class="n">setIndex</span><span class="p">(</span><span class="nb">math.floor</span><span class="p">(</span><span class="nb">math.random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+        </pre></div>
       </td>
     </tr>
     <tr id='section-19'>
@@ -254,16 +254,11 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class="pilwrap">
           <a class="pilcrow" href="#section-19">&#182;</a>
         </div>
-        <p>start the sprite at a random x position, and somewhere off the screen</p>
+        <p>how many times the animation plays</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre>        <span class="n">sprites</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">sprite</span><span class="o">=</span><span class="n">sprite</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="nb">math.random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">bg</span><span class="p">:</span><span class="n">getWidth</span><span class="p">()),</span><span class="n">y</span><span class="o">=-</span><span class="mi">16</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="nb">math.random</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)});</span>
-        
-    <span class="k">end</span>
-    <span class="n">sheet</span><span class="p">:</span><span class="n">addSprite</span><span class="p">(</span><span class="n">sprites</span><span class="p">)</span>
-<span class="k">end</span>
-
-<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span></pre></div>
+        <div class='highlight'><pre>        <span class="n">sprite</span><span class="p">:</span><span class="n">setLoops</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                </pre></div>
       </td>
     </tr>
     <tr id='section-20'>
@@ -271,11 +266,41 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class="pilwrap">
           <a class="pilcrow" href="#section-20">&#182;</a>
         </div>
-        <p>draws all the sprites that have been added to the sheet during the update function</p>
+        <p>start the sprite at a random x position, and somewhere off the screen</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>        <span class="nb">table.insert</span><span class="p">(</span><span class="n">sprites</span><span class="p">,</span> <span class="p">{</span><span class="n">sprite</span><span class="o">=</span><span class="n">sprite</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="nb">math.random</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">bg</span><span class="p">:</span><span class="n">getWidth</span><span class="p">()),</span><span class="n">y</span><span class="o">=-</span><span class="mi">16</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="nb">math.random</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)});</span>
+        
+    <span class="k">end</span>
+<span class="k">end</span>
 
+<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-21'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-21">&#182;</a>
+        </div>
+        <p>draws all the sprites that have been added to the sheet during the update function</p>
       </td>
       <td class=code>
         <div class='highlight'><pre>    <span class="n">sheet</span><span class="p">:</span><span class="n">draw</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">touch</span><span class="p">.</span><span class="n">down</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">id</span><span class="p">)</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-22'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-22">&#182;</a>
+        </div>
+        <p>print out the size of the sprite array, for debugging purposes</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">num sprites:&quot;</span> <span class="p">..</span> <span class="nb">table.maxn</span><span class="p">(</span><span class="n">sprites</span><span class="p">))</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
