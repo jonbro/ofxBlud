@@ -4,6 +4,7 @@
 #include "bludGraphics.h"
 #include "bludSynth.h"
 #include "bludAudioSync.h"
+#include "bludSpriteSheet.h"
 
 #include "blud_boot.h"
 
@@ -54,6 +55,8 @@ void ofxBlud::setup(){
 	Lunar<bludGraphics>::Register(luaVM);
 	Lunar<bludSynth>::Register(luaVM);
 	Lunar<bludAudioSync>::Register(luaVM);
+	Lunar<bludSprite>::Register(luaVM);
+	Lunar<bludSpriteSheet>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
@@ -82,6 +85,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.update, this, &ofxBlud::update);
 	
 	mixer = bludMixer::getInstance();
+	ofEnableAlphaBlending();
 }
 
 void ofxBlud::draw(ofEventArgs &e){
