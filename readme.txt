@@ -17,3 +17,5 @@ dependencies:
 [ofxDspChain](https://github.com/jonbro/ofxDspChain)
 
 [ofxSynth](https://github.com/jonbro/ofxSynth)
+
+[ofxSpriteSheetRenderer](https://github.com/stfj/ofxSpriteSheetRenderer)
