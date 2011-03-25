@@ -11,8 +11,8 @@
 
 -- you can override any of the app callbacks as follows
 
--- blud update recieves a variable that corrosponds to how much time has passed since the last update
-function blud.update(dt)
+-- blud update recieves the total elapsed time that the app has been running
+function blud.update(t)
 end
 
 -- the same as the openframeworks draw function

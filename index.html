@@ -17,6 +17,7 @@
           <a class="source" href="bludAudioSync.html">bludAudioSync.lua</a>
           <a class="source" href="bludGraphics.html">bludGraphics.lua</a>
           <a class="source" href="bludImage.html">bludImage.lua</a>
+          <a class="source" href="bludSpriteSheet.html">bludSpriteSheet.lua</a>
           <a class="source" href="bludSynth.html">bludSynth.lua</a>
           <a class="source" href="index.html">index.lua</a>
       </div>
@@ -78,10 +79,10 @@ with the following additional components:</p>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
-        <p>blud update recieves a variable that corrosponds to how much time has passed since the last update</p>
+        <p>blud update recieves the total elapsed time that the app has been running</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="k">end</span></pre></div>
       </td>
     </tr>
