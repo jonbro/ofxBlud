@@ -47,17 +47,18 @@ function blud.update(t)
         -- the animation length in frames
         sprite:setTotalFrames(4)
 
-        -- -- the number of tiles each animation frame is in width and height
-        -- sprite:setWidth(1)
-        -- sprite:setHeight(1)
-        -- 
+        -- the number of tiles each animation frame is in width and height
+        sprite:setWidth(1)
+        sprite:setHeight(1)
+        
         -- how long each frame displays for
         sprite:setFrameDuration(75)
-        -- 
+        
         -- change the start index of our sprite. we have 4 rows of animations and our spritesheet is 8 tiles wide, so our possible start indicies are 0, 8, 16, and 24
         sprite:setIndex(math.floor(math.random(0,4))*8)
-        -- -- how many times the animation plays
-        -- sprite:setLoops(-1)
+        
+		-- how many times the animation plays
+        sprite:setLoops(-1)
                 
         -- start the sprite at a random x position, and somewhere off the screen
         table.insert(sprites, {sprite=sprite, x=math.random(0, bg:getWidth()),y=-16, speed=math.random(2,4)});

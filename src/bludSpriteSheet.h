@@ -34,9 +34,25 @@ public:
 		ani.index = luaL_checknumber(L, 1);
 		return 1;
 	}
+	int setWidth(lua_State *L)  {
+		ani.w = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setHeight(lua_State *L)  {
+		ani.h = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setLoops(lua_State *L)  {
+		ani.loops = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setFrameSkip(lua_State *L)  {
+		ani.frame_skip = luaL_checknumber(L, 1);
+		return 1;
+	}
 	~bludSprite(){
-//		ofLog(OF_LOG_VERBOSE, "deleted sprite" << this << endl);
-//		printf("deleted sprite (%p)\n", this);
+		// ofLog(OF_LOG_VERBOSE, "deleted sprite" << this << endl);
+		// printf("deleted sprite (%p)\n", this);
 	}
 	animation_t ani;
 };
@@ -46,6 +62,10 @@ Lunar<bludSprite>::RegType bludSprite::methods[] = {
 	method(bludSprite, setTotalFrames),
 	method(bludSprite, setFrameDuration),
 	method(bludSprite, setIndex),
+	method(bludSprite, setWidth),
+	method(bludSprite, setHeight),
+	method(bludSprite, setLoops),
+	method(bludSprite, setFrameSkip),
 	{0,0}
 };
 
