@@ -1,3 +1,4 @@
+-- #bludGraphics
 -- bludGraphics is a wrapper around all the openframeworks global functions that are useful for drawing
 -- some of these are in turn just wrappers around opengl functions
 

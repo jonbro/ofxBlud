@@ -14,7 +14,10 @@
     Jump To &hellip;
     <div id="jump_wrapper">
       <div id="jump_page">
+          <a class="source" href="bludAudioSync.html">bludAudioSync.lua</a>
           <a class="source" href="bludGraphics.html">bludGraphics.lua</a>
+          <a class="source" href="bludImage.html">bludImage.lua</a>
+          <a class="source" href="bludSynth.html">bludSynth.lua</a>
           <a class="source" href="index.html">index.lua</a>
       </div>
     </div>
@@ -35,10 +38,82 @@
         <h1>ofxBlud</h1>
 
 <h2>a set of lua wrappers around a chunk of openframeworks</h2>
-
       </td>
       <td class=code>
         <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>the core of blud more or less maps to the way that openframeworks is layed out
+with the following additional components:</p>
+
+<ul>
+<li> <a href="bludGraphics.html">bludGraphics</a> a wrapper around some of the opengl parts of openframeworks. Useful for drawing rectangles.</li>
+<li> <a href="bludImage.html">bludImage</a> for drawing texture maps, or parts of texturemaps. Has some very basic sprite support.</li>
+<li> <a href="bludSynth.html">bludSynth</a> a sample based synthesizer</li>
+<li> <a href="bludAudioSync.html">bludAudioSync</a> an audio syncronized event system</li>
+</ul>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>you can override any of the app callbacks as follows</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p>blud update recieves a variable that corrosponds to how much time has passed since the last update</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-5'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-5">&#182;</a>
+        </div>
+        <p>the same as the openframeworks draw function</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="k">end</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-6'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-6">&#182;</a>
+        </div>
+        <p>all of the touch functions receive three parameters</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">touch</span><span class="p">.</span><span class="n">down</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">touch</span><span class="p">.</span><span class="n">moved</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">touch</span><span class="p">.</span><span class="n">up</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">touch</span><span class="p">.</span><span class="n">double_tap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">id</span><span class="p">)</span>
+<span class="k">end</span></pre></div>
       </td>
     </tr>
 	<tr>
