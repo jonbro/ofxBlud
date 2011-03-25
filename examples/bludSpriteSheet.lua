@@ -1,3 +1,6 @@
+-- #bludSpriteSheet
+-- bludSpriteSheet is a wrapper around (ofxSpriteSheet)[https://github.com/stfj/ofxSpriteSheetRenderer] an optomized sprite drawer from Zach Gage
+
 -- need an instance of blud graphics so that we can get information about screen size
 bg = bludGraphics();
 

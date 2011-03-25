@@ -8,6 +8,7 @@
 -- *    [bludImage](bludImage.html) for drawing texture maps, or parts of texturemaps. Has some very basic sprite support.
 -- *    [bludSynth](bludSynth.html) a sample based synthesizer
 -- *    [bludAudioSync](bludAudioSync.html) an audio syncronized event system
+-- *    [bludSpriteSheet](bludSpriteSheet.html) an optimized sprite renderer
 
 -- you can override any of the app callbacks as follows
 

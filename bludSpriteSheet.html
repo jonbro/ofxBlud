@@ -31,15 +31,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr id='section-1'>
+    <tr id='section-bludSpriteSheet'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-1">&#182;</a>
+          <a class="pilcrow" href="#section-bludSpriteSheet">&#182;</a>
         </div>
-        <p>need an instance of blud graphics so that we can get information about screen size</p>
+        <h1>bludSpriteSheet</h1>
+
+<p>bludSpriteSheet is a wrapper around (ofxSpriteSheet)[https://github.com/stfj/ofxSpriteSheetRenderer] an optomized sprite drawer from Zach Gage</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">bludGraphics</span><span class="p">();</span></pre></div>
+        <div class='highlight'><pre></pre></div>
       </td>
     </tr>
     <tr id='section-2'>
@@ -47,16 +49,27 @@
         <div class="pilwrap">
           <a class="pilcrow" href="#section-2">&#182;</a>
         </div>
-        <p>setup a new sprite sheet with 1 layer, 10000 tiles per layer, default layer of 0, tile size of 32</p>
+        <p>need an instance of blud graphics so that we can get information about screen size</p>
       </td>
       <td class=code>
-        <div class='highlight'><pre><span class="n">sheet</span> <span class="o">=</span> <span class="n">bludSpriteSheet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span></pre></div>
+        <div class='highlight'><pre><span class="n">bg</span> <span class="o">=</span> <span class="n">bludGraphics</span><span class="p">();</span></pre></div>
       </td>
     </tr>
     <tr id='section-3'>
       <td class=docs>
         <div class="pilwrap">
           <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>setup a new sprite sheet with 1 layer, 10000 tiles per layer, default layer of 0, tile size of 32</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="n">sheet</span> <span class="o">=</span> <span class="n">bludSpriteSheet</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
         </div>
         <p>load the texture onto the sheet
 takes the following parameters <code>(filename, sheetsize)</code>. The sheet must be a power of 2, and square.</p>
@@ -65,10 +78,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class='highlight'><pre><span class="n">sheet</span><span class="p">:</span><span class="n">loadTexture</span><span class="p">(</span><span class="s2">&quot;</span><span class="s">spriteSheetExample.png&quot;</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span></pre></div>
       </td>
     </tr>
-    <tr id='section-4'>
+    <tr id='section-5'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-4">&#182;</a>
+          <a class="pilcrow" href="#section-5">&#182;</a>
         </div>
         <p>setup an empty table to hold all of the sprites</p>
       </td>
@@ -78,10 +91,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
 <span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></pre></div>
       </td>
     </tr>
-    <tr id='section-5'>
+    <tr id='section-6'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-5">&#182;</a>
+          <a class="pilcrow" href="#section-6">&#182;</a>
         </div>
         <p>remove all of the sprites that we have added to the sheet during the last frame</p>
       </td>
@@ -89,10 +102,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class='highlight'><pre>    <span class="n">sheet</span><span class="p">:</span><span class="n">clear</span><span class="p">()</span></pre></div>
       </td>
     </tr>
-    <tr id='section-6'>
+    <tr id='section-7'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-6">&#182;</a>
+          <a class="pilcrow" href="#section-7">&#182;</a>
         </div>
         <p>update the sheet so that all of the animations play properly</p>
       </td>
@@ -101,10 +114,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
     </pre></div>
       </td>
     </tr>
-    <tr id='section-7'>
+    <tr id='section-8'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-7">&#182;</a>
+          <a class="pilcrow" href="#section-8">&#182;</a>
         </div>
         <p>sort the table so that the lower sprites are drawn last</p>
       </td>
@@ -113,10 +126,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
     </pre></div>
       </td>
     </tr>
-    <tr id='section-8'>
+    <tr id='section-9'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-8">&#182;</a>
+          <a class="pilcrow" href="#section-9">&#182;</a>
         </div>
         <p>loop through the sprite table</p>
       </td>
@@ -124,10 +137,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <div class='highlight'><pre>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">sprites</span><span class="p">)</span> <span class="k">do</span></pre></div>
       </td>
     </tr>
-    <tr id='section-9'>
+    <tr id='section-10'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-9">&#182;</a>
+          <a class="pilcrow" href="#section-10">&#182;</a>
         </div>
         <p>update the vertical position of the sprite</p>
       </td>
@@ -137,10 +150,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">bg</span><span class="p">:</span><span class="n">getHeight</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span></pre></div>
       </td>
     </tr>
-    <tr id='section-10'>
+    <tr id='section-11'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-10">&#182;</a>
+          <a class="pilcrow" href="#section-11">&#182;</a>
         </div>
         <p>if the sprite is off the screen, remove it from the array</p>
       </td>
@@ -149,10 +162,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         <span class="k">else</span></pre></div>
       </td>
     </tr>
-    <tr id='section-11'>
+    <tr id='section-12'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-11">&#182;</a>
+          <a class="pilcrow" href="#section-12">&#182;</a>
         </div>
         <p>otherwise, add it to the sheet that is about to be drawn</p>
       </td>
@@ -163,10 +176,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
     </pre></div>
       </td>
     </tr>
-    <tr id='section-12'>
+    <tr id='section-13'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-12">&#182;</a>
+          <a class="pilcrow" href="#section-13">&#182;</a>
         </div>
         <p>every frame add a whole bunch of sprites so that the screen fills with an army</p>
       </td>
@@ -175,10 +188,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         </pre></div>
       </td>
     </tr>
-    <tr id='section-13'>
+    <tr id='section-14'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-13">&#182;</a>
+          <a class="pilcrow" href="#section-14">&#182;</a>
         </div>
         <p>blud sprite is a container for the animation info that the spritesheet needs to render. It doesn&rsquo;t contain information about where to render on the screen though, so we need to store some additional information in the table</p>
       </td>
@@ -187,10 +200,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
                 </pre></div>
       </td>
     </tr>
-    <tr id='section-14'>
+    <tr id='section-15'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-14">&#182;</a>
+          <a class="pilcrow" href="#section-15">&#182;</a>
         </div>
         <p>the animation length in frames</p>
       </td>
@@ -199,10 +212,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         </pre></div>
       </td>
     </tr>
-    <tr id='section-15'>
+    <tr id='section-16'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-15">&#182;</a>
+          <a class="pilcrow" href="#section-16">&#182;</a>
         </div>
         <p>the number of tiles each animation frame is in width and height</p>
       </td>
@@ -212,10 +225,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         </pre></div>
       </td>
     </tr>
-    <tr id='section-16'>
+    <tr id='section-17'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-16">&#182;</a>
+          <a class="pilcrow" href="#section-17">&#182;</a>
         </div>
         <p>how long each frame displays for</p>
       </td>
@@ -224,10 +237,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
         </pre></div>
       </td>
     </tr>
-    <tr id='section-17'>
+    <tr id='section-18'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-17">&#182;</a>
+          <a class="pilcrow" href="#section-18">&#182;</a>
         </div>
         <p>how many times the animation plays</p>
       </td>
@@ -236,10 +249,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
                 </pre></div>
       </td>
     </tr>
-    <tr id='section-18'>
+    <tr id='section-19'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-18">&#182;</a>
+          <a class="pilcrow" href="#section-19">&#182;</a>
         </div>
         <p>start the sprite at a random x position, and somewhere off the screen</p>
       </td>
@@ -253,10 +266,10 @@ takes the following parameters <code>(filename, sheetsize)</code>. The sheet mus
 <span class="k">function</span> <span class="nf">blud</span><span class="p">.</span><span class="n">draw</span><span class="p">()</span></pre></div>
       </td>
     </tr>
-    <tr id='section-19'>
+    <tr id='section-20'>
       <td class=docs>
         <div class="pilwrap">
-          <a class="pilcrow" href="#section-19">&#182;</a>
+          <a class="pilcrow" href="#section-20">&#182;</a>
         </div>
         <p>draws all the sprites that have been added to the sheet during the update function</p>
 
