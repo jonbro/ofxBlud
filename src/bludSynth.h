@@ -23,7 +23,10 @@ class bludSynth {
 			sampler.trigger();
 			return 1;
 		}
-		int setLoop(lua_State *L){ return 1; }
+		int setLoopType(lua_State *L){ 
+			sampler.setLoopType(luaL_checknumber(L, 1));
+			return 1;
+		}
 		int setNote(lua_State *L){
 			sampler.setFrequencyMidiNote(luaL_checknumber(L, 1));
 			return 1;
@@ -45,5 +48,6 @@ Lunar<bludSynth>::RegType bludSynth::methods[] = {
 	method(bludSynth, load),
 	method(bludSynth, trigger),
 	method(bludSynth, setNote),
+	method(bludSynth, setLoopType),
 	{0,0}
 };

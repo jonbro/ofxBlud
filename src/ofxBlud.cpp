@@ -5,6 +5,7 @@
 #include "bludSynth.h"
 #include "bludAudioSync.h"
 #include "bludSpriteSheet.h"
+#include "bludShapeBatch.h"
 
 #include "blud_boot.h"
 
@@ -29,7 +30,7 @@ static void stackDump (lua_State *L) {
 				
 			default:  /* other values */
 				printf("%s", lua_typename(L, t));
-				break;
+
 				
         }
         printf("  ");  /* put a separator */
@@ -57,6 +58,7 @@ void ofxBlud::setup(){
 	Lunar<bludAudioSync>::Register(luaVM);
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
+	Lunar<bludShapeBatch>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
@@ -64,6 +66,15 @@ void ofxBlud::setup(){
 		ofLog(OF_LOG_ERROR, "Blud Bootload failed");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
+	
+	// set the default paths so that loading properly works
+	string s = "blud.bundle_root = '";
+	s += ofToDataPath("");
+	s += "'";
+	error = luaL_dostring(luaVM, s.c_str());
+	if (error) {
+		printf("%s\n", lua_tostring(luaVM, -1));
+	}	
 	
 	// touch events
 	ofAddListener(ofEvents.touchDown, this, &ofxBlud::touchDown);
