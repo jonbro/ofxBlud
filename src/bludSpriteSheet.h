@@ -102,6 +102,17 @@ public:
 		spriteRenderer->addCenteredTile(&s->ani, luaL_checknumber(L, 2), luaL_checknumber(L, 3));
 		return 1;
 	}
+	int addTile(lua_State *L)  {
+		// need to pull out the user data that was passed in on the first parameter
+		bludSprite *s = Lunar<bludSprite>::check(L, 1);
+		spriteRenderer->addTile(&s->ani, luaL_checknumber(L, 2), luaL_checknumber(L, 3));
+		return 1;
+	}
+//	int addCenteredRotatedTile(lua_State *L){
+//		bludSprite *s = Lunar<bludSprite>::check(L, 1);		
+//		spriteRenderer->addCenterRotatedTile(&s->ani, float x, float y, int layer = -1, float wh = 1, flipDirection f = F_NONE, float scale=1.0, int rot=0, int r=255, int g=255, int b=255, int alpha=255);
+//		return 1;
+//	}
 	~bludSpriteSheet() {
 		delete spriteRenderer;
 		printf("deleted sprite sheet (%p)\n", this);
@@ -118,5 +129,6 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, update),
 	method(bludSpriteSheet, draw),
 	method(bludSpriteSheet, addCenteredTile),
+	method(bludSpriteSheet, addTile),
 	{0,0}
 };

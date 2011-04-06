@@ -6,6 +6,7 @@
 #include "bludAudioSync.h"
 #include "bludSpriteSheet.h"
 #include "bludShapeBatch.h"
+#include "bludOsc.h"
 
 #include "blud_boot.h"
 
@@ -59,6 +60,8 @@ void ofxBlud::setup(){
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
 	Lunar<bludShapeBatch>::Register(luaVM);
+	Lunar<bludOscMessage>::Register(luaVM);
+	Lunar<bludOsc>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
