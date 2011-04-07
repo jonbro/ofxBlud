@@ -97,7 +97,9 @@ void ofxBlud::setup(){
 	// sys events
 	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents.update, this, &ofxBlud::update);
-	
+
+	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
+
 	mixer = bludMixer::getInstance();
 	ofEnableAlphaBlending();
 }
@@ -267,4 +269,71 @@ void ofxBlud::audioRequested(ofAudioEventArgs &e){
 	// getting called
 	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
 	mutex.unlock();
+}
+
+// via http://lua-users.org/wiki/LuaXml
+
+void LuaXML_ParseNode (lua_State *L,TiXmlNode* pNode) { 
+	if (!pNode) return;
+	// resize stack if neccessary
+	luaL_checkstack(L, 5, "LuaXML_ParseNode : recursion too deep");
+	
+	TiXmlElement* pElem = pNode->ToElement();
+	if (pElem) {
+		// element name
+		lua_pushstring(L,"name");
+		lua_pushstring(L,pElem->Value());
+		lua_settable(L,-3);
+		
+		// parse attributes
+		TiXmlAttribute* pAttr = pElem->FirstAttribute();
+		if (pAttr) {
+			lua_pushstring(L,"attr");
+			lua_newtable(L);
+			for (;pAttr;pAttr = pAttr->Next()) {
+				lua_pushstring(L,pAttr->Name());
+				lua_pushstring(L,pAttr->Value());
+				lua_settable(L,-3);
+				
+			}
+			lua_settable(L,-3);
+		}
+	}
+	
+	// children
+	TiXmlNode *pChild = pNode->FirstChild();
+	if (pChild) {
+		int iChildCount = 0;
+		for(;pChild;pChild = pChild->NextSibling()) {
+			switch (pChild->Type()) {
+				case TiXmlNode::DOCUMENT: break;
+				case TiXmlNode::ELEMENT: 
+					// normal element, parse recursive
+					lua_newtable(L);
+					LuaXML_ParseNode(L,pChild);
+					lua_rawseti(L,-2,++iChildCount);
+					break;
+				case TiXmlNode::COMMENT: break;
+				case TiXmlNode::TEXT: 
+					// plaintext, push raw
+					lua_pushstring(L,pChild->Value());
+					lua_rawseti(L,-2,++iChildCount);
+					break;
+				case TiXmlNode::DECLARATION: break;
+				case TiXmlNode::UNKNOWN: break;
+			};
+		}
+		lua_pushstring(L,"n");
+		lua_pushnumber(L,iChildCount);
+		lua_settable(L,-3);
+	}
+}
+
+static int LuaXML_ParseFile (lua_State *L) {
+	const char* sFileName = luaL_checkstring(L,1);
+	TiXmlDocument doc(sFileName);
+	doc.LoadFile();
+	lua_newtable(L);
+	LuaXML_ParseNode(L,&doc);
+	return 1;
 }

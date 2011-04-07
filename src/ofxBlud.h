@@ -15,6 +15,8 @@ extern "C" {
 #include "ofEvents.h"
 #include "bludMixer.h"
 
+#include "tinyxml.h"
+
 class ofxBlud{
 	public:
 		void setup();
@@ -42,3 +44,6 @@ class ofxBlud{
 		ofSoundMixer *mixer;
 		ofMutex mutex;
 };
+
+void	RegisterLuaXML (lua_State *L);
+static int LuaXML_ParseFile (lua_State *L);
