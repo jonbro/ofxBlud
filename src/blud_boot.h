@@ -30,7 +30,7 @@ const char *blud_boot =
 "	-- do nothing when initially launching\n"
 "end\n"
 "function blud.mouse.dragged(x, y, button)\n"
-"	print(\"mouse dragged\")\n"
+"	-- print(\"mouse dragged\")\n"
 "	-- do nothing when initially launching\n"
 "end\n"
 "function blud.mouse.pressed(x, y, button)\n"
