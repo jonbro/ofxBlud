@@ -105,7 +105,13 @@ public:
 	int addTile(lua_State *L)  {
 		// need to pull out the user data that was passed in on the first parameter
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
-		spriteRenderer->addTile(&s->ani, luaL_checknumber(L, 2), luaL_checknumber(L, 3));
+		float x = luaL_checknumber(L, 2);
+		float y = luaL_checknumber(L, 3);
+		float layer = -1;
+		if (lua_isnumber(L, 4)) {
+			layer = luaL_checknumber(L, 4);
+		}
+		spriteRenderer->addTile(&s->ani, x, y, layer);
 		return 1;
 	}
 //	int addCenteredRotatedTile(lua_State *L){
