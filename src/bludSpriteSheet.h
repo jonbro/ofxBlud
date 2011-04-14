@@ -107,11 +107,37 @@ public:
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
 		float x = luaL_checknumber(L, 2);
 		float y = luaL_checknumber(L, 3);
+		
 		float layer = -1;
 		if (lua_isnumber(L, 4)) {
 			layer = luaL_checknumber(L, 4);
 		}
-		spriteRenderer->addTile(&s->ani, x, y, layer);
+		
+		int flipDir = 0;
+		if (lua_isnumber(L, 5)) {
+			flipDir = luaL_checknumber(L, 5);
+		}
+		int r = 255;
+		if (lua_isnumber(L, 6)) {
+			r = luaL_checknumber(L, 6);
+		}
+		int g = 255;
+		if (lua_isnumber(L, 7)) {
+			g = luaL_checknumber(L, 7);
+		}
+		int b = 255;
+		if (lua_isnumber(L, 8)) {
+			b = luaL_checknumber(L, 8);
+		}
+		int alpha = 255;
+		if (lua_isnumber(L, 9)) {
+			alpha = luaL_checknumber(L, 9);
+		}
+		
+		//bool ofxSpriteSheetRenderer::addTile(animation_t* sprite, float x, float y, int layer, flipDirection f, int r, int g, int b, int alpha) {
+		//bool addTile             (animation_t* sprite, float x, float y, int layer = -1, flipDirection f = F_NONE, int r=255, int g=255, int b=255, int alpha=255);
+
+		spriteRenderer->addTile(&s->ani, x, y, layer, (flipDirection)flipDir, r, g, b, alpha);
 		return 1;
 	}
 //	int addCenteredRotatedTile(lua_State *L){
