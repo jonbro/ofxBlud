@@ -25,7 +25,6 @@ public:
 	}
 	~bludOscMessage() {
 		// remove the connection to the sampler
-		printf("removed osc message (%p)\n", this);
 	}
 	ofxOscMessage message;
 };
