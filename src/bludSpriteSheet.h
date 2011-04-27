@@ -99,7 +99,42 @@ public:
 	int addCenteredTile(lua_State *L)  {
 		// need to pull out the user data that was passed in on the first parameter
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
-		spriteRenderer->addCenteredTile(&s->ani, luaL_checknumber(L, 2), luaL_checknumber(L, 3));
+		float x = luaL_checknumber(L, 2);
+		float y = luaL_checknumber(L, 3);
+
+		float layer = -1;
+		if (lua_isnumber(L, 4)) {
+			layer = luaL_checknumber(L, 4);
+		}
+		
+		int flipDir = 0;
+		if (lua_isnumber(L, 5)) {
+			flipDir = luaL_checknumber(L, 5);
+		}
+
+		float scale = 1;
+		if (lua_isnumber(L, 6)) {
+			scale = luaL_checknumber(L, 6);
+		}
+		
+		int r = 255;
+		if (lua_isnumber(L, 7)) {
+			r = luaL_checknumber(L, 7);
+		}
+		int g = 255;
+		if (lua_isnumber(L, 8)) {
+			g = luaL_checknumber(L, 8);
+		}
+		int b = 255;
+		if (lua_isnumber(L, 9)) {
+			b = luaL_checknumber(L, 9);
+		}
+		int alpha = 255;
+		if (lua_isnumber(L, 10)) {
+			alpha = luaL_checknumber(L, 10);
+		}
+		
+		spriteRenderer->addCenteredTile(&s->ani, x, y, layer, (flipDirection)flipDir, scale, r, g, b, alpha);
 		return 1;
 	}
 	int addTile(lua_State *L)  {
