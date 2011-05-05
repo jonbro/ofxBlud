@@ -6,7 +6,9 @@
 #include "bludAudioSync.h"
 #include "bludSpriteSheet.h"
 #include "bludShapeBatch.h"
+#include "bludShapeBatch.h"
 #include "bludOsc.h"
+#include "bludFont.h"
 
 #include "blud_boot.h"
 
@@ -61,6 +63,7 @@ void ofxBlud::setup(){
 	Lunar<bludSpriteSheet>::Register(luaVM);
 	Lunar<bludShapeBatch>::Register(luaVM);
 	Lunar<bludOscMessage>::Register(luaVM);
+	Lunar<bludFont>::Register(luaVM);
 	Lunar<bludOsc>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks

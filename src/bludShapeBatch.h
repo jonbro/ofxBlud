@@ -9,11 +9,27 @@ public:
 	static Lunar<bludShapeBatch>::RegType methods[];
 	ofxShapeBatchRenderer *batch;
 	bludShapeBatch(lua_State *L) {
+		
+		int perLayer  = 1000;
+		if (lua_isnumber(L, 1)) {
+			perLayer = luaL_checknumber(L, 1);
+		}
+
+		int layers  = 10;
+		if (lua_isnumber(L, 2)) {
+			layers = luaL_checknumber(L, 2);
+		}
+		
 		// TODO: allow for different settings to be passed in
-		batch = new ofxShapeBatchRenderer(SBR_TRIANGLE, 1000, 10);
+		batch = new ofxShapeBatchRenderer(SBR_TRIANGLE, perLayer, layers);
 	}
 	int addRect(lua_State *L){
-		batch->addRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4), luaL_checknumber(L, 5), 0);
+		int layer  = 0;
+		if (lua_isnumber(L, 6)) {
+			layer = luaL_checknumber(L, 6);
+		}
+		
+		batch->addRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4), luaL_checknumber(L, 5), layer);
 		return 1;
 	}
 	int draw(lua_State *L){
