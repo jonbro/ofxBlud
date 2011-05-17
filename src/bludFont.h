@@ -21,11 +21,19 @@ public:
 	int draw (lua_State *L) {
 		font.drawString(luaL_checkstring(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3));
 		return 1;
-	}	
+	}
+	int getWidth(lua_State *L){
+		lua_pushnumber(L, font.stringWidth(luaL_checkstring(L, 1))); return 1;
+	}
+	int getHeight(lua_State *L){
+		lua_pushnumber(L, font.stringHeight(luaL_checkstring(L, 1))); return 1;
+	}
 };
 const char bludFont::className[] = "bludFont";
 Lunar<bludFont>::RegType bludFont::methods[] = {
 	method(bludFont, load),
 	method(bludFont, draw),
+	method(bludFont, getWidth),
+	method(bludFont, getHeight),
 	{0,0}
 };

@@ -8,7 +8,7 @@
 #include "bludShapeBatch.h"
 #include "bludShapeBatch.h"
 #include "bludFont.h"
-
+#include "bludOsc.h"
 #include "blud_boot.h"
 
 static void stackDump (lua_State *L) {
@@ -62,6 +62,10 @@ void ofxBlud::setup(){
 	Lunar<bludSpriteSheet>::Register(luaVM);
 	Lunar<bludShapeBatch>::Register(luaVM);
 	Lunar<bludFont>::Register(luaVM);
+	
+	Lunar<bludOsc>::Register(luaVM);
+	Lunar<bludOscMessage>::Register(luaVM);
+	Lunar<bludOscReceiver>::Register(luaVM);
 	
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	

@@ -116,7 +116,6 @@ public:
 		if (lua_isnumber(L, 6)) {
 			scale = luaL_checknumber(L, 6);
 		}
-		
 		int r = 255;
 		if (lua_isnumber(L, 7)) {
 			r = luaL_checknumber(L, 7);
