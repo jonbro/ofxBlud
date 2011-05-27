@@ -136,6 +136,51 @@ public:
 		spriteRenderer->addCenteredTile(&s->ani, x, y, layer, (flipDirection)flipDir, scale, r, g, b, alpha);
 		return 1;
 	}
+	int addCenterRotatedTile(lua_State *L){
+		// need to pull out the user data that was passed in on the first parameter
+		bludSprite *s = Lunar<bludSprite>::check(L, 1);
+		float x = luaL_checknumber(L, 2);
+		float y = luaL_checknumber(L, 3);
+		
+		float layer = -1;
+		if (lua_isnumber(L, 4)) {
+			layer = luaL_checknumber(L, 4);
+		}
+		
+		int flipDir = 0;
+		if (lua_isnumber(L, 5)) {
+			flipDir = luaL_checknumber(L, 5);
+		}
+		
+		float scale = 1;
+		if (lua_isnumber(L, 6)) {
+			scale = luaL_checknumber(L, 6);
+		}
+		int rot = 0;
+		if (lua_isnumber(L, 7)) {
+			rot = luaL_checknumber(L, 7);
+		}
+		int r = 255;
+		if (lua_isnumber(L, 8)) {
+			r = luaL_checknumber(L, 8);
+		}
+		int g = 255;
+		if (lua_isnumber(L, 9)) {
+			g = luaL_checknumber(L, 9);
+		}
+		int b = 255;
+		if (lua_isnumber(L, 10)) {
+			b = luaL_checknumber(L, 10);
+		}
+		int alpha = 255;
+		if (lua_isnumber(L, 11)) {
+			alpha = luaL_checknumber(L, 11);
+		}
+		//cout << "rendering" << endl;
+		//printf("rendered: %i", (int)spriteRenderer->addCenterRotatedTile(&s->ani, x, y, layer, 1.0, (flipDirection)flipDir, scale, rot, r, g, b, alpha));
+		spriteRenderer->addCenterRotatedTile(&s->ani, x, y, layer, 1.0, (flipDirection)flipDir, scale, rot, r, g, b, alpha);
+		return 1;
+	}
 	int addTile(lua_State *L)  {
 		// need to pull out the user data that was passed in on the first parameter
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
@@ -196,5 +241,6 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, draw),
 	method(bludSpriteSheet, addCenteredTile),
 	method(bludSpriteSheet, addTile),
+	method(bludSpriteSheet, addCenterRotatedTile),
 	{0,0}
 };

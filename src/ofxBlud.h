@@ -1,11 +1,7 @@
 #pragma once
 
 // bring in the lua stuff
-extern "C" {
-	#include "lua.h"
-	#include "lauxlib.h"
-	#include "lualib.h"
-}
+#include "lua.hpp"
 
 #include "lunar.h"
 
