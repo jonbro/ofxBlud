@@ -18,6 +18,7 @@ public:
 
 	int setColor(lua_State *L)  {ofSetColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
 	int drawRect(lua_State *L)  {ofRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
+	int drawCircle(lua_State *L)  {ofCircle(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
 
 	int getWidth(lua_State *L)  {lua_pushnumber(L, ofGetWidth()); return 1;}
 	int getHeight(lua_State *L)  {lua_pushnumber(L, ofGetHeight()); return 1;}
@@ -35,6 +36,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, scale),
 	method(bludGraphics, setColor),
 	method(bludGraphics, drawRect),
+	method(bludGraphics, drawCircle),
 	method(bludGraphics, getWidth),
 	method(bludGraphics, getHeight),
 	{0,0}
