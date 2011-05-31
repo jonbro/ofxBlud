@@ -32,6 +32,14 @@ public:
 		batch->addRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4), luaL_checknumber(L, 5), layer);
 		return 1;
 	}
+	int addCircle(lua_State *L){
+		int layer  = 0;
+		if (lua_isnumber(L, 5)) {
+			layer = luaL_checknumber(L, 5);
+		}		
+		batch->addCircle(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4), layer);
+		return 1;
+	}
 	int draw(lua_State *L){
 		batch->draw();
 		return 1;
@@ -41,7 +49,11 @@ public:
 		return 1;
 	}
 	int setColor(lua_State *L){
-		batch->setColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
+		int alpha = 255;
+		if (lua_isnumber(L, 4)) {
+			alpha = luaL_checknumber(L, 4);
+		}		
+		batch->setColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), alpha);
 		return 1;
 	}	
 	~bludShapeBatch() {
@@ -54,6 +66,7 @@ const char bludShapeBatch::className[] = "bludShapeBatch";
 
 Lunar<bludShapeBatch>::RegType bludShapeBatch::methods[] = {
 	method(bludShapeBatch, addRect),
+	method(bludShapeBatch, addCircle),
 	method(bludShapeBatch, draw),
 	method(bludShapeBatch, clear),
 	method(bludShapeBatch, setColor),
