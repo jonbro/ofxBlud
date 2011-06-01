@@ -24,15 +24,13 @@ void bludSyncContainer::audioRequested( float* buffer, int numFrames, int numCha
 		for ( int i=0; i<(int)triggers.size(); i++ ) {
 			if (counter%triggers[i]->rate == 0) {
 				// trigger the callback
+				mutex->lock();
 				lua_rawgeti( L, LUA_REGISTRYINDEX, triggers[i]->callback );
-//				cout << "callback index: " << triggers[i]->callback << endl;
-//				cout << "top of the stack index: " << lua_gettop(L) << endl;
 				if(lua_pcall(L, 0, 0, 0) != 0){
 					ofLog(OF_LOG_ERROR, "Blud audio sync error");
 					ofLog(OF_LOG_ERROR, lua_tostring(L, -1));
 				}
-				// pop the rawgeti off the top of the stack
-				//lua_pop(L, 1);
+				mutex->unlock();
 			}
 		}
 	}

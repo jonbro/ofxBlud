@@ -122,10 +122,18 @@ void ofxBlud::setup(){
 
 	mixer = bludMixer::getInstance();
 	ofEnableAlphaBlending();
+//	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+//    [localPlayer authenticateWithCompletionHandler:^(NSError *error) {
+//		if (localPlayer.isAuthenticated)
+//		{
+//			// Perform additional tasks for the authenticated player.
+//		}
+//	}];
+	mutex = bludLock::getInstance();
 }
 
 void ofxBlud::draw(ofEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
 	if(lua_pcall(luaVM, 0, 0, 0) != 0){
@@ -135,11 +143,11 @@ void ofxBlud::draw(ofEventArgs &e){
 	// need to pop once for global and once for the field.
 	// the numbers and the calling of the function do not need to be called because they are automatically popped off the stack
 	lua_pop(luaVM,1);
-	mutex.unlock();
+	mutex->unlock();
 }
 
 void ofxBlud::update(ofEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "update"); /* function to be called */
 	lua_pushnumber(luaVM, ofGetElapsedTimeMillis());
@@ -148,7 +156,7 @@ void ofxBlud::update(ofEventArgs &e){
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
 	lua_pop(luaVM,1);
-	mutex.unlock();
+	mutex->unlock();
 }
 
 string ofxBlud::execute(string code){
@@ -170,7 +178,7 @@ string ofxBlud::executeFile(std::string filename){
 
 // event callbacks
 void ofxBlud::mousePressed(ofMouseEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "mouse"); /* function to be called */
 	lua_getfield(luaVM, -1, "pressed"); /* function to be called */
@@ -179,10 +187,10 @@ void ofxBlud::mousePressed(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 2, 0, 0) != 0){
 		printf("error in mouse.pressed: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::mouseMoved(ofMouseEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "mouse"); /* function to be called */
 	lua_getfield(luaVM, -1, "moved"); /* function to be called */
@@ -191,10 +199,10 @@ void ofxBlud::mouseMoved(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 2, 0, 0) != 0){
 		printf("error in mouse.moved: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::mouseDragged(ofMouseEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "mouse"); /* function to be called */
 	lua_getfield(luaVM, -1, "dragged"); /* function to be called */
@@ -204,10 +212,10 @@ void ofxBlud::mouseDragged(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.dragged: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::mouseReleased(ofMouseEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "mouse"); /* function to be called */
 	lua_getfield(luaVM, -1, "released"); /* function to be called */
@@ -217,13 +225,13 @@ void ofxBlud::mouseReleased(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.released: %s\n", lua_tostring(luaVM, -1));
 	}	
-	mutex.unlock();
+	mutex->unlock();
 }
 
 // all of the touch events
 // I wonder if all this stuff could be handled through a macro or something?
 void ofxBlud::touchDown(ofTouchEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "touch"); /* function to be called */
 	lua_getfield(luaVM, -1, "down"); /* function to be called */
@@ -234,10 +242,10 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 		printf("error in touch.down: %s\n", lua_tostring(luaVM, -1));
 	}
 	lua_pop(luaVM,4);
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::touchMoved(ofTouchEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "touch"); /* function to be called */
 	lua_getfield(luaVM, -1, "moved"); /* function to be called */
@@ -247,10 +255,10 @@ void ofxBlud::touchMoved(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.moved: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::touchUp(ofTouchEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "touch"); /* function to be called */
 	lua_getfield(luaVM, -1, "up"); /* function to be called */
@@ -262,10 +270,10 @@ void ofxBlud::touchUp(ofTouchEventArgs &e){
 	}
 	lua_pop(luaVM,4);
 //	stackDump(luaVM);
-	mutex.unlock();
+	mutex->unlock();
 }
 void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
-	mutex.lock();
+	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "touch"); /* function to be called */
 	lua_getfield(luaVM, -1, "double_tap"); /* function to be called */
@@ -275,7 +283,7 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.double_tap: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex.unlock();
+	mutex->unlock();
 }
 
 // does not pass audio processing through to lua
@@ -285,10 +293,8 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 #include "ofMath.h"
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
-	mutex.lock();
 	// getting called
 	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
-	mutex.unlock();
 }
 
 // via http://lua-users.org/wiki/LuaXml

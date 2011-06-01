@@ -3,6 +3,8 @@
 #include "lunar.h"
 #include "ofSoundUnit.h"
 #include "bludMixer.h"
+#include "bludLock.h"
+#include "ofTypes.h"
 
 /**
  * Singleton to manage all of the audio syncs
@@ -12,6 +14,7 @@ class bludSyncContainer : public ofSoundSource {
 public:
 	bludSyncContainer(){
 		mixer = bludMixer::getInstance();
+		mutex = bludLock::getInstance();
 		mixer->addInputFrom(this);
 		counter = 0;
 	};
@@ -37,6 +40,7 @@ private:
 	vector<Trigger*> triggers;	
 	int counter;
 	lua_State *L;
+	ofMutex *mutex;
 };
 
 /**
@@ -63,7 +67,7 @@ public:
 			lua_pushvalue(L, 1);
 			// store this stack position in the registry index
 			callback = luaL_ref(L, LUA_REGISTRYINDEX);
-			container->addTrigger(callback, rate);			
+			container->addTrigger(callback, rate);
 		}
 		return 0;
 	}

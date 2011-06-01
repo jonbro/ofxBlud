@@ -2,6 +2,12 @@
 
 // bring in the lua stuff
 #include "lua.hpp"
+// bring in the lua stuff
+//extern "C" {
+//#include "lua.h"
+//#include "lauxlib.h"
+//#include "lualib.h"
+//}
 
 #include "lunar.h"
 
@@ -10,8 +16,10 @@
 #include "ofUtils.h"
 #include "ofEvents.h"
 #include "bludMixer.h"
+#import "bludLock.h"
 
 #include "tinyxml.h"
+#import <GameKit/GameKit.h>
 
 class ofxBlud{
 	public:
@@ -38,7 +46,7 @@ class ofxBlud{
 	private:
 		lua_State* luaVM;
 		ofSoundMixer *mixer;
-		ofMutex mutex;
+		ofMutex *mutex;
 };
 
 void	RegisterLuaXML (lua_State *L);
