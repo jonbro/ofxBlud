@@ -23,8 +23,8 @@ void bludSyncContainer::audioRequested( float* buffer, int numFrames, int numCha
 		counter++;
 		for ( int i=0; i<(int)triggers.size(); i++ ) {
 			if (counter%triggers[i]->rate == 0) {
-				// trigger the callback
 				mutex->lock();
+				// trigger the callback
 				lua_rawgeti( L, LUA_REGISTRYINDEX, triggers[i]->callback );
 				if(lua_pcall(L, 0, 0, 0) != 0){
 					ofLog(OF_LOG_ERROR, "Blud audio sync error");

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofGraphics.h"
+#include "ofMath.h"
 #include "ofAppRunner.h"
 
 class bludGraphics {
@@ -29,7 +30,18 @@ public:
 
 	int getWidth(lua_State *L)  {lua_pushnumber(L, ofGetWidth()); return 1;}
 	int getHeight(lua_State *L)  {lua_pushnumber(L, ofGetHeight()); return 1;}
-	
+	int noise(lua_State *L){
+		if (lua_isnumber(L, 4)) {
+			lua_pushnumber(L, ofNoise(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)));
+		}else if (lua_isnumber(L, 3)) {
+			lua_pushnumber(L, ofNoise(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)));
+		}else if (lua_isnumber(L, 2)) {
+			lua_pushnumber(L, ofNoise(luaL_checknumber(L, 1), luaL_checknumber(L, 2)));
+		}else{
+			lua_pushnumber(L, ofNoise(luaL_checknumber(L, 1)));
+		}
+		return 1;
+	}
 	~bludGraphics() {}
 };
 
@@ -46,5 +58,6 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, drawCircle),
 	method(bludGraphics, getWidth),
 	method(bludGraphics, getHeight),
+	method(bludGraphics, noise),
 	{0,0}
 };

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ofxSpriteSheetRenderer.h"
-
+#import "ofxSpriteSheetRenderer.h"
+#import "lunar.h"
 // sprite
 // wrapper for a struct that contains data about the current sprite
 
@@ -9,7 +9,7 @@ class bludSprite {
 public:
 	static const char className[];
 	static Lunar<bludSprite>::RegType methods[];
-	bludSprite(lua_State *L){
+	bludSprite(){
 		// setup the defaults for the animation
 		ani.index			= 0;
 		ani.frame			= 0;
@@ -21,6 +21,9 @@ public:
 		ani.loops			= -1;
 		ani.final_index		= -1;
 		ani.frame_skip		= 1;
+	}
+	bludSprite(lua_State *L){
+		bludSprite();
 	}
 	int setTotalFrames(lua_State *L)  {
 		ani.total_frames = luaL_checknumber(L, 1);
@@ -56,18 +59,6 @@ public:
 	}
 	animation_t ani;
 };
-const char bludSprite::className[] = "bludSprite";
-
-Lunar<bludSprite>::RegType bludSprite::methods[] = {
-	method(bludSprite, setTotalFrames),
-	method(bludSprite, setFrameDuration),
-	method(bludSprite, setIndex),
-	method(bludSprite, setWidth),
-	method(bludSprite, setHeight),
-	method(bludSprite, setLoops),
-	method(bludSprite, setFrameSkip),
-	{0,0}
-};
 
 /// spriteSheet renderer. Only partially implemented
 class bludSpriteSheet {
@@ -75,7 +66,7 @@ class bludSpriteSheet {
 public:
 	static const char className[];
 	static Lunar<bludSpriteSheet>::RegType methods[];
-	bludSpriteSheet(lua_State *L){
+	bludSpriteSheet(lua_State *L){		
 		spriteRenderer = new ofxSpriteSheetRenderer(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
 	}
 	int loadTexture(lua_State *L)  {
@@ -228,19 +219,6 @@ public:
 		delete spriteRenderer;
 		printf("deleted sprite sheet (%p)\n", this);
 	}
-private:
 	ofxSpriteSheetRenderer * spriteRenderer;
-};
-
-const char bludSpriteSheet::className[] = "bludSpriteSheet";
-
-Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
-	method(bludSpriteSheet, loadTexture),
-	method(bludSpriteSheet, clear),
-	method(bludSpriteSheet, update),
-	method(bludSpriteSheet, draw),
-	method(bludSpriteSheet, addCenteredTile),
-	method(bludSpriteSheet, addTile),
-	method(bludSpriteSheet, addCenterRotatedTile),
-	{0,0}
+private:
 };

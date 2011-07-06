@@ -19,13 +19,13 @@
 #import "bludLock.h"
 
 #include "tinyxml.h"
-#import <GameKit/GameKit.h>
 
 class ofxBlud{
 	public:
 		void setup();
 		void draw(ofEventArgs &e);
 		void update(ofEventArgs &e);
+		void exit(ofEventArgs &e);
 	
 		std::string execute(std::string code); // returns an error if there is one
 		std::string executeFile(std::string filename); // executes a file, returns error if there is one
@@ -42,9 +42,9 @@ class ofxBlud{
 		void touchDoubleTap(ofTouchEventArgs &e);
 		
 		void audioRequested(ofAudioEventArgs &e);
+		lua_State* luaVM;
 		
 	private:
-		lua_State* luaVM;
 		ofSoundMixer *mixer;
 		ofMutex *mutex;
 };

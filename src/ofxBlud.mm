@@ -117,18 +117,12 @@ void ofxBlud::setup(){
 	// sys events
 	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents.update, this, &ofxBlud::update);
+	ofAddListener(ofEvents.exit, this, &ofxBlud::exit);
 
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
 
 	mixer = bludMixer::getInstance();
 	ofEnableAlphaBlending();
-//	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-//    [localPlayer authenticateWithCompletionHandler:^(NSError *error) {
-//		if (localPlayer.isAuthenticated)
-//		{
-//			// Perform additional tasks for the authenticated player.
-//		}
-//	}];
 	mutex = bludLock::getInstance();
 }
 
@@ -138,6 +132,19 @@ void ofxBlud::draw(ofEventArgs &e){
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
 	if(lua_pcall(luaVM, 0, 0, 0) != 0){
 		ofLog(OF_LOG_ERROR, "Blud draw error");
+		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+	}
+	// need to pop once for global and once for the field.
+	// the numbers and the calling of the function do not need to be called because they are automatically popped off the stack
+	lua_pop(luaVM,1);
+	mutex->unlock();
+}
+void ofxBlud::exit(ofEventArgs &e){
+	mutex->lock();
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "exit"); /* function to be called */
+	if(lua_pcall(luaVM, 0, 0, 0) != 0){
+		ofLog(OF_LOG_ERROR, "Blud exit error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
 	// need to pop once for global and once for the field.
@@ -168,11 +175,13 @@ string ofxBlud::execute(string code){
 }
 
 string ofxBlud::executeFile(std::string filename){
+	mutex->lock();
 	cout << ofToDataPath(filename).c_str() << endl;
 	int error = luaL_dofile(luaVM, ofToDataPath(filename).c_str());
 	if (error) {
 		return lua_tostring(luaVM, -1);
 	}
+	mutex->unlock();
 	return "";
 }
 

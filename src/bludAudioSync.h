@@ -58,6 +58,7 @@ public:
 		container = bludSyncContainer::getInstance(L);
 		rate = luaL_checknumber(L, 1);
 		// load the sync into the callback container
+		mutex = bludLock::getInstance();
 		cout << "rate: " << rate << endl;
 	}
 	int setCallback(lua_State *L){
@@ -67,6 +68,7 @@ public:
 			lua_pushvalue(L, 1);
 			// store this stack position in the registry index
 			callback = luaL_ref(L, LUA_REGISTRYINDEX);
+			cout << "callback" << callback << endl;
 			container->addTrigger(callback, rate);
 		}
 		return 0;
@@ -79,5 +81,6 @@ private:
 	int callback;	// the reference to the function that gets called in lua
 	int rate;		// the number of samples between when it gets called.
 	bludSyncContainer *container;
+	ofMutex *mutex;
 	//everything syncs to a 0 offset that is set at first run
 };

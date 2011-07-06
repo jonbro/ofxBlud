@@ -36,6 +36,11 @@ public:
 		lua_pushcfunction(L, gc_T);
 		set(L, metatable, "__gc");
 		
+		///////adding this should work
+		lua_pushvalue(L, methods);
+		set(L, metatable, "__newindex");
+		//////////
+		
 		lua_newtable(L);                // mt for method table
 		lua_pushcfunction(L, new_T);
 		lua_pushvalue(L, -1);           // dup new_T function
