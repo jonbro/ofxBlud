@@ -11,6 +11,12 @@ Lunar<bludSprite>::RegType bludSprite::methods[] = {
 	method(bludSprite, setHeight),
 	method(bludSprite, setLoops),
 	method(bludSprite, setFrameSkip),
+	method(bludSprite, setTexX),
+	method(bludSprite, setTexY),
+	method(bludSprite, setSpriteX),
+	method(bludSprite, setSpriteY),
+	method(bludSprite, setTexWidth),
+	method(bludSprite, setTexHeight),
 	{0,0}
 };
 

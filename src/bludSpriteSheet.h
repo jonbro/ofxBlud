@@ -21,6 +21,17 @@ public:
 		ani.loops			= -1;
 		ani.final_index		= -1;
 		ani.frame_skip		= 1;
+		
+		ani.tex_y = 0;					// how much offset from the top left of the sheet the texture is (no longer using the index for lookups)
+		ani.tex_x = 0;					// doing it this way so that we can have differently sized textures
+		ani.tex_w = 0;					// how big the texture is (on the sheet)
+		ani.tex_h = 0;
+		
+		ani.sprite_x = 0;					// how far offset the display of the sprite should be from the requested display position (how much alpha got trimmed when packing the sprite)
+		ani.sprite_y = 0;
+		ani.spritesource_w = 0;			// the size of the sprite before the alpha trimming took place
+		ani.spritesource_h = 0;			// used for doing rotations around the center of the sprite (maybe, used for nothing for now)		
+		
 	}
 	bludSprite(lua_State *L){
 		bludSprite();
@@ -37,12 +48,36 @@ public:
 		ani.index = luaL_checknumber(L, 1);
 		return 1;
 	}
+	int setTexX(lua_State *L)  {
+		ani.tex_x = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setTexY(lua_State *L)  {
+		ani.tex_y = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setSpriteX(lua_State *L)  {
+		ani.sprite_x = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setSpriteY(lua_State *L)  {
+		ani.sprite_y = luaL_checknumber(L, 1);
+		return 1;
+	}
 	int setWidth(lua_State *L)  {
 		ani.w = luaL_checknumber(L, 1);
 		return 1;
 	}
 	int setHeight(lua_State *L)  {
 		ani.h = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setTexWidth(lua_State *L)  {
+		ani.tex_w = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int setTexHeight(lua_State *L)  {
+		ani.tex_h = luaL_checknumber(L, 1);
 		return 1;
 	}
 	int setLoops(lua_State *L)  {
