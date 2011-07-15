@@ -26,10 +26,15 @@ public:
 			width = lua_tonumber(L, 4);
 		}
 		
+		float line_height = 20;
+		if(lua_isnumber(L, 5)){
+			line_height = lua_tonumber(L, 5);
+		}
+		
 		string textString = luaL_checkstring(L, 1);
 		float x = luaL_checknumber(L, 2);
 		float y = luaL_checknumber(L, 3);
-		int line_height = 20;
+		int line_y_pos = 0;
 		
 		if(width > 0){
 			size_t start_pos = 0;
@@ -49,17 +54,17 @@ public:
 					
 					// if we are over the width
 					// then print the line to the screen
-					font.drawString(textString.substr(start_pos, end_pos-start_pos), x, y+line_height);
+					font.drawString(textString.substr(start_pos, end_pos-start_pos), x, y+line_y_pos);
 
 					// move the start position forward, and unwind the end test
 					end_pos++;
 					start_pos = end_pos;
 					test_end_pos--;
 					// increase the line height
-					line_height += 20;
+					line_y_pos += line_height;
 				}
-
 			}			
+			font.drawString(textString.substr(start_pos, end_pos-start_pos), x, y+line_y_pos);
 		}else {
 			font.drawString(textString, x, y);
 		}
