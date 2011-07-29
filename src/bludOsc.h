@@ -24,7 +24,7 @@ public:
 		return 1;
 	}
 	int getAddress(lua_State *L){
-		lua_pushstring(L, message.getAddress());
+		lua_pushstring(L, message.getAddress().c_str());
 		return 1;
 	}
 	int getNumArgs(lua_State *L){
@@ -32,7 +32,7 @@ public:
 		return 1;
 	}
 	int getArgTypeName(lua_State *L){
-		lua_pushstring(L, message.getArgTypeName(luaL_checknumber(L, 1)));
+		lua_pushstring(L, message.getArgTypeName(luaL_checknumber(L, 1)).c_str());
 		return 1;
 	}	
 	int getArgAsInt(lua_State *L){
@@ -44,7 +44,7 @@ public:
 		return 1;
 	}	
 	int getArgAsString(lua_State *L){
-		lua_pushstring(L, message.getArgAsString(luaL_checknumber(L, 1)));
+		lua_pushstring(L, message.getArgAsString(luaL_checknumber(L, 1)).c_str());
 		return 1;
 	}
 	~bludOscMessage() {

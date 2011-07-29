@@ -68,6 +68,14 @@ public:
 		ani.w = luaL_checknumber(L, 1);
 		return 1;
 	}
+	int getWidth(lua_State *L) {
+		lua_pushnumber(L, ani.w);
+		return 1;
+	}
+	int getHeight(lua_State *L) {
+		lua_pushnumber(L, ani.h	);
+		return 1;
+	}
 	int setHeight(lua_State *L)  {
 		ani.h = luaL_checknumber(L, 1);
 		return 1;
