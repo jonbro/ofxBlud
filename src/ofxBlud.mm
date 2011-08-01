@@ -167,10 +167,12 @@ void ofxBlud::update(ofEventArgs &e){
 }
 
 string ofxBlud::execute(string code){
+	mutex->lock();
 	int error = luaL_dostring(luaVM, code.c_str());
 	if (error) {
 		return lua_tostring(luaVM, -1);
 	}
+	mutex->unlock();
 	return "";
 }
 
@@ -250,7 +252,7 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.down: %s\n", lua_tostring(luaVM, -1));
 	}
-	lua_pop(luaVM,4);
+//	lua_pop(luaVM,4);
 	mutex->unlock();
 }
 void ofxBlud::touchMoved(ofTouchEventArgs &e){

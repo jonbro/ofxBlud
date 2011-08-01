@@ -210,8 +210,6 @@ public:
 		if (lua_isnumber(L, 11)) {
 			alpha = luaL_checknumber(L, 11);
 		}
-		//cout << "rendering" << endl;
-		//printf("rendered: %i", (int)spriteRenderer->addCenterRotatedTile(&s->ani, x, y, layer, 1.0, (flipDirection)flipDir, scale, rot, r, g, b, alpha));
 		spriteRenderer->addCenterRotatedTile(&s->ani, x, y, layer, 1.0, (flipDirection)flipDir, scale, rot, r, g, b, alpha);
 		return 1;
 	}
@@ -253,11 +251,6 @@ public:
 		spriteRenderer->addTile(&s->ani, x, y, layer, (flipDirection)flipDir, r, g, b, alpha);
 		return 1;
 	}
-//	int addCenteredRotatedTile(lua_State *L){
-//		bludSprite *s = Lunar<bludSprite>::check(L, 1);		
-//		spriteRenderer->addCenterRotatedTile(&s->ani, float x, float y, int layer = -1, float wh = 1, flipDirection f = F_NONE, float scale=1.0, int rot=0, int r=255, int g=255, int b=255, int alpha=255);
-//		return 1;
-//	}
 	~bludSpriteSheet() {
 		delete spriteRenderer;
 		printf("deleted sprite sheet (%p)\n", this);
