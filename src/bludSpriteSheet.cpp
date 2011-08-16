@@ -30,5 +30,6 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, addCenteredTile),
 	method(bludSpriteSheet, addTile),
 	method(bludSpriteSheet, addCenterRotatedTile),
+	method(bludSpriteSheet, addCornerTile),
 	{0,0}
 };

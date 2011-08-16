@@ -213,6 +213,35 @@ public:
 		spriteRenderer->addCenterRotatedTile(&s->ani, x, y, layer, 1.0, (flipDirection)flipDir, scale, rot, r, g, b, alpha);
 		return 1;
 	}
+	int addCornerTile(lua_State *L){
+		bludSprite *s = Lunar<bludSprite>::check(L, 1);
+
+		float layer = -1;
+		if (lua_isnumber(L, 10)) {
+			layer = luaL_checknumber(L, 10);
+		}
+		
+		int r = 255;
+		if (lua_isnumber(L, 11)) {
+			r = luaL_checknumber(L, 11);
+		}
+		int g = 255;
+		if (lua_isnumber(L, 12)) {
+			g = luaL_checknumber(L, 12);
+		}
+		int b = 255;
+		if (lua_isnumber(L, 13)) {
+			b = luaL_checknumber(L, 13);
+		}
+		int alpha = 255;
+		if (lua_isnumber(L, 14)) {
+			alpha = luaL_checknumber(L, 14);
+		}
+		
+		spriteRenderer->addCornerTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, r, g, b, alpha);
+
+		return 1;
+	}
 	int addTile(lua_State *L)  {
 		// need to pull out the user data that was passed in on the first parameter
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
