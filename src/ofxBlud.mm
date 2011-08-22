@@ -104,6 +104,9 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.touchUp, this, &ofxBlud::touchUp);
 	ofAddListener(ofEvents.touchMoved, this, &ofxBlud::touchMoved);
 	ofAddListener(ofEvents.touchDoubleTap, this, &ofxBlud::touchDoubleTap);
+
+	ofAddListener(ofEvents.keyPressed, this, &ofxBlud::keyPressed);
+	ofAddListener(ofEvents.keyReleased, this, &ofxBlud::keyReleased);
 	
 	// mouse events
 	ofAddListener(ofEvents.mousePressed, this, &ofxBlud::mousePressed);
@@ -124,6 +127,48 @@ void ofxBlud::setup(){
 	mixer = bludMixer::getInstance();
 	ofEnableAlphaBlending();
 	mutex = bludLock::getInstance();
+	
+	mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+	int xpos = 0;
+	float red = 1.0;
+	// draw the first square
+	mesh.addVertex(ofVec3f(0+xpos, 0, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(0+xpos, 50, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(50+xpos, 0, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(50+xpos, 50, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	// extra vertex to add discontinuity
+	mesh.addVertex(ofVec3f(50+xpos, 50, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	
+	xpos = 100;
+	red = 0;
+	// you need two extra vertexes for the full discontinuity
+	mesh.addVertex(ofVec3f(0+xpos, 0, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	
+	// draw the second square
+	mesh.addVertex(ofVec3f(0+xpos, 0, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(0+xpos, 50, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(50+xpos, 0, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
+	mesh.addVertex(ofVec3f(50+xpos, 50, 0));
+	mesh.addColor(ofFloatColor(red, 1.0, 0));
+	mesh.addIndex(mesh.getNumVertices()-1);
 }
 
 void ofxBlud::draw(ofEventArgs &e){
@@ -138,6 +183,7 @@ void ofxBlud::draw(ofEventArgs &e){
 	// the numbers and the calling of the function do not need to be called because they are automatically popped off the stack
 	lua_pop(luaVM,1);
 	mutex->unlock();
+	//mesh.drawFaces();
 }
 void ofxBlud::exit(ofEventArgs &e){
 	mutex->lock();
@@ -186,6 +232,29 @@ string ofxBlud::executeFile(std::string filename){
 	mutex->unlock();
 	return "";
 }
+// event callbacks
+void ofxBlud::keyPressed(ofKeyEventArgs &e){
+	mutex->lock();
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "key"); /* function to be called */
+	lua_getfield(luaVM, -1, "pressed"); /* function to be called */
+	lua_pushnumber(luaVM, e.key);
+	if(lua_pcall(luaVM, 1, 0, 0) != 0){
+		printf("error in key.pressed: %s\n", lua_tostring(luaVM, -1));
+	}
+	mutex->unlock();
+}
+void ofxBlud::keyReleased(ofKeyEventArgs &e){
+	mutex->lock();
+	lua_getglobal(luaVM, "blud");
+	lua_getfield(luaVM, -1, "key"); /* function to be called */
+	lua_getfield(luaVM, -1, "released"); /* function to be called */
+	lua_pushnumber(luaVM, e.key);
+	if(lua_pcall(luaVM, 1, 0, 0) != 0){
+		printf("error in key.released: %s\n", lua_tostring(luaVM, -1));
+	}
+	mutex->unlock();
+}
 
 // event callbacks
 void ofxBlud::mousePressed(ofMouseEventArgs &e){
@@ -195,7 +264,8 @@ void ofxBlud::mousePressed(ofMouseEventArgs &e){
 	lua_getfield(luaVM, -1, "pressed"); /* function to be called */
 	lua_pushnumber(luaVM, e.x);
 	lua_pushnumber(luaVM, e.y);
-	if(lua_pcall(luaVM, 2, 0, 0) != 0){
+	lua_pushnumber(luaVM, e.button);
+	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.pressed: %s\n", lua_tostring(luaVM, -1));
 	}
 	mutex->unlock();
@@ -207,7 +277,8 @@ void ofxBlud::mouseMoved(ofMouseEventArgs &e){
 	lua_getfield(luaVM, -1, "moved"); /* function to be called */
 	lua_pushnumber(luaVM, e.x);
 	lua_pushnumber(luaVM, e.y);
-	if(lua_pcall(luaVM, 2, 0, 0) != 0){
+	lua_pushnumber(luaVM, e.button);
+	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.moved: %s\n", lua_tostring(luaVM, -1));
 	}
 	mutex->unlock();

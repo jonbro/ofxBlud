@@ -31,6 +31,9 @@ class ofxBlud{
 		std::string executeFile(std::string filename); // executes a file, returns error if there is one
 	
 		// event callbacks
+		void keyPressed(ofKeyEventArgs &e);
+		void keyReleased(ofKeyEventArgs &e);
+	
 		void mousePressed(ofMouseEventArgs &e);
 		void mouseMoved(ofMouseEventArgs &e);
 		void mouseDragged(ofMouseEventArgs &e);
@@ -43,10 +46,11 @@ class ofxBlud{
 		
 		void audioRequested(ofAudioEventArgs &e);
 		lua_State* luaVM;
-		
+
 	private:
 		ofSoundMixer *mixer;
 		ofMutex *mutex;
+		ofMesh mesh;
 };
 
 void	RegisterLuaXML (lua_State *L);

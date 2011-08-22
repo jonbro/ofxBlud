@@ -1,4 +1,7 @@
 #pragma once
+#ifdef check 
+#undef check 
+#endif 
 
 extern "C" {
 #include "lua.h"
