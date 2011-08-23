@@ -36,7 +36,7 @@ public:
 		int layer  = 0;
 		if (lua_isnumber(L, 5)) {
 			layer = luaL_checknumber(L, 5);
-		}		
+		}
 		batch->addCircle(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4), layer);
 		return 1;
 	}
