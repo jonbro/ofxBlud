@@ -2,6 +2,7 @@
 
 #include "ofGraphics.h"
 #include "ofMath.h"
+#include "ofUtils.h"
 #include "ofAppRunner.h"
 
 class bludGraphics {
@@ -30,6 +31,7 @@ public:
 
 	int getWidth(lua_State *L)  {lua_pushnumber(L, ofGetWidth()); return 1;}
 	int getHeight(lua_State *L)  {lua_pushnumber(L, ofGetHeight()); return 1;}
+	int getMillis(lua_State *L)  {lua_pushnumber(L, ofGetElapsedTimeMillis()); return 1;}
 	int noise(lua_State *L){
 		if (lua_isnumber(L, 4)) {
 			lua_pushnumber(L, ofNoise(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)));
@@ -58,6 +60,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, drawCircle),
 	method(bludGraphics, getWidth),
 	method(bludGraphics, getHeight),
+	method(bludGraphics, getMillis),
 	method(bludGraphics, noise),
 	{0,0}
 };
