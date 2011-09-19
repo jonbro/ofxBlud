@@ -9,10 +9,20 @@
 #error "Version mismatch between DynASM and included encoding engine"
 #endif
 
+# 1 "buildvm_ppc.dasc"
+//|// Low-level VM code for PowerPC CPUs.
+//|// Bytecode interpreter, fast functions and helper functions.
+//|// Copyright (C) 2005-2011 Mike Pall. See Copyright Notice in luajit.h
+//|
+//|.arch ppc
+//|.section code_op, code_sub
 #define DASM_SECTION_CODE_OP	0
 #define DASM_SECTION_CODE_SUB	1
 #define DASM_MAXSECTION		2
-static const unsigned int build_actionlist[4954] = {
+# 7 "buildvm_ppc.dasc"
+//|
+//|.actionlist build_actionlist
+static const unsigned int build_actionlist[4992] = {
 0x00010001,
 0x00060014,
 0x72000000,
@@ -740,6 +750,9 @@ static const unsigned int build_actionlist[4954] = {
 0x48000000,
 0x00050024,
 0x0006003e,
+0x00000000,
+0x7c751b78,
+0x00000000,
 0x7c8e6214,
 0x91d20000,
 0x00098200,
@@ -747,8 +760,17 @@ static const unsigned int build_actionlist[4954] = {
 0x9201000c,
 0x48000001,
 0x00030006,
+0x00000000,
+0x28030000,
+0x40820000,
+0x00050835,
+0x7ea3ab78,
+0x48000000,
+0x0005003f,
+0x00000000,
 0x48000000,
 0x00050035,
+0x00000000,
 0x00060025,
 0x7e439378,
 0x91320000,
@@ -772,7 +794,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7e947214,
 0x7c0903a6,
 0x4e800420,
-0x0006003f,
+0x00060040,
 0x7e439378,
 0x91d20000,
 0x00098200,
@@ -786,8 +808,8 @@ static const unsigned int build_actionlist[4954] = {
 0x39750008,
 0x8154fffc,
 0x48000000,
-0x00050040,
-0x00060041,
+0x00050041,
+0x00060042,
 0x7e439378,
 0x91d20000,
 0x00098200,
@@ -811,21 +833,21 @@ static const unsigned int build_actionlist[4954] = {
 0x00000000,
 0x48000000,
 0x00070000,
-0x00060042,
+0x00060043,
 0x280b0008,
 0x100e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x111ad200,
 0x3a8efff8,
 0x10804232,
 0x820efff8,
 0x40840000,
-0x00050843,
+0x00050844,
 0x10140321,
 0x398b0008,
 0x41820000,
-0x00050844,
+0x00050845,
 0x39000008,
 0x396bfff8,
 0x0006000b,
@@ -836,12 +858,12 @@ static const unsigned int build_actionlist[4954] = {
 0x40820000,
 0x0005080b,
 0x48000000,
-0x00050044,
-0x00060045,
+0x00050045,
+0x00060046,
 0x280b0008,
 0x806e0000,
 0x41800000,
-0x00050843,
+0x00050844,
 0x39200000,
 0x00098200,
 0x7c03b040,
@@ -853,12 +875,12 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x10694300,
 0x48000000,
-0x00050046,
-0x00060047,
+0x00050047,
+0x00060048,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003c234,
 0x11031a2c,
 0x40800000,
@@ -872,7 +894,7 @@ static const unsigned int build_actionlist[4954] = {
 0x81710000,
 0x00098200,
 0x41820000,
-0x00050846,
+0x00050847,
 0x00000000,
 0x800a0000,
 0x00098200,
@@ -901,16 +923,16 @@ static const unsigned int build_actionlist[4954] = {
 0x00050805,
 0x28090000,
 0x41820000,
-0x00050846,
+0x00050847,
 0x48000000,
 0x0005000d,
 0x0006000f,
 0x1008d234,
 0x41800000,
-0x00050846,
+0x00050847,
 0x10684217,
 0x48000000,
-0x00050046,
+0x00050047,
 0x00060010,
 0x2c080000,
 0x00098200,
@@ -928,30 +950,30 @@ static const unsigned int build_actionlist[4954] = {
 0x7d49402e,
 0x48000000,
 0x0005000c,
-0x00060048,
+0x00060049,
 0x00000000,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000c234,
 0x40830000,
-0x00050843,
+0x00050844,
 0x81030000,
 0x00098200,
 0x28080000,
 0x88c30000,
 0x00098200,
 0x40820000,
-0x00050843,
+0x00050844,
 0x70c00000,
 0x00090200,
 0x90830000,
 0x00098200,
 0x41820000,
-0x00050846,
+0x00050847,
 0x80110000,
 0x00098200,
 0x54c607b8,
@@ -962,41 +984,41 @@ static const unsigned int build_actionlist[4954] = {
 0x90030000,
 0x00098200,
 0x48000000,
-0x00050046,
-0x00060049,
+0x00050047,
+0x0006004a,
 0x280b0010,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004c234,
 0x38ae0008,
 0x40800000,
-0x00050843,
+0x00050844,
 0x7e439378,
 0x48000001,
 0x00030009,
 0x10630301,
 0x48000000,
-0x00050046,
-0x0006004a,
+0x00050047,
+0x0006004b,
 0x280b0008,
 0x106e0301,
 0x40820000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x41800000,
-0x00050846,
+0x00050847,
 0x48000000,
-0x00050043,
-0x0006004b,
+0x00050044,
+0x0006004c,
 0x00000000,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003ba34,
 0x41800000,
-0x00050846,
+0x00050847,
 0x80110000,
 0x00098200,
 0x1003b232,
@@ -1006,31 +1028,31 @@ static const unsigned int build_actionlist[4954] = {
 0x4c403202,
 0x9201000c,
 0x40820000,
-0x00050843,
+0x00050844,
 0x80110000,
 0x00098200,
 0x81110000,
 0x00098200,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x7e439378,
 0x7dc47378,
 0x48000001,
 0x0003000a,
 0x10771a2d,
 0x48000000,
-0x00050046,
-0x0006004d,
+0x00050047,
+0x0006004e,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x134e5b20,
 0x1004c234,
 0x820efff8,
 0x40800000,
-0x00050843,
+0x00050844,
 0x91d20000,
 0x00098200,
 0x7e439378,
@@ -1043,7 +1065,7 @@ static const unsigned int build_actionlist[4954] = {
 0x28030000,
 0x107ad217,
 0x41820000,
-0x00050846,
+0x00050847,
 0x100e0b01,
 0x3a8efff8,
 0x110e1301,
@@ -1052,16 +1074,16 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x11140b21,
 0x48000000,
-0x00050044,
-0x0006004e,
+0x00050045,
+0x0006004f,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003c234,
 0x820efff8,
 0x40800000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x81230000,
 0x00098200,
@@ -1070,7 +1092,7 @@ static const unsigned int build_actionlist[4954] = {
 0x28090000,
 0x3a8efff8,
 0x40820000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x100a0301,
 0x00090cab,
@@ -1081,21 +1103,21 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x10140321,
 0x48000000,
-0x00050044,
-0x0006004f,
+0x00050045,
+0x00060050,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003c234,
 0x820efff8,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x3cc03ff0,
 0x40800000,
-0x00050843,
+0x00050844,
 0x112022f5,
 0x80030000,
 0x00098200,
@@ -1117,12 +1139,12 @@ static const unsigned int build_actionlist[4954] = {
 0x39800000,
 0x00098200,
 0x41800000,
-0x00050844,
+0x00050845,
 0x39800000,
 0x00098200,
 0x11140b21,
 0x48000000,
-0x00050044,
+0x00050045,
 0x0006000c,
 0x80030000,
 0x00098200,
@@ -1130,7 +1152,7 @@ static const unsigned int build_actionlist[4954] = {
 0x39800000,
 0x00098200,
 0x41820000,
-0x00050844,
+0x00050845,
 0x7d244b78,
 0x48000001,
 0x0003000c,
@@ -1138,20 +1160,20 @@ static const unsigned int build_actionlist[4954] = {
 0x39800000,
 0x00098200,
 0x41820000,
-0x00050844,
+0x00050845,
 0x00000000,
 0x11030301,
 0x48000000,
 0x0005000b,
-0x00060050,
+0x00060051,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003c234,
 0x820efff8,
 0x40800000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x81230000,
 0x00098200,
@@ -1160,7 +1182,7 @@ static const unsigned int build_actionlist[4954] = {
 0x28090000,
 0x3a8efff8,
 0x40820000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x100a0301,
 0x00090cab,
@@ -1172,13 +1194,13 @@ static const unsigned int build_actionlist[4954] = {
 0x110e0b21,
 0x10140321,
 0x48000000,
-0x00050044,
-0x00060051,
+0x00050045,
+0x00060052,
 0x280b0008,
 0x88d10000,
 0x00098200,
 0x41800000,
-0x00050843,
+0x00050844,
 0x7dc97378,
 0x39ce0008,
 0x54c607fe,
@@ -1188,18 +1210,18 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x48000000,
 0x00050024,
-0x00060052,
+0x00060053,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x88d10000,
 0x00098200,
 0x7dc97378,
 0x1004ca34,
 0x40800000,
-0x00050843,
+0x00050844,
 0x39ce0010,
 0x54c607fe,
 0x000900ab,
@@ -1210,16 +1232,16 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x48000000,
 0x00050024,
-0x00060053,
+0x00060054,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x10031a2c,
 0x2c000000,
 0x00098200,
 0x40820000,
-0x00050843,
+0x00050844,
 0x88030000,
 0x00098200,
 0x81030000,
@@ -1246,7 +1268,7 @@ static const unsigned int build_actionlist[4954] = {
 0x91d20000,
 0x00098200,
 0x41980000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x39ce0008,
 0x396bfff8,
@@ -1348,7 +1370,7 @@ static const unsigned int build_actionlist[4954] = {
 0x38600000,
 0x48000000,
 0x0005000e,
-0x00060054,
+0x00060055,
 0x00000000,
 0x806a0000,
 0x00098200,
@@ -1377,7 +1399,7 @@ static const unsigned int build_actionlist[4954] = {
 0x91d20000,
 0x00098200,
 0x41980000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x91230000,
 0x00098200,
@@ -1462,7 +1484,7 @@ static const unsigned int build_actionlist[4954] = {
 0x38600000,
 0x48000000,
 0x0005000e,
-0x00060055,
+0x00060056,
 0x80120000,
 0x00098200,
 0x00000000,
@@ -1476,30 +1498,30 @@ static const unsigned int build_actionlist[4954] = {
 0x38600000,
 0x00098200,
 0x41820000,
-0x00050843,
+0x00050844,
 0x93720000,
 0x00098200,
 0x98720000,
 0x00098200,
 0x48000000,
 0x0005001a,
-0x00060056,
+0x00060057,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x106302e4,
-0x00060046,
+0x00060047,
 0x820efff8,
 0x3a8efff8,
 0x10740321,
-0x00060057,
+0x00060058,
 0x39800000,
 0x00098200,
-0x00060044,
+0x00060045,
 0x72000000,
 0x00090200,
 0x7d936378,
@@ -1529,312 +1551,312 @@ static const unsigned int build_actionlist[4954] = {
 0x13544320,
 0x48000000,
 0x0005000f,
-0x00060058,
+0x00060059,
 0x00000000,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x820efff8,
 0x48000001,
-0x00050059,
+0x0005005a,
 0x3a8efff8,
 0x10940321,
 0x48000000,
-0x00050057,
-0x0006005a,
+0x00050058,
+0x0006005b,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x820efff8,
 0x48000001,
-0x0005005b,
+0x0005005c,
 0x3a8efff8,
 0x10940321,
 0x48000000,
-0x00050057,
-0x0006005c,
-0x280b0008,
-0x108e0301,
-0x41800000,
-0x00050843,
-0x1004b232,
-0x1064222c,
-0x40800000,
-0x00050843,
-0x48000001,
-0x0003000e,
-0x1063222d,
-0x48000000,
-0x00050046,
+0x00050058,
 0x0006005d,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x0003000f,
+0x0003000e,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x0006005e,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
+0x48000001,
+0x0003000f,
+0x1063222d,
+0x48000000,
+0x00050047,
+0x0006005f,
+0x280b0008,
+0x108e0301,
+0x41800000,
+0x00050844,
+0x1004b232,
+0x1064222c,
+0x40800000,
+0x00050844,
 0x00000000,
 0x48000001,
 0x00030010,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x0006005f,
-0x280b0008,
-0x108e0301,
-0x41800000,
-0x00050843,
-0x1004b232,
-0x1064222c,
-0x40800000,
-0x00050843,
-0x48000001,
-0x00030011,
-0x1063222d,
-0x48000000,
-0x00050046,
+0x00050047,
 0x00060060,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x00030012,
+0x00030011,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x00060061,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x00030013,
+0x00030012,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x00060062,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
+0x48000001,
+0x00030013,
+0x1063222d,
+0x48000000,
+0x00050047,
+0x00060063,
+0x280b0008,
+0x108e0301,
+0x41800000,
+0x00050844,
+0x1004b232,
+0x1064222c,
+0x40800000,
+0x00050844,
 0x48000001,
 0x00030014,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x00060063,
+0x00050047,
+0x00060064,
 0x00000000,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
 0x00030015,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x00060064,
-0x280b0008,
-0x108e0301,
-0x41800000,
-0x00050843,
-0x1004b232,
-0x1064222c,
-0x40800000,
-0x00050843,
-0x48000001,
-0x00030016,
-0x1063222d,
-0x48000000,
-0x00050046,
+0x00050047,
 0x00060065,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x00030017,
+0x00030016,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x00060066,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x00030018,
+0x00030017,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x00060067,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
+0x48000001,
+0x00030018,
+0x1063222d,
+0x48000000,
+0x00050047,
+0x00060068,
+0x280b0008,
+0x108e0301,
+0x41800000,
+0x00050844,
+0x1004b232,
+0x1064222c,
+0x40800000,
+0x00050844,
 0x00000000,
 0x48000001,
 0x00030019,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x00060068,
+0x00050047,
+0x00060069,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x48000001,
 0x0003001a,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x00060069,
-0x280b0010,
-0x108e0301,
-0x10ce0b01,
-0x41800000,
-0x00050843,
-0x1066222c,
-0x1003b232,
-0x10a6322c,
-0x40830000,
-0x00050843,
-0x48000001,
-0x0003001b,
-0x1063222d,
-0x48000000,
-0x00050046,
+0x00050047,
 0x0006006a,
 0x280b0010,
 0x108e0301,
 0x10ce0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1066222c,
 0x1003b232,
 0x10a6322c,
 0x40830000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x0003001c,
+0x0003001b,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x0006006b,
 0x280b0010,
 0x108e0301,
 0x10ce0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1066222c,
 0x1003b232,
 0x10a6322c,
 0x40830000,
-0x00050843,
+0x00050844,
 0x48000001,
-0x0003001d,
+0x0003001c,
 0x1063222d,
 0x48000000,
-0x00050046,
+0x00050047,
 0x0006006c,
-0x0006006d,
-0x00000000,
-0x280b0008,
-0x106e0301,
-0x41800000,
-0x00050843,
-0x1003b232,
-0x40800000,
-0x00050843,
-0x108a0301,
-0x00090cab,
-0x106322e8,
-0x48000000,
-0x00050046,
-0x0006006e,
 0x280b0010,
 0x108e0301,
 0x10ce0b01,
 0x41800000,
-0x00050843,
+0x00050844,
+0x1066222c,
+0x1003b232,
+0x10a6322c,
+0x40830000,
+0x00050844,
+0x48000001,
+0x0003001d,
+0x1063222d,
+0x48000000,
+0x00050047,
+0x0006006d,
+0x0006006e,
+0x00000000,
+0x280b0008,
+0x106e0301,
+0x41800000,
+0x00050844,
+0x1003b232,
+0x40800000,
+0x00050844,
+0x108a0301,
+0x00090cab,
+0x106322e8,
+0x48000000,
+0x00050047,
+0x0006006f,
+0x280b0010,
+0x108e0301,
+0x10ce0b01,
+0x41800000,
+0x00050844,
 0x1066222c,
 0x1003b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x10a032f5,
 0x48000001,
 0x0003001e,
 0x1063222d,
 0x48000000,
-0x00050046,
-0x0006006f,
+0x00050047,
+0x00060070,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x38b10000,
 0x00098200,
 0x820efff8,
@@ -1850,16 +1872,16 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x10940b21,
 0x48000000,
-0x00050044,
-0x00060070,
+0x00050045,
+0x00060071,
 0x280b0008,
 0x108e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x1064222c,
 0x40800000,
-0x00050843,
+0x00050844,
 0x38aefff8,
 0x820efff8,
 0x48000001,
@@ -1871,48 +1893,25 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x00000000,
 0x48000000,
-0x00050044,
-0x00060071,
-0x280b0008,
-0x106e0301,
-0x41800000,
-0x00050843,
-0x1003b232,
-0x39000008,
-0x40800000,
-0x00050843,
-0x0006000b,
-0x108e4300,
-0x7c885840,
-0x1004b232,
-0x40840000,
-0x00050846,
-0x40800000,
-0x00050843,
-0x10041afd,
-0x39080008,
-0x4c010b82,
-0x10641a78,
-0x48000000,
-0x0005000b,
+0x00050045,
 0x00060072,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x39000008,
 0x40800000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x108e4300,
 0x7c885840,
 0x1004b232,
 0x40840000,
-0x00050846,
+0x00050847,
 0x40800000,
-0x00050843,
-0x10041afc,
+0x00050844,
+0x10041afd,
 0x39080008,
 0x4c010b82,
 0x10641a78,
@@ -1922,25 +1921,48 @@ static const unsigned int build_actionlist[4954] = {
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
+0x1003b232,
+0x39000008,
+0x40800000,
+0x00050844,
+0x0006000b,
+0x108e4300,
+0x7c885840,
+0x1004b232,
+0x40840000,
+0x00050847,
+0x40800000,
+0x00050844,
+0x10041afc,
+0x39080008,
+0x4c010b82,
+0x10641a78,
+0x48000000,
+0x0005000b,
+0x00060074,
+0x280b0008,
+0x106e0301,
+0x41800000,
+0x00050844,
 0x1003ba34,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80030000,
 0x00098200,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060074,
+0x00050047,
+0x00060075,
 0x280b0008,
 0x106e0301,
 0x40820000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x1003ba34,
 0x3a8efff8,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80030000,
 0x00098200,
 0x39800000,
@@ -1955,31 +1977,31 @@ static const unsigned int build_actionlist[4954] = {
 0x7d8c489e,
 0x10740321,
 0x48000000,
-0x00050044,
-0x00060075,
+0x00050045,
+0x00060076,
 0x80110000,
 0x00098200,
 0x81110000,
 0x00098200,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x280b0008,
 0x106e0301,
 0x40820000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x38910000,
 0x00098200,
 0x40800000,
-0x00050843,
+0x00050844,
 0x10001afa,
 0x38a00001,
 0x280000ff,
 0x98040000,
 0x41810000,
-0x00050843,
-0x00060076,
+0x00050844,
+0x00060077,
 0x7e439378,
 0x91d20000,
 0x00098200,
@@ -1990,8 +2012,8 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x10771a2d,
 0x48000000,
-0x00050046,
-0x00060077,
+0x00050047,
+0x00060078,
 0x80110000,
 0x00098200,
 0x81110000,
@@ -1999,28 +2021,28 @@ static const unsigned int build_actionlist[4954] = {
 0x00000000,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x280b0010,
 0x10ae1301,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x108e0b01,
 0x3920ffff,
 0x41820000,
 0x00050801,
 0x1005b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x11202afa,
 0x0006000b,
 0x1004b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1003ba34,
 0x110022fa,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80030000,
 0x00098200,
 0x7c004840,
@@ -2040,7 +2062,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7c844214,
 0x7ca0281e,
 0x48000000,
-0x00050076,
+0x00050077,
 0x0006000f,
 0x7c004800,
 0x38c60001,
@@ -2054,27 +2076,27 @@ static const unsigned int build_actionlist[4954] = {
 0x39080001,
 0x48000000,
 0x0005000d,
-0x00060078,
+0x00060079,
 0x80110000,
 0x00098200,
 0x81110000,
 0x00098200,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x00000000,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1004b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1003ba34,
 0x10a022fa,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80030000,
 0x00098200,
 0x2c050000,
@@ -2088,13 +2110,13 @@ static const unsigned int build_actionlist[4954] = {
 0x00050802,
 0x7c882840,
 0x40820000,
-0x00050843,
+0x00050844,
 0x88030000,
 0x00098200,
 0x80910000,
 0x00098200,
 0x41840000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x28090000,
 0x7c0449ae,
@@ -2102,31 +2124,31 @@ static const unsigned int build_actionlist[4954] = {
 0x40820000,
 0x0005080b,
 0x48000000,
-0x00050076,
+0x00050077,
 0x0006000c,
 0x38710000,
 0x00098200,
 0x10771a2d,
 0x48000000,
-0x00050046,
-0x00060079,
+0x00050047,
+0x0006007a,
 0x80110000,
 0x00098200,
 0x81110000,
 0x00098200,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x00000000,
 0x1003ba34,
 0x81110000,
 0x00098200,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80a30000,
 0x00098200,
 0x38630000,
@@ -2137,55 +2159,14 @@ static const unsigned int build_actionlist[4954] = {
 0x7c082840,
 0x38c5ffff,
 0x41800000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x2c060000,
 0x7d0348ae,
 0x41800000,
-0x00050876,
+0x00050877,
 0x7d0431ae,
 0x38c6ffff,
-0x39290001,
-0x48000000,
-0x0005000b,
-0x0006007a,
-0x80110000,
-0x00098200,
-0x81110000,
-0x00098200,
-0x7c004040,
-0x40800001,
-0x0005084c,
-0x280b0008,
-0x106e0301,
-0x41800000,
-0x00050843,
-0x1003ba34,
-0x81110000,
-0x00098200,
-0x40800000,
-0x00050843,
-0x80a30000,
-0x00098200,
-0x38630000,
-0x00098200,
-0x80910000,
-0x00098200,
-0x7c082840,
-0x39200000,
-0x41800000,
-0x00050843,
-0x0006000b,
-0x7c092840,
-0x7d0348ae,
-0x40800000,
-0x00050876,
-0x00000000,
-0x3808ffbf,
-0x69060020,
-0x2800001a,
-0x7d06401e,
-0x7d0449ae,
 0x39290001,
 0x48000000,
 0x0005000b,
@@ -2196,16 +2177,16 @@ static const unsigned int build_actionlist[4954] = {
 0x00098200,
 0x7c004040,
 0x40800001,
-0x0005084c,
+0x0005084d,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003ba34,
 0x81110000,
 0x00098200,
 0x40800000,
-0x00050843,
+0x00050844,
 0x80a30000,
 0x00098200,
 0x38630000,
@@ -2215,13 +2196,14 @@ static const unsigned int build_actionlist[4954] = {
 0x7c082840,
 0x39200000,
 0x41800000,
-0x00050843,
+0x00050844,
 0x0006000b,
 0x7c092840,
 0x7d0348ae,
 0x40800000,
-0x00050876,
-0x3808ff9f,
+0x00050877,
+0x00000000,
+0x3808ffbf,
 0x69060020,
 0x2800001a,
 0x7d06401e,
@@ -2230,63 +2212,80 @@ static const unsigned int build_actionlist[4954] = {
 0x48000000,
 0x0005000b,
 0x0006007c,
+0x80110000,
+0x00098200,
+0x81110000,
+0x00098200,
+0x7c004040,
+0x40800001,
+0x0005084d,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
-0x1003c234,
+0x00050844,
+0x1003ba34,
+0x81110000,
+0x00098200,
 0x40800000,
-0x00050843,
-0x48000001,
-0x00030022,
-0x10601af1,
+0x00050844,
+0x80a30000,
+0x00098200,
+0x38630000,
+0x00098200,
+0x80910000,
+0x00098200,
+0x7c082840,
+0x39200000,
+0x41800000,
+0x00050844,
+0x0006000b,
+0x7c092840,
+0x7d0348ae,
+0x40800000,
+0x00050877,
+0x3808ff9f,
+0x69060020,
+0x2800001a,
+0x7d06401e,
+0x7d0449ae,
+0x39290001,
 0x48000000,
-0x00050046,
+0x0005000b,
 0x0006007d,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
-0x00000000,
-0x1003b232,
+0x00050844,
+0x1003c234,
 0x40800000,
-0x00050843,
-0x1063dae0,
-0x0006007e,
+0x00050844,
+0x48000001,
+0x00030022,
 0x10601af1,
 0x48000000,
-0x00050046,
-0x0006007f,
+0x00050047,
+0x0006007e,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
+0x00000000,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1063dae0,
-0x39000008,
-0x0006000b,
-0x108e4300,
-0x7c885840,
-0x1004b232,
-0x40840000,
-0x0005087e,
-0x40800000,
-0x00050843,
-0x1084dae0,
-0x7c632038,
-0x39080008,
+0x0006007f,
+0x10601af1,
 0x48000000,
-0x0005000b,
+0x00050047,
 0x00060080,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1063dae0,
 0x39000008,
 0x0006000b,
@@ -2294,11 +2293,11 @@ static const unsigned int build_actionlist[4954] = {
 0x7c885840,
 0x1004b232,
 0x40840000,
-0x0005087e,
+0x0005087f,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1084dae0,
-0x7c632378,
+0x7c632038,
 0x39080008,
 0x48000000,
 0x0005000b,
@@ -2306,10 +2305,10 @@ static const unsigned int build_actionlist[4954] = {
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1063dae0,
 0x39000008,
 0x0006000b,
@@ -2317,12 +2316,11 @@ static const unsigned int build_actionlist[4954] = {
 0x7c885840,
 0x1004b232,
 0x40840000,
-0x0005087e,
-0x00000000,
+0x0005087f,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1084dae0,
-0x7c632278,
+0x7c632378,
 0x39080008,
 0x48000000,
 0x0005000b,
@@ -2330,116 +2328,140 @@ static const unsigned int build_actionlist[4954] = {
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
+0x1063dae0,
+0x39000008,
+0x0006000b,
+0x108e4300,
+0x7c885840,
+0x1004b232,
+0x40840000,
+0x0005087f,
+0x00000000,
+0x40800000,
+0x00050844,
+0x1084dae0,
+0x7c632278,
+0x39080008,
+0x48000000,
+0x0005000b,
+0x00060083,
+0x280b0008,
+0x106e0301,
+0x41800000,
+0x00050844,
+0x1003b232,
+0x40800000,
+0x00050844,
 0x1063dae0,
 0x5460403e,
 0x5060c00e,
 0x5060c42e,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060083,
+0x00050047,
+0x00060084,
 0x280b0008,
 0x106e0301,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003b232,
 0x40800000,
-0x00050843,
+0x00050844,
 0x1063dae0,
 0x7c6018f8,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060084,
+0x00050047,
+0x00060085,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x1084dae0,
 0x1063dae0,
 0x548406fe,
 0x7c602030,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060085,
+0x00050047,
+0x00060086,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x1084dae0,
 0x1063dae0,
 0x548406fe,
 0x7c602430,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060086,
+0x00050047,
+0x00060087,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x1084dae0,
 0x1063dae0,
 0x548406fe,
 0x7c602630,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060087,
+0x00050047,
+0x00060088,
 0x00000000,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x1084dae0,
 0x1063dae0,
 0x5c60203e,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060088,
+0x00050047,
+0x00060089,
 0x280b0010,
 0x106e0301,
 0x108e0b01,
 0x41800000,
-0x00050843,
+0x00050844,
 0x1003222c,
 0x1000b232,
 0x40830000,
-0x00050843,
+0x00050844,
 0x1084dae0,
 0x1063dae0,
 0x7c8400d0,
 0x5c60203e,
 0x106002f1,
 0x48000000,
-0x00050046,
-0x00060043,
+0x00050047,
+0x00060044,
 0x80ca0000,
 0x00098200,
 0x7d0e5a14,
@@ -2466,7 +2488,7 @@ static const unsigned int build_actionlist[4954] = {
 0x000900a1,
 0x3a8efff8,
 0x41810000,
-0x00050844,
+0x00050845,
 0x0006000b,
 0x80120000,
 0x00098200,
@@ -2507,7 +2529,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7c000000,
 0x48000000,
 0x0005000b,
-0x0006004c,
+0x0006004d,
 0x7ea802a6,
 0x91d20000,
 0x00098200,
@@ -2526,11 +2548,11 @@ static const unsigned int build_actionlist[4954] = {
 0x7d6e0050,
 0x814efffc,
 0x4e800020,
-0x00060089,
+0x0006008a,
 0x00000000,
 0x7c810808,
 0x00000000,
-0x0006008a,
+0x0006008b,
 0x88d10000,
 0x00098200,
 0x70c00000,
@@ -2543,7 +2565,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7c11402e,
 0x7c0903a6,
 0x4e800420,
-0x0006008b,
+0x0006008c,
 0x88d10000,
 0x00098200,
 0x81310000,
@@ -2588,22 +2610,22 @@ static const unsigned int build_actionlist[4954] = {
 0x54eb9d78,
 0x7c0903a6,
 0x4e800420,
-0x0006008c,
+0x0006008d,
 0x3a100004,
 0x826affec,
 0x48000000,
 0x0005000e,
-0x0006008d,
+0x0006008e,
 0x00000000,
 0x7c810808,
 0x00000000,
-0x0006008e,
+0x0006008f,
 0x7e048378,
 0x00000000,
 0x48000000,
 0x00050001,
 0x00000000,
-0x0006008f,
+0x00060090,
 0x00000000,
 0x62040001,
 0x0006000b,
@@ -2628,17 +2650,24 @@ static const unsigned int build_actionlist[4954] = {
 0x814efffc,
 0x7c6903a6,
 0x4e800420,
-0x00060090,
-0x00000000,
-0x7c810808,
-0x00000000,
 0x00060091,
 0x00000000,
 0x7c810808,
 0x00000000,
 0x00060092,
+0x00000000,
+0x7c810808,
+0x00000000,
+0x00060093,
+0x7ca802a6,
+0x48000001,
+0x0005005a,
+0x7ca803a6,
 0x1064222c,
-0x00060059,
+0x4e800020,
+0x00060094,
+0x1064222c,
+0x0006005a,
 0x5469657e,
 0x3529fc01,
 0x3900ffff,
@@ -2674,9 +2703,9 @@ static const unsigned int build_actionlist[4954] = {
 0x5103007e,
 0x1083022d,
 0x4e800020,
-0x00060093,
+0x00060095,
 0x1064222c,
-0x0006005b,
+0x0006005c,
 0x5469657e,
 0x3529fc01,
 0x3900ffff,
@@ -2713,9 +2742,9 @@ static const unsigned int build_actionlist[4954] = {
 0x1083022d,
 0x4e800020,
 0x00000000,
-0x00060094,
+0x00060096,
 0x1064222c,
-0x00060095,
+0x00060097,
 0x5469657e,
 0x3529fc01,
 0x3900ffff,
@@ -2736,18 +2765,18 @@ static const unsigned int build_actionlist[4954] = {
 0x1088022d,
 0x4e800020,
 0x00000000,
-0x00060094,
-0x00060095,
-0x00000000,
 0x00060096,
-0x00000000,
-0x7c810808,
-0x00000000,
 0x00060097,
 0x00000000,
+0x00060098,
+0x00000000,
 0x7c810808,
 0x00000000,
-0x00060098,
+0x00060099,
+0x00000000,
+0x7c810808,
+0x00000000,
+0x0006009a,
 0x1083222d,
 0x28070001,
 0x10c5322d,
@@ -2786,7 +2815,7 @@ static const unsigned int build_actionlist[4954] = {
 0x11463217,
 0x7d6802a6,
 0x48000001,
-0x00050092,
+0x00050094,
 0x7d6803a6,
 0x108452e8,
 0x108522e1,
@@ -2808,7 +2837,7 @@ static const unsigned int build_actionlist[4954] = {
 0x4e800020,
 0x0006000c,
 0x7c810808,
-0x00060099,
+0x0006009b,
 0x00000000,
 0x7c810808,
 0x00000000,
@@ -3118,10 +3147,29 @@ static const unsigned int build_actionlist[4954] = {
 0x1003c234,
 0x40800000,
 0x0005083e,
+0x00000000,
+0x81230000,
+0x00098200,
+0x28090000,
+0x40820000,
+0x00050809,
+0x0006000d,
+0x00000000,
+0x0006003f,
 0x48000001,
 0x00030022,
 0x48000000,
 0x0005000b,
+0x00000000,
+0x00060013,
+0x88090000,
+0x00098200,
+0x70000000,
+0x00090200,
+0x40820000,
+0x0005080d,
+0x48000000,
+0x0005003e,
 0x00000000,
 0x100e5300,
 0x1000b232,
@@ -3270,10 +3318,10 @@ static const unsigned int build_actionlist[4954] = {
 0x40830000,
 0x0005083d,
 0x00000000,
-0x0006009a,
+0x0006009c,
 0x108caae9,
 0x48000001,
-0x00050092,
+0x00050094,
 0x1004aae8,
 0x80f00000,
 0x3a100004,
@@ -3308,7 +3356,7 @@ static const unsigned int build_actionlist[4954] = {
 0x0005083d,
 0x00000000,
 0x48000000,
-0x0005009a,
+0x0005009c,
 0x00000000,
 0x108e5300,
 0x10ce5b00,
@@ -3743,10 +3791,10 @@ static const unsigned int build_actionlist[4954] = {
 0x7d6f402e,
 0x00000000,
 0x48000000,
-0x0005009b,
+0x0005009d,
 0x00000000,
 0x48000000,
-0x0005009c,
+0x0005009e,
 0x00000000,
 0x114e5300,
 0x116e5b00,
@@ -3802,7 +3850,7 @@ static const unsigned int build_actionlist[4954] = {
 0x0006000f,
 0x100bba34,
 0x41800000,
-0x0005089b,
+0x0005089d,
 0x48000000,
 0x0005002f,
 0x00000000,
@@ -3814,7 +3862,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7d6f402e,
 0x40800000,
 0x0005082c,
-0x0006009b,
+0x0006009d,
 0x800a0000,
 0x00098200,
 0x810b0000,
@@ -3981,7 +4029,7 @@ static const unsigned int build_actionlist[4954] = {
 0x0006000f,
 0x100bba34,
 0x41800000,
-0x0005089c,
+0x0005089e,
 0x48000000,
 0x00050033,
 0x00060011,
@@ -4006,7 +4054,7 @@ static const unsigned int build_actionlist[4954] = {
 0x7d6f402e,
 0x40800000,
 0x00050830,
-0x0006009c,
+0x0006009e,
 0x800a0000,
 0x00098200,
 0x810b0000,
@@ -4285,8 +4333,8 @@ static const unsigned int build_actionlist[4954] = {
 0x100aca34,
 0x3a940008,
 0x40800000,
-0x0005083f,
-0x00060040,
+0x00050840,
+0x00060041,
 0x71000000,
 0x00090200,
 0x88ca0000,
@@ -4607,7 +4655,7 @@ static const unsigned int build_actionlist[4954] = {
 0x6a080000,
 0x00090200,
 0x40820000,
-0x0005089d,
+0x0005089f,
 0x00060017,
 0x80f0fffc,
 0x2c0c0008,
@@ -4658,7 +4706,7 @@ static const unsigned int build_actionlist[4954] = {
 0x13494320,
 0x48000000,
 0x0005000f,
-0x0006009d,
+0x0006009f,
 0x71090000,
 0x00090200,
 0x40820000,
@@ -4676,7 +4724,7 @@ static const unsigned int build_actionlist[4954] = {
 0x6a080000,
 0x00090200,
 0x40820000,
-0x0005089d,
+0x0005089f,
 0x80f0fffc,
 0x392efff8,
 0x54ea5d78,
@@ -4728,7 +4776,7 @@ static const unsigned int build_actionlist[4954] = {
 0x4c00e382,
 0x4c002382,
 0x41800000,
-0x00050841,
+0x00050842,
 0x00000000,
 0x110832e0,
 0x11140321,
@@ -4969,6 +5017,8 @@ static const unsigned int build_actionlist[4954] = {
 0x00010000
 };
 
+# 9 "buildvm_ppc.dasc"
+//|.globals GLOB_
 enum {
   GLOB_vm_returnp,
   GLOB_cont_dispatch,
@@ -5013,6 +5063,7 @@ enum {
   GLOB_vmeta_unm,
   GLOB_vmeta_arith_vv,
   GLOB_vmeta_len,
+  GLOB_BC_LEN_Z,
   GLOB_vmeta_callt,
   GLOB_BC_CALLT_Z,
   GLOB_vmeta_for,
@@ -5097,8 +5148,9 @@ enum {
   GLOB_vm_exit_handler,
   GLOB_vm_exit_interp,
   GLOB_vm_floor,
-  GLOB_vm_ceil,
-  GLOB_vm_trunc,
+  GLOB_vm_floor_efd,
+  GLOB_vm_ceil_efd,
+  GLOB_vm_trunc_efd,
   GLOB_vm_trunc_hilo,
   GLOB_vm_powi,
   GLOB_vm_foldfpm,
@@ -5110,6 +5162,8 @@ enum {
   GLOB_BC_RETV_Z,
   GLOB__MAX
 };
+# 10 "buildvm_ppc.dasc"
+//|.globalnames globnames
 static const char *const globnames[] = {
   "vm_returnp",
   "cont_dispatch",
@@ -5154,6 +5208,7 @@ static const char *const globnames[] = {
   "vmeta_unm",
   "vmeta_arith_vv",
   "vmeta_len",
+  "BC_LEN_Z",
   "vmeta_callt",
   "BC_CALLT_Z",
   "vmeta_for",
@@ -5238,8 +5293,9 @@ static const char *const globnames[] = {
   "vm_exit_handler",
   "vm_exit_interp",
   "vm_floor",
-  "vm_ceil",
-  "vm_trunc",
+  "vm_floor_efd",
+  "vm_ceil_efd",
+  "vm_trunc_efd",
   "vm_trunc_hilo",
   "vm_powi",
   "vm_foldfpm",
@@ -5251,6 +5307,8 @@ static const char *const globnames[] = {
   "BC_RETV_Z",
   (const char *)0
 };
+# 11 "buildvm_ppc.dasc"
+//|.externnames extnames
 static const char *const extnames[] = {
   "lj_state_growstack",
   "lj_meta_tget",
@@ -5301,135 +5359,2281 @@ static const char *const extnames[] = {
   "lj_tab_reasize",
   (const char *)0
 };
+# 12 "buildvm_ppc.dasc"
+//|
+//|.if not SPE
+//|.error "No support for plain PowerPC CPUs (yet)"
+//|.endif
+//|
+//|// Note: The ragged indentation of the instructions is intentional.
+//|//       The starting columns indicate data dependencies.
+//|
+//|//-----------------------------------------------------------------------
+//|
+//|// Fixed register assignments for the interpreter.
+//|// Don't use: r1 = sp, r2 and r13 = reserved and/or small data area ptr
+//|
+//|// The following must be C callee-save (but BASE is often refetched).
+//|.define BASE,		r14	// Base of current Lua stack frame.
+//|.define KBASE,		r15	// Constants of current Lua function.
+//|.define PC,		r16	// Next PC.
+//|.define DISPATCH,	r17	// Opcode dispatch table.
+//|.define LREG,		r18	// Register holding lua_State (also in SAVE_L).
+//|.define MULTRES,	r19	// Size of multi-result: (nresults+1)*8.
+//|
+//|// Constants for vectorized type-comparisons (hi+low GPR). C callee-save.
+//|.define TISNUM,	r22
+//|.if SPE
+//|.define TISSTR,	r23
+//|.define TISTAB,	r24
+//|.define TISFUNC,	r25
+//|.define TISNIL,	r26
+//|.define TOBIT,		r27
+//|.define ZERO,		TOBIT	// Zero in lo word.
+//|.endif
+//|
+//|// The following temporaries are not saved across C calls, except for RA.
+//|.define RA,		r20	// Callee-save.
+//|.define RB,		r10
+//|.define RC,		r11
+//|.define RD,		r12
+//|.define INS,		r7	// Overlaps CARG5.
+//|
+//|.define TMP0,		r0
+//|.define TMP1,		r8
+//|.define TMP2,		r9
+//|.define TMP3,		r6	// Overlaps CARG4.
+//|
+//|// Saved temporaries.
+//|.define SAVE0,		r21
+//|
+//|// Calling conventions.
+//|.define CARG1,		r3
+//|.define CARG2,		r4
+//|.define CARG3,		r5
+//|.define CARG4,		r6	// Overlaps TMP3.
+//|.define CARG5,		r7	// Overlaps INS.
+//|
+//|.define CRET1,		r3
+//|.define CRET2,		r4
+//|
+//|// Stack layout while in interpreter. Must match with lj_frame.h.
+//|.if SPE
+//|.define SAVE_LR,	180(sp)
+//|.define CFRAME_SPACE,	176	// Delta for sp.
+//|// Back chain for sp:	176(sp)	<-- sp entering interpreter
+//|.define SAVE_r31,	168(sp)	// 64 bit register saves.
+//|.define SAVE_r30,	160(sp)
+//|.define SAVE_r29,	152(sp)
+//|.define SAVE_r28,	144(sp)
+//|.define SAVE_r27,	136(sp)
+//|.define SAVE_r26,	128(sp)
+//|.define SAVE_r25,	120(sp)
+//|.define SAVE_r24,	112(sp)
+//|.define SAVE_r23,	104(sp)
+//|.define SAVE_r22,	96(sp)
+//|.define SAVE_r21,	88(sp)
+//|.define SAVE_r20,	80(sp)
+//|.define SAVE_r19,	72(sp)
+//|.define SAVE_r18,	64(sp)
+//|.define SAVE_r17,	56(sp)
+//|.define SAVE_r16,	48(sp)
+//|.define SAVE_r15,	40(sp)
+//|.define SAVE_r14,	32(sp)
+//|.define SAVE_ERRF,	28(sp)	// 32 bit C frame info.
+//|.define SAVE_NRES,	24(sp)
+//|.define SAVE_CFRAME,	20(sp)
+//|.define SAVE_L,	16(sp)
+//|.define SAVE_PC,	12(sp)
+//|.define SAVE_MULTRES,	8(sp)
+//|// Next frame lr:	4(sp)
+//|// Back chain for sp:	0(sp)	<-- sp while in interpreter
+//|
+//|.macro save_, reg; evstdd reg, SAVE_..reg; .endmacro
+//|.macro rest_, reg; evldd reg, SAVE_..reg; .endmacro
+//|.endif
+//|
+//|.macro saveregs
+//|  stwu sp, -CFRAME_SPACE(sp)
+//|  save_ r14; save_ r15; save_ r16; save_ r17; save_ r18; save_ r19
+//|  mflr r0
+//|  save_ r20; save_ r21; save_ r22; save_ r23; save_ r24; save_ r25
+//|  stw  r0, SAVE_LR
+//|  save_ r26; save_ r27; save_ r28; save_ r29; save_ r30; save_ r31
+//|.endmacro
+//|
+//|.macro restoreregs
+//|  lwz r0, SAVE_LR
+//|  rest_ r14; rest_ r15; rest_ r16; rest_ r17; rest_ r18; rest_ r19
+//|  mtlr r0
+//|  rest_ r20; rest_ r21; rest_ r22; rest_ r23; rest_ r24; rest_ r25
+//|  rest_ r26; rest_ r27; rest_ r28; rest_ r29; rest_ r30; rest_ r31
+//|  addi sp, sp, CFRAME_SPACE
+//|.endmacro
+//|
+//|// Type definitions. Some of these are only used for documentation.
+//|.type L,		lua_State,	LREG
 #define Dt1(_V) (int)(ptrdiff_t)&(((lua_State *)0)_V)
+# 125 "buildvm_ppc.dasc"
+//|.type GL,		global_State
 #define Dt2(_V) (int)(ptrdiff_t)&(((global_State *)0)_V)
+# 126 "buildvm_ppc.dasc"
+//|.type TVALUE,		TValue
 #define Dt3(_V) (int)(ptrdiff_t)&(((TValue *)0)_V)
+# 127 "buildvm_ppc.dasc"
+//|.type GCOBJ,		GCobj
 #define Dt4(_V) (int)(ptrdiff_t)&(((GCobj *)0)_V)
+# 128 "buildvm_ppc.dasc"
+//|.type STR,		GCstr
 #define Dt5(_V) (int)(ptrdiff_t)&(((GCstr *)0)_V)
+# 129 "buildvm_ppc.dasc"
+//|.type TAB,		GCtab
 #define Dt6(_V) (int)(ptrdiff_t)&(((GCtab *)0)_V)
+# 130 "buildvm_ppc.dasc"
+//|.type LFUNC,		GCfuncL
 #define Dt7(_V) (int)(ptrdiff_t)&(((GCfuncL *)0)_V)
+# 131 "buildvm_ppc.dasc"
+//|.type CFUNC,		GCfuncC
 #define Dt8(_V) (int)(ptrdiff_t)&(((GCfuncC *)0)_V)
+# 132 "buildvm_ppc.dasc"
+//|.type PROTO,		GCproto
 #define Dt9(_V) (int)(ptrdiff_t)&(((GCproto *)0)_V)
+# 133 "buildvm_ppc.dasc"
+//|.type UPVAL,		GCupval
 #define DtA(_V) (int)(ptrdiff_t)&(((GCupval *)0)_V)
+# 134 "buildvm_ppc.dasc"
+//|.type NODE,		Node
 #define DtB(_V) (int)(ptrdiff_t)&(((Node *)0)_V)
+# 135 "buildvm_ppc.dasc"
+//|.type NARGS8,		int
 #define DtC(_V) (int)(ptrdiff_t)&(((int *)0)_V)
+# 136 "buildvm_ppc.dasc"
+//|.type TRACE,		GCtrace
 #define DtD(_V) (int)(ptrdiff_t)&(((GCtrace *)0)_V)
+# 137 "buildvm_ppc.dasc"
+//|
+//|//-----------------------------------------------------------------------
+//|
+//|// These basic macros should really be part of DynASM.
+//|.macro srwi, rx, ry, n; rlwinm rx, ry, 32-n, n, 31; .endmacro
+//|.macro slwi, rx, ry, n; rlwinm rx, ry, n, 0, 31-n; .endmacro
+//|.macro rotlwi, rx, ry, n; rlwinm rx, ry, n, 0, 31; .endmacro
+//|.macro rotlw, rx, ry, rn; rlwnm rx, ry, rn, 0, 31; .endmacro
+//|.macro subi, rx, ry, i; addi rx, ry, -i; .endmacro
+//|
+//|// Trap for not-yet-implemented parts.
+//|.macro NYI; tw 4, sp, sp; .endmacro
+//|
+//|//-----------------------------------------------------------------------
+//|
+//|// Access to frame relative to BASE.
+//|.define FRAME_PC,	-8
+//|.define FRAME_FUNC,	-4
+//|
+//|// Instruction decode.
+//|.macro decode_OP4, dst, ins; rlwinm dst, ins, 2, 22, 29; .endmacro
+//|.macro decode_RA8, dst, ins; rlwinm dst, ins, 27, 21, 28; .endmacro
+//|.macro decode_RB8, dst, ins; rlwinm dst, ins, 11, 21, 28; .endmacro
+//|.macro decode_RC8, dst, ins; rlwinm dst, ins, 19, 21, 28; .endmacro
+//|.macro decode_RD8, dst, ins; rlwinm dst, ins, 19, 13, 28; .endmacro
+//|
+//|.macro decode_OP1, dst, ins; rlwinm dst, ins, 0, 24, 31; .endmacro
+//|.macro decode_RD4, dst, ins; rlwinm dst, ins, 18, 14, 29; .endmacro
+//|
+//|// Instruction fetch.
+//|.macro ins_NEXT1
+//|  lwz INS, 0(PC)
+//|   addi PC, PC, 4
+//|.endmacro
+//|// Instruction decode+dispatch.
+//|.macro ins_NEXT2
+//|  decode_OP4 TMP1, INS
+//|   decode_RB8 RB, INS
+//|   decode_RD8 RD, INS
+//|  lwzx TMP0, DISPATCH, TMP1
+//|   decode_RA8 RA, INS
+//|   decode_RC8 RC, INS
+//|  mtctr TMP0
+//|  bctr
+//|.endmacro
+//|.macro ins_NEXT
+//|  ins_NEXT1
+//|  ins_NEXT2
+//|.endmacro
+//|
+//|// Instruction footer.
+//|.if 1
+//|  // Replicated dispatch. Less unpredictable branches, but higher I-Cache use.
+//|  .define ins_next, ins_NEXT
+//|  .define ins_next_, ins_NEXT
+//|  .define ins_next1, ins_NEXT1
+//|  .define ins_next2, ins_NEXT2
+//|.else
+//|  // Common dispatch. Lower I-Cache use, only one (very) unpredictable branch.
+//|  // Affects only certain kinds of benchmarks (and only with -j off).
+//|  .macro ins_next
+//|    b ->ins_next
+//|  .endmacro
+//|  .macro ins_next1
+//|  .endmacro
+//|  .macro ins_next2
+//|    b ->ins_next
+//|  .endmacro
+//|  .macro ins_next_
+//|  ->ins_next:
+//|    ins_NEXT
+//|  .endmacro
+//|.endif
+//|
+//|// Call decode and dispatch.
+//|.macro ins_callt
+//|  // BASE = new base, RB = LFUNC/CFUNC, RC = nargs*8, FRAME_PC(BASE) = PC
+//|  lwz PC, LFUNC:RB->pc
+//|  lwz INS, 0(PC)
+//|   addi PC, PC, 4
+//|  decode_OP4 TMP1, INS
+//|   decode_RA8 RA, INS
+//|  lwzx TMP0, DISPATCH, TMP1
+//|   add RA, RA, BASE
+//|  mtctr TMP0
+//|  bctr
+//|.endmacro
+//|
+//|.macro ins_call
+//|  // BASE = new base, RB = LFUNC/CFUNC, RC = nargs*8, PC = caller PC
+//|  stw PC, FRAME_PC(BASE)
+//|  ins_callt
+//|.endmacro
+//|
+//|//-----------------------------------------------------------------------
+//|
+//|// Macros to test operand types.
+//|.if SPE
+//|.macro checknum, reg; evcmpltu reg, TISNUM; .endmacro
+//|.macro checkstr, reg; evcmpeq reg, TISSTR; .endmacro
+//|.macro checktab, reg; evcmpeq reg, TISTAB; .endmacro
+//|.macro checkfunc, reg; evcmpeq reg, TISFUNC; .endmacro
+//|.macro checknil, reg; evcmpeq reg, TISNIL; .endmacro
+//|.macro checkok, label; blt label; .endmacro
+//|.macro checkfail, label; bge label; .endmacro
+//|.macro checkanyfail, label; bns label; .endmacro
+//|.macro checkallok, label; bso label; .endmacro
+//|.endif
+//|
+//|.macro branch_RD
+//|  srwi TMP0, RD, 1
+//|  add PC, PC, TMP0
+//|  addis PC, PC, -(BCBIAS_J*4 >> 16)
+//|.endmacro
+//|
+//|// Assumes DISPATCH is relative to GL.
 #define DISPATCH_GL(field)	(GG_DISP2G + (int)offsetof(global_State, field))
 #define DISPATCH_J(field)	(GG_DISP2J + (int)offsetof(jit_State, field))
+//|
 #define PC2PROTO(field)  ((int)offsetof(GCproto, field)-(int)sizeof(GCproto))
+//|
+//|.macro hotloop
+//|  NYI
+//|.endmacro
+//|
+//|.macro hotcall
+//|  NYI
+//|.endmacro
+//|
+//|// Set current VM state. Uses TMP0.
+//|.macro li_vmstate, st; li TMP0, ~LJ_VMST_..st; .endmacro
+//|.macro st_vmstate; stw TMP0, DISPATCH_GL(vmstate)(DISPATCH); .endmacro
+//|
+//|// Move table write barrier back. Overwrites mark and tmp.
+//|.macro barrierback, tab, mark, tmp
+//|  lwz tmp, DISPATCH_GL(gc.grayagain)(DISPATCH)
+//|  // Assumes LJ_GC_BLACK is 0x04.
+//|   rlwinm mark, mark, 0, 30, 28		// black2gray(tab)
+//|  stw tab, DISPATCH_GL(gc.grayagain)(DISPATCH)
+//|   stb mark, tab->marked
+//|  stw tmp, tab->gclist
+//|.endmacro
+//|
+//|//-----------------------------------------------------------------------
 
 /* Generate subroutines used by opcodes and other parts of the VM. */
 /* The .code_sub section should be last to help static branch prediction. */
 static void build_subroutines(BuildCtx *ctx)
 {
+  //|.code_sub
   dasm_put(Dst, 0);
+# 287 "buildvm_ppc.dasc"
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Return handling ----------------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_returnp:
+  //|  // See vm_return. Also: TMP2 = previous base.
+  //|  andi. TMP0, PC, FRAME_P
+  //|   evsplati TMP1, LJ_TTRUE
+  //|  beq ->cont_dispatch
+  //|
+  //|  // Return from pcall or xpcall fast func.
+  //|  lwz PC, FRAME_PC(TMP2)		// Fetch PC of previous frame.
+  //|  mr BASE, TMP2			// Restore caller base.
+  //|  // Prepending may overwrite the pcall frame, so do it at the end.
+  //|   stwu TMP1, FRAME_PC(RA)		// Prepend true to results.
+  //|
+  //|->vm_returnc:
+  //|  andi. TMP0, PC, FRAME_TYPE
+  //|   addi RD, RD, 8			// RD = (nresults+1)*8.
+  //|   mr MULTRES, RD
+  //|  beq ->BC_RET_Z			// Handle regular return to Lua.
+  //|
+  //|->vm_return:
+  //|  // BASE = base, RA = resultptr, RD/MULTRES = (nresults+1)*8, PC = return
+  //|  // TMP0 = PC & FRAME_TYPE
+  //|  cmpwi TMP0, FRAME_C
+  //|   rlwinm TMP2, PC, 0, 0, 28
+  //|    li_vmstate C
+  //|   sub TMP2, BASE, TMP2		// TMP2 = previous base.
+  //|  bne ->vm_returnp
+  //|
+  //|  addic. TMP1, RD, -8
+  //|   stw TMP2, L->base
+  //|   lwz TMP2, SAVE_NRES
+  //|    subi BASE, BASE, 8
+  //|    st_vmstate
+  //|   slwi TMP2, TMP2, 3
+  //|  beq >2
+  //|1:
+  //|  addic. TMP1, TMP1, -8
+  //|   evldd TMP0, 0(RA)
+  //|    addi RA, RA, 8
+  //|   evstdd TMP0, 0(BASE)
+  //|    addi BASE, BASE, 8
+  //|  bne <1
+  //|
+  //|2:
+  //|  cmpw TMP2, RD			// More/less results wanted?
+  //|  bne >6
+  //|3:
+  //|  stw BASE, L->top			// Store new top.
+  //|
+  //|->vm_leave_cp:
+  //|  lwz TMP0, SAVE_CFRAME		// Restore previous C frame.
   dasm_put(Dst, 1, FRAME_P, LJ_TTRUE, FRAME_TYPE, FRAME_C, ~LJ_VMST_C, Dt1(->base), DISPATCH_GL(vmstate), 31-3, Dt1(->top));
+# 342 "buildvm_ppc.dasc"
+  //|   li CRET1, 0			// Ok return status for vm_pcall.
+  //|  stw TMP0, L->cframe
+  //|
+  //|->vm_leave_unw:
+  //|  restoreregs
+  //|  blr
+  //|
+  //|6:
+  //|  ble >7				// Less results wanted?
+  //|  // More results wanted. Check stack size and fill up results with nil.
+  //|  lwz TMP1, L->maxstack
+  //|  cmplw BASE, TMP1
+  //|  bge >8
+  //|  evstdd TISNIL, 0(BASE)
+  //|  addi RD, RD, 8
+  //|  addi BASE, BASE, 8
+  //|  b <2
+  //|
+  //|7:  // Less results wanted.
+  //|   sub TMP0, RD, TMP2
+  //|  cmpwi TMP2, 0			// LUA_MULTRET+1 case?
+  //|   sub TMP0, BASE, TMP0		// Subtract the difference.
+  //|  iseleq BASE, BASE, TMP0		// Either keep top or shrink it.
+  //|  b <3
+  //|
+  //|8:  // Corner case: need to grow stack for filling up results.
+  //|  // This can happen if:
+  //|  // - A C function grows the stack (a lot).
+  //|  // - The GC shrinks the stack in between.
+  //|  // - A return back from a lua_call() with (high) nresults adjustment.
+  //|  stw BASE, L->top			// Save current top held in BASE (yes).
+  //|   mr SAVE0, RD
+  //|  mr CARG2, TMP2
+  //|  mr CARG1, L
+  //|  bl extern lj_state_growstack	// (lua_State *L, int n)
+  //|    lwz TMP2, SAVE_NRES
+  //|   mr RD, SAVE0
+  //|    slwi TMP2, TMP2, 3
+  //|  lwz BASE, L->top			// Need the (realloced) L->top in BASE.
+  //|  b <2
+  //|
+  //|->vm_unwind_c:			// Unwind C stack, return from vm_pcall.
+  //|  // (void *cframe, int errcode)
+  //|  mr sp, CARG1
+  //|  mr CRET1, CARG2
+  //|->vm_unwind_c_eh:			// Landing pad for external unwinder.
+  //|  lwz L, SAVE_L
+  //|   li TMP0, ~LJ_VMST_C
+  //|  lwz GL:TMP1, L->glref
+  //|   stw TMP0, GL:TMP1->vmstate
+  //|  b ->vm_leave_unw
+  //|
+  //|->vm_unwind_ff:			// Unwind C stack, return from ff pcall.
+  //|  // (void *cframe)
+  //|  rlwinm sp, CARG1, 0, 0, 29
   dasm_put(Dst, 55, Dt1(->cframe), Dt1(->maxstack), Dt1(->top), 31-3, Dt1(->top), ~LJ_VMST_C, Dt1(->glref), Dt2(->vmstate));
+# 397 "buildvm_ppc.dasc"
+  //|->vm_unwind_ff_eh:			// Landing pad for external unwinder.
+  //|  lwz L, SAVE_L
+  //|     evsplati TISNUM, LJ_TISNUM+1	// Setup type comparison constants.
+  //|     evsplati TISFUNC, LJ_TFUNC
+  //|     lus TOBIT, 0x4338
+  //|     evsplati TISTAB, LJ_TTAB
+  //|     li TMP0, 0
+  //|  lwz BASE, L->base
+  //|     evmergelo TOBIT, TOBIT, TMP0
+  //|   lwz DISPATCH, L->glref		// Setup pointer to dispatch table.
+  //|     evsplati TISSTR, LJ_TSTR
+  //|  li TMP1, LJ_TFALSE
+  //|     evsplati TISNIL, LJ_TNIL
+  //|    li_vmstate INTERP
+  //|  lwz PC, FRAME_PC(BASE)		// Fetch PC of previous frame.
+  //|  la RA, -8(BASE)			// Results start at BASE-8.
+  //|   addi DISPATCH, DISPATCH, GG_G2DISP
+  //|  stw TMP1, 0(RA)			// Prepend false to error message.
+  //|  li RD, 16				// 2 results: false + error message.
+  //|    st_vmstate
+  //|  b ->vm_returnc
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Grow stack for calls -----------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_growstack_c:			// Grow stack for C function.
+  //|  li CARG2, LUA_MINSTACK
+  //|  b >2
+  //|
+  //|->vm_growstack_l:			// Grow stack for Lua function.
+  //|  // BASE = new base, RA = BASE+framesize*8, RC = nargs*8, PC = first PC
+  //|  add RC, BASE, RC
+  //|   sub RA, RA, BASE
+  //|  stw BASE, L->base
+  //|   addi PC, PC, 4			// Must point after first instruction.
+  //|  stw RC, L->top
+  //|   srwi CARG2, RA, 3
+  //|2:
+  //|  // L->base = new base, L->top = top
+  //|   stw PC, SAVE_PC
+  //|  mr CARG1, L
+  //|  bl extern lj_state_growstack	// (lua_State *L, int n)
+  //|  lwz BASE, L->base
   dasm_put(Dst, 133, LJ_TISNUM+1, LJ_TFUNC, LJ_TTAB, Dt1(->base), Dt1(->glref), LJ_TSTR, LJ_TFALSE, LJ_TNIL, ~LJ_VMST_INTERP, GG_G2DISP, DISPATCH_GL(vmstate), LUA_MINSTACK, Dt1(->base), Dt1(->top), 32-3);
+# 441 "buildvm_ppc.dasc"
+  //|  lwz RC, L->top
+  //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+  //|  sub RC, RC, BASE
+  //|  // BASE = new base, RB = LFUNC/CFUNC, RC = nargs*8, FRAME_PC(BASE) = PC
+  //|  ins_callt				// Just retry the call.
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Entry points into the assembler VM ---------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_resume:				// Setup C frame and resume thread.
+  //|  // (lua_State *L, TValue *base, int nres1 = 0, ptrdiff_t ef = 0)
+  //|  saveregs
+  //|  mr L, CARG1
+  //|    lwz DISPATCH, L->glref		// Setup pointer to dispatch table.
+  //|  mr BASE, CARG2
+  //|    lbz TMP1, L->status
+  //|   stw L, SAVE_L
+  //|  li PC, FRAME_CP
+  //|  addi TMP0, sp, CFRAME_RESUME
+  //|    addi DISPATCH, DISPATCH, GG_G2DISP
+  //|   stw CARG3, SAVE_NRES
+  //|    cmplwi TMP1, 0
+  //|   stw CARG3, SAVE_ERRF
+  //|  stw TMP0, L->cframe
+  //|   stw CARG3, SAVE_CFRAME
+  //|   stw CARG1, SAVE_PC		// Any value outside of bytecode is ok.
+  //|    beq >3
+  //|
+  //|  // Resume after yield (like a return).
+  //|  mr RA, BASE
+  //|   lwz BASE, L->base
+  //|    evsplati TISNUM, LJ_TISNUM+1	// Setup type comparison constants.
+  //|   lwz TMP1, L->top
+  //|    evsplati TISFUNC, LJ_TFUNC
+  //|    lus TOBIT, 0x4338
+  //|    evsplati TISTAB, LJ_TTAB
+  //|  lwz PC, FRAME_PC(BASE)
+  //|    li TMP2, 0
+  //|    evsplati TISSTR, LJ_TSTR
+  //|   sub RD, TMP1, BASE
+  //|    evmergelo TOBIT, TOBIT, TMP2
+  //|    stb CARG3, L->status
+  //|  andi. TMP0, PC, FRAME_TYPE
+  //|    li_vmstate INTERP
+  //|   addi RD, RD, 8
+  //|    evsplati TISNIL, LJ_TNIL
+  //|   mr MULTRES, RD
+  //|    st_vmstate
+  //|  beq ->BC_RET_Z
   dasm_put(Dst, 188, Dt1(->base), Dt1(->top), Dt7(->pc), Dt1(->glref), Dt1(->status), FRAME_CP, CFRAME_RESUME, GG_G2DISP, Dt1(->cframe), Dt1(->base), LJ_TISNUM+1, Dt1(->top), LJ_TFUNC, LJ_TTAB, LJ_TSTR, Dt1(->status), FRAME_TYPE, ~LJ_VMST_INTERP, LJ_TNIL, DISPATCH_GL(vmstate));
+# 491 "buildvm_ppc.dasc"
+  //|  b ->vm_return
+  //|
+  //|->vm_pcall:				// Setup protected C frame and enter VM.
+  //|  // (lua_State *L, TValue *base, int nres1, ptrdiff_t ef)
+  //|  saveregs
+  //|  li PC, FRAME_CP
+  //|  stw CARG4, SAVE_ERRF
+  //|  b >1
+  //|
+  //|->vm_call:				// Setup C frame and enter VM.
+  //|  // (lua_State *L, TValue *base, int nres1)
+  //|  saveregs
+  //|  li PC, FRAME_C
+  //|
+  //|1:  // Entry point for vm_pcall above (PC = ftype).
+  //|  lwz TMP1, L:CARG1->cframe
+  //|   stw CARG3, SAVE_NRES
+  //|    mr L, CARG1
+  //|   stw CARG1, SAVE_L
+  //|    mr BASE, CARG2
+  //|  stw sp, L->cframe			// Add our C frame to cframe chain.
+  //|    lwz DISPATCH, L->glref		// Setup pointer to dispatch table.
+  //|   stw CARG1, SAVE_PC		// Any value outside of bytecode is ok.
+  //|  stw TMP1, SAVE_CFRAME
+  //|    addi DISPATCH, DISPATCH, GG_G2DISP
+  //|
+  //|3:  // Entry point for vm_cpcall/vm_resume (BASE = base, PC = ftype).
+  //|  lwz TMP2, L->base			// TMP2 = old base (used in vmeta_call).
+  //|    evsplati TISNUM, LJ_TISNUM+1	// Setup type comparison constants.
+  //|   lwz TMP1, L->top
+  //|    evsplati TISFUNC, LJ_TFUNC
+  //|  add PC, PC, BASE
+  //|    evsplati TISTAB, LJ_TTAB
+  //|    lus TOBIT, 0x4338
+  //|    li TMP0, 0
+  //|  sub PC, PC, TMP2			// PC = frame delta + frame type
+  //|    evsplati TISSTR, LJ_TSTR
+  //|   sub NARGS8:RC, TMP1, BASE
+  //|    evmergelo TOBIT, TOBIT, TMP0
+  //|    li_vmstate INTERP
+  //|    evsplati TISNIL, LJ_TNIL
+  //|    st_vmstate
+  //|
+  //|->vm_call_dispatch:
+  //|  // TMP2 = old base, BASE = new base, RC = nargs*8, PC = caller PC
+  //|  li TMP0, -8
   dasm_put(Dst, 279, FRAME_CP, FRAME_C, Dt1(->cframe), Dt1(->cframe), Dt1(->glref), GG_G2DISP, Dt1(->base), LJ_TISNUM+1, Dt1(->top), LJ_TFUNC, LJ_TTAB, LJ_TSTR, ~LJ_VMST_INTERP, LJ_TNIL, DISPATCH_GL(vmstate));
+# 537 "buildvm_ppc.dasc"
+  //|  evlddx LFUNC:RB, BASE, TMP0
+  //|  checkfunc LFUNC:RB
+  //|  checkfail ->vmeta_call
+  //|
+  //|->vm_call_dispatch_f:
+  //|  ins_call
+  //|  // BASE = new base, RB = func, RC = nargs*8, PC = caller PC
+  //|
+  //|->vm_cpcall:				// Setup protected C frame, call C.
+  //|  // (lua_State *L, lua_CFunction func, void *ud, lua_CPFunction cp)
+  //|  saveregs
+  //|  mr L, CARG1
+  //|   lwz TMP0, L:CARG1->stack
+  //|  stw CARG1, SAVE_L
+  //|   lwz TMP1, L->top
+  //|  stw CARG1, SAVE_PC			// Any value outside of bytecode is ok.
+  //|   sub TMP0, TMP0, TMP1		// Compute -savestack(L, L->top).
+  //|    lwz TMP1, L->cframe
+  //|    stw sp, L->cframe		// Add our C frame to cframe chain.
+  //|  li TMP2, 0
+  //|   stw TMP0, SAVE_NRES		// Neg. delta means cframe w/o frame.
+  //|  stw TMP2, SAVE_ERRF		// No error function.
+  //|    stw TMP1, SAVE_CFRAME
+  //|  mtctr CARG4
+  //|  bctrl			// (lua_State *L, lua_CFunction func, void *ud)
+  //|  mr. BASE, CRET1
+  //|   lwz DISPATCH, L->glref		// Setup pointer to dispatch table.
+  //|    li PC, FRAME_CP
+  //|   addi DISPATCH, DISPATCH, GG_G2DISP
+  //|  bne <3				// Else continue with the call.
+  //|  b ->vm_leave_cp			// No base? Just remove C frame.
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Metamethod handling ------------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|// The lj_meta_* functions (except for lj_meta_cat) don't reallocate the
+  //|// stack, so BASE doesn't need to be reloaded across these calls.
+  //|
+  //|//-- Continuation dispatch ----------------------------------------------
+  //|
+  //|->cont_dispatch:
+  //|  // BASE = meta base, RA = resultptr, RD = (nresults+1)*8
+  //|  lwz TMP0, -12(BASE)		// Continuation.
+  //|   mr RB, BASE
+  //|   mr BASE, TMP2			// Restore caller BASE.
+  //|    lwz LFUNC:TMP1, FRAME_FUNC(TMP2)
+  //|  cmplwi TMP0, 0
+  //|     lwz PC, -16(RB)			// Restore PC from [cont|PC].
+  //|  beq >1
+  //|   subi TMP2, RD, 8
+  //|    lwz TMP1, LFUNC:TMP1->pc
+  //|   evstddx TISNIL, RA, TMP2		// Ensure one valid arg.
+  //|    lwz KBASE, PC2PROTO(k)(TMP1)
+  //|  // BASE = base, RA = resultptr, RB = meta base
+  //|  mtctr TMP0
+  //|  bctr				// Jump to continuation.
+  //|
+  //|1:  // Tail call from C function.
+  //|  subi TMP1, RB, 16
+  //|  sub RC, TMP1, BASE
+  //|  b ->vm_call_tail
+  //|
+  //|->cont_cat:				// RA = resultptr, RB = meta base
+  //|  lwz INS, -4(PC)
+  //|   subi CARG2, RB, 16
+  //|  decode_RB8 SAVE0, INS
+  //|   evldd TMP0, 0(RA)
+  //|  add TMP1, BASE, SAVE0
+  //|   stw BASE, L->base
+  //|  cmplw TMP1, CARG2
+  //|   sub CARG3, CARG2, TMP1
+  //|  decode_RA8 RA, INS
+  //|   evstdd TMP0, 0(CARG2)
+  //|  bne ->BC_CAT_Z
+  //|   evstddx TMP0, BASE, RA
   dasm_put(Dst, 376, Dt7(->pc), Dt1(->stack), Dt1(->top), Dt1(->cframe), Dt1(->cframe), Dt1(->glref), FRAME_CP, GG_G2DISP, Dt7(->pc), PC2PROTO(k), Dt1(->base));
+# 613 "buildvm_ppc.dasc"
+  //|  b ->cont_nop
+  //|
+  //|//-- Table indexing metamethods -----------------------------------------
+  //|
+  //|->vmeta_tgets1:
+  //|  evmergelo STR:RC, TISSTR, STR:RC
+  //|  la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   decode_RB8 RB, INS
+  //|  evstdd STR:RC, 0(CARG3)
+  //|   add CARG2, BASE, RB
+  //|  b >1
+  //|
+  //|->vmeta_tgets:
+  //|  evmergelo TAB:RB, TISTAB, TAB:RB
+  //|  la CARG2, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   evmergelo STR:RC, TISSTR, STR:RC
+  //|  evstdd TAB:RB, 0(CARG2)
+  //|   la CARG3, DISPATCH_GL(tmptv2)(DISPATCH)
+  //|   evstdd STR:RC, 0(CARG3)
+  //|  b >1
+  //|
+  //|->vmeta_tgetb:			// TMP0 = index
+  //|  efdcfsi TMP0, TMP0
+  //|   decode_RB8 RB, INS
+  //|  la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   add CARG2, BASE, RB
+  //|  evstdd TMP0, 0(CARG3)
+  //|  b >1
+  //|
+  //|->vmeta_tgetv:
+  //|  decode_RB8 RB, INS
+  //|   decode_RC8 RC, INS
+  //|  add CARG2, BASE, RB
+  //|   add CARG3, BASE, RC
+  //|1:
+  //|  stw BASE, L->base
+  //|  mr CARG1, L
+  //|  stw PC, SAVE_PC
+  //|  bl extern lj_meta_tget		// (lua_State *L, TValue *o, TValue *k)
+  //|  // Returns TValue * (finished) or NULL (metamethod).
+  //|  cmplwi CRET1, 0
+  //|  beq >3
+  //|  evldd TMP0, 0(CRET1)
+  //|  evstddx TMP0, BASE, RA
+  //|  ins_next
+  //|
+  //|3:  // Call __index metamethod.
+  //|  // BASE = base, L->top = new base, stack = cont/func/t/k
+  //|  subfic TMP1, BASE, FRAME_CONT
+  //|  lwz BASE, L->top
+  //|  stw PC, -16(BASE)			// [cont|PC]
+  //|   add PC, TMP1, BASE
+  //|  lwz LFUNC:RB, FRAME_FUNC(BASE)	// Guaranteed to be a function here.
+  //|   li NARGS8:RC, 16			// 2 args for func(t, k).
+  //|  b ->vm_call_dispatch_f
+  //|
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vmeta_tsets1:
+  //|  evmergelo STR:RC, TISSTR, STR:RC
+  //|  la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   decode_RB8 RB, INS
   dasm_put(Dst, 481, DISPATCH_GL(tmptv), DISPATCH_GL(tmptv), DISPATCH_GL(tmptv2), DISPATCH_GL(tmptv), Dt1(->base), FRAME_CONT, Dt1(->top), DISPATCH_GL(tmptv));
+# 675 "buildvm_ppc.dasc"
+  //|  evstdd STR:RC, 0(CARG3)
+  //|   add CARG2, BASE, RB
+  //|  b >1
+  //|
+  //|->vmeta_tsets:
+  //|  evmergelo TAB:RB, TISTAB, TAB:RB
+  //|  la CARG2, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   evmergelo STR:RC, TISSTR, STR:RC
+  //|  evstdd TAB:RB, 0(CARG2)
+  //|   la CARG3, DISPATCH_GL(tmptv2)(DISPATCH)
+  //|   evstdd STR:RC, 0(CARG3)
+  //|  b >1
+  //|
+  //|->vmeta_tsetb:			// TMP0 = index
+  //|  efdcfsi TMP0, TMP0
+  //|   decode_RB8 RB, INS
+  //|  la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   add CARG2, BASE, RB
+  //|  evstdd TMP0, 0(CARG3)
+  //|  b >1
+  //|
+  //|->vmeta_tsetv:
+  //|  decode_RB8 RB, INS
+  //|   decode_RC8 RC, INS
+  //|  add CARG2, BASE, RB
+  //|   add CARG3, BASE, RC
+  //|1:
+  //|  stw BASE, L->base
+  //|  mr CARG1, L
+  //|  stw PC, SAVE_PC
+  //|  bl extern lj_meta_tset		// (lua_State *L, TValue *o, TValue *k)
+  //|  // Returns TValue * (finished) or NULL (metamethod).
+  //|  cmplwi CRET1, 0
+  //|   evlddx TMP0, BASE, RA
+  //|  beq >3
+  //|  // NOBARRIER: lj_meta_tset ensures the table is not black.
+  //|   evstdd TMP0, 0(CRET1)
+  //|  ins_next
+  //|
+  //|3:  // Call __newindex metamethod.
+  //|  // BASE = base, L->top = new base, stack = cont/func/t/k/(v)
+  //|  subfic TMP1, BASE, FRAME_CONT
+  //|  lwz BASE, L->top
+  //|  stw PC, -16(BASE)			// [cont|PC]
+  //|   add PC, TMP1, BASE
+  //|  lwz LFUNC:RB, FRAME_FUNC(BASE)	// Guaranteed to be a function here.
+  //|   li NARGS8:RC, 24			// 3 args for func(t, k, v)
+  //|  evstdd TMP0, 16(BASE)		// Copy value to third argument.
+  //|  b ->vm_call_dispatch_f
+  //|
+  //|//-- Comparison metamethods ---------------------------------------------
+  //|
+  //|->vmeta_comp:
+  //|  mr CARG1, L
+  //|   subi PC, PC, 4
+  //|  add CARG2, BASE, RA
+  //|   stw PC, SAVE_PC
+  //|  add CARG3, BASE, RD
+  //|   stw BASE, L->base
+  //|  decode_OP1 CARG4, INS
+  //|  bl extern lj_meta_comp  // (lua_State *L, TValue *o1, *o2, int op)
+  //|  // Returns 0/1 or TValue * (metamethod).
+  //|3:
+  //|  cmplwi CRET1, 1
+  //|  bgt ->vmeta_binop
+  //|4:
+  //|  lwz INS, 0(PC)
   dasm_put(Dst, 556, DISPATCH_GL(tmptv), DISPATCH_GL(tmptv2), DISPATCH_GL(tmptv), Dt1(->base), FRAME_CONT, Dt1(->top), Dt1(->base));
+# 742 "buildvm_ppc.dasc"
+  //|   addi PC, PC, 4
+  //|  decode_RD4 TMP2, INS
+  //|  addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+  //|  add TMP2, TMP2, TMP3
+  //|  isellt PC, PC, TMP2
+  //|->cont_nop:
+  //|  ins_next
+  //|
+  //|->cont_ra:				// RA = resultptr
+  //|  lwz INS, -4(PC)
+  //|   evldd TMP0, 0(RA)
+  //|  decode_RA8 TMP1, INS
+  //|   evstddx TMP0, BASE, TMP1
+  //|  b ->cont_nop
+  //|
+  //|->cont_condt:			// RA = resultptr
+  //|  lwz TMP0, 0(RA)
+  //|   li TMP1, LJ_TTRUE
+  //|  cmplw TMP1, TMP0			// Branch if result is true.
+  //|  b <4
+  //|
+  //|->cont_condf:			// RA = resultptr
+  //|  lwz TMP0, 0(RA)
+  //|   li TMP1, LJ_TFALSE
+  //|  cmplw TMP0, TMP1			// Branch if result is false.
+  //|  b <4
+  //|
+  //|->vmeta_equal:
+  //|  // CARG2, CARG3, CARG4 are already set by BC_ISEQV/BC_ISNEV.
+  //|  subi PC, PC, 4
+  //|   stw BASE, L->base
+  //|  mr CARG1, L
+  //|   stw PC, SAVE_PC
+  //|  bl extern lj_meta_equal  // (lua_State *L, GCobj *o1, *o2, int ne)
+  //|  // Returns 0/1 or TValue * (metamethod).
+  //|  b <3
+  //|
+  //|//-- Arithmetic metamethods ---------------------------------------------
+  //|
+  //|->vmeta_arith_vn:
+  //|  add CARG3, BASE, RB
+  //|  add CARG4, KBASE, RC
+  //|  b >1
+  //|
+  //|->vmeta_arith_nv:
+  //|  add CARG3, KBASE, RC
+  //|  add CARG4, BASE, RB
+  //|  b >1
+  //|
+  //|->vmeta_unm:
+  //|  add CARG3, BASE, RD
+  //|  mr CARG4, CARG3
+  //|  b >1
+  //|
+  //|->vmeta_arith_vv:
+  //|  add CARG3, BASE, RB
+  //|  add CARG4, BASE, RC
+  //|1:
+  //|  add CARG2, BASE, RA
   dasm_put(Dst, 637, -(BCBIAS_J*4 >> 16), LJ_TTRUE, LJ_TFALSE, Dt1(->base));
-  dasm_put(Dst, 706, Dt1(->base), FRAME_CONT, Dt1(->base), Dt1(->base), Dt7(->pc), Dt1(->base), Dt1(->base));
-#if LJ_HASJIT
-  dasm_put(Dst, 784);
-#endif
-  dasm_put(Dst, 786);
-#if LJ_HASJIT
-  dasm_put(Dst, 788, BC_JFORI);
-#endif
-  dasm_put(Dst, 791);
-#if LJ_HASJIT
-  dasm_put(Dst, 793, BC_JFORI);
-#endif
-  dasm_put(Dst, 796, BC_FORI, ~LJ_TNUMX, 31-3, Dt8(->upvalue), Dt6(->metatable), DISPATCH_GL(gcroot[GCROOT_MMNAME+MM_metatable]));
-  dasm_put(Dst, 861, Dt6(->hmask), Dt5(->hash), Dt6(->node), 31-5, 31-3, DtB(->key), DtB(->val), DtB(->next), LJ_TUDATA, 31-2, 4*~LJ_TNUMX, DISPATCH_GL(gcroot[GCROOT_BASEMT]));
-  dasm_put(Dst, 917, Dt6(->metatable), Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
-  dasm_put(Dst, 977, DISPATCH_GL(gcroot[GCROOT_BASEMT_NUM]), Dt1(->base), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), Dt1(->base), Dt1(->top), (2+1)*8);
+# 801 "buildvm_ppc.dasc"
+  //|   stw BASE, L->base
+  //|  mr CARG1, L
+  //|   stw PC, SAVE_PC
+  //|  decode_OP1 CARG5, INS		// Caveat: CARG5 overlaps INS.
+  //|  bl extern lj_meta_arith  // (lua_State *L, TValue *ra,*rb,*rc, BCReg op)
+  //|  // Returns NULL (finished) or TValue * (metamethod).
+  //|  cmplwi CRET1, 0
+  //|  beq ->cont_nop
+  //|
+  //|  // Call metamethod for binary op.
+  //|->vmeta_binop:
+  //|  // BASE = old base, CRET1 = new base, stack = cont/func/o1/o2
+  //|  sub TMP1, CRET1, BASE
+  //|   stw PC, -16(CRET1)		// [cont|PC]
+  //|  addi PC, TMP1, FRAME_CONT
+  //|   mr BASE, CRET1
+  //|  li NARGS8:RC, 16			// 2 args for func(o1, o2).
+  //|  b ->vm_call_dispatch
+  //|
+  //|->vmeta_len:
+  dasm_put(Dst, 706, Dt1(->base), FRAME_CONT);
+# 821 "buildvm_ppc.dasc"
 #ifdef LUAJIT_ENABLE_LUA52COMPAT
-  dasm_put(Dst, 1050, Dt6(->metatable), Dt8(->upvalue[0]));
-#else
-  dasm_put(Dst, 1059, Dt8(->upvalue[0]));
+  //|  mr SAVE0, CARG1
+  dasm_put(Dst, 728);
+# 823 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 1063, (3+1)*8, Dt6(->asize), Dt6(->array), 31-3, (0+1)*8, (2+1)*8, Dt6(->hmask), (0+1)*8, (0+1)*8);
-  dasm_put(Dst, 1127);
+  //|  add CARG2, BASE, RD
+  //|   stw BASE, L->base
+  //|  mr CARG1, L
+  //|   stw PC, SAVE_PC
+  //|  bl extern lj_meta_len		// (lua_State *L, TValue *o)
+  //|  // Returns NULL (retry) or TValue * (metamethod base).
+  dasm_put(Dst, 730, Dt1(->base));
+# 830 "buildvm_ppc.dasc"
 #ifdef LUAJIT_ENABLE_LUA52COMPAT
-  dasm_put(Dst, 1140, Dt6(->metatable), Dt8(->upvalue[0]));
+  //|  cmplwi CRET1, 0
+  //|  bne ->vmeta_binop			// Binop call for compatibility.
+  //|  mr CARG1, SAVE0
+  //|  b ->BC_LEN_Z
+  dasm_put(Dst, 738);
+# 835 "buildvm_ppc.dasc"
 #else
-  dasm_put(Dst, 1149, Dt8(->upvalue[0]));
+  //|  b ->vmeta_binop			// Binop call for compatibility.
+  dasm_put(Dst, 745);
+# 837 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 1153, (3+1)*8, DISPATCH_GL(hookmask), 32-HOOK_ACTIVE_SHIFT, 8+FRAME_PCALL, DISPATCH_GL(hookmask), 32-HOOK_ACTIVE_SHIFT, 16+FRAME_PCALL, LJ_TTHREAD, Dt1(->status), Dt1(->cframe), Dt1(->top));
-  dasm_put(Dst, 1214, LUA_YIELD, Dt1(->base), Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->top), Dt1(->base), LUA_YIELD, Dt1(->top), ~LJ_VMST_INTERP, Dt1(->base), DISPATCH_GL(vmstate), Dt1(->maxstack));
-  dasm_put(Dst, 1277, Dt1(->top), FRAME_TYPE, LJ_TTRUE, FRAME_TYPE, LJ_TFALSE, Dt1(->top), (2+1)*8, 32-3);
-  dasm_put(Dst, 1337, Dt8(->upvalue[0].gcr), Dt1(->status), Dt1(->cframe), Dt1(->top), LUA_YIELD, Dt1(->base), Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->top), Dt1(->base), LUA_YIELD, Dt1(->top), ~LJ_VMST_INTERP);
-  dasm_put(Dst, 1396, Dt1(->base), DISPATCH_GL(vmstate), Dt1(->maxstack), Dt1(->top), FRAME_TYPE, 32-3, Dt1(->cframe));
-  dasm_put(Dst, 1453, Dt1(->base), CFRAME_RESUME, Dt1(->top), LUA_YIELD, Dt1(->cframe), Dt1(->status), (1+1)*8, FRAME_TYPE);
-  dasm_put(Dst, 1518);
-  dasm_put(Dst, 1587);
-  dasm_put(Dst, 1650);
-  dasm_put(Dst, 1715);
-  dasm_put(Dst, 1785, Dt8(->upvalue[0]), DISPATCH_GL(tmptv), DISPATCH_GL(tmptv), (2+1)*8, (2+1)*8);
-  dasm_put(Dst, 1857, Dt5(->len));
-  dasm_put(Dst, 1924, Dt5(->len), (0+1)*8, Dt5([1]), (1+1)*8, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmptv), Dt1(->base), Dt1(->base), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
-  dasm_put(Dst, 1984, Dt5(->len), sizeof(GCstr)-1, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
-  dasm_put(Dst, 2050, Dt5(->len), DISPATCH_GL(tmpbuf.sz), Dt5([1]), DISPATCH_GL(tmpbuf.buf), DISPATCH_GL(strempty), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
-  dasm_put(Dst, 2109, DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf));
-  dasm_put(Dst, 2168, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf));
-  dasm_put(Dst, 2235);
-  dasm_put(Dst, 2306);
-  dasm_put(Dst, 2394, Dt8(->f), 8*LUA_MINSTACK, Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->base), 31-3, Dt1(->top), Dt7(->pc));
-  dasm_put(Dst, 2473, FRAME_TYPE, LUA_MINSTACK, Dt1(->base), Dt1(->base), Dt1(->top), Dt1(->base), Dt1(->top));
+  //|
+  //|//-- Call metamethod ----------------------------------------------------
+  //|
+  //|->vmeta_call:			// Resolve and call __call metamethod.
+  //|  // TMP2 = old base, BASE = new base, RC = nargs*8
+  //|  mr CARG1, L
+  //|   stw TMP2, L->base			// This is the callers base!
+  //|  subi CARG2, BASE, 8
+  //|   stw PC, SAVE_PC
+  //|  add CARG3, BASE, RC
+  //|   mr SAVE0, NARGS8:RC
+  //|  bl extern lj_meta_call	// (lua_State *L, TValue *func, TValue *top)
+  //|  lwz LFUNC:RB, FRAME_FUNC(BASE)	// Guaranteed to be a function here.
+  //|   addi NARGS8:RC, SAVE0, 8		// Got one more argument now.
+  //|  ins_call
+  //|
+  //|->vmeta_callt:			// Resolve __call for BC_CALLT.
+  //|  // BASE = old base, RA = new base, RC = nargs*8
+  //|  mr CARG1, L
+  //|   stw BASE, L->base
+  //|  subi CARG2, RA, 8
+  //|   stw PC, SAVE_PC
+  //|  add CARG3, RA, RC
+  //|   mr SAVE0, NARGS8:RC
+  //|  bl extern lj_meta_call	// (lua_State *L, TValue *func, TValue *top)
+  //|  lwz TMP1, FRAME_PC(BASE)
+  //|   addi NARGS8:RC, SAVE0, 8		// Got one more argument now.
+  //|   lwz LFUNC:RB, FRAME_FUNC(RA)	// Guaranteed to be a function here.
+  //|  b ->BC_CALLT_Z
+  //|
+  //|//-- Argument coercion for 'for' statement ------------------------------
+  //|
+  //|->vmeta_for:
+  //|  mr CARG1, L
+  //|   stw BASE, L->base
+  //|  mr CARG2, RA
+  //|   stw PC, SAVE_PC
+  //|  mr SAVE0, INS
+  //|  bl extern lj_meta_for	// (lua_State *L, TValue *base)
+  dasm_put(Dst, 748, Dt1(->base), Dt7(->pc), Dt1(->base), Dt1(->base));
+# 877 "buildvm_ppc.dasc"
 #if LJ_HASJIT
-  dasm_put(Dst, 2515);
+  //|   decode_OP1 TMP0, SAVE0
+  dasm_put(Dst, 796);
+# 879 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2517, DISPATCH_GL(hookmask), HOOK_ACTIVE, GG_DISP2STATIC, DISPATCH_GL(hookmask), DISPATCH_GL(hookcount), HOOK_ACTIVE, 31-LUA_HOOKLINE, DISPATCH_GL(hookcount), Dt1(->base), Dt1(->base));
-  dasm_put(Dst, 2564, GG_DISP2STATIC);
+  //|  decode_RA8 RA, SAVE0
+  dasm_put(Dst, 798);
+# 881 "buildvm_ppc.dasc"
 #if LJ_HASJIT
-  dasm_put(Dst, 2582);
+  //|   cmpwi TMP0, BC_JFORI
+  dasm_put(Dst, 800, BC_JFORI);
+# 883 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2584);
+  //|  decode_RD8 RD, SAVE0
+  dasm_put(Dst, 803);
+# 885 "buildvm_ppc.dasc"
 #if LJ_HASJIT
-  dasm_put(Dst, 2587);
+  //|   beq =>BC_JFORI
+  dasm_put(Dst, 805, BC_JFORI);
+# 887 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2590);
-#if LJ_HASJIT
-  dasm_put(Dst, 2592);
-#endif
-  dasm_put(Dst, 2595, Dt1(->base), Dt1(->top), Dt1(->base), Dt1(->top));
-#if LJ_HASJIT
-  dasm_put(Dst, 2617);
-#endif
-  dasm_put(Dst, 2619);
-#if LJ_HASJIT
-  dasm_put(Dst, 2621);
-#endif
-  dasm_put(Dst, 2623);
-#if LJ_HASJIT
-  dasm_put(Dst, 2700);
+  //|  b =>BC_FORI
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Fast functions -----------------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|.macro .ffunc, name
+  //|->ff_ .. name:
+  //|.endmacro
+  //|
+  //|.macro .ffunc_1, name
+  //|->ff_ .. name:
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG1, 0(BASE)
+  //|  blt ->fff_fallback
+  //|.endmacro
+  //|
+  //|.macro .ffunc_2, name
+  //|->ff_ .. name:
+  //|  cmplwi NARGS8:RC, 16
+  //|   evldd CARG1, 0(BASE)
+  //|   evldd CARG2, 8(BASE)
+  //|  blt ->fff_fallback
+  //|.endmacro
+  //|
+  //|.macro .ffunc_n, name
+  //|  .ffunc_1 name
+  //|  checknum CARG1
+  //|  checkfail ->fff_fallback
+  //|.endmacro
+  //|
+  //|.macro .ffunc_nn, name
+  //|  .ffunc_2 name
+  //|  evmergehi TMP0, CARG1, CARG2
+  //|  checknum TMP0
+  //|  checkanyfail ->fff_fallback
+  //|.endmacro
+  //|
+  //|// Inlined GC threshold check. Caveat: uses TMP0 and TMP1.
+  //|.macro ffgccheck
+  //|  lwz TMP0, DISPATCH_GL(gc.total)(DISPATCH)
+  //|  lwz TMP1, DISPATCH_GL(gc.threshold)(DISPATCH)
+  //|  cmplw TMP0, TMP1
+  //|  bgel ->fff_gcstep
+  //|.endmacro
+  //|
+  //|//-- Base library: checks -----------------------------------------------
+  //|
+  //|.ffunc assert
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd TMP0, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  evaddw TMP1, TISNIL, TISNIL	// Synthesize LJ_TFALSE.
+  //|  la RA, -8(BASE)
+  //|   evcmpltu cr1, TMP0, TMP1
+  //|    lwz PC, FRAME_PC(BASE)
+  //|  bge cr1, ->fff_fallback
+  //|   evstdd TMP0, 0(RA)
+  //|  addi RD, NARGS8:RC, 8		// Compute (nresults+1)*8.
+  //|   beq ->fff_res			// Done if exactly 1 argument.
+  //|  li TMP1, 8
+  //|  subi RC, RC, 8
+  //|1:
+  //|  cmplw TMP1, RC
+  //|   evlddx TMP0, BASE, TMP1
+  //|   evstddx TMP0, RA, TMP1
+  //|    addi TMP1, TMP1, 8
+  //|  bne <1
+  //|  b ->fff_res
+  //|
+  //|.ffunc type
+  //|  cmplwi NARGS8:RC, 8
+  //|   lwz CARG1, 0(BASE)
+  //|  blt ->fff_fallback
+  //|    li TMP2, ~LJ_TNUMX
+  //|  cmplw CARG1, TISNUM
+  //|  not TMP1, CARG1
+  //|  isellt TMP1, TMP2, TMP1
+  //|  slwi TMP1, TMP1, 3
+  //|   la TMP2, CFUNC:RB->upvalue
+  //|  evlddx STR:CRET1, TMP2, TMP1
+  //|  b ->fff_restv
+  //|
+  //|//-- Base library: getters and setters ---------------------------------
+  //|
+  //|.ffunc_1 getmetatable
+  //|  checktab CARG1
+  //|   evmergehi TMP1, CARG1, CARG1
+  //|  checkfail >6
+  //|1:  // Field metatable must be at same offset for GCtab and GCudata!
+  //|  lwz TAB:RB, TAB:CARG1->metatable
+  //|2:
+  //|  evmr CRET1, TISNIL
+  //|   cmplwi TAB:RB, 0
+  //|  lwz STR:RC, DISPATCH_GL(gcroot[GCROOT_MMNAME+MM_metatable])(DISPATCH)
+  //|   beq ->fff_restv
+  //|  lwz TMP0, TAB:RB->hmask
+  dasm_put(Dst, 808, BC_FORI, ~LJ_TNUMX, 31-3, Dt8(->upvalue), Dt6(->metatable), DISPATCH_GL(gcroot[GCROOT_MMNAME+MM_metatable]));
+# 985 "buildvm_ppc.dasc"
+  //|   evmergelo CRET1, TISTAB, TAB:RB	// Use metatable as default result.
+  //|  lwz TMP1, STR:RC->hash
+  //|  lwz NODE:TMP2, TAB:RB->node
+  //|   evmergelo STR:RC, TISSTR, STR:RC
+  //|  and TMP1, TMP1, TMP0		// idx = str->hash & tab->hmask
+  //|  slwi TMP0, TMP1, 5
+  //|  slwi TMP1, TMP1, 3
+  //|  sub TMP1, TMP0, TMP1
+  //|  add NODE:TMP2, NODE:TMP2, TMP1	// node = tab->node + (idx*32-idx*8)
+  //|3:  // Rearranged logic, because we expect _not_ to find the key.
+  //|  evldd TMP0, NODE:TMP2->key
+  //|   evldd TMP1, NODE:TMP2->val
+  //|  evcmpeq TMP0, STR:RC
+  //|   lwz NODE:TMP2, NODE:TMP2->next
+  //|  checkallok >5
+  //|   cmplwi NODE:TMP2, 0
+  //|   beq ->fff_restv			// Not found, keep default result.
+  //|   b <3
+  //|5:
+  //|  checknil TMP1
+  //|  checkok ->fff_restv		// Ditto for nil value.
+  //|  evmr CRET1, TMP1			// Return value of mt.__metatable.
+  //|  b ->fff_restv
+  //|
+  //|6:
+  //|  cmpwi TMP1, LJ_TUDATA
+  //|   not TMP1, TMP1
+  //|  beq <1
+  //|  checknum CARG1
+  //|   slwi TMP1, TMP1, 2
+  //|   li TMP2, 4*~LJ_TNUMX
+  //|  isellt TMP1, TMP2, TMP1
+  //|   la TMP2, DISPATCH_GL(gcroot[GCROOT_BASEMT])(DISPATCH)
+  //|  lwzx TAB:RB, TMP2, TMP1
+  //|  b <2
+  //|
+  //|.ffunc_2 setmetatable
+  dasm_put(Dst, 873, Dt6(->hmask), Dt5(->hash), Dt6(->node), 31-5, 31-3, DtB(->key), DtB(->val), DtB(->next), LJ_TUDATA, 31-2, 4*~LJ_TNUMX, DISPATCH_GL(gcroot[GCROOT_BASEMT]));
+# 1022 "buildvm_ppc.dasc"
+  //|  // Fast path: no mt for table yet and not clearing the mt.
+  //|  evmergehi TMP0, TAB:CARG1, TAB:CARG2
+  //|  checktab TMP0
+  //|  checkanyfail ->fff_fallback
+  //|  lwz TAB:TMP1, TAB:CARG1->metatable
+  //|  cmplwi TAB:TMP1, 0
+  //|   lbz TMP3, TAB:CARG1->marked
+  //|  bne ->fff_fallback
+  //|   andi. TMP0, TMP3, LJ_GC_BLACK	// isblack(table)
+  //|    stw TAB:CARG2, TAB:CARG1->metatable
+  //|   beq ->fff_restv
+  //|  barrierback TAB:CARG1, TMP3, TMP0
+  //|  b ->fff_restv
+  //|
+  //|.ffunc rawget
+  //|  cmplwi NARGS8:RC, 16
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checktab CARG2
+  //|   la CARG3, 8(BASE)
+  //|  checkfail ->fff_fallback
+  //|   mr CARG1, L
+  //|  bl extern lj_tab_get  // (lua_State *L, GCtab *t, cTValue *key)
+  //|  // Returns cTValue *.
+  //|  evldd CRET1, 0(CRET1)
+  //|  b ->fff_restv
+  //|
+  //|//-- Base library: conversions ------------------------------------------
+  //|
+  //|.ffunc tonumber
+  //|  // Only handles the number case inline (without a base argument).
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG1, 0(BASE)
+  //|  bne ->fff_fallback			// Exactly one argument.
+  //|  checknum CARG1
+  //|  checkok ->fff_restv
+  //|  b ->fff_fallback
+  //|
+  //|.ffunc_1 tostring
+  dasm_put(Dst, 929, Dt6(->metatable), Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
+# 1061 "buildvm_ppc.dasc"
+  //|  // Only handles the string or number case inline.
+  //|  checkstr CARG1
+  //|  // A __tostring method in the string base metatable is ignored.
+  //|  checkok ->fff_restv		// String key?
+  //|  // Handle numbers inline, unless a number base metatable is present.
+  //|  lwz TMP0, DISPATCH_GL(gcroot[GCROOT_BASEMT_NUM])(DISPATCH)
+  //|  checknum CARG1
+  //|  cmplwi cr1, TMP0, 0
+  //|   stw BASE, L->base			// Add frame since C call can throw.
+  //|.if SPE
+  //|  crand 4*cr0+eq, 4*cr0+lt, 4*cr1+eq
+  //|.else
+  //|.error "NYI"
+  //|.endif
+  //|   stw PC, SAVE_PC			// Redundant (but a defined value).
+  //|  bne ->fff_fallback
+  //|  ffgccheck
+  //|  mr CARG1, L
+  //|  mr CARG2, BASE
+  //|  bl extern lj_str_fromnum		// (lua_State *L, lua_Number *np)
+  //|  // Returns GCstr *.
+  //|  evmergelo STR:CRET1, TISSTR, STR:CRET1
+  //|  b ->fff_restv
+  //|
+  //|//-- Base library: iterators -------------------------------------------
+  //|
+  //|.ffunc next
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|   evstddx TISNIL, BASE, NARGS8:RC	// Set missing 2nd arg to nil.
+  //|  checktab TAB:CARG2
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  checkfail ->fff_fallback
+  //|   stw BASE, L->base			// Add frame since C call can throw.
+  //|  mr CARG1, L
+  //|   stw BASE, L->top			// Dummy frame length is ok.
+  //|  la CARG3, 8(BASE)
+  //|   stw PC, SAVE_PC
+  //|  bl extern lj_tab_next	// (lua_State *L, GCtab *t, TValue *key)
+  //|  // Returns 0 at end of traversal.
+  //|  cmplwi CRET1, 0
+  //|   evmr CRET1, TISNIL
+  //|  beq ->fff_restv			// End of traversal: return nil.
+  //|  evldd TMP0, 8(BASE)		// Copy key and value to results.
+  //|   la RA, -8(BASE)
+  //|  evldd TMP1, 16(BASE)
+  //|  evstdd TMP0, 0(RA)
+  //|   li RD, (2+1)*8
+  //|  evstdd TMP1, 8(RA)
+  //|  b ->fff_res
+  //|
+  //|.ffunc_1 pairs
+  //|  checktab TAB:CARG1
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  checkfail ->fff_fallback
+  dasm_put(Dst, 989, DISPATCH_GL(gcroot[GCROOT_BASEMT_NUM]), Dt1(->base), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), Dt1(->base), Dt1(->top), (2+1)*8);
+# 1117 "buildvm_ppc.dasc"
+#ifdef LUAJIT_ENABLE_LUA52COMPAT
+  //|   lwz TAB:TMP2, TAB:CARG1->metatable
+  //|  evldd CFUNC:TMP0, CFUNC:RB->upvalue[0]
+  //|   cmplwi TAB:TMP2, 0
+  //|  la RA, -8(BASE)
+  //|   bne ->fff_fallback
+  dasm_put(Dst, 1062, Dt6(->metatable), Dt8(->upvalue[0]));
+# 1123 "buildvm_ppc.dasc"
 #else
-  dasm_put(Dst, 2723);
+  //|  evldd CFUNC:TMP0, CFUNC:RB->upvalue[0]
+  //|  la RA, -8(BASE)
+  dasm_put(Dst, 1071, Dt8(->upvalue[0]));
+# 1126 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2726);
+  //|   evstdd TISNIL, 8(BASE)
+  //|  li RD, (3+1)*8
+  //|  evstdd CFUNC:TMP0, 0(RA)
+  //|  b ->fff_res
+  //|
+  //|.ffunc_2 ipairs_aux
+  //|  checktab TAB:CARG1
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  checkfail ->fff_fallback
+  //|  checknum CARG2
+  //|    lus TMP3, 0x3ff0
+  //|  checkfail ->fff_fallback
+  //|  efdctsi TMP2, CARG2
+  //|   lwz TMP0, TAB:CARG1->asize
+  //|    evmergelo TMP3, TMP3, ZERO
+  //|   lwz TMP1, TAB:CARG1->array
+  //|  efdadd CARG2, CARG2, TMP3
+  //|  addi TMP2, TMP2, 1
+  //|   la RA, -8(BASE)
+  //|  cmplw TMP0, TMP2
+  //|   slwi TMP3, TMP2, 3
+  //|  evstdd CARG2, 0(RA)
+  //|  ble >2				// Not in array part?
+  //|  evlddx TMP1, TMP1, TMP3
+  //|1:
+  //|  checknil TMP1
+  //|   li RD, (0+1)*8
+  //|  checkok ->fff_res			// End of iteration, return 0 results.
+  //|   li RD, (2+1)*8
+  //|  evstdd TMP1, 8(RA)
+  //|  b ->fff_res
+  //|2:  // Check for empty hash part first. Otherwise call C function.
+  //|  lwz TMP0, TAB:CARG1->hmask
+  //|  cmplwi TMP0, 0
+  //|   li RD, (0+1)*8
+  //|  beq ->fff_res
+  //|   mr CARG2, TMP2
+  //|  bl extern lj_tab_getinth		// (GCtab *t, int32_t key)
+  //|  // Returns cTValue * or NULL.
+  //|  cmplwi CRET1, 0
+  //|   li RD, (0+1)*8
+  //|  beq ->fff_res
+  //|  evldd TMP1, 0(CRET1)
+  dasm_put(Dst, 1075, (3+1)*8, Dt6(->asize), Dt6(->array), 31-3, (0+1)*8, (2+1)*8, Dt6(->hmask), (0+1)*8, (0+1)*8);
+# 1170 "buildvm_ppc.dasc"
+  //|  b <1
+  //|
+  //|.ffunc_1 ipairs
+  //|  checktab TAB:CARG1
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  checkfail ->fff_fallback
+  dasm_put(Dst, 1139);
+# 1176 "buildvm_ppc.dasc"
+#ifdef LUAJIT_ENABLE_LUA52COMPAT
+  //|   lwz TAB:TMP2, TAB:CARG1->metatable
+  //|  evldd CFUNC:TMP0, CFUNC:RB->upvalue[0]
+  //|   cmplwi TAB:TMP2, 0
+  //|  la RA, -8(BASE)
+  //|   bne ->fff_fallback
+  dasm_put(Dst, 1152, Dt6(->metatable), Dt8(->upvalue[0]));
+# 1182 "buildvm_ppc.dasc"
+#else
+  //|  evldd CFUNC:TMP0, CFUNC:RB->upvalue[0]
+  //|  la RA, -8(BASE)
+  dasm_put(Dst, 1161, Dt8(->upvalue[0]));
+# 1185 "buildvm_ppc.dasc"
+#endif
+  //|    evsplati TMP1, 0
+  //|  li RD, (3+1)*8
+  //|    evstdd TMP1, 8(BASE)
+  //|  evstdd CFUNC:TMP0, 0(RA)
+  //|  b ->fff_res
+  //|
+  //|//-- Base library: catch errors ----------------------------------------
+  //|
+  //|.ffunc pcall
+  //|  cmplwi NARGS8:RC, 8
+  //|   lbz TMP3, DISPATCH_GL(hookmask)(DISPATCH)
+  //|  blt ->fff_fallback
+  //|   mr TMP2, BASE
+  //|   la BASE, 8(BASE)
+  //|  // Remember active hook before pcall.
+  //|  rlwinm TMP3, TMP3, 32-HOOK_ACTIVE_SHIFT, 31, 31
+  //|   subi NARGS8:RC, NARGS8:RC, 8
+  //|  addi PC, TMP3, 8+FRAME_PCALL
+  //|  b ->vm_call_dispatch
+  //|
+  //|.ffunc_2 xpcall
+  //|  lbz TMP3, DISPATCH_GL(hookmask)(DISPATCH)
+  //|   mr TMP2, BASE
+  //|  checkfunc CARG2			// Traceback must be a function.
+  //|  checkfail ->fff_fallback
+  //|   la BASE, 16(BASE)
+  //|  // Remember active hook before pcall.
+  //|  rlwinm TMP3, TMP3, 32-HOOK_ACTIVE_SHIFT, 31, 31
+  //|   evstdd CARG2, 0(TMP2)		// Swap function and traceback.
+  //|  subi NARGS8:RC, NARGS8:RC, 16
+  //|   evstdd CARG1, 8(TMP2)
+  //|  addi PC, TMP3, 16+FRAME_PCALL
+  //|  b ->vm_call_dispatch
+  //|
+  //|//-- Coroutine library --------------------------------------------------
+  //|
+  //|.macro coroutine_resume_wrap, resume
+  //|.if resume
+  //|.ffunc_1 coroutine_resume
+  //|  evmergehi TMP0, L:CARG1, L:CARG1
+  //|.else
+  //|.ffunc coroutine_wrap_aux
+  //|  lwz L:CARG1, CFUNC:RB->upvalue[0].gcr
+  //|.endif
+  //|.if resume
+  //|  cmpwi TMP0, LJ_TTHREAD
+  //|  bne ->fff_fallback
+  //|.endif
+  //|  lbz TMP0, L:CARG1->status
+  //|   lwz TMP1, L:CARG1->cframe
+  //|    lwz CARG2, L:CARG1->top
+  //|  cmplwi cr0, TMP0, LUA_YIELD
+  //|    lwz TMP2, L:CARG1->base
+  //|   cmplwi cr1, TMP1, 0
+  //|   lwz TMP0, L:CARG1->maxstack
+  //|    cmplw cr7, CARG2, TMP2
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  crorc 4*cr6+lt, 4*cr0+gt, 4*cr1+eq		// st>LUA_YIELD || cframe!=0
+  //|   add TMP2, CARG2, NARGS8:RC
+  //|  crandc 4*cr6+gt, 4*cr7+eq, 4*cr0+eq	// base==top && st!=LUA_YIELD
+  //|   cmplw cr1, TMP2, TMP0
+  //|  cror 4*cr6+lt, 4*cr6+lt, 4*cr6+gt
+  //|   stw PC, SAVE_PC
+  //|  cror 4*cr6+lt, 4*cr6+lt, 4*cr1+gt		// cond1 || cond2 || stackov
+  //|   stw BASE, L->base
+  //|  blt cr6, ->fff_fallback
+  //|1:
+  //|.if resume
+  //|  addi BASE, BASE, 8			// Keep resumed thread in stack for GC.
+  //|  subi NARGS8:RC, NARGS8:RC, 8
+  //|  subi TMP2, TMP2, 8
+  //|.endif
+  //|  stw TMP2, L:CARG1->top
+  //|  li TMP1, 0
+  //|  stw BASE, L->top
+  //|2:  // Move args to coroutine.
+  //|  cmpw TMP1, NARGS8:RC
+  //|   evlddx TMP0, BASE, TMP1
+  //|  beq >3
+  //|   evstddx TMP0, CARG2, TMP1
+  //|  addi TMP1, TMP1, 8
+  //|  b <2
+  //|3:
+  //|  li CARG3, 0
+  //|   mr L:SAVE0, L:CARG1
+  //|  li CARG4, 0
+  //|  bl ->vm_resume			// (lua_State *L, TValue *base, 0, 0)
+  //|  // Returns thread status.
+  //|4:
+  //|  lwz TMP2, L:SAVE0->base
+  //|   cmplwi CRET1, LUA_YIELD
+  //|  lwz TMP3, L:SAVE0->top
+  //|    li_vmstate INTERP
+  //|  lwz BASE, L->base
+  //|    st_vmstate
+  //|   bgt >8
+  //|  sub RD, TMP3, TMP2
+  //|   lwz TMP0, L->maxstack
+  //|  cmplwi RD, 0
+  //|   add TMP1, BASE, RD
+  //|  beq >6				// No results?
+  //|  cmplw TMP1, TMP0
+  //|   li TMP1, 0
+  //|  bgt >9				// Need to grow stack?
+  //|
+  //|  subi TMP3, RD, 8
+  //|   stw TMP2, L:SAVE0->top		// Clear coroutine stack.
+  //|5:  // Move results from coroutine.
+  //|  cmplw TMP1, TMP3
+  //|   evlddx TMP0, TMP2, TMP1
+  //|   evstddx TMP0, BASE, TMP1
+  //|    addi TMP1, TMP1, 8
+  //|  bne <5
+  //|6:
+  //|  andi. TMP0, PC, FRAME_TYPE
+  //|.if resume
+  //|  li TMP1, LJ_TTRUE
+  //|   la RA, -8(BASE)
+  //|  stw TMP1, -8(BASE)			// Prepend true to results.
+  //|  addi RD, RD, 16
+  //|.else
+  //|  mr RA, BASE
+  //|  addi RD, RD, 8
+  //|.endif
+  //|7:
+  //|    stw PC, SAVE_PC
+  //|   mr MULTRES, RD
+  //|  beq ->BC_RET_Z
+  //|  b ->vm_return
+  //|
+  //|8:  // Coroutine returned with error (at co->top-1).
+  //|.if resume
+  //|  andi. TMP0, PC, FRAME_TYPE
+  //|  la TMP3, -8(TMP3)
+  //|   li TMP1, LJ_TFALSE
+  //|  evldd TMP0, 0(TMP3)
+  //|   stw TMP3, L:SAVE0->top		// Remove error from coroutine stack.
+  //|    li RD, (2+1)*8
+  //|   stw TMP1, -8(BASE)		// Prepend false to results.
+  //|    la RA, -8(BASE)
+  //|  evstdd TMP0, 0(BASE)		// Copy error message.
+  //|  b <7
+  //|.else
+  //|  mr CARG1, L
+  //|  mr CARG2, L:SAVE0
+  //|  bl extern lj_ffh_coroutine_wrap_err  // (lua_State *L, lua_State *co)
+  //|.endif
+  //|
+  //|9:  // Handle stack expansion on return from yield.
+  //|  mr CARG1, L
+  //|  srwi CARG2, RD, 3
+  //|  bl extern lj_state_growstack	// (lua_State *L, int n)
+  //|  li CRET1, 0
+  //|  b <4
+  //|.endmacro
+  //|
+  //|  coroutine_resume_wrap 1		// coroutine.resume
+  dasm_put(Dst, 1165, (3+1)*8, DISPATCH_GL(hookmask), 32-HOOK_ACTIVE_SHIFT, 8+FRAME_PCALL, DISPATCH_GL(hookmask), 32-HOOK_ACTIVE_SHIFT, 16+FRAME_PCALL, LJ_TTHREAD, Dt1(->status), Dt1(->cframe), Dt1(->top));
+  dasm_put(Dst, 1226, LUA_YIELD, Dt1(->base), Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->top), Dt1(->base), LUA_YIELD, Dt1(->top), ~LJ_VMST_INTERP, Dt1(->base), DISPATCH_GL(vmstate), Dt1(->maxstack));
+# 1343 "buildvm_ppc.dasc"
+  //|  coroutine_resume_wrap 0		// coroutine.wrap
+  dasm_put(Dst, 1289, Dt1(->top), FRAME_TYPE, LJ_TTRUE, FRAME_TYPE, LJ_TFALSE, Dt1(->top), (2+1)*8, 32-3);
+  dasm_put(Dst, 1349, Dt8(->upvalue[0].gcr), Dt1(->status), Dt1(->cframe), Dt1(->top), LUA_YIELD, Dt1(->base), Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->top), Dt1(->base), LUA_YIELD, Dt1(->top), ~LJ_VMST_INTERP);
+# 1344 "buildvm_ppc.dasc"
+  //|
+  //|.ffunc coroutine_yield
+  //|  lwz TMP0, L->cframe
+  //|   add TMP1, BASE, NARGS8:RC
+  dasm_put(Dst, 1408, Dt1(->base), DISPATCH_GL(vmstate), Dt1(->maxstack), Dt1(->top), FRAME_TYPE, 32-3, Dt1(->cframe));
+# 1348 "buildvm_ppc.dasc"
+  //|   stw BASE, L->base
+  //|  andi. TMP0, TMP0, CFRAME_RESUME
+  //|   stw TMP1, L->top
+  //|    li CRET1, LUA_YIELD
+  //|  beq ->fff_fallback
+  //|   stw ZERO, L->cframe
+  //|    stb CRET1, L->status
+  //|  b ->vm_leave_unw
+  //|
+  //|//-- Math library -------------------------------------------------------
+  //|
+  //|.ffunc_n math_abs
+  //|  efdabs CRET1, CARG1
+  //|  // Fallthrough.
+  //|
+  //|->fff_restv:
+  //|  // CRET1 = TValue result.
+  //|  lwz PC, FRAME_PC(BASE)
+  //|   la RA, -8(BASE)
+  //|  evstdd CRET1, 0(RA)
+  //|->fff_res1:
+  //|  // RA = results, PC = return.
+  //|  li RD, (1+1)*8
+  //|->fff_res:
+  //|  // RA = results, RD = (nresults+1)*8, PC = return.
+  //|  andi. TMP0, PC, FRAME_TYPE
+  //|   mr MULTRES, RD
+  //|  bne ->vm_return
+  //|  lwz INS, -4(PC)
+  //|  decode_RB8 RB, INS
+  //|5:
+  //|  cmplw RB, RD			// More results expected?
+  //|   decode_RA8 TMP0, INS
+  //|  bgt >6
+  //|  ins_next1
+  //|  // Adjust BASE. KBASE is assumed to be set for the calling frame.
+  //|   sub BASE, RA, TMP0
+  //|  ins_next2
+  //|
+  //|6:  // Fill up results with nil.
+  //|  subi TMP1, RD, 8
+  //|   addi RD, RD, 8
+  //|  evstddx TISNIL, RA, TMP1
+  //|  b <5
+  //|
+  //|.macro math_extern, func
+  //|  .ffunc math_ .. func
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checknum CARG2
+  //|   evmergehi CARG1, CARG2, CARG2
+  //|  checkfail ->fff_fallback
+  //|  bl extern func
+  //|  evmergelo CRET1, CRET1, CRET2
+  //|  b ->fff_restv
+  //|.endmacro
+  //|
+  //|.macro math_extern2, func
+  //|  .ffunc math_ .. func
+  //|  cmplwi NARGS8:RC, 16
+  //|   evldd CARG2, 0(BASE)
+  //|   evldd CARG4, 8(BASE)
+  //|  blt ->fff_fallback
+  //|  evmergehi CARG1, CARG4, CARG2
+  //|  checknum CARG1
+  //|   evmergehi CARG3, CARG4, CARG4
+  //|  checkanyfail ->fff_fallback
+  //|  bl extern func
+  //|  evmergelo CRET1, CRET1, CRET2
+  //|  b ->fff_restv
+  //|.endmacro
+  //|
+  //|.macro math_round, func
+  //|  .ffunc math_ .. func
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checknum CARG2
+  //|   evmergehi CARG1, CARG2, CARG2
+  //|  checkfail ->fff_fallback
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  bl ->vm_..func.._hilo;
+  //|  la RA, -8(BASE)
+  //|  evstdd CRET2, 0(RA)
+  //|  b ->fff_res1
+  //|.endmacro
+  //|
+  //|  math_round floor
+  dasm_put(Dst, 1465, Dt1(->base), CFRAME_RESUME, Dt1(->top), LUA_YIELD, Dt1(->cframe), Dt1(->status), (1+1)*8, FRAME_TYPE);
+# 1437 "buildvm_ppc.dasc"
+  //|  math_round ceil
+  //|
+  //|  math_extern sqrt
+  //|  math_extern log
+  //|  math_extern log10
+  dasm_put(Dst, 1530);
+# 1442 "buildvm_ppc.dasc"
+  //|  math_extern exp
+  //|  math_extern sin
+  //|  math_extern cos
+  //|  math_extern tan
+  //|  math_extern asin
+  dasm_put(Dst, 1599);
+# 1447 "buildvm_ppc.dasc"
+  //|  math_extern acos
+  //|  math_extern atan
+  //|  math_extern sinh
+  //|  math_extern cosh
+  dasm_put(Dst, 1662);
+# 1451 "buildvm_ppc.dasc"
+  //|  math_extern tanh
+  //|  math_extern2 pow
+  //|  math_extern2 atan2
+  //|  math_extern2 fmod
+  //|
+  //|->ff_math_deg:
+  //|.ffunc_n math_rad
+  dasm_put(Dst, 1727);
+# 1458 "buildvm_ppc.dasc"
+  //|  evldd CARG2, CFUNC:RB->upvalue[0]
+  //|  efdmul CRET1, CARG1, CARG2
+  //|  b ->fff_restv
+  //|
+  //|.ffunc math_ldexp
+  //|  cmplwi NARGS8:RC, 16
+  //|   evldd CARG2, 0(BASE)
+  //|   evldd CARG4, 8(BASE)
+  //|  blt ->fff_fallback
+  //|  evmergehi CARG1, CARG4, CARG2
+  //|  checknum CARG1
+  //|  checkanyfail ->fff_fallback
+  //|  efdctsi CARG3, CARG4
+  //|  bl extern ldexp
+  //|  evmergelo CRET1, CRET1, CRET2
+  //|  b ->fff_restv
+  //|
+  //|.ffunc math_frexp
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checknum CARG2
+  //|   evmergehi CARG1, CARG2, CARG2
+  //|  checkfail ->fff_fallback
+  //|  la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  bl extern frexp
+  //|   lwz TMP1, DISPATCH_GL(tmptv)(DISPATCH)
+  //|  evmergelo CRET1, CRET1, CRET2
+  //|   efdcfsi CRET2, TMP1
+  //|   la RA, -8(BASE)
+  //|  evstdd CRET1, 0(RA)
+  //|  li RD, (2+1)*8
+  //|   evstdd CRET2, 8(RA)
+  //|  b ->fff_res
+  //|
+  //|.ffunc math_modf
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG2, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checknum CARG2
+  //|   evmergehi CARG1, CARG2, CARG2
+  //|  checkfail ->fff_fallback
+  //|  la CARG3, -8(BASE)
+  //|   lwz PC, FRAME_PC(BASE)
+  //|  bl extern modf
+  //|  evmergelo CRET1, CRET1, CRET2
+  //|   la RA, -8(BASE)
+  //|  evstdd CRET1, 0(BASE)
+  //|  li RD, (2+1)*8
+  //|  b ->fff_res
+  dasm_put(Dst, 1797, Dt8(->upvalue[0]), DISPATCH_GL(tmptv), DISPATCH_GL(tmptv), (2+1)*8, (2+1)*8);
+# 1509 "buildvm_ppc.dasc"
+  //|
+  //|.macro math_minmax, name, cmpop
+  //|  .ffunc_1 name
+  //|  checknum CARG1
+  //|   li TMP1, 8
+  //|  checkfail ->fff_fallback
+  //|1:
+  //|  evlddx CARG2, BASE, TMP1
+  //|  cmplw cr1, TMP1, NARGS8:RC
+  //|   checknum CARG2
+  //|  bge cr1, ->fff_restv		// Ok, since CRET1 = CARG1.
+  //|   checkfail ->fff_fallback
+  //|  cmpop CARG2, CARG1
+  //|   addi TMP1, TMP1, 8
+  //|  crmove 4*cr0+lt, 4*cr0+gt
+  //|  evsel CARG1, CARG2, CARG1
+  //|  b <1
+  //|.endmacro
+  //|
+  //|  math_minmax math_min, efdtstlt
+  //|  math_minmax math_max, efdtstgt
+  //|
+  //|//-- String library -----------------------------------------------------
+  //|
+  //|.ffunc_1 string_len
+  //|  checkstr STR:CARG1
+  //|  checkfail ->fff_fallback
+  //|  lwz TMP0, STR:CARG1->len
+  //|  efdcfsi CRET1, TMP0
+  //|  b ->fff_restv
+  //|
+  //|.ffunc string_byte			// Only handle the 1-arg case here.
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd STR:CARG1, 0(BASE)
+  //|  bne ->fff_fallback			// Need exactly 1 argument.
+  //|  checkstr STR:CARG1
+  dasm_put(Dst, 1869, Dt5(->len));
+# 1545 "buildvm_ppc.dasc"
+  //|   la RA, -8(BASE)
+  //|  checkfail ->fff_fallback
+  //|  lwz TMP0, STR:CARG1->len
+  //|   li RD, (0+1)*8
+  //|    lbz TMP1, STR:CARG1[1]		// Access is always ok (NUL at end).
+  //|   li TMP2, (1+1)*8
+  //|  cmplwi TMP0, 0
+  //|   lwz PC, FRAME_PC(BASE)
+  //|    efdcfsi CRET1, TMP1
+  //|  iseleq RD, RD, TMP2
+  //|    evstdd CRET1, 0(RA)
+  //|  b ->fff_res
+  //|
+  //|.ffunc string_char			// Only handle the 1-arg case here.
+  //|  ffgccheck
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG1, 0(BASE)
+  //|  bne ->fff_fallback			// Exactly 1 argument.
+  //|  checknum CARG1
+  //|   la CARG2, DISPATCH_GL(tmptv)(DISPATCH)
+  //|  checkfail ->fff_fallback
+  //|  efdctsiz TMP0, CARG1
+  //|   li CARG3, 1
+  //|  cmplwi TMP0, 255
+  //|   stb TMP0, 0(CARG2)
+  //|  bgt ->fff_fallback
+  //|->fff_newstr:
+  //|  mr CARG1, L
+  //|  stw BASE, L->base
+  //|  stw PC, SAVE_PC
+  //|  bl extern lj_str_new		// (lua_State *L, char *str, size_t l)
+  //|  // Returns GCstr *.
+  //|  lwz BASE, L->base
+  //|   evmergelo STR:CRET1, TISSTR, STR:CRET1
+  //|  b ->fff_restv
+  //|
+  //|.ffunc string_sub
+  //|  ffgccheck
+  dasm_put(Dst, 1936, Dt5(->len), (0+1)*8, Dt5([1]), (1+1)*8, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmptv), Dt1(->base), Dt1(->base), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
+# 1583 "buildvm_ppc.dasc"
+  //|  cmplwi NARGS8:RC, 16
+  //|   evldd CARG3, 16(BASE)
+  //|   evldd STR:CARG1, 0(BASE)
+  //|  blt ->fff_fallback
+  //|   evldd CARG2, 8(BASE)
+  //|   li TMP2, -1
+  //|  beq >1
+  //|  checknum CARG3
+  //|  checkfail ->fff_fallback
+  //|  efdctsiz TMP2, CARG3
+  //|1:
+  //|  checknum CARG2
+  //|  checkfail ->fff_fallback
+  //|  checkstr STR:CARG1
+  //|   efdctsiz TMP1, CARG2
+  //|  checkfail ->fff_fallback
+  //|   lwz TMP0, STR:CARG1->len
+  //|  cmplw TMP0, TMP2			// len < end? (unsigned compare)
+  //|   add TMP3, TMP2, TMP0
+  //|  blt >5
+  //|2:
+  //|  cmpwi TMP1, 0			// start <= 0?
+  //|   add TMP3, TMP1, TMP0
+  //|  ble >7
+  //|3:
+  //|  sub. CARG3, TMP2, TMP1
+  //|    addi CARG2, STR:CARG1, #STR-1
+  //|   addi CARG3, CARG3, 1
+  //|    add CARG2, CARG2, TMP1
+  //|  isellt CARG3, r0, CARG3
+  //|  b ->fff_newstr
+  //|
+  //|5:  // Negative end or overflow.
+  //|  cmpw TMP0, TMP2
+  //|   addi TMP3, TMP3, 1
+  //|  iselgt TMP2, TMP3, TMP0		// end = end > len ? len : end+len+1
+  //|  b <2
+  //|
+  //|7:  // Negative start or underflow.
+  //|   cmpwi cr1, TMP3, 0
+  //|  iseleq TMP1, r0, TMP3
+  //|   isel TMP1, r0, TMP1, 4*cr1+lt
+  //|  addi TMP1, TMP1, 1			// start = 1 + (start ? start+len : 0)
+  //|  b <3
+  //|
+  //|.ffunc string_rep			// Only handle the 1-char case inline.
+  //|  ffgccheck
+  //|  cmplwi NARGS8:RC, 16
+  dasm_put(Dst, 1996, Dt5(->len), sizeof(GCstr)-1, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
+# 1631 "buildvm_ppc.dasc"
+  //|   evldd CARG1, 0(BASE)
+  //|   evldd CARG2, 8(BASE)
+  //|  blt ->fff_fallback
+  //|  checknum CARG2
+  //|  checkfail ->fff_fallback
+  //|  checkstr STR:CARG1
+  //|   efdctsiz CARG3, CARG2
+  //|  checkfail ->fff_fallback
+  //|   lwz TMP0, STR:CARG1->len
+  //|  cmpwi CARG3, 0
+  //|   lwz TMP1, DISPATCH_GL(tmpbuf.sz)(DISPATCH)
+  //|  ble >2				// Count <= 0? (or non-int)
+  //|   cmplwi TMP0, 1
+  //|  subi TMP2, CARG3, 1
+  //|   blt >2				// Zero length string?
+  //|  cmplw cr1, TMP1, CARG3
+  //|   bne ->fff_fallback		// Fallback for > 1-char strings.
+  //|   lbz TMP0, STR:CARG1[1]
+  //|   lwz CARG2, DISPATCH_GL(tmpbuf.buf)(DISPATCH)
+  //|  blt cr1, ->fff_fallback
+  //|1:  // Fill buffer with char. Yes, this is suboptimal code (do you care?).
+  //|  cmplwi TMP2, 0
+  //|   stbx TMP0, CARG2, TMP2
+  //|   subi TMP2, TMP2, 1
+  //|  bne <1
+  //|  b ->fff_newstr
+  //|2:  // Return empty string.
+  //|  la STR:CRET1, DISPATCH_GL(strempty)(DISPATCH)
+  //|  evmergelo CRET1, TISSTR, STR:CRET1
+  //|  b ->fff_restv
+  //|
+  //|.ffunc string_reverse
+  //|  ffgccheck
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG1, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checkstr STR:CARG1
+  dasm_put(Dst, 2062, Dt5(->len), DISPATCH_GL(tmpbuf.sz), Dt5([1]), DISPATCH_GL(tmpbuf.buf), DISPATCH_GL(strempty), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold));
+# 1668 "buildvm_ppc.dasc"
+  //|   lwz TMP1, DISPATCH_GL(tmpbuf.sz)(DISPATCH)
+  //|  checkfail ->fff_fallback
+  //|  lwz CARG3, STR:CARG1->len
+  //|   la CARG1, #STR(STR:CARG1)
+  //|   lwz CARG2, DISPATCH_GL(tmpbuf.buf)(DISPATCH)
+  //|   li TMP2, 0
+  //|  cmplw TMP1, CARG3
+  //|   subi TMP3, CARG3, 1
+  //|  blt ->fff_fallback
+  //|1:  // Reverse string copy.
+  //|  cmpwi TMP3, 0
+  //|   lbzx TMP1, CARG1, TMP2
+  //|  blt ->fff_newstr
+  //|   stbx TMP1, CARG2, TMP3
+  //|  subi TMP3, TMP3, 1
+  //|  addi TMP2, TMP2, 1
+  //|  b <1
+  //|
+  //|.macro ffstring_case, name, lo
+  //|  .ffunc name
+  //|  ffgccheck
+  //|  cmplwi NARGS8:RC, 8
+  //|   evldd CARG1, 0(BASE)
+  //|  blt ->fff_fallback
+  //|  checkstr STR:CARG1
+  //|   lwz TMP1, DISPATCH_GL(tmpbuf.sz)(DISPATCH)
+  //|  checkfail ->fff_fallback
+  //|  lwz CARG3, STR:CARG1->len
+  //|   la CARG1, #STR(STR:CARG1)
+  //|   lwz CARG2, DISPATCH_GL(tmpbuf.buf)(DISPATCH)
+  //|  cmplw TMP1, CARG3
+  //|   li TMP2, 0
+  //|  blt ->fff_fallback
+  //|1:  // ASCII case conversion.
+  //|  cmplw TMP2, CARG3
+  //|   lbzx TMP1, CARG1, TMP2
+  //|  bge ->fff_newstr
+  //|   subi TMP0, TMP1, lo
+  //|    xori TMP3, TMP1, 0x20
+  //|   cmplwi TMP0, 26
+  //|   isellt TMP1, TMP3, TMP1
+  //|   stbx TMP1, CARG2, TMP2
+  //|  addi TMP2, TMP2, 1
+  //|  b <1
+  //|.endmacro
+  //|
+  //|ffstring_case string_lower, 65
+  dasm_put(Dst, 2121, DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf), DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf));
+# 1715 "buildvm_ppc.dasc"
+  //|ffstring_case string_upper, 97
+  //|
+  //|//-- Table library ------------------------------------------------------
+  //|
+  //|.ffunc_1 table_getn
+  //|  checktab CARG1
+  //|  checkfail ->fff_fallback
+  //|  bl extern lj_tab_len		// (GCtab *t)
+  //|  // Returns uint32_t (but less than 2^31).
+  //|  efdcfsi CRET1, CRET1
+  //|  b ->fff_restv
+  //|
+  //|//-- Bit library --------------------------------------------------------
+  //|
+  //|.macro .ffunc_bit, name
+  //|  .ffunc_n bit_..name
+  //|  efdadd CARG1, CARG1, TOBIT
+  //|.endmacro
+  //|
+  //|.ffunc_bit tobit
+  dasm_put(Dst, 2180, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), DISPATCH_GL(tmpbuf.sz), Dt5(->len), sizeof(GCstr), DISPATCH_GL(tmpbuf.buf));
+# 1735 "buildvm_ppc.dasc"
+  //|->fff_resbit:
+  //|  efdcfsi CRET1, CARG1
+  //|  b ->fff_restv
+  //|
+  //|.macro .ffunc_bit_op, name, ins
+  //|  .ffunc_bit name
+  //|   li TMP1, 8
+  //|1:
+  //|  evlddx CARG2, BASE, TMP1
+  //|  cmplw cr1, TMP1, NARGS8:RC
+  //|   checknum CARG2
+  //|  bge cr1, ->fff_resbit
+  //|   checkfail ->fff_fallback
+  //|  efdadd CARG2, CARG2, TOBIT
+  //|  ins CARG1, CARG1, CARG2
+  //|   addi TMP1, TMP1, 8
+  //|  b <1
+  //|.endmacro
+  //|
+  //|.ffunc_bit_op band, and
+  //|.ffunc_bit_op bor, or
+  //|.ffunc_bit_op bxor, xor
+  dasm_put(Dst, 2247);
+# 1757 "buildvm_ppc.dasc"
+  //|
+  //|.ffunc_bit bswap
+  //|  rotlwi TMP0, CARG1, 8
+  //|  rlwimi TMP0, CARG1, 24, 0, 7
+  //|  rlwimi TMP0, CARG1, 24, 16, 23
+  //|  efdcfsi CRET1, TMP0
+  //|  b ->fff_restv
+  //|
+  //|.ffunc_bit bnot
+  //|  not TMP0, CARG1
+  //|  efdcfsi CRET1, TMP0
+  //|  b ->fff_restv
+  //|
+  //|.macro .ffunc_bit_sh, name, ins, shmod
+  //|  .ffunc_nn bit_..name
+  //|  efdadd CARG2, CARG2, TOBIT
+  //|   efdadd CARG1, CARG1, TOBIT
+  //|.if shmod == 1
+  //|  rlwinm CARG2, CARG2, 0, 27, 31
+  //|.elif shmod == 2
+  //|  neg CARG2, CARG2
+  //|.endif
+  //|  ins TMP0, CARG1, CARG2
+  //|  efdcfsi CRET1, TMP0
+  //|  b ->fff_restv
+  //|.endmacro
+  //|
+  //|.ffunc_bit_sh lshift, slw, 1
+  //|.ffunc_bit_sh rshift, srw, 1
+  //|.ffunc_bit_sh arshift, sraw, 1
+  //|.ffunc_bit_sh rol, rotlw, 0
+  dasm_put(Dst, 2318);
+# 1788 "buildvm_ppc.dasc"
+  //|.ffunc_bit_sh ror, rotlw, 2
+  //|
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->fff_fallback:			// Call fast function fallback handler.
+  //|  // BASE = new base, RB = CFUNC, RC = nargs*8
+  //|  lwz TMP3, CFUNC:RB->f
+  //|    add TMP1, BASE, NARGS8:RC
+  //|   lwz PC, FRAME_PC(BASE)		// Fallback may overwrite PC.
+  //|    addi TMP0, TMP1, 8*LUA_MINSTACK
+  //|     lwz TMP2, L->maxstack
+  //|   stw PC, SAVE_PC			// Redundant (but a defined value).
+  //|  cmplw TMP0, TMP2
+  //|     stw BASE, L->base
+  //|    stw TMP1, L->top
+  //|   mr CARG1, L
+  //|  bgt >5				// Need to grow stack.
+  //|  mtctr TMP3
+  //|  bctrl				// (lua_State *L)
+  //|  // Either throws an error, or recovers and returns -1, 0 or nresults+1.
+  //|  lwz BASE, L->base
+  //|  cmpwi CRET1, 0
+  //|   slwi RD, CRET1, 3
+  //|   la RA, -8(BASE)
+  //|  bgt ->fff_res			// Returned nresults+1?
+  //|1:  // Returned 0 or -1: retry fast path.
+  //|  lwz TMP0, L->top
+  //|   lwz LFUNC:RB, FRAME_FUNC(BASE)
+  //|  sub NARGS8:RC, TMP0, BASE
+  //|  bne ->vm_call_tail			// Returned -1?
+  //|  ins_callt				// Returned 0: retry fast path.
+  //|
+  //|// Reconstruct previous base for vmeta_call during tailcall.
+  //|->vm_call_tail:
+  //|  andi. TMP0, PC, FRAME_TYPE
+  dasm_put(Dst, 2406, Dt8(->f), 8*LUA_MINSTACK, Dt1(->maxstack), Dt1(->base), Dt1(->top), Dt1(->base), 31-3, Dt1(->top), Dt7(->pc));
+# 1823 "buildvm_ppc.dasc"
+  //|   rlwinm TMP1, PC, 0, 0, 28
+  //|  bne >3
+  //|  lwz INS, -4(PC)
+  //|  decode_RA8 TMP1, INS
+  //|3:
+  //|  sub TMP2, BASE, TMP1
+  //|  b ->vm_call_dispatch		// Resolve again for tailcall.
+  //|
+  //|5:  // Grow stack for fallback handler.
+  //|  li CARG2, LUA_MINSTACK
+  //|  bl extern lj_state_growstack	// (lua_State *L, int n)
+  //|  lwz BASE, L->base
+  //|  cmpw TMP0, TMP0			// Set 4*cr0+eq to force retry.
+  //|  b <1
+  //|
+  //|->fff_gcstep:			// Call GC step function.
+  //|  // BASE = new base, RC = nargs*8
+  //|  mflr SAVE0
+  //|   stw BASE, L->base
+  //|  add TMP0, BASE, NARGS8:RC
+  //|   stw PC, SAVE_PC			// Redundant (but a defined value).
+  //|  stw TMP0, L->top
+  //|  mr CARG1, L
+  //|  bl extern lj_gc_step		// (lua_State *L)
+  //|   lwz BASE, L->base
+  //|  mtlr SAVE0
+  //|    lwz TMP0, L->top
+  //|   sub NARGS8:RC, TMP0, BASE
+  //|   lwz CFUNC:RB, FRAME_FUNC(BASE)
+  //|  blr
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Special dispatch targets -------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_record:				// Dispatch target for recording phase.
+  dasm_put(Dst, 2485, FRAME_TYPE, LUA_MINSTACK, Dt1(->base), Dt1(->base), Dt1(->top), Dt1(->base), Dt1(->top));
+# 1859 "buildvm_ppc.dasc"
 #if LJ_HASJIT
-  dasm_put(Dst, 2728);
+  //|  NYI
+  dasm_put(Dst, 2527);
+# 1861 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2730);
+  //|
+  //|->vm_rethook:			// Dispatch target for return hooks.
+  //|  lbz TMP3, DISPATCH_GL(hookmask)(DISPATCH)
+  //|  andi. TMP0, TMP3, HOOK_ACTIVE	// Hook already active?
+  //|  beq >1
+  //|5:  // Re-dispatch to static ins.
+  //|  addi TMP1, TMP1, GG_DISP2STATIC	// Assumes decode_OP4 TMP1, INS.
+  //|  lwzx TMP0, DISPATCH, TMP1
+  //|  mtctr TMP0
+  //|  bctr
+  //|
+  //|->vm_inshook:			// Dispatch target for instr/line hooks.
+  //|  lbz TMP3, DISPATCH_GL(hookmask)(DISPATCH)
+  //|  lwz TMP2, DISPATCH_GL(hookcount)(DISPATCH)
+  //|  andi. TMP0, TMP3, HOOK_ACTIVE	// Hook already active?
+  //|   rlwinm TMP0, TMP3, 31-LUA_HOOKLINE, 31, 0
+  //|  bne <5
+  //|
+  //|   cmpwi cr1, TMP0, 0
+  //|  addic. TMP2, TMP2, -1
+  //|   beq cr1, <5
+  //|  stw TMP2, DISPATCH_GL(hookcount)(DISPATCH)
+  //|  beq >1
+  //|   bge cr1, <5
+  //|1:
+  //|  mr CARG1, L
+  //|   stw MULTRES, SAVE_MULTRES
+  //|  mr CARG2, PC
+  //|   stw BASE, L->base
+  //|  // SAVE_PC must hold the _previous_ PC. The callee updates it with PC.
+  //|  bl extern lj_dispatch_ins		// (lua_State *L, const BCIns *pc)
+  //|3:
+  //|  lwz BASE, L->base
+  //|4:  // Re-dispatch to static ins.
+  //|  lwz INS, -4(PC)
+  dasm_put(Dst, 2529, DISPATCH_GL(hookmask), HOOK_ACTIVE, GG_DISP2STATIC, DISPATCH_GL(hookmask), DISPATCH_GL(hookcount), HOOK_ACTIVE, 31-LUA_HOOKLINE, DISPATCH_GL(hookcount), Dt1(->base), Dt1(->base));
+# 1897 "buildvm_ppc.dasc"
+  //|  decode_OP4 TMP1, INS
+  //|   decode_RB8 RB, INS
+  //|  addi TMP1, TMP1, GG_DISP2STATIC
+  //|   decode_RD8 RD, INS
+  //|  lwzx TMP0, DISPATCH, TMP1
+  //|   decode_RA8 RA, INS
+  //|   decode_RC8 RC, INS
+  //|  mtctr TMP0
+  //|  bctr
+  //|
+  //|->cont_hook:				// Continue from hook yield.
+  //|  addi PC, PC, 4
+  //|  lwz MULTRES, -20(RB)		// Restore MULTRES for *M ins.
+  //|  b <4
+  //|
+  //|->vm_hotloop:			// Hot loop counter underflow.
+  dasm_put(Dst, 2576, GG_DISP2STATIC);
+# 1913 "buildvm_ppc.dasc"
 #if LJ_HASJIT
-  dasm_put(Dst, 2732);
+  //|  NYI
+  dasm_put(Dst, 2594);
+# 1915 "buildvm_ppc.dasc"
 #endif
-  dasm_put(Dst, 2734);
+  //|
+  //|->vm_callhook:			// Dispatch target for call hooks.
+  //|  mr CARG2, PC
+  dasm_put(Dst, 2596);
+# 1919 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  b >1
+  dasm_put(Dst, 2599);
+# 1921 "buildvm_ppc.dasc"
+#endif
+  //|
+  //|->vm_hotcall:			// Hot call counter underflow.
+  dasm_put(Dst, 2602);
+# 1924 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  ori CARG2, PC, 1
+  //|1:
+  dasm_put(Dst, 2604);
+# 1927 "buildvm_ppc.dasc"
+#endif
+  //|  add TMP0, BASE, RC
+  //|   stw PC, SAVE_PC
+  //|  mr CARG1, L
+  //|   stw BASE, L->base
+  //|  sub RA, RA, BASE
+  //|   stw TMP0, L->top
+  //|  bl extern lj_dispatch_call		// (lua_State *L, const BCIns *pc)
+  //|  // Returns ASMFunction.
+  //|  lwz BASE, L->base
+  //|   lwz TMP0, L->top
+  //|   stw ZERO, SAVE_PC			// Invalidate for subsequent line hook.
+  //|  sub NARGS8:RC, TMP0, BASE
+  //|  add RA, BASE, RA
+  //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+  //|  mtctr CRET1
+  //|  bctr
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Trace exit handler -------------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_exit_handler:
+  dasm_put(Dst, 2607, Dt1(->base), Dt1(->top), Dt1(->base), Dt1(->top));
+# 1950 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  NYI
+  dasm_put(Dst, 2629);
+# 1952 "buildvm_ppc.dasc"
+#endif
+  //|->vm_exit_interp:
+  dasm_put(Dst, 2631);
+# 1954 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  NYI
+  dasm_put(Dst, 2633);
+# 1956 "buildvm_ppc.dasc"
+#endif
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Math helper functions ----------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|// FP value rounding. Called by math.floor/math.ceil fast functions
+  //|// and from JIT code.
+  //|//
+  //|// This can be inlined if the CPU has the frin/friz/frip/frim instructions.
+  //|// The alternative hard-float approaches have a deep dependency chain.
+  //|// The resulting latency is at least 3x-7x the double-precision FP latency
+  //|// (e500v2: 6cy, e600: 5cy, Cell: 10cy) or around 20-70 cycles.
+  //|//
+  //|// The soft-float approach is tedious, but much faster (e500v2: ~11cy/~6cy).
+  //|// However it relies on a fast way to transfer the FP value to GPRs
+  //|// (e500v2: 0cy for lo-word, 1cy for hi-word).
+  //|//
+  //|.macro vm_round, name, mode
+  //|  // Used temporaries: TMP0, TMP1, TMP2, TMP3.
+  //|->name.._efd:			// Input: CARG2, output: CRET2
+  //|  evmergehi CARG1, CARG2, CARG2
+  //|->name.._hilo:
+  //|  // Input: CARG1 (hi), CARG2 (hi, lo), output: CRET2
+  //|  rlwinm TMP2, CARG1, 12, 21, 31
+  //|  addic. TMP2, TMP2, -1023		// exp = exponent(x) - 1023
+  //|   li TMP1, -1
+  //|  cmplwi cr1, TMP2, 51		// 0 <= exp <= 51?
+  //|   subfic TMP0, TMP2, 52
+  //|  bgt cr1, >1
+  //|   lus TMP3, 0xfff0
+  //|  slw TMP0, TMP1, TMP0		// lomask = -1 << (52-exp)
+  //|   sraw TMP1, TMP3, TMP2		// himask = (int32_t)0xfff00000 >> exp
+  //|.if mode == 2		// trunc(x):
+  //|  evmergelo TMP0, TMP1, TMP0
+  //|  evand CRET2, CARG2, TMP0		// hi &= himask, lo &= lomask
+  //|.else
+  //|  andc TMP2, CARG2, TMP0
+  //|   andc TMP3, CARG1, TMP1
+  //|  or TMP2, TMP2, TMP3		// ztest = (hi&~himask) | (lo&~lomask)
+  //|   srawi TMP3, CARG1, 31		// signmask = (int32_t)hi >> 31
+  //|.if mode == 0		// floor(x):
+  //|  and. TMP2, TMP2, TMP3		// iszero = ((ztest & signmask) == 0)
+  //|.else			// ceil(x):
+  //|  andc. TMP2, TMP2, TMP3		// iszero = ((ztest & ~signmask) == 0)
+  //|.endif
+  //|  and CARG2, CARG2, TMP0		// lo &= lomask
+  //|  and CARG1, CARG1, TMP1		// hi &= himask
+  //|   subc TMP0, CARG2, TMP0
+  //|  iseleq TMP0, CARG2, TMP0		// lo = iszero ? lo : lo-lomask
+  //|   sube TMP1, CARG1, TMP1
+  //|  iseleq TMP1, CARG1, TMP1		// hi = iszero ? hi : hi-himask+carry
+  //|  evmergelo CRET2, TMP1, TMP0
+  //|.endif
+  //|  blr
+  //|1:
+  //|  bgtlr				// Already done if >=2^52, +-inf or nan.
+  //|.if mode == 2		// trunc(x):
+  //|  rlwinm TMP1, CARG1, 0, 0, 0	// hi = sign(x)
+  //|  li TMP0, 0
+  //|  evmergelo CRET2, TMP1, TMP0
+  //|.else
+  //|  rlwinm TMP2, CARG1, 0, 1, 31
+  //|  srawi TMP0, CARG1, 31		// signmask = (int32_t)hi >> 31
+  //|  or TMP2, TMP2, CARG2		// ztest = abs(hi) | lo
+  //|   lus TMP1, 0x3ff0
+  //|.if mode == 0		// floor(x):
+  //|  and. TMP2, TMP2, TMP0		// iszero = ((ztest & signmask) == 0)
+  //|.else			// ceil(x):
+  //|  andc. TMP2, TMP2, TMP0		// iszero = ((ztest & ~signmask) == 0)
+  //|.endif
+  //|   li TMP0, 0
+  //|  iseleq TMP1, r0, TMP1
+  //|  rlwimi CARG1, TMP1, 0, 1, 31	// hi = sign(x) | (iszero ? 0.0 : 1.0)
+  //|  evmergelo CRET2, CARG1, TMP0
+  //|.endif
+  //|  blr
+  //|.endmacro
+  //|
+  //|->vm_floor:
+  //|  mflr CARG3
+  //|  bl ->vm_floor_hilo
+  //|  mtlr CARG3
+  //|  evmergehi CRET1, CRET2, CRET2
+  //|  blr
+  //|
+  //|  vm_round vm_floor, 0
+  //|  vm_round vm_ceil,  1
+  dasm_put(Dst, 2635);
+# 2044 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  vm_round vm_trunc, 2
+  dasm_put(Dst, 2719);
+# 2046 "buildvm_ppc.dasc"
+#else
+  //|->vm_trunc_efd:
+  //|->vm_trunc_hilo:
+  dasm_put(Dst, 2742);
+# 2049 "buildvm_ppc.dasc"
+#endif
+  //|
+  //|->vm_powi:
+  dasm_put(Dst, 2745);
+# 2052 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  NYI
+  dasm_put(Dst, 2747);
+# 2054 "buildvm_ppc.dasc"
+#endif
+  //|
+  //|->vm_foldfpm:
+  dasm_put(Dst, 2749);
+# 2057 "buildvm_ppc.dasc"
+#if LJ_HASJIT
+  //|  NYI
+  dasm_put(Dst, 2751);
+# 2059 "buildvm_ppc.dasc"
+#endif
+  //|
+  //|// Callable from C: double lj_vm_foldarith(double x, double y, int op)
+  //|// Compute x op y for basic arithmetic operators (+ - * / % ^ and unary -)
+  //|// and basic math functions. ORDER ARITH
+  //|->vm_foldarith:
+  //|  evmergelo CARG2, CARG1, CARG2
+  //|   cmplwi CARG5, 1
+  //|  evmergelo CARG4, CARG3, CARG4
+  //|   beq >1; bgt >2
+  //|  efdadd CRET2, CARG2, CARG4; evmergehi CRET1, CRET2, CRET2; blr
+  //|1:
+  //|  efdsub CRET2, CARG2, CARG4; evmergehi CRET1, CRET2, CRET2; blr
+  //|2:
+  //|   cmplwi CARG5, 3; beq >1; bgt >2
+  //|  efdmul CRET2, CARG2, CARG4; evmergehi CRET1, CRET2, CRET2; blr
+  //|1:
+  //|  efddiv CRET2, CARG2, CARG4; evmergehi CRET1, CRET2, CRET2; blr
+  //|2:
+  //|   cmplwi CARG5, 5; beq >1; bgt >2
+  //|  evmr CARG3, CARG2; efddiv CRET2, CARG2, CARG4; evmr RB, CARG4
+  //|  mflr RC; bl ->vm_floor_efd; mtlr RC
+  //|  efdmul CRET2, CRET2, RB; efdsub CRET2, CARG3, CRET2
+  //|  evmergehi CRET1, CRET2, CRET2; blr
+  //|1:
+  //|  b extern pow
+  //|2:
+  //|   cmplwi CARG5, 7; beq >1; bgt >2
+  //|  xoris CARG1, CARG1, 0x8000; blr
+  //|1:
+  //|  rlwinm CARG1, CARG1, 0, 1, 31; blr
+  //|2:
+  //|  NYI  // Other operations only needed by JIT compiler.
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- Miscellaneous functions --------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|//-----------------------------------------------------------------------
+  //|//-- FFI helper functions -----------------------------------------------
+  //|//-----------------------------------------------------------------------
+  //|
+  //|->vm_ffi_call:
+  dasm_put(Dst, 2753);
+# 2102 "buildvm_ppc.dasc"
 #if LJ_HASFFI
-  dasm_put(Dst, 2797);
+  //|  NYI
+  dasm_put(Dst, 2816);
+# 2104 "buildvm_ppc.dasc"
 #endif
+  //|
+  //|//-----------------------------------------------------------------------
 }
 
 /* Generate the code for a single instruction. */
 static void build_ins(BuildCtx *ctx, BCOp op, int defop)
 {
   int vk = 0;
-  dasm_put(Dst, 2799, defop);
+  //|=>defop:
+  dasm_put(Dst, 2818, defop);
+# 2114 "buildvm_ppc.dasc"
 
   switch (op) {
 
@@ -5438,378 +7642,1555 @@ static void build_ins(BuildCtx *ctx, BCOp op, int defop)
   /* Remember: all ops branch for a true comparison, fall through otherwise. */
 
   case BC_ISLT: case BC_ISGE: case BC_ISLE: case BC_ISGT:
-    dasm_put(Dst, 2801, -(BCBIAS_J*4 >> 16));
+    //|  // RA = src1*8, RD = src2*8, JMP with RD = target
+    //|  evlddx TMP0, BASE, RA
+    //|   addi PC, PC, 4
+    //|  evlddx TMP1, BASE, RD
+    //|   addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|   lwz TMP2, -4(PC)
+    //|  evmergehi RB, TMP0, TMP1
+    //|   decode_RD4 TMP2, TMP2
+    //|  checknum RB
+    //|   add TMP2, TMP2, TMP3
+    //|  checkanyfail ->vmeta_comp
+    //|  efdcmplt TMP0, TMP1
+    dasm_put(Dst, 2820, -(BCBIAS_J*4 >> 16));
+# 2134 "buildvm_ppc.dasc"
     if (op == BC_ISLE || op == BC_ISGT) {
-      dasm_put(Dst, 2815);
+      //|  efdcmpeq cr1, TMP0, TMP1
+      //|  cror 4*cr0+gt, 4*cr0+gt, 4*cr1+gt
+      dasm_put(Dst, 2834);
+# 2137 "buildvm_ppc.dasc"
     }
     if (op == BC_ISLT || op == BC_ISLE) {
-      dasm_put(Dst, 2818);
+      //|  iselgt PC, TMP2, PC
+      dasm_put(Dst, 2837);
+# 2140 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2820);
+      //|  iselgt PC, PC, TMP2
+      dasm_put(Dst, 2839);
+# 2142 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2822);
+    //|  ins_next
+    dasm_put(Dst, 2841);
+# 2144 "buildvm_ppc.dasc"
     break;
 
   case BC_ISEQV: case BC_ISNEV:
     vk = op == BC_ISEQV;
-    dasm_put(Dst, 2833, -(BCBIAS_J*4 >> 16));
+    //|  // RA = src1*8, RD = src2*8, JMP with RD = target
+    //|  evlddx CARG2, BASE, RA
+    //|   addi PC, PC, 4
+    //|  evlddx CARG3, BASE, RD
+    //|   addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|   lwz TMP2, -4(PC)
+    //|  evmergehi RB, CARG2, CARG3
+    //|   decode_RD4 TMP2, TMP2
+    //|  checknum RB
+    //|   add TMP2, TMP2, TMP3
+    //|  checkanyfail >5
+    //|  efdcmpeq CARG2, CARG3
+    dasm_put(Dst, 2852, -(BCBIAS_J*4 >> 16));
+# 2160 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2847);
+      //|  iselgt PC, TMP2, PC
+      dasm_put(Dst, 2866);
+# 2162 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2849);
+      //|  iselgt PC, PC, TMP2
+      dasm_put(Dst, 2868);
+# 2164 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2851, ~LJ_TISPRI, ~LJ_TISTABUD);
+    //|1:
+    //|  ins_next
+    //|
+    //|5:  // Either or both types are not numbers.
+    //|  evcmpeq CARG2, CARG3
+    //|   not TMP3, RB
+    //|   cmplwi cr1, TMP3, ~LJ_TISPRI		// Primitive?
+    //|  crorc 4*cr7+lt, 4*cr0+so, 4*cr0+lt	// 1: Same tv or different type.
+    //|   cmplwi cr6, TMP3, ~LJ_TISTABUD		// Table or userdata?
+    //|  crandc 4*cr7+gt, 4*cr0+lt, 4*cr1+gt	// 2: Same type and primitive.
+    //|   mr SAVE0, PC
+    dasm_put(Dst, 2870, ~LJ_TISPRI, ~LJ_TISTABUD);
+# 2176 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2873);
+      //|  isel PC, TMP2, PC, 4*cr7+gt
+      dasm_put(Dst, 2892);
+# 2178 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2875);
+      //|  isel TMP2, PC, TMP2, 4*cr7+gt
+      dasm_put(Dst, 2894);
+# 2180 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2877);
+    //|  cror 4*cr7+lt, 4*cr7+lt, 4*cr7+gt	// 1 or 2.
+    dasm_put(Dst, 2896);
+# 2182 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2879);
+      //|  isel PC, TMP2, PC, 4*cr0+so
+      dasm_put(Dst, 2898);
+# 2184 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2881);
+      //|  isel PC, PC, TMP2, 4*cr0+so
+      dasm_put(Dst, 2900);
+# 2186 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2883, Dt6(->metatable), 1-vk, Dt6(->nomm), 1<<MM_eq);
+    //|  blt cr7, <1			// Done if 1 or 2.
+    //|  blt cr6, <1			// Done if not tab/ud.
+    //|
+    //|  // Different tables or userdatas. Need to check __eq metamethod.
+    //|  // Field metatable must be at same offset for GCtab and GCudata!
+    //|  lwz TAB:TMP2, TAB:CARG2->metatable
+    //|   li CARG4, 1-vk			// ne = 0 or 1.
+    //|  cmplwi TAB:TMP2, 0
+    //|  beq <1				// No metatable?
+    //|  lbz TMP2, TAB:TMP2->nomm
+    //|  andi. TMP2, TMP2, 1<<MM_eq
+    //|  bne <1				// Or 'no __eq' flag set?
+    //|  mr PC, SAVE0			// Restore old PC.
+    //|  b ->vmeta_equal			// Handle __eq metamethod.
+    dasm_put(Dst, 2902, Dt6(->metatable), 1-vk, Dt6(->nomm), 1<<MM_eq);
+# 2201 "buildvm_ppc.dasc"
     break;
 
   case BC_ISEQS: case BC_ISNES:
     vk = op == BC_ISEQS;
-    dasm_put(Dst, 2904, 32-1, -(BCBIAS_J*4 >> 16));
+    //|  // RA = src*8, RD = str_const*8 (~), JMP with RD = target
+    //|  evlddx TMP0, BASE, RA
+    //|   srwi RD, RD, 1
+    //|    lwz INS, 0(PC)
+    //|   subfic RD, RD, -4
+    //|    addi PC, PC, 4
+    //|   lwzx STR:TMP1, KBASE, RD	// KBASE-4-str_const*4
+    //|    addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|    decode_RD4 TMP2, INS
+    //|   evmergelo STR:TMP1, TISSTR, STR:TMP1
+    //|    add TMP2, TMP2, TMP3
+    //|  evcmpeq TMP0, STR:TMP1
+    dasm_put(Dst, 2923, 32-1, -(BCBIAS_J*4 >> 16));
+# 2217 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2918);
+      //|  isel PC, TMP2, PC, 4*cr0+so
+      dasm_put(Dst, 2937);
+# 2219 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2920);
+      //|  isel PC, PC, TMP2, 4*cr0+so
+      dasm_put(Dst, 2939);
+# 2221 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2922);
+    //|  ins_next
+    dasm_put(Dst, 2941);
+# 2223 "buildvm_ppc.dasc"
     break;
 
   case BC_ISEQN: case BC_ISNEN:
     vk = op == BC_ISEQN;
-    dasm_put(Dst, 2933, -(BCBIAS_J*4 >> 16));
+    //|  // RA = src*8, RD = num_const*8, JMP with RD = target
+    //|  evlddx TMP0, BASE, RA
+    //|   addi PC, PC, 4
+    //|  evlddx TMP1, KBASE, RD
+    //|   addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|   lwz INS, -4(PC)
+    //|  checknum TMP0
+    //|  checkfail >5
+    //|  efdcmpeq TMP0, TMP1
+    //|1:
+    //|   decode_RD4 TMP2, INS
+    //|   add TMP2, TMP2, TMP3
+    dasm_put(Dst, 2952, -(BCBIAS_J*4 >> 16));
+# 2239 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2947);
+      //|  iselgt PC, TMP2, PC
+      //|5:
+      dasm_put(Dst, 2966);
+# 2242 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2950);
+      //|  iselgt PC, PC, TMP2
+      dasm_put(Dst, 2969);
+# 2244 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2952);
+    //|3:
+    //|  ins_next
+    dasm_put(Dst, 2971);
+# 2247 "buildvm_ppc.dasc"
     if (!vk) {
-      dasm_put(Dst, 2964);
+      //|5:
+      //|  decode_RD4 TMP2, INS
+      //|  add PC, TMP2, TMP3
+      //|  b <3
+      dasm_put(Dst, 2983);
+# 2252 "buildvm_ppc.dasc"
     }
     break;
 
   case BC_ISEQP: case BC_ISNEP:
     vk = op == BC_ISEQP;
-    dasm_put(Dst, 2970, 32-3, -(BCBIAS_J*4 >> 16));
+    //|  // RA = src*8, RD = primitive_type*8 (~), JMP with RD = target
+    //|  lwzx TMP0, BASE, RA
+    //|   srwi TMP1, RD, 3
+    //|    lwz INS, 0(PC)
+    //|    addi PC, PC, 4
+    //|   not TMP1, TMP1
+    //|    addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|  cmplw TMP0, TMP1
+    //|    decode_RD4 TMP2, INS
+    //|    add TMP2, TMP2, TMP3
+    dasm_put(Dst, 2989, 32-3, -(BCBIAS_J*4 >> 16));
+# 2267 "buildvm_ppc.dasc"
     if (vk) {
-      dasm_put(Dst, 2982);
+      //|  iseleq PC, TMP2, PC
+      dasm_put(Dst, 3001);
+# 2269 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 2984);
+      //|  iseleq PC, PC, TMP2
+      dasm_put(Dst, 3003);
+# 2271 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 2986);
+    //|  ins_next
+    dasm_put(Dst, 3005);
+# 2273 "buildvm_ppc.dasc"
     break;
 
   /* -- Unary test and copy ops ------------------------------------------- */
 
   case BC_ISTC: case BC_ISFC: case BC_IST: case BC_ISF:
-    dasm_put(Dst, 2997);
+    //|  // RA = dst*8 or unused, RD = src*8, JMP with RD = target
+    //|  evlddx TMP0, BASE, RD
+    //|   evaddw TMP1, TISNIL, TISNIL	// Synthesize LJ_TFALSE.
+    //|   lwz INS, 0(PC)
+    //|  evcmpltu TMP0, TMP1
+    //|   addi PC, PC, 4
+    dasm_put(Dst, 3016);
+# 2284 "buildvm_ppc.dasc"
     if (op == BC_IST || op == BC_ISF) {
-      dasm_put(Dst, 3003, -(BCBIAS_J*4 >> 16));
+      //|  addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+      //|  decode_RD4 TMP2, INS
+      //|  add TMP2, TMP2, TMP3
+      dasm_put(Dst, 3022, -(BCBIAS_J*4 >> 16));
+# 2288 "buildvm_ppc.dasc"
       if (op == BC_IST) {
-	dasm_put(Dst, 3008);
+	//|  isellt PC, TMP2, PC
+	dasm_put(Dst, 3027);
+# 2290 "buildvm_ppc.dasc"
       } else {
-	dasm_put(Dst, 3010);
+	//|  isellt PC, PC, TMP2
+	dasm_put(Dst, 3029);
+# 2292 "buildvm_ppc.dasc"
       }
     } else {
       if (op == BC_ISTC) {
-	dasm_put(Dst, 3012);
+	//|  checkfail >1
+	dasm_put(Dst, 3031);
+# 2296 "buildvm_ppc.dasc"
       } else {
-	dasm_put(Dst, 3015);
+	//|  checkok >1
+	dasm_put(Dst, 3034);
+# 2298 "buildvm_ppc.dasc"
       }
-      dasm_put(Dst, 3018, -(BCBIAS_J*4 >> 16));
+      //|  addis PC, PC, -(BCBIAS_J*4 >> 16)
+      //|  decode_RD4 TMP2, INS
+      //|   evstddx TMP0, BASE, RA
+      //|  add PC, PC, TMP2
+      //|1:
+      dasm_put(Dst, 3037, -(BCBIAS_J*4 >> 16));
+# 2304 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 3025);
+    //|  ins_next
+    dasm_put(Dst, 3044);
+# 2306 "buildvm_ppc.dasc"
     break;
 
   /* -- Unary ops --------------------------------------------------------- */
 
   case BC_MOV:
-    dasm_put(Dst, 3036);
+    //|  // RA = dst*8, RD = src*8
+    //|  ins_next1
+    //|  evlddx TMP0, BASE, RD
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3055);
+# 2316 "buildvm_ppc.dasc"
     break;
   case BC_NOT:
-    dasm_put(Dst, 3049, LJ_TTRUE);
+    //|  // RA = dst*8, RD = src*8
+    //|  ins_next1
+    //|  lwzx TMP0, BASE, RD
+    //|  subfic TMP1, TMP0, LJ_TTRUE
+    //|  adde TMP0, TMP0, TMP1
+    //|  stwx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3068, LJ_TTRUE);
+# 2325 "buildvm_ppc.dasc"
     break;
   case BC_UNM:
-    dasm_put(Dst, 3065);
+    //|  // RA = dst*8, RD = src*8
+    //|  evlddx TMP0, BASE, RD
+    //|  checknum TMP0
+    //|  checkfail ->vmeta_unm
+    //|  efdneg TMP0, TMP0
+    //|  ins_next1
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3084);
+# 2335 "buildvm_ppc.dasc"
     break;
   case BC_LEN:
-    dasm_put(Dst, 3082, Dt5(->len));
+    //|  // RA = dst*8, RD = src*8
+    //|  evlddx CARG1, BASE, RD
+    //|  checkstr CARG1
+    //|  checkfail >2
+    //|  lwz CRET1, STR:CARG1->len
+    //|1:
+    //|  ins_next1
+    //|  efdcfsi TMP0, CRET1
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    //|2:
+    //|  checktab CARG1
+    //|  checkfail ->vmeta_len
+    dasm_put(Dst, 3101, Dt5(->len));
+# 2350 "buildvm_ppc.dasc"
+#ifdef LUAJIT_ENABLE_LUA52COMPAT
+    //|  lwz TAB:TMP2, TAB:CARG1->metatable
+    //|  cmplwi TAB:TMP2, 0
+    //|  bne >9
+    //|3:
+    dasm_put(Dst, 3125, Dt6(->metatable));
+# 2355 "buildvm_ppc.dasc"
+#endif
+    //|->BC_LEN_Z:
+    //|  bl extern lj_tab_len		// (GCtab *t)
+    //|  // Returns uint32_t (but less than 2^31).
+    //|  b <1
+    dasm_put(Dst, 3132);
+# 2360 "buildvm_ppc.dasc"
+#ifdef LUAJIT_ENABLE_LUA52COMPAT
+    //|9:
+    //|  lbz TMP0, TAB:TMP2->nomm
+    //|  andi. TMP0, TMP0, 1<<MM_len
+    //|  bne <3				// 'no __len' flag set: done.
+    //|  b ->vmeta_len
+    dasm_put(Dst, 3138, Dt6(->nomm), 1<<MM_len);
+# 2366 "buildvm_ppc.dasc"
+#endif
     break;
 
   /* -- Binary ops -------------------------------------------------------- */
 
+    //|.macro ins_arithpre, t0, t1
+    //|  // RA = dst*8, RB = src1*8, RC = src2*8 | num_const*8
+    //||vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
+    //||switch (vk) {
+    //||case 0:
+    //|   evlddx t0, BASE, RB
+    //|    checknum t0
+    //|   evlddx t1, KBASE, RC
+    //|    checkfail ->vmeta_arith_vn
+    //||  break;
+    //||case 1:
+    //|   evlddx t1, BASE, RB
+    //|    checknum t1
+    //|   evlddx t0, KBASE, RC
+    //|    checkfail ->vmeta_arith_nv
+    //||  break;
+    //||default:
+    //|   evlddx t0, BASE, RB
+    //|   evlddx t1, BASE, RC
+    //|    evmergehi TMP2, t0, t1
+    //|    checknum TMP2
+    //|    checkanyfail ->vmeta_arith_vv
+    //||  break;
+    //||}
+    //|.endmacro
+    //|
+    //|.macro ins_arith, ins
+    //|  ins_arithpre TMP0, TMP1
+    //|  ins_next1
+    //|  ins TMP0, TMP0, TMP1
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    //|.endmacro
 
   case BC_ADDVN: case BC_ADDNV: case BC_ADDVV:
+    //|  ins_arith efdadd
     vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
     switch (vk) {
     case 0:
-    dasm_put(Dst, 3110);
-      break;
-    case 1:
-    dasm_put(Dst, 3116);
-      break;
-    default:
-    dasm_put(Dst, 3122);
-      break;
-    }
-    dasm_put(Dst, 3129);
-    break;
-  case BC_SUBVN: case BC_SUBNV: case BC_SUBVV:
-    vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
-    switch (vk) {
-    case 0:
-    dasm_put(Dst, 3142);
-      break;
-    case 1:
     dasm_put(Dst, 3148);
       break;
-    default:
+    case 1:
     dasm_put(Dst, 3154);
       break;
+    default:
+    dasm_put(Dst, 3160);
+      break;
     }
-    dasm_put(Dst, 3161);
+    dasm_put(Dst, 3167);
+# 2407 "buildvm_ppc.dasc"
     break;
-  case BC_MULVN: case BC_MULNV: case BC_MULVV:
+  case BC_SUBVN: case BC_SUBNV: case BC_SUBVV:
+    //|  ins_arith efdsub
     vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
     switch (vk) {
     case 0:
-    dasm_put(Dst, 3174);
-      break;
-    case 1:
     dasm_put(Dst, 3180);
       break;
-    default:
+    case 1:
     dasm_put(Dst, 3186);
       break;
+    default:
+    dasm_put(Dst, 3192);
+      break;
     }
-    dasm_put(Dst, 3193);
+    dasm_put(Dst, 3199);
+# 2410 "buildvm_ppc.dasc"
     break;
-  case BC_DIVVN: case BC_DIVNV: case BC_DIVVV:
+  case BC_MULVN: case BC_MULNV: case BC_MULVV:
+    //|  ins_arith efdmul
     vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
     switch (vk) {
     case 0:
-    dasm_put(Dst, 3206);
-      break;
-    case 1:
     dasm_put(Dst, 3212);
       break;
-    default:
+    case 1:
     dasm_put(Dst, 3218);
       break;
+    default:
+    dasm_put(Dst, 3224);
+      break;
     }
-    dasm_put(Dst, 3225);
+    dasm_put(Dst, 3231);
+# 2413 "buildvm_ppc.dasc"
     break;
-  case BC_MODVN:
+  case BC_DIVVN: case BC_DIVNV: case BC_DIVVV:
+    //|  ins_arith efddiv
     vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
     switch (vk) {
     case 0:
-    dasm_put(Dst, 3238);
-      break;
-    case 1:
     dasm_put(Dst, 3244);
       break;
-    default:
+    case 1:
     dasm_put(Dst, 3250);
       break;
+    default:
+    dasm_put(Dst, 3256);
+      break;
     }
-    dasm_put(Dst, 3257);
+    dasm_put(Dst, 3263);
+# 2416 "buildvm_ppc.dasc"
     break;
-  case BC_MODNV: case BC_MODVV:
+  case BC_MODVN:
+    //|  ins_arithpre RD, SAVE0
     vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
     switch (vk) {
     case 0:
-    dasm_put(Dst, 3275);
+    dasm_put(Dst, 3276);
       break;
     case 1:
-    dasm_put(Dst, 3281);
+    dasm_put(Dst, 3282);
       break;
     default:
-    dasm_put(Dst, 3287);
+    dasm_put(Dst, 3288);
       break;
     }
-    dasm_put(Dst, 3294);
+# 2419 "buildvm_ppc.dasc"
+    //|->BC_MODVN_Z:
+    //|  efddiv CARG2, RD, SAVE0
+    //|  bl ->vm_floor_efd		// floor(b/c)
+    //|  efdmul TMP0, CRET2, SAVE0
+    //|  ins_next1
+    //|  efdsub TMP0, RD, TMP0		// b - floor(b/c)*c
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3295);
+# 2427 "buildvm_ppc.dasc"
+    break;
+  case BC_MODNV: case BC_MODVV:
+    //|  ins_arithpre RD, SAVE0
+    vk = ((int)op - BC_ADDVN) / (BC_ADDNV-BC_ADDVN);
+    switch (vk) {
+    case 0:
+    dasm_put(Dst, 3313);
+      break;
+    case 1:
+    dasm_put(Dst, 3319);
+      break;
+    default:
+    dasm_put(Dst, 3325);
+      break;
+    }
+# 2430 "buildvm_ppc.dasc"
+    //|  b ->BC_MODVN_Z			// Avoid 3 copies. It's slow anyway.
+    dasm_put(Dst, 3332);
+# 2431 "buildvm_ppc.dasc"
     break;
   case BC_POW:
-    dasm_put(Dst, 3297);
+    //|  evlddx CARG2, BASE, RB
+    //|  evlddx CARG4, BASE, RC
+    //|  evmergehi CARG1, CARG4, CARG2
+    //|  checknum CARG1
+    //|   evmergehi CARG3, CARG4, CARG4
+    //|  checkanyfail ->vmeta_arith_vv
+    //|  bl extern pow
+    //|  evmergelo CRET2, CRET1, CRET2
+    //|  evstddx CRET2, BASE, RA
+    //|  ins_next
+    dasm_put(Dst, 3335);
+# 2443 "buildvm_ppc.dasc"
     break;
 
   case BC_CAT:
-    dasm_put(Dst, 3319, Dt1(->base), 32-3, Dt1(->base));
+    //|  // RA = dst*8, RB = src_start*8, RC = src_end*8
+    //|  sub CARG3, RC, RB
+    //|   stw BASE, L->base
+    //|  add CARG2, BASE, RC
+    //|  mr SAVE0, RB
+    //|->BC_CAT_Z:
+    //|   stw PC, SAVE_PC
+    //|  mr CARG1, L
+    //|  srwi CARG3, CARG3, 3
+    //|  bl extern lj_meta_cat		// (lua_State *L, TValue *top, int left)
+    //|  // Returns NULL (finished) or TValue * (metamethod).
+    //|  cmplwi CRET1, 0
+    //|   lwz BASE, L->base
+    //|  bne ->vmeta_binop
+    //|  evlddx TMP0, BASE, SAVE0		// Copy result from RB to RA.
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next
+    dasm_put(Dst, 3357, Dt1(->base), 32-3, Dt1(->base));
+# 2463 "buildvm_ppc.dasc"
     break;
 
   /* -- Constant ops ------------------------------------------------------ */
 
   case BC_KSTR:
-    dasm_put(Dst, 3349, 32-1);
+    //|  // RA = dst*8, RD = str_const*8 (~)
+    //|  ins_next1
+    //|  srwi TMP1, RD, 1
+    //|  subfic TMP1, TMP1, -4
+    //|  lwzx TMP0, KBASE, TMP1		// KBASE-4-str_const*4
+    //|  evmergelo TMP0, TISSTR, TMP0
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3387, 32-1);
+# 2476 "buildvm_ppc.dasc"
     break;
   case BC_KCDATA:
 #if LJ_HASFFI
-    dasm_put(Dst, 3366, 32-1, LJ_TCDATA);
+    //|  // RA = dst*8, RD = cdata_const*8 (~)
+    //|  ins_next1
+    //|  srwi TMP1, RD, 1
+    //|  subfic TMP1, TMP1, -4
+    //|  lwzx TMP0, KBASE, TMP1		// KBASE-4-cdata_const*4
+    //|  li TMP2, LJ_TCDATA
+    //|  evmergelo TMP0, TMP2, TMP0
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3404, 32-1, LJ_TCDATA);
+# 2488 "buildvm_ppc.dasc"
 #endif
     break;
   case BC_KSHORT:
-    dasm_put(Dst, 3385, 32-3);
+    //|  // RA = dst*8, RD = int16_literal*8
+    //|  srwi TMP1, RD, 3
+    //|  extsh TMP1, TMP1
+    //|  ins_next1
+    //|  efdcfsi TMP0, TMP1
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3423, 32-3);
+# 2498 "buildvm_ppc.dasc"
     break;
   case BC_KNUM:
-    dasm_put(Dst, 3401);
+    //|  // RA = dst*8, RD = num_const*8
+    //|  evlddx TMP0, KBASE, RD
+    //|  ins_next1
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3439);
+# 2505 "buildvm_ppc.dasc"
     break;
   case BC_KPRI:
-    dasm_put(Dst, 3414, 32-3);
+    //|  // RA = dst*8, RD = primitive_type*8 (~)
+    //|  srwi TMP1, RD, 3
+    //|  not TMP0, TMP1
+    //|  ins_next1
+    //|  stwx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3452, 32-3);
+# 2513 "buildvm_ppc.dasc"
     break;
   case BC_KNIL:
-    dasm_put(Dst, 3429);
+    //|  // RA = base*8, RD = end*8
+    //|  evstddx TISNIL, BASE, RA
+    //|   addi RA, RA, 8
+    //|1:
+    //|  evstddx TISNIL, BASE, RA
+    //|  cmpw RA, RD
+    //|   addi RA, RA, 8
+    //|  blt <1
+    //|  ins_next_
+    dasm_put(Dst, 3467);
+# 2524 "buildvm_ppc.dasc"
     break;
 
   /* -- Upvalue and function ops ------------------------------------------ */
 
   case BC_UGET:
-    dasm_put(Dst, 3448, 32-1, offsetof(GCfuncL, uvptr), DtA(->v));
+    //|  // RA = dst*8, RD = uvnum*8
+    //|  ins_next1
+    //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+    //|   srwi RD, RD, 1
+    //|   addi RD, RD, offsetof(GCfuncL, uvptr)
+    //|  lwzx UPVAL:RB, LFUNC:RB, RD
+    //|  lwz TMP1, UPVAL:RB->v
+    //|  evldd TMP0, 0(TMP1)
+    //|  evstddx TMP0, BASE, RA
+    //|  ins_next2
+    dasm_put(Dst, 3486, 32-1, offsetof(GCfuncL, uvptr), DtA(->v));
+# 2539 "buildvm_ppc.dasc"
     break;
   case BC_USETV:
-    dasm_put(Dst, 3469, 32-1, offsetof(GCfuncL, uvptr), DtA(->marked), DtA(->v), LJ_GC_BLACK, DtA(->closed), -(LJ_TISNUM+1), LJ_TISGCV - (LJ_TISNUM+1), Dt4(->gch.marked), LJ_GC_WHITES, GG_DISP2G);
+    //|  // RA = uvnum*8, RD = src*8
+    //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+    //|    srwi RA, RA, 1
+    //|    addi RA, RA, offsetof(GCfuncL, uvptr)
+    //|   evlddx TMP1, BASE, RD
+    //|  lwzx UPVAL:RB, LFUNC:RB, RA
+    //|  lbz TMP3, UPVAL:RB->marked
+    //|   lwz CARG2, UPVAL:RB->v
+    //|  andi. TMP3, TMP3, LJ_GC_BLACK	// isblack(uv)
+    //|    lbz TMP0, UPVAL:RB->closed
+    //|   evmergehi TMP2, TMP1, TMP1
+    //|   evstdd TMP1, 0(CARG2)
+    //|    cmplwi cr1, TMP0, 0
+    //|  cror 4*cr0+eq, 4*cr0+eq, 4*cr1+eq
+    //|   subi TMP2, TMP2, (LJ_TISNUM+1)
+    //|  bne >2				// Upvalue is closed and black?
+    //|1:
+    //|  ins_next
+    //|
+    //|2:  // Check if new value is collectable.
+    //|  cmplwi TMP2, LJ_TISGCV - (LJ_TISNUM+1)
+    //|  bge <1				// tvisgcv(v)
+    //|  lbz TMP3, GCOBJ:TMP1->gch.marked
+    //|  andi. TMP3, TMP3, LJ_GC_WHITES	// iswhite(v)
+    //|   la CARG1, GG_DISP2G(DISPATCH)
+    //|  // Crossed a write barrier. Move the barrier forward.
+    //|  beq <1
+    //|  bl extern lj_gc_barrieruv	// (global_State *g, TValue *tv)
+    //|  b <1
+    dasm_put(Dst, 3507, 32-1, offsetof(GCfuncL, uvptr), DtA(->marked), DtA(->v), LJ_GC_BLACK, DtA(->closed), -(LJ_TISNUM+1), LJ_TISGCV - (LJ_TISNUM+1), Dt4(->gch.marked), LJ_GC_WHITES, GG_DISP2G);
+# 2570 "buildvm_ppc.dasc"
     break;
   case BC_USETS:
-    dasm_put(Dst, 3521, 32-1, 32-1, offsetof(GCfuncL, uvptr), DtA(->marked), DtA(->v), LJ_GC_BLACK, Dt5(->marked), DtA(->closed), LJ_GC_WHITES, GG_DISP2G);
+    //|  // RA = uvnum*8, RD = str_const*8 (~)
+    //|  ins_next1
+    //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+    //|   srwi TMP1, RD, 1
+    //|    srwi RA, RA, 1
+    //|   subfic TMP1, TMP1, -4
+    //|    addi RA, RA, offsetof(GCfuncL, uvptr)
+    //|   lwzx STR:TMP1, KBASE, TMP1	// KBASE-4-str_const*4
+    //|  lwzx UPVAL:RB, LFUNC:RB, RA
+    //|   evmergelo STR:TMP1, TISSTR, STR:TMP1
+    //|  lbz TMP3, UPVAL:RB->marked
+    //|   lwz CARG2, UPVAL:RB->v
+    //|  andi. TMP3, TMP3, LJ_GC_BLACK	// isblack(uv)
+    //|   lbz TMP3, STR:TMP1->marked
+    //|   lbz TMP2, UPVAL:RB->closed
+    //|   evstdd STR:TMP1, 0(CARG2)
+    //|  bne >2
+    //|1:
+    //|  ins_next2
+    //|
+    //|2:  // Check if string is white and ensure upvalue is closed.
+    //|  andi. TMP3, TMP3, LJ_GC_WHITES	// iswhite(str)
+    //|   cmplwi cr1, TMP2, 0
+    //|  cror 4*cr0+eq, 4*cr0+eq, 4*cr1+eq
+    //|   la CARG1, GG_DISP2G(DISPATCH)
+    //|  // Crossed a write barrier. Move the barrier forward.
+    //|  beq <1
+    //|  bl extern lj_gc_barrieruv	// (global_State *g, TValue *tv)
+    //|  b <1
+    dasm_put(Dst, 3559, 32-1, 32-1, offsetof(GCfuncL, uvptr), DtA(->marked), DtA(->v), LJ_GC_BLACK, Dt5(->marked), DtA(->closed), LJ_GC_WHITES, GG_DISP2G);
+# 2601 "buildvm_ppc.dasc"
     break;
   case BC_USETN:
-    dasm_put(Dst, 3570, 32-1, offsetof(GCfuncL, uvptr), DtA(->v));
+    //|  // RA = uvnum*8, RD = num_const*8
+    //|  ins_next1
+    //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+    //|   srwi RA, RA, 1
+    //|   addi RA, RA, offsetof(GCfuncL, uvptr)
+    //|    evlddx TMP0, KBASE, RD
+    //|  lwzx UPVAL:RB, LFUNC:RB, RA
+    //|  lwz TMP1, UPVAL:RB->v
+    //|  evstdd TMP0, 0(TMP1)
+    //|  ins_next2
+    dasm_put(Dst, 3608, 32-1, offsetof(GCfuncL, uvptr), DtA(->v));
+# 2613 "buildvm_ppc.dasc"
     break;
   case BC_USETP:
-    dasm_put(Dst, 3591, 32-1, offsetof(GCfuncL, uvptr), 32-3, DtA(->v));
+    //|  // RA = uvnum*8, RD = primitive_type*8 (~)
+    //|  ins_next1
+    //|  lwz LFUNC:RB, FRAME_FUNC(BASE)
+    //|   srwi RA, RA, 1
+    //|   addi RA, RA, offsetof(GCfuncL, uvptr)
+    //|    srwi TMP0, RD, 3
+    //|  lwzx UPVAL:RB, LFUNC:RB, RA
+    //|    not TMP0, TMP0
+    //|  lwz TMP1, UPVAL:RB->v
+    //|  stw TMP0, 0(TMP1)
+    //|  ins_next2
+    dasm_put(Dst, 3629, 32-1, offsetof(GCfuncL, uvptr), 32-3, DtA(->v));
+# 2626 "buildvm_ppc.dasc"
     break;
 
   case BC_UCLO:
-    dasm_put(Dst, 3614, Dt1(->openupval), 32-1, -(BCBIAS_J*4 >> 16), Dt1(->base), Dt1(->base));
+    //|  // RA = level*8, RD = target
+    //|  lwz TMP1, L->openupval
+    //|  branch_RD			// Do this first since RD is not saved.
+    //|   stw BASE, L->base
+    //|  cmplwi TMP1, 0
+    //|   mr CARG1, L
+    //|  beq >1
+    //|   add CARG2, BASE, RA
+    //|  bl extern lj_func_closeuv	// (lua_State *L, TValue *level)
+    //|  lwz BASE, L->base
+    //|1:
+    //|  ins_next
+    dasm_put(Dst, 3652, Dt1(->openupval), 32-1, -(BCBIAS_J*4 >> 16), Dt1(->base), Dt1(->base));
+# 2641 "buildvm_ppc.dasc"
     break;
 
   case BC_FNEW:
-    dasm_put(Dst, 3644, 32-1, Dt1(->base), Dt1(->base));
+    //|  // RA = dst*8, RD = proto_const*8 (~) (holding function prototype)
+    //|  srwi TMP1, RD, 1
+    //|   stw BASE, L->base
+    //|  subfic TMP1, TMP1, -4
+    //|   stw PC, SAVE_PC
+    //|  lwzx CARG2, KBASE, TMP1		// KBASE-4-tab_const*4
+    //|   mr CARG1, L
+    //|  lwz CARG3, FRAME_FUNC(BASE)
+    //|  // (lua_State *L, GCproto *pt, GCfuncL *parent)
+    //|  bl extern lj_func_newL_gc
+    //|  // Returns GCfuncL *.
+    //|  lwz BASE, L->base
+    //|  evmergelo LFUNC:CRET1, TISFUNC, LFUNC:CRET1
+    //|  evstddx LFUNC:CRET1, BASE, RA
+    //|  ins_next
+    dasm_put(Dst, 3682, 32-1, Dt1(->base), Dt1(->base));
+# 2659 "buildvm_ppc.dasc"
     break;
 
   /* -- Table ops --------------------------------------------------------- */
 
   case BC_TNEW:
   case BC_TDUP:
-    dasm_put(Dst, 3670, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), Dt1(->base));
+    //|  // RA = dst*8, RD = (hbits|asize)*8 | tab_const*8 (~)
+    //|  lwz TMP0, DISPATCH_GL(gc.total)(DISPATCH)
+    //|   mr CARG1, L
+    //|  lwz TMP1, DISPATCH_GL(gc.threshold)(DISPATCH)
+    //|   stw BASE, L->base
+    //|  cmplw TMP0, TMP1
+    //|   stw PC, SAVE_PC
+    //|  bge >5
+    //|1:
+    dasm_put(Dst, 3708, DISPATCH_GL(gc.total), DISPATCH_GL(gc.threshold), Dt1(->base));
+# 2674 "buildvm_ppc.dasc"
     if (op == BC_TNEW) {
-      dasm_put(Dst, 3683);
+      //|  rlwinm CARG2, RD, 29, 21, 31
+      //|  rlwinm CARG3, RD, 18, 27, 31
+      //|  cmpwi CARG2, 0x7ff
+      //|   li TMP1, 0x801
+      //|  iseleq CARG2, TMP1, CARG2
+      //|  bl extern lj_tab_new  // (lua_State *L, int32_t asize, uint32_t hbits)
+      //|  // Returns Table *.
+      dasm_put(Dst, 3721);
+# 2682 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 3691, 32-1);
+      //|  srwi TMP1, RD, 1
+      //|  subfic TMP1, TMP1, -4
+      //|  lwzx CARG2, KBASE, TMP1		// KBASE-4-tab_const*4
+      //|  bl extern lj_tab_dup  // (lua_State *L, Table *kt)
+      //|  // Returns Table *.
+      dasm_put(Dst, 3729, 32-1);
+# 2688 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 3698, Dt1(->base));
+    //|  lwz BASE, L->base
+    //|  evmergelo TAB:CRET1, TISTAB, TAB:CRET1
+    //|  evstddx TAB:CRET1, BASE, RA
+    //|  ins_next
+    //|5:
+    //|  mr SAVE0, RD
+    //|  bl extern lj_gc_step_fixtop  // (lua_State *L)
+    //|  mr RD, SAVE0
+    //|  mr CARG1, L
+    //|  b <1
+    dasm_put(Dst, 3736, Dt1(->base));
+# 2699 "buildvm_ppc.dasc"
     break;
 
   case BC_GGET:
+    //|  // RA = dst*8, RD = str_const*8 (~)
   case BC_GSET:
-    dasm_put(Dst, 3721, 32-1, Dt7(->env));
+    //|  // RA = src*8, RD = str_const*8 (~)
+    //|  lwz LFUNC:TMP2, FRAME_FUNC(BASE)
+    //|   srwi TMP1, RD, 1
+    //|  lwz TAB:RB, LFUNC:TMP2->env
+    //|   subfic TMP1, TMP1, -4
+    //|   lwzx STR:RC, KBASE, TMP1	// KBASE-4-str_const*4
+    dasm_put(Dst, 3759, 32-1, Dt7(->env));
+# 2710 "buildvm_ppc.dasc"
     if (op == BC_GGET) {
-      dasm_put(Dst, 3729);
+      //|  b ->BC_TGETS_Z
+      dasm_put(Dst, 3767);
+# 2712 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 3732);
+      //|  b ->BC_TSETS_Z
+      dasm_put(Dst, 3770);
+# 2714 "buildvm_ppc.dasc"
     }
     break;
 
   case BC_TGETV:
-    dasm_put(Dst, 3735, Dt6(->asize), Dt6(->array), 31-3, Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
+    //|  // RA = dst*8, RB = table*8, RC = key*8
+    //|  evlddx TAB:RB, BASE, RB
+    //|   evlddx RC, BASE, RC
+    //|  checktab TAB:RB
+    //|  checkfail ->vmeta_tgetv
+    //|  checknum RC
+    //|  checkfail >5
+    //|  // Convert number key to integer
+    //|  efdctsi TMP2, RC
+    //|   lwz TMP0, TAB:RB->asize
+    //|  efdcfsi TMP1, TMP2
+    //|   cmplw cr0, TMP0, TMP2
+    //|  efdcmpeq cr1, RC, TMP1
+    //|   lwz TMP1, TAB:RB->array
+    //|  crand 4*cr0+gt, 4*cr0+gt, 4*cr1+gt
+    //|   slwi TMP2, TMP2, 3
+    //|  ble ->vmeta_tgetv		// Integer key and in array part?
+    //|  evlddx TMP1, TMP1, TMP2
+    //|  checknil TMP1
+    //|  checkok >2
+    //|1:
+    //|  evstddx TMP1, BASE, RA
+    //|  ins_next
+    //|
+    //|2:  // Check for __index if table value is nil.
+    //|  lwz TAB:TMP2, TAB:RB->metatable
+    //|  cmplwi TAB:TMP2, 0
+    //|  beq <1				// No metatable: done.
+    //|  lbz TMP0, TAB:TMP2->nomm
+    //|  andi. TMP0, TMP0, 1<<MM_index
+    //|  bne <1				// 'no __index' flag set: done.
+    //|  b ->vmeta_tgetv
+    //|
+    //|5:
+    //|  checkstr STR:RC			// String key?
+    //|  checkok ->BC_TGETS_Z
+    //|  b ->vmeta_tgetv
+    dasm_put(Dst, 3773, Dt6(->asize), Dt6(->array), 31-3, Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
+# 2755 "buildvm_ppc.dasc"
     break;
   case BC_TGETS:
-    dasm_put(Dst, 3793, 32-1, Dt6(->hmask), Dt5(->hash), Dt6(->node), 31-5, 31-3, DtB(->key), DtB(->val), DtB(->next), Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
-    dasm_put(Dst, 3857);
+    //|  // RA = dst*8, RB = table*8, RC = str_const*8 (~)
+    //|  evlddx TAB:RB, BASE, RB
+    //|   srwi TMP1, RC, 1
+    //|  checktab TAB:RB
+    //|   subfic TMP1, TMP1, -4
+    //|   lwzx STR:RC, KBASE, TMP1	// KBASE-4-str_const*4
+    //|  checkfail ->vmeta_tgets1
+    //|->BC_TGETS_Z:
+    //|  // TAB:RB = GCtab *, STR:RC = GCstr *, RA = dst*8
+    //|  lwz TMP0, TAB:RB->hmask
+    //|  lwz TMP1, STR:RC->hash
+    //|  lwz NODE:TMP2, TAB:RB->node
+    //|   evmergelo STR:RC, TISSTR, STR:RC
+    //|  and TMP1, TMP1, TMP0		// idx = str->hash & tab->hmask
+    //|  slwi TMP0, TMP1, 5
+    //|  slwi TMP1, TMP1, 3
+    //|  sub TMP1, TMP0, TMP1
+    //|  add NODE:TMP2, NODE:TMP2, TMP1	// node = tab->node + (idx*32-idx*8)
+    //|1:
+    //|  evldd TMP0, NODE:TMP2->key
+    //|   evldd TMP1, NODE:TMP2->val
+    //|  evcmpeq TMP0, STR:RC
+    //|  checkanyfail >4
+    //|   checknil TMP1
+    //|   checkok >5			// Key found, but nil value?
+    //|3:
+    //|   evstddx TMP1, BASE, RA
+    //|  ins_next
+    //|
+    //|4:  // Follow hash chain.
+    //|  lwz NODE:TMP2, NODE:TMP2->next
+    //|  cmplwi NODE:TMP2, 0
+    //|  bne <1
+    //|  // End of hash chain: key not found, nil result.
+    //|   evmr TMP1, TISNIL
+    //|
+    //|5:  // Check for __index if table value is nil.
+    //|  lwz TAB:TMP2, TAB:RB->metatable
+    //|  cmplwi TAB:TMP2, 0
+    //|  beq <3				// No metatable: done.
+    //|  lbz TMP0, TAB:TMP2->nomm
+    //|  andi. TMP0, TMP0, 1<<MM_index
+    //|  bne <3				// 'no __index' flag set: done.
+    dasm_put(Dst, 3831, 32-1, Dt6(->hmask), Dt5(->hash), Dt6(->node), 31-5, 31-3, DtB(->key), DtB(->val), DtB(->next), Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
+# 2800 "buildvm_ppc.dasc"
+    //|  b ->vmeta_tgets
+    dasm_put(Dst, 3895);
+# 2801 "buildvm_ppc.dasc"
     break;
   case BC_TGETB:
-    dasm_put(Dst, 3862, 32-3, Dt6(->asize), Dt6(->array), Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
+    //|  // RA = dst*8, RB = table*8, RC = index*8
+    //|  evlddx TAB:RB, BASE, RB
+    //|   srwi TMP0, RC, 3
+    //|  checktab TAB:RB
+    //|  checkfail ->vmeta_tgetb
+    //|  lwz TMP1, TAB:RB->asize
+    //|   lwz TMP2, TAB:RB->array
+    //|  cmplw TMP0, TMP1
+    //|  bge ->vmeta_tgetb
+    //|  evlddx TMP1, TMP2, RC
+    //|  checknil TMP1
+    //|  checkok >5
+    //|1:
+    //|  ins_next1
+    //|  evstddx TMP1, BASE, RA
+    //|  ins_next2
+    //|
+    //|5:  // Check for __index if table value is nil.
+    //|  lwz TAB:TMP2, TAB:RB->metatable
+    //|  cmplwi TAB:TMP2, 0
+    //|  beq <1				// No metatable: done.
+    //|  lbz TMP2, TAB:TMP2->nomm
+    //|  andi. TMP2, TMP2, 1<<MM_index
+    //|  bne <1				// 'no __index' flag set: done.
+    //|  b ->vmeta_tgetb			// Caveat: preserve TMP0!
+    dasm_put(Dst, 3900, 32-3, Dt6(->asize), Dt6(->array), Dt6(->metatable), Dt6(->nomm), 1<<MM_index);
+# 2828 "buildvm_ppc.dasc"
     break;
 
   case BC_TSETV:
-    dasm_put(Dst, 3906, Dt6(->asize), Dt6(->array), 31-3, Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), Dt6(->nomm), 1<<MM_newindex);
-    dasm_put(Dst, 3973, DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
+    //|  // RA = src*8, RB = table*8, RC = key*8
+    //|  evlddx TAB:RB, BASE, RB
+    //|   evlddx RC, BASE, RC
+    //|  checktab TAB:RB
+    //|  checkfail ->vmeta_tsetv
+    //|  checknum RC
+    //|  checkfail >5
+    //|  // Convert number key to integer
+    //|  efdctsi TMP2, RC
+    //|    evlddx SAVE0, BASE, RA
+    //|   lwz TMP0, TAB:RB->asize
+    //|  efdcfsi TMP1, TMP2
+    //|   cmplw cr0, TMP0, TMP2
+    //|  efdcmpeq cr1, RC, TMP1
+    //|   lwz TMP1, TAB:RB->array
+    //|  crand 4*cr0+gt, 4*cr0+gt, 4*cr1+gt
+    //|   slwi TMP0, TMP2, 3
+    //|  ble ->vmeta_tsetv		// Integer key and in array part?
+    //|   lbz TMP3, TAB:RB->marked
+    //|  evlddx TMP2, TMP1, TMP0
+    //|  checknil TMP2
+    //|  checkok >3
+    //|1:
+    //|  andi. TMP2, TMP3, LJ_GC_BLACK	// isblack(table)
+    //|   evstddx SAVE0, TMP1, TMP0
+    //|  bne >7
+    //|2:
+    //|  ins_next
+    //|
+    //|3:  // Check for __newindex if previous value is nil.
+    //|  lwz TAB:TMP2, TAB:RB->metatable
+    //|  cmplwi TAB:TMP2, 0
+    //|  beq <1				// No metatable: done.
+    //|  lbz TMP2, TAB:TMP2->nomm
+    //|  andi. TMP2, TMP2, 1<<MM_newindex
+    //|  bne <1				// 'no __newindex' flag set: done.
+    //|  b ->vmeta_tsetv
+    //|
+    //|5:
+    //|  checkstr STR:RC			// String key?
+    //|  checkok ->BC_TSETS_Z
+    //|  b ->vmeta_tsetv
+    //|
+    //|7:  // Possible table write barrier for the value. Skip valiswhite check.
+    //|  barrierback TAB:RB, TMP3, TMP0
+    dasm_put(Dst, 3944, Dt6(->asize), Dt6(->array), 31-3, Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), Dt6(->nomm), 1<<MM_newindex);
+# 2876 "buildvm_ppc.dasc"
+    //|  b <2
+    dasm_put(Dst, 4011, DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
+# 2877 "buildvm_ppc.dasc"
     break;
   case BC_TSETS:
-    dasm_put(Dst, 3985, 32-1, Dt6(->hmask), Dt5(->hash), Dt6(->node), Dt6(->nomm), 31-5, 31-3, Dt6(->marked), DtB(->key), DtB(->val), LJ_GC_BLACK, DtB(->val), Dt6(->metatable));
-    dasm_put(Dst, 4046, Dt6(->nomm), 1<<MM_newindex, DtB(->next), Dt6(->metatable), DISPATCH_GL(tmptv), Dt1(->base), Dt6(->nomm), 1<<MM_newindex, Dt1(->base), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain));
-    dasm_put(Dst, 4097, Dt6(->marked), Dt6(->gclist));
+    //|  // RA = src*8, RB = table*8, RC = str_const*8 (~)
+    //|  evlddx TAB:RB, BASE, RB
+    //|   srwi TMP1, RC, 1
+    //|  checktab TAB:RB
+    //|   subfic TMP1, TMP1, -4
+    //|   lwzx STR:RC, KBASE, TMP1	// KBASE-4-str_const*4
+    //|  checkfail ->vmeta_tsets1
+    //|->BC_TSETS_Z:
+    //|  // TAB:RB = GCtab *, STR:RC = GCstr *, RA = src*8
+    //|  lwz TMP0, TAB:RB->hmask
+    //|  lwz TMP1, STR:RC->hash
+    //|  lwz NODE:TMP2, TAB:RB->node
+    //|   evmergelo STR:RC, TISSTR, STR:RC
+    //|    stb ZERO, TAB:RB->nomm		// Clear metamethod cache.
+    //|  and TMP1, TMP1, TMP0		// idx = str->hash & tab->hmask
+    //|    evlddx SAVE0, BASE, RA
+    //|  slwi TMP0, TMP1, 5
+    //|  slwi TMP1, TMP1, 3
+    //|  sub TMP1, TMP0, TMP1
+    //|    lbz TMP3, TAB:RB->marked
+    //|  add NODE:TMP2, NODE:TMP2, TMP1	// node = tab->node + (idx*32-idx*8)
+    //|1:
+    //|  evldd TMP0, NODE:TMP2->key
+    //|   evldd TMP1, NODE:TMP2->val
+    //|  evcmpeq TMP0, STR:RC
+    //|  checkanyfail >5
+    //|   checknil TMP1
+    //|   checkok >4			// Key found, but nil value?
+    //|2:
+    //|  andi. TMP0, TMP3, LJ_GC_BLACK	// isblack(table)
+    //|    evstdd SAVE0, NODE:TMP2->val
+    //|  bne >7
+    //|3:
+    //|  ins_next
+    //|
+    //|4:  // Check for __newindex if previous value is nil.
+    //|  lwz TAB:TMP1, TAB:RB->metatable
+    //|  cmplwi TAB:TMP1, 0
+    dasm_put(Dst, 4023, 32-1, Dt6(->hmask), Dt5(->hash), Dt6(->node), Dt6(->nomm), 31-5, 31-3, Dt6(->marked), DtB(->key), DtB(->val), LJ_GC_BLACK, DtB(->val), Dt6(->metatable));
+# 2917 "buildvm_ppc.dasc"
+    //|  beq <2				// No metatable: done.
+    //|  lbz TMP0, TAB:TMP1->nomm
+    //|  andi. TMP0, TMP0, 1<<MM_newindex
+    //|  bne <2				// 'no __newindex' flag set: done.
+    //|  b ->vmeta_tsets
+    //|
+    //|5:  // Follow hash chain.
+    //|  lwz NODE:TMP2, NODE:TMP2->next
+    //|  cmplwi NODE:TMP2, 0
+    //|  bne <1
+    //|  // End of hash chain: key not found, add a new one.
+    //|
+    //|  // But check for __newindex first.
+    //|  lwz TAB:TMP1, TAB:RB->metatable
+    //|   la CARG3, DISPATCH_GL(tmptv)(DISPATCH)
+    //|   stw PC, SAVE_PC
+    //|   mr CARG1, L
+    //|  cmplwi TAB:TMP1, 0
+    //|   stw BASE, L->base
+    //|  beq >6				// No metatable: continue.
+    //|  lbz TMP0, TAB:TMP1->nomm
+    //|  andi. TMP0, TMP0, 1<<MM_newindex
+    //|  beq ->vmeta_tsets		// 'no __newindex' flag NOT set: check.
+    //|6:
+    //|  mr CARG2, TAB:RB
+    //|  evstdd STR:RC, 0(CARG3)
+    //|  bl extern lj_tab_newkey		// (lua_State *L, GCtab *t, TValue *k)
+    //|  // Returns TValue *.
+    //|  lwz BASE, L->base
+    //|  evstdd SAVE0, 0(CRET1)
+    //|  b <3				// No 2nd write barrier needed.
+    //|
+    //|7:  // Possible table write barrier for the value. Skip valiswhite check.
+    //|  barrierback TAB:RB, TMP3, TMP0
+    dasm_put(Dst, 4084, Dt6(->nomm), 1<<MM_newindex, DtB(->next), Dt6(->metatable), DISPATCH_GL(tmptv), Dt1(->base), Dt6(->nomm), 1<<MM_newindex, Dt1(->base), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain));
+# 2951 "buildvm_ppc.dasc"
+    //|  b <3
+    dasm_put(Dst, 4135, Dt6(->marked), Dt6(->gclist));
+# 2952 "buildvm_ppc.dasc"
     break;
   case BC_TSETB:
-    dasm_put(Dst, 4104, 32-3, Dt6(->asize), Dt6(->array), Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), Dt6(->nomm), 1<<MM_newindex, DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked));
-    dasm_put(Dst, 4164, Dt6(->gclist));
+    //|  // RA = src*8, RB = table*8, RC = index*8
+    //|  evlddx TAB:RB, BASE, RB
+    //|   srwi TMP0, RC, 3
+    //|  checktab TAB:RB
+    //|  checkfail ->vmeta_tsetb
+    //|  lwz TMP1, TAB:RB->asize
+    //|   lwz TMP2, TAB:RB->array
+    //|    lbz TMP3, TAB:RB->marked
+    //|  cmplw TMP0, TMP1
+    //|   evlddx SAVE0, BASE, RA
+    //|  bge ->vmeta_tsetb
+    //|  evlddx TMP1, TMP2, RC
+    //|  checknil TMP1
+    //|  checkok >5
+    //|1:
+    //|  andi. TMP0, TMP3, LJ_GC_BLACK	// isblack(table)
+    //|   evstddx SAVE0, TMP2, RC
+    //|  bne >7
+    //|2:
+    //|  ins_next
+    //|
+    //|5:  // Check for __newindex if previous value is nil.
+    //|  lwz TAB:TMP1, TAB:RB->metatable
+    //|  cmplwi TAB:TMP1, 0
+    //|  beq <1				// No metatable: done.
+    //|  lbz TMP1, TAB:TMP1->nomm
+    //|  andi. TMP1, TMP1, 1<<MM_newindex
+    //|  bne <1				// 'no __newindex' flag set: done.
+    //|  b ->vmeta_tsetb			// Caveat: preserve TMP0!
+    //|
+    //|7:  // Possible table write barrier for the value. Skip valiswhite check.
+    //|  barrierback TAB:RB, TMP3, TMP0
+    dasm_put(Dst, 4142, 32-3, Dt6(->asize), Dt6(->array), Dt6(->marked), LJ_GC_BLACK, Dt6(->metatable), Dt6(->nomm), 1<<MM_newindex, DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked));
+# 2986 "buildvm_ppc.dasc"
+    //|  b <2
+    dasm_put(Dst, 4202, Dt6(->gclist));
+# 2987 "buildvm_ppc.dasc"
     break;
 
   case BC_TSETM:
-    dasm_put(Dst, 4169, 32-3, Dt6(->asize), 31-3, Dt6(->marked), Dt6(->array), LJ_GC_BLACK, Dt1(->base), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
-    dasm_put(Dst, 4238);
+    //|  // RA = base*8 (table at base-1), RD = num_const*8 (start index)
+    //|  add RA, BASE, RA
+    //|1:
+    //|   add TMP3, KBASE, RD
+    //|  lwz TAB:CARG2, -4(RA)		// Guaranteed to be a table.
+    //|    addic. TMP0, MULTRES, -8
+    //|   lwz TMP3, 4(TMP3)		// Integer constant is in lo-word.
+    //|    srwi CARG3, TMP0, 3
+    //|    beq >4				// Nothing to copy?
+    //|  add CARG3, CARG3, TMP3
+    //|  lwz TMP2, TAB:CARG2->asize
+    //|   slwi TMP1, TMP3, 3
+    //|    lbz TMP3, TAB:CARG2->marked
+    //|  cmplw CARG3, TMP2
+    //|   add TMP2, RA, TMP0
+    //|   lwz TMP0, TAB:CARG2->array
+    //|  bgt >5
+    //|   add TMP1, TMP1, TMP0
+    //|    andi. TMP0, TMP3, LJ_GC_BLACK	// isblack(table)
+    //|3:  // Copy result slots to table.
+    //|   evldd TMP0, 0(RA)
+    //|  addi RA, RA, 8
+    //|  cmpw cr1, RA, TMP2
+    //|   evstdd TMP0, 0(TMP1)
+    //|    addi TMP1, TMP1, 8
+    //|  blt cr1, <3
+    //|  bne >7
+    //|4:
+    //|  ins_next
+    //|
+    //|5:  // Need to resize array part.
+    //|   stw BASE, L->base
+    //|  mr CARG1, L
+    //|   stw PC, SAVE_PC
+    //|  mr SAVE0, RD
+    //|  bl extern lj_tab_reasize		// (lua_State *L, GCtab *t, int nasize)
+    //|  // Must not reallocate the stack.
+    //|  mr RD, SAVE0
+    //|  b <1
+    //|
+    //|7:  // Possible table write barrier for any value. Skip valiswhite check.
+    //|  barrierback TAB:RB, TMP3, TMP0
+    //|  b <4
+    dasm_put(Dst, 4207, 32-3, Dt6(->asize), 31-3, Dt6(->marked), Dt6(->array), LJ_GC_BLACK, Dt1(->base), DISPATCH_GL(gc.grayagain), DISPATCH_GL(gc.grayagain), Dt6(->marked), Dt6(->gclist));
+    dasm_put(Dst, 4276);
+# 3033 "buildvm_ppc.dasc"
     break;
 
   /* -- Calls and vararg handling ----------------------------------------- */
 
   case BC_CALLM:
-    dasm_put(Dst, 4241);
+    //|  // RA = base*8, (RB = (nresults+1)*8,) RC = extra_nargs*8
+    //|  add NARGS8:RC, NARGS8:RC, MULTRES
+    //|  // Fall through. Assumes BC_CALL follows.
+    dasm_put(Dst, 4279);
+# 3041 "buildvm_ppc.dasc"
     break;
   case BC_CALL:
-    dasm_put(Dst, 4243, Dt7(->pc));
+    //|  // RA = base*8, (RB = (nresults+1)*8,) RC = (nargs+1)*8
+    //|  evlddx LFUNC:RB, BASE, RA
+    //|   mr TMP2, BASE
+    //|   add BASE, BASE, RA
+    //|    subi NARGS8:RC, NARGS8:RC, 8
+    //|  checkfunc LFUNC:RB
+    //|   addi BASE, BASE, 8
+    //|  checkfail ->vmeta_call
+    //|  ins_call
+    dasm_put(Dst, 4281, Dt7(->pc));
+# 3052 "buildvm_ppc.dasc"
     break;
 
   case BC_CALLMT:
-    dasm_put(Dst, 4263);
+    //|  // RA = base*8, (RB = 0,) RC = extra_nargs*8
+    //|  add NARGS8:RC, NARGS8:RC, MULTRES
+    //|  // Fall through. Assumes BC_CALLT follows.
+    dasm_put(Dst, 4301);
+# 3058 "buildvm_ppc.dasc"
     break;
   case BC_CALLT:
-    dasm_put(Dst, 4265, FRAME_TYPE, Dt7(->ffid), FRAME_VARG, Dt7(->pc), -4-8, Dt7(->pc), PC2PROTO(k), FRAME_TYPEP);
-    dasm_put(Dst, 4330, FRAME_TYPE);
+    //|  // RA = base*8, (RB = 0,) RC = (nargs+1)*8
+    //|  evlddx LFUNC:RB, BASE, RA
+    //|   add RA, BASE, RA
+    //|    lwz TMP1, FRAME_PC(BASE)
+    //|    subi NARGS8:RC, NARGS8:RC, 8
+    //|  checkfunc LFUNC:RB
+    //|   addi RA, RA, 8
+    //|  checkfail ->vmeta_callt
+    //|->BC_CALLT_Z:
+    //|  andi. TMP0, TMP1, FRAME_TYPE	// Caveat: preserve cr0 until the crand.
+    //|   lbz TMP3, LFUNC:RB->ffid
+    //|    xori TMP2, TMP1, FRAME_VARG
+    //|    cmplwi cr1, NARGS8:RC, 0
+    //|  bne >7
+    //|1:
+    //|  stw LFUNC:RB, FRAME_FUNC(BASE)	// Copy function down, but keep PC.
+    //|  li TMP2, 0
+    //|   cmplwi cr7, TMP3, 1		// (> FF_C) Calling a fast function?
+    //|    beq cr1, >3
+    //|2:
+    //|  addi TMP3, TMP2, 8
+    //|   evlddx TMP0, RA, TMP2
+    //|  cmplw cr1, TMP3, NARGS8:RC
+    //|   evstddx TMP0, BASE, TMP2
+    //|  mr TMP2, TMP3
+    //|  bne cr1, <2
+    //|3:
+    //|  crand 4*cr0+eq, 4*cr0+eq, 4*cr7+gt
+    //|  beq >5
+    //|4:
+    //|  ins_callt
+    //|
+    //|5:  // Tailcall to a fast function with a Lua frame below.
+    //|  lwz INS, -4(TMP1)
+    //|  decode_RA8 RA, INS
+    //|  sub TMP1, BASE, RA
+    //|  lwz LFUNC:TMP1, FRAME_FUNC-8(TMP1)
+    //|  lwz TMP1, LFUNC:TMP1->pc
+    //|  lwz KBASE, PC2PROTO(k)(TMP1)	// Need to prepare KBASE.
+    //|  b <4
+    //|
+    //|7:  // Tailcall from a vararg function.
+    //|  andi. TMP0, TMP2, FRAME_TYPEP
+    //|  bne <1				// Vararg frame below?
+    //|  sub BASE, BASE, TMP2		// Relocate BASE down.
+    dasm_put(Dst, 4303, FRAME_TYPE, Dt7(->ffid), FRAME_VARG, Dt7(->pc), -4-8, Dt7(->pc), PC2PROTO(k), FRAME_TYPEP);
+# 3105 "buildvm_ppc.dasc"
+    //|  lwz TMP1, FRAME_PC(BASE)
+    //|  andi. TMP0, TMP1, FRAME_TYPE
+    //|  b <1
+    dasm_put(Dst, 4368, FRAME_TYPE);
+# 3108 "buildvm_ppc.dasc"
     break;
 
   case BC_ITERC:
-    dasm_put(Dst, 4337, Dt7(->pc));
+    //|  // RA = base*8, (RB = (nresults+1)*8, RC = (nargs+1)*8 ((2+1)*8))
+    //|  subi RA, RA, 24			// evldd doesn't support neg. offsets.
+    //|   mr TMP2, BASE
+    //|  evlddx LFUNC:RB, BASE, RA
+    //|   add BASE, BASE, RA
+    //|   evldd TMP0, 8(BASE)
+    //|    evldd TMP1, 16(BASE)
+    //|  evstdd LFUNC:RB, 24(BASE)	// Copy callable.
+    //|  checkfunc LFUNC:RB
+    //|   evstdd TMP0, 32(BASE)		// Copy state.
+    //|     li NARGS8:RC, 16		// Iterators get 2 arguments.
+    //|    evstdd TMP1, 40(BASE)		// Copy control var.
+    //|     addi BASE, BASE, 32
+    //|  checkfail ->vmeta_call
+    //|  ins_call
+    dasm_put(Dst, 4375, Dt7(->pc));
+# 3126 "buildvm_ppc.dasc"
     break;
 
   case BC_ITERN:
+    //|  // RA = base*8, (RB = (nresults+1)*8, RC = (nargs+1)*8 (2+1)*8)
 #if LJ_HASJIT
+    //|  // NYI: add hotloop, record BC_ITERN.
 #endif
-    dasm_put(Dst, 4363, Dt6(->asize), Dt6(->array), 31-3, -(BCBIAS_J*4 >> 16), Dt6(->hmask), Dt6(->node), 31-5, 31-3, DtB(->key), -(BCBIAS_J*4 >> 16));
-    dasm_put(Dst, 4442);
+    //|  add RA, BASE, RA
+    //|  lwz TAB:RB, -12(RA)
+    //|  lwz RC, -4(RA)			// Get index from control var.
+    //|  lwz TMP0, TAB:RB->asize
+    //|  lwz TMP1, TAB:RB->array
+    //|   addi PC, PC, 4
+    //|1:  // Traverse array part.
+    //|  cmplw RC, TMP0
+    //|   slwi TMP3, RC, 3
+    //|  bge >5				// Index points after array part?
+    //|  evlddx TMP2, TMP1, TMP3
+    //|  checknil TMP2
+    //|     lwz INS, -4(PC)
+    //|  checkok >4
+    //|   efdcfsi TMP0, RC
+    //|    addi RC, RC, 1
+    //|     addis TMP3, PC, -(BCBIAS_J*4 >> 16)
+    //|  evstdd TMP2, 8(RA)
+    //|     decode_RD4 TMP1, INS
+    //|    stw RC, -4(RA)			// Update control var.
+    //|     add PC, TMP1, TMP3
+    //|   evstdd TMP0, 0(RA)
+    //|3:
+    //|  ins_next
+    //|
+    //|4:  // Skip holes in array part.
+    //|  addi RC, RC, 1
+    //|  b <1
+    //|
+    //|5:  // Traverse hash part.
+    //|  lwz TMP1, TAB:RB->hmask
+    //|  sub RC, RC, TMP0
+    //|   lwz TMP2, TAB:RB->node
+    //|6:
+    //|  cmplw RC, TMP1			// End of iteration? Branch to ITERL+1.
+    //|   slwi TMP3, RC, 5
+    //|  bgt <3
+    //|   slwi RB, RC, 3
+    //|   sub TMP3, TMP3, RB
+    //|  evlddx RB, TMP2, TMP3
+    //|   add NODE:TMP3, TMP2, TMP3
+    //|  checknil RB
+    //|     lwz INS, -4(PC)
+    //|  checkok >7
+    //|   evldd TMP3, NODE:TMP3->key
+    //|     addis TMP2, PC, -(BCBIAS_J*4 >> 16)
+    //|  evstdd RB, 8(RA)
+    //|    add RC, RC, TMP0
+    //|     decode_RD4 TMP1, INS
+    //|   evstdd TMP3, 0(RA)
+    //|    addi RC, RC, 1
+    //|     add PC, TMP1, TMP2
+    //|    stw RC, -4(RA)			// Update control var.
+    //|  b <3
+    //|
+    //|7:  // Skip holes in hash part.
+    //|  addi RC, RC, 1
+    dasm_put(Dst, 4401, Dt6(->asize), Dt6(->array), 31-3, -(BCBIAS_J*4 >> 16), Dt6(->hmask), Dt6(->node), 31-5, 31-3, DtB(->key), -(BCBIAS_J*4 >> 16));
+# 3190 "buildvm_ppc.dasc"
+    //|  b <6
+    dasm_put(Dst, 4480);
+# 3191 "buildvm_ppc.dasc"
     break;
 
   case BC_ISNEXT:
-    dasm_put(Dst, 4446, LJ_TTAB, LJ_TFUNC, LJ_TNIL, Dt8(->ffid), FF_next_N, 32-1, -(BCBIAS_J*4 >> 16), BC_JMP, BC_ITERC, -(BCBIAS_J*4 >> 16));
+    //|  // RA = base*8, RD = target (points to ITERN)
+    //|  add RA, BASE, RA
+    //|   li TMP2, -24
+    //|  evlddx CFUNC:TMP1, RA, TMP2
+    //|   lwz TMP2, -16(RA)
+    //|    lwz TMP3, -8(RA)
+    //|  evmergehi TMP0, CFUNC:TMP1, CFUNC:TMP1
+    //|   cmpwi cr0, TMP2, LJ_TTAB
+    //|  cmpwi cr1, TMP0, LJ_TFUNC
+    //|    cmpwi cr6, TMP3, LJ_TNIL
+    //|  bne cr1, >5
+    //|  lbz TMP1, CFUNC:TMP1->ffid
+    //|   crand 4*cr0+eq, 4*cr0+eq, 4*cr6+eq
+    //|  cmpwi cr7, TMP1, FF_next_N
+    //|    srwi TMP0, RD, 1
+    //|  crand 4*cr0+eq, 4*cr0+eq, 4*cr7+eq
+    //|    add TMP3, PC, TMP0
+    //|  bne cr0, >5
+    //|  stw ZERO, -4(RA)			// Initialize control var.
+    //|    addis PC, TMP3, -(BCBIAS_J*4 >> 16)
+    //|1:
+    //|  ins_next
+    //|5:  // Despecialize bytecode if any of the checks fail.
+    //|  li TMP0, BC_JMP
+    //|   li TMP1, BC_ITERC
+    //|  stb TMP0, -1(PC)
+    //|    addis PC, TMP3, -(BCBIAS_J*4 >> 16)
+    //|   stb TMP1, 3(PC)
+    //|  b <1
+    dasm_put(Dst, 4484, LJ_TTAB, LJ_TFUNC, LJ_TNIL, Dt8(->ffid), FF_next_N, 32-1, -(BCBIAS_J*4 >> 16), BC_JMP, BC_ITERC, -(BCBIAS_J*4 >> 16));
+# 3223 "buildvm_ppc.dasc"
     break;
 
   case BC_VARG:
-    dasm_put(Dst, 4497, FRAME_VARG, Dt1(->maxstack), Dt1(->top), Dt1(->base), 32-3, Dt1(->base));
-    dasm_put(Dst, 4577);
+    //|  // RA = base*8, RB = (nresults+1)*8, RC = numparams*8
+    //|  lwz TMP0, FRAME_PC(BASE)
+    //|  add RC, BASE, RC
+    //|   add RA, BASE, RA
+    //|  addi RC, RC, FRAME_VARG
+    //|   add TMP2, RA, RB
+    //|  subi TMP3, BASE, 8		// TMP3 = vtop
+    //|  sub RC, RC, TMP0			// RC = vbase
+    //|  // Note: RC may now be even _above_ BASE if nargs was < numparams.
+    //|  cmplwi cr1, RB, 0
+    //|   sub. TMP1, TMP3, RC
+    //|  beq cr1, >5			// Copy all varargs?
+    //|   subi TMP2, TMP2, 16
+    //|   ble >2				// No vararg slots?
+    //|1:  // Copy vararg slots to destination slots.
+    //|  evldd TMP0, 0(RC)
+    //|   addi RC, RC, 8
+    //|  evstdd TMP0, 0(RA)
+    //|  cmplw RA, TMP2
+    //|   cmplw cr1, RC, TMP3
+    //|  bge >3				// All destination slots filled?
+    //|    addi RA, RA, 8
+    //|   blt cr1, <1			// More vararg slots?
+    //|2:  // Fill up remainder with nil.
+    //|  evstdd TISNIL, 0(RA)
+    //|  cmplw RA, TMP2
+    //|   addi RA, RA, 8
+    //|  blt <2
+    //|3:
+    //|  ins_next
+    //|
+    //|5:  // Copy all varargs.
+    //|  lwz TMP0, L->maxstack
+    //|   li MULTRES, 8			// MULTRES = (0+1)*8
+    //|  ble <3				// No vararg slots?
+    //|  add TMP2, RA, TMP1
+    //|  cmplw TMP2, TMP0
+    //|   addi MULTRES, TMP1, 8
+    //|  bgt >7
+    //|6:
+    //|  evldd TMP0, 0(RC)
+    //|   addi RC, RC, 8
+    //|  evstdd TMP0, 0(RA)
+    //|  cmplw RC, TMP3
+    //|   addi RA, RA, 8
+    //|  blt <6				// More vararg slots?
+    //|  b <3
+    //|
+    //|7:  // Grow stack for varargs.
+    //|  mr CARG1, L
+    //|   stw RA, L->top
+    //|  sub SAVE0, RC, BASE		// Need delta, because BASE may change.
+    //|   stw BASE, L->base
+    //|  sub RA, RA, BASE
+    //|   stw PC, SAVE_PC
+    //|  srwi CARG2, TMP1, 3
+    //|  bl extern lj_state_growstack	// (lua_State *L, int n)
+    //|  lwz BASE, L->base
+    //|  add RA, BASE, RA
+    dasm_put(Dst, 4535, FRAME_VARG, Dt1(->maxstack), Dt1(->top), Dt1(->base), 32-3, Dt1(->base));
+# 3285 "buildvm_ppc.dasc"
+    //|  add RC, BASE, SAVE0
+    //|  subi TMP3, BASE, 8
+    //|  b <6
+    dasm_put(Dst, 4615);
+# 3288 "buildvm_ppc.dasc"
     break;
 
   /* -- Returns ----------------------------------------------------------- */
 
   case BC_RETM:
-    dasm_put(Dst, 4583);
+    //|  // RA = results*8, RD = extra_nresults*8
+    //|  add RD, RD, MULTRES		// MULTRES >= 8, so RD >= 8.
+    //|  // Fall through. Assumes BC_RET follows.
+    dasm_put(Dst, 4621);
+# 3296 "buildvm_ppc.dasc"
     break;
 
   case BC_RET:
-    dasm_put(Dst, 4585, FRAME_TYPE, FRAME_VARG, Dt7(->pc), PC2PROTO(k), FRAME_TYPEP);
+    //|  // RA = results*8, RD = (nresults+1)*8
+    //|  lwz PC, FRAME_PC(BASE)
+    //|   add RA, BASE, RA
+    //|    mr MULTRES, RD
+    //|1:
+    //|  andi. TMP0, PC, FRAME_TYPE
+    //|   xori TMP1, PC, FRAME_VARG
+    //|  bne ->BC_RETV_Z
+    //|
+    //|->BC_RET_Z:
+    //|  // BASE = base, RA = resultptr, RD = (nresults+1)*8, PC = return
+    //|   lwz INS, -4(PC)
+    //|  cmpwi RD, 8
+    //|   subi TMP2, BASE, 8
+    //|   subi RC, RD, 8
+    //|   decode_RB8 RB, INS
+    //|  beq >3
+    //|   li TMP1, 0
+    //|2:
+    //|  addi TMP3, TMP1, 8
+    //|   evlddx TMP0, RA, TMP1
+    //|  cmpw TMP3, RC
+    //|   evstddx TMP0, TMP2, TMP1
+    //|  beq >3
+    //|  addi TMP1, TMP3, 8
+    //|   evlddx TMP0, RA, TMP3
+    //|  cmpw TMP1, RC
+    //|   evstddx TMP0, TMP2, TMP3
+    //|  bne <2
+    //|3:
+    //|5:
+    //|  cmplw RB, RD
+    //|   decode_RA8 RA, INS
+    //|  bgt >6
+    //|   sub BASE, TMP2, RA
+    //|  lwz LFUNC:TMP1, FRAME_FUNC(BASE)
+    //|  ins_next1
+    //|  lwz TMP1, LFUNC:TMP1->pc
+    //|  lwz KBASE, PC2PROTO(k)(TMP1)
+    //|  ins_next2
+    //|
+    //|6:  // Fill up results with nil.
+    //|  subi TMP1, RD, 8
+    //|   addi RD, RD, 8
+    //|  evstddx TISNIL, TMP2, TMP1
+    //|  b <5
+    //|
+    //|->BC_RETV_Z:  // Non-standard return case.
+    //|  andi. TMP2, TMP1, FRAME_TYPEP
+    //|  bne ->vm_return
+    //|  // Return from vararg function: relocate BASE down.
+    //|  sub BASE, BASE, TMP1
+    //|  lwz PC, FRAME_PC(BASE)
+    //|  b <1
+    dasm_put(Dst, 4623, FRAME_TYPE, FRAME_VARG, Dt7(->pc), PC2PROTO(k), FRAME_TYPEP);
+# 3353 "buildvm_ppc.dasc"
     break;
 
   case BC_RET0: case BC_RET1:
-    dasm_put(Dst, 4655, FRAME_TYPE, FRAME_VARG);
+    //|  // RA = results*8, RD = (nresults+1)*8
+    //|  lwz PC, FRAME_PC(BASE)
+    //|   add RA, BASE, RA
+    //|    mr MULTRES, RD
+    //|  andi. TMP0, PC, FRAME_TYPE
+    //|   xori TMP1, PC, FRAME_VARG
+    //|  bne ->BC_RETV_Z
+    //|
+    //|  lwz INS, -4(PC)
+    //|   subi TMP2, BASE, 8
+    //|  decode_RB8 RB, INS
+    dasm_put(Dst, 4693, FRAME_TYPE, FRAME_VARG);
+# 3367 "buildvm_ppc.dasc"
     if (op == BC_RET1) {
-      dasm_put(Dst, 4668);
+      //|  evldd TMP0, 0(RA)
+      //|  evstdd TMP0, 0(TMP2)
+      dasm_put(Dst, 4706);
+# 3370 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4671, Dt7(->pc), PC2PROTO(k));
+    //|5:
+    //|  cmplw RB, RD
+    //|   decode_RA8 RA, INS
+    //|  bgt >6
+    //|   sub BASE, TMP2, RA
+    //|  lwz LFUNC:TMP1, FRAME_FUNC(BASE)
+    //|  ins_next1
+    //|  lwz TMP1, LFUNC:TMP1->pc
+    //|  lwz KBASE, PC2PROTO(k)(TMP1)
+    //|  ins_next2
+    //|
+    //|6:  // Fill up results with nil.
+    //|  subi TMP1, RD, 8
+    //|   addi RD, RD, 8
+    //|  evstddx TISNIL, TMP2, TMP1
+    //|  b <5
+    dasm_put(Dst, 4709, Dt7(->pc), PC2PROTO(k));
+# 3387 "buildvm_ppc.dasc"
     break;
 
   /* -- Loops and branches ------------------------------------------------ */
 
   case BC_FORL:
 #if LJ_HASJIT
-    dasm_put(Dst, 4699);
+    //|  hotloop
+    dasm_put(Dst, 4737);
+# 3394 "buildvm_ppc.dasc"
 #endif
+    //|  // Fall through. Assumes BC_IFORL follows.
     break;
 
   case BC_JFORI:
@@ -5819,37 +9200,80 @@ static void build_ins(BuildCtx *ctx, BCOp op, int defop)
 #endif
   case BC_FORI:
   case BC_IFORL:
+    //|  // RA = base*8, RD = target (after end of loop or start of loop)
     vk = (op == BC_IFORL || op == BC_JFORL);
-    dasm_put(Dst, 4701, FORL_IDX*8, FORL_STEP*8, FORL_STOP*8);
+    //|  add RA, BASE, RA
+    //|  evldd TMP1, FORL_IDX*8(RA)
+    //|  evldd TMP3, FORL_STEP*8(RA)
+    //|  evldd TMP2, FORL_STOP*8(RA)
+    dasm_put(Dst, 4739, FORL_IDX*8, FORL_STEP*8, FORL_STOP*8);
+# 3411 "buildvm_ppc.dasc"
     if (!vk) {
-      dasm_put(Dst, 4709);
+      //|  evcmpgtu cr0, TMP1, TISNUM
+      //|  evcmpgtu cr7, TMP3, TISNUM
+      //|  evcmpgtu cr1, TMP2, TISNUM
+      //|  cror 4*cr0+lt, 4*cr0+lt, 4*cr7+lt
+      //|  cror 4*cr0+lt, 4*cr0+lt, 4*cr1+lt
+      //|  blt ->vmeta_for
+      dasm_put(Dst, 4747);
+# 3418 "buildvm_ppc.dasc"
     }
     if (vk) {
-      dasm_put(Dst, 4717, FORL_IDX*8);
+      //|  efdadd TMP1, TMP1, TMP3
+      //|  evstdd TMP1, FORL_IDX*8(RA)
+      dasm_put(Dst, 4755, FORL_IDX*8);
+# 3422 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4721, FORL_EXT*8);
+    //|   evcmpgts TMP3, TISNIL
+    //|  evstdd TMP1, FORL_EXT*8(RA)
+    //|   bge >2
+    //|  efdcmpgt TMP1, TMP2
+    //|1:
+    dasm_put(Dst, 4759, FORL_EXT*8);
+# 3428 "buildvm_ppc.dasc"
     if (op != BC_JFORL) {
-      dasm_put(Dst, 4729, 32-1);
+      //|  srwi RD, RD, 1
+      //|  add RD, PC, RD
+      dasm_put(Dst, 4767, 32-1);
+# 3431 "buildvm_ppc.dasc"
       if (op == BC_JFORI) {
-	dasm_put(Dst, 4733, -(BCBIAS_J*4 >> 16));
+	//|  addis PC, RD, -(BCBIAS_J*4 >> 16)
+	dasm_put(Dst, 4771, -(BCBIAS_J*4 >> 16));
+# 3433 "buildvm_ppc.dasc"
       } else {
-	dasm_put(Dst, 4736, -(BCBIAS_J*4 >> 16));
+	//|  addis RD, RD, -(BCBIAS_J*4 >> 16)
+	dasm_put(Dst, 4774, -(BCBIAS_J*4 >> 16));
+# 3435 "buildvm_ppc.dasc"
       }
     }
     if (op == BC_FORI) {
-      dasm_put(Dst, 4739);
+      //|  iselgt PC, RD, PC
+      dasm_put(Dst, 4777);
+# 3439 "buildvm_ppc.dasc"
     } else if (op == BC_IFORL) {
-      dasm_put(Dst, 4741);
+      //|  iselgt PC, PC, RD
+      dasm_put(Dst, 4779);
+# 3441 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 4743, BC_JLOOP);
+      //|  ble =>BC_JLOOP
+      dasm_put(Dst, 4781, BC_JLOOP);
+# 3443 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4746);
+    //|  ins_next
+    //|2:
+    //|  efdcmpgt TMP2, TMP1
+    //|  b <1
+    dasm_put(Dst, 4784);
+# 3448 "buildvm_ppc.dasc"
     break;
 
   case BC_ITERL:
 #if LJ_HASJIT
-    dasm_put(Dst, 4761);
+    //|  hotloop
+    dasm_put(Dst, 4799);
+# 3453 "buildvm_ppc.dasc"
 #endif
+    //|  // Fall through. Assumes BC_IITERL follows.
     break;
 
   case BC_JITERL:
@@ -5857,42 +9281,74 @@ static void build_ins(BuildCtx *ctx, BCOp op, int defop)
     break;
 #endif
   case BC_IITERL:
-    dasm_put(Dst, 4763);
+    //|  // RA = base*8, RD = target
+    //|  evlddx TMP1, BASE, RA
+    //|   subi RA, RA, 8
+    //|  checknil TMP1
+    //|  checkok >1			// Stop if iterator returned nil.
+    dasm_put(Dst, 4801);
+# 3467 "buildvm_ppc.dasc"
     if (op == BC_JITERL) {
-      dasm_put(Dst, 4769);
+      //|  NYI
+      dasm_put(Dst, 4807);
+# 3469 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 4771, 32-1, -(BCBIAS_J*4 >> 16));
+      //|  branch_RD			// Otherwise save control var + branch.
+      //|  evstddx TMP1, BASE, RA
+      dasm_put(Dst, 4809, 32-1, -(BCBIAS_J*4 >> 16));
+# 3472 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4778);
+    //|1:
+    //|  ins_next
+    dasm_put(Dst, 4816);
+# 3475 "buildvm_ppc.dasc"
     break;
 
   case BC_LOOP:
+    //|  // RA = base*8, RD = target (loop extent)
+    //|  // Note: RA/RD is only used by trace recorder to determine scope/extent
+    //|  // This opcode does NOT jump, it's only purpose is to detect a hot loop.
 #if LJ_HASJIT
-    dasm_put(Dst, 4790);
+    //|  hotloop
+    dasm_put(Dst, 4828);
+# 3483 "buildvm_ppc.dasc"
 #endif
+    //|  // Fall through. Assumes BC_ILOOP follows.
     break;
 
   case BC_ILOOP:
-    dasm_put(Dst, 4792);
+    //|  // RA = base*8, RD = target (loop extent)
+    //|  ins_next
+    dasm_put(Dst, 4830);
+# 3490 "buildvm_ppc.dasc"
     break;
 
   case BC_JLOOP:
 #if LJ_HASJIT
-    dasm_put(Dst, 4803);
+    //|  NYI
+    dasm_put(Dst, 4841);
+# 3495 "buildvm_ppc.dasc"
 #endif
     break;
 
   case BC_JMP:
-    dasm_put(Dst, 4805, 32-1, -(BCBIAS_J*4 >> 16));
+    //|  // RA = base*8 (only used by trace recorder), RD = target
+    //|  branch_RD
+    //|  ins_next
+    dasm_put(Dst, 4843, 32-1, -(BCBIAS_J*4 >> 16));
+# 3502 "buildvm_ppc.dasc"
     break;
 
   /* -- Function headers -------------------------------------------------- */
 
   case BC_FUNCF:
 #if LJ_HASJIT
-    dasm_put(Dst, 4821);
+    //|  hotcall
+    dasm_put(Dst, 4859);
+# 3509 "buildvm_ppc.dasc"
 #endif
   case BC_FUNCV:  /* NYI: compiled vararg functions. */
+    //|  // Fall through. Assumes BC_IFUNCF/BC_IFUNCV follow.
     break;
 
   case BC_JFUNCF:
@@ -5900,38 +9356,127 @@ static void build_ins(BuildCtx *ctx, BCOp op, int defop)
     break;
 #endif
   case BC_IFUNCF:
-    dasm_put(Dst, 4823, Dt1(->maxstack), -4+PC2PROTO(numparams), -4+PC2PROTO(k), 31-3);
+    //|  // BASE = new base, RA = BASE+framesize*8, RB = LFUNC, RC = nargs*8
+    //|  lwz TMP2, L->maxstack
+    //|   lbz TMP1, -4+PC2PROTO(numparams)(PC)
+    //|    lwz KBASE, -4+PC2PROTO(k)(PC)
+    //|  cmplw RA, TMP2
+    //|   slwi TMP1, TMP1, 3
+    //|  bgt ->vm_growstack_l
+    //|  ins_next1
+    //|2:
+    //|  cmplw NARGS8:RC, TMP1		// Check for missing parameters.
+    //|  ble >3
+    dasm_put(Dst, 4861, Dt1(->maxstack), -4+PC2PROTO(numparams), -4+PC2PROTO(k), 31-3);
+# 3530 "buildvm_ppc.dasc"
     if (op == BC_JFUNCF) {
-      dasm_put(Dst, 4841);
+      //|  NYI
+      dasm_put(Dst, 4879);
+# 3532 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 4843);
+      //|  ins_next2
+      dasm_put(Dst, 4881);
+# 3534 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4852);
+    //|
+    //|3:  // Clear missing parameters.
+    //|  evstddx TISNIL, BASE, NARGS8:RC
+    //|  addi NARGS8:RC, NARGS8:RC, 8
+    //|  b <2
+    dasm_put(Dst, 4890);
+# 3540 "buildvm_ppc.dasc"
     break;
 
   case BC_JFUNCV:
 #if !LJ_HASJIT
     break;
 #endif
-    dasm_put(Dst, 4858);
+    //|  NYI  // NYI: compiled vararg functions
+    dasm_put(Dst, 4896);
+# 3547 "buildvm_ppc.dasc"
     break;  /* NYI: compiled vararg functions. */
 
   case BC_IFUNCV:
-    dasm_put(Dst, 4860, Dt1(->maxstack), 8+FRAME_VARG, -4+PC2PROTO(k), -4+PC2PROTO(numparams));
+    //|  // BASE = new base, RA = BASE+framesize*8, RB = LFUNC, RC = nargs*8
+    //|  lwz TMP2, L->maxstack
+    //|   add TMP1, BASE, RC
+    //|  add TMP0, RA, RC
+    //|   stw LFUNC:RB, 4(TMP1)		// Store copy of LFUNC.
+    //|   addi TMP3, RC, 8+FRAME_VARG
+    //|    lwz KBASE, -4+PC2PROTO(k)(PC)
+    //|  cmplw TMP0, TMP2
+    //|   stw TMP3, 0(TMP1)		// Store delta + FRAME_VARG.
+    //|  bge ->vm_growstack_l
+    //|  lbz TMP2, -4+PC2PROTO(numparams)(PC)
+    //|   mr RA, BASE
+    //|   mr RC, TMP1
+    //|  ins_next1
+    //|  cmpwi TMP2, 0
+    //|   addi BASE, TMP1, 8
+    //|  beq >3
+    //|1:
+    //|  cmplw RA, RC			// Less args than parameters?
+    //|   evldd TMP0, 0(RA)
+    //|  bge >4
+    //|    evstdd TISNIL, 0(RA)		// Clear old fixarg slot (help the GC).
+    //|    addi RA, RA, 8
+    //|2:
+    //|  addic. TMP2, TMP2, -1
+    //|   evstdd TMP0, 8(TMP1)
+    //|    addi TMP1, TMP1, 8
+    //|  bne <1
+    //|3:
+    //|  ins_next2
+    //|
+    //|4:  // Clear missing parameters.
+    //|  evmr TMP0, TISNIL
+    //|  b <2
+    dasm_put(Dst, 4898, Dt1(->maxstack), 8+FRAME_VARG, -4+PC2PROTO(k), -4+PC2PROTO(numparams));
+# 3584 "buildvm_ppc.dasc"
     break;
 
   case BC_FUNCC:
   case BC_FUNCCW:
+    //|  // BASE = new base, RA = BASE+framesize*8, RB = CFUNC, RC = nargs*8
     if (op == BC_FUNCC) {
-      dasm_put(Dst, 4910, Dt8(->f));
+      //|  lwz TMP3, CFUNC:RB->f
+      dasm_put(Dst, 4948, Dt8(->f));
+# 3591 "buildvm_ppc.dasc"
     } else {
-      dasm_put(Dst, 4913, DISPATCH_GL(wrapf));
+      //|  lwz TMP3, DISPATCH_GL(wrapf)(DISPATCH)
+      dasm_put(Dst, 4951, DISPATCH_GL(wrapf));
+# 3593 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4916, Dt1(->maxstack), Dt1(->base), Dt1(->top), ~LJ_VMST_C);
+    //|   add TMP1, RA, NARGS8:RC
+    //|   lwz TMP2, L->maxstack
+    //|    add RC, BASE, NARGS8:RC
+    //|   stw BASE, L->base
+    //|   cmplw TMP1, TMP2
+    //|    stw RC, L->top
+    //|     li_vmstate C
+    //|  mtctr TMP3
+    dasm_put(Dst, 4954, Dt1(->maxstack), Dt1(->base), Dt1(->top), ~LJ_VMST_C);
+# 3602 "buildvm_ppc.dasc"
     if (op == BC_FUNCCW) {
-      dasm_put(Dst, 4929, Dt8(->f));
+      //|  lwz CARG2, CFUNC:RB->f
+      dasm_put(Dst, 4967, Dt8(->f));
+# 3604 "buildvm_ppc.dasc"
     }
-    dasm_put(Dst, 4932, DISPATCH_GL(vmstate), Dt1(->top), 31-3, Dt1(->base), ~LJ_VMST_INTERP, DISPATCH_GL(vmstate));
+    //|  mr CARG1, L
+    //|   bgt ->vm_growstack_c		// Need to grow stack.
+    //|     st_vmstate
+    //|  bctrl				// (lua_State *L [, lua_CFunction f])
+    //|  // Returns nresults.
+    //|  lwz TMP1, L->top
+    //|   slwi RD, CRET1, 3
+    //|  lwz BASE, L->base
+    //|    li_vmstate INTERP
+    //|  lwz PC, FRAME_PC(BASE)		// Fetch PC of caller.
+    //|   sub RA, TMP1, RD		// RA = L->top - nresults*8
+    //|    st_vmstate
+    //|  b ->vm_returnc
+    dasm_put(Dst, 4970, DISPATCH_GL(vmstate), Dt1(->top), 31-3, Dt1(->base), ~LJ_VMST_INTERP, DISPATCH_GL(vmstate));
+# 3618 "buildvm_ppc.dasc"
     break;
 
   /* ---------------------------------------------------------------------- */
@@ -5951,7 +9496,9 @@ static int build_backend(BuildCtx *ctx)
 
   build_subroutines(ctx);
 
-  dasm_put(Dst, 4953);
+  //|.code_op
+  dasm_put(Dst, 4991);
+# 3638 "buildvm_ppc.dasc"
   for (op = 0; op < BC__MAX; op++)
     build_ins(ctx, (BCOp)op, op);
 
