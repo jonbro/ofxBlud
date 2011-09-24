@@ -64,7 +64,7 @@ void ofxBlud::setup(){
 	Lunar<bludShapeBatch>::Register(luaVM);
 	Lunar<bludFont>::Register(luaVM);
 	Lunar<bludLine>::Register(luaVM);
-	
+	Lunar<bludVideoPlayer>::Register(luaVM);
 	Lunar<bludOsc>::Register(luaVM);
 	Lunar<bludOscMessage>::Register(luaVM);
 	Lunar<bludOscReceiver>::Register(luaVM);

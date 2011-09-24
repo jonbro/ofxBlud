@@ -16,6 +16,7 @@
 #include "ofUtils.h"
 #include "ofEvents.h"
 #include "bludMixer.h"
+#include "bludVideoPlayer.h"
 #import "bludLock.h"
 
 #include "tinyxml.h"
