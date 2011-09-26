@@ -26,6 +26,11 @@ public:
 		ofSetColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), alpha);
 		return 1;
 	}
+	int setFrameRate(lua_State *L){
+		ofSetFrameRate(luaL_checknumber(L, 1));
+		cout << "current framerate: " << ofGetFrameRate() << endl;
+		return 1;
+	}
 	int drawRect(lua_State *L)  {ofRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
 	int drawCircle(lua_State *L)  {ofCircle(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
 
@@ -56,6 +61,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, translate),
 	method(bludGraphics, scale),
 	method(bludGraphics, setColor),
+	method(bludGraphics, setFrameRate),	
 	method(bludGraphics, drawRect),
 	method(bludGraphics, drawCircle),
 	method(bludGraphics, getWidth),

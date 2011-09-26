@@ -5,6 +5,7 @@ const char bludVideoPlayer::className[] = "bludVideoPlayer";
 Lunar<bludVideoPlayer>::RegType bludVideoPlayer::methods[] = {
 	method(bludVideoPlayer, load),
 	method(bludVideoPlayer, setCompletionCallback),
+	method(bludVideoPlayer, removeView),
 	{0,0}
 };
 

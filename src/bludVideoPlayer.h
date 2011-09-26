@@ -37,7 +37,7 @@ public:
 		//NSURL *theURL = [NSURL URLWithString:@"http://webapp-net.com/Demo/Media/sample_iPod.m4v"];  
 		
 		
-		MPMoviePlayerController* theMovie = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
+		theMovie = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
 		
 		[theMovie prepareToPlay];
 		
@@ -58,12 +58,6 @@ public:
 		
 		
 		
-		
-		/*
-		theMovie.scalingMode = MPMovieScalingModeAspectFill;  
-		theMovie.movieControlMode = MPMovieControlModeDefault;  
-		 */
-		
 		// setup the completion callback
 		[[NSNotificationCenter defaultCenter] 
 		 addObserver:notifier
@@ -75,7 +69,10 @@ public:
 		[ofxiPhoneGetUIWindow() addSubview:theMovie.view];
 		[ofxiPhoneGetUIWindow() makeKeyAndVisible];
 		
-		
+		return 1;
+	}
+	int removeView(lua_State *L){
+		[theMovie.view removeFromSuperview];
 		return 1;
 	}
 	int setCompletionCallback(lua_State *L){
@@ -105,6 +102,7 @@ public:
 private:
 	int completionCallback;
 	bool hasCompletionCallback;
+	MPMoviePlayerController* theMovie;
 	bludVideoPlayerNotifier *notifier;
 	lua_State *_L;
 };
