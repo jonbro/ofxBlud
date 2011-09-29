@@ -126,7 +126,7 @@ public:
 	ofVec2f a, b;
 	bludLine(lua_State *L) {
 		_image = Lunar<bludImage>::check(L, 1);
-		int width = 10;
+		int width = 4;
 		if (lua_isnumber(L, 2)) {
 			width = luaL_checknumber(L, 2);
 		}
