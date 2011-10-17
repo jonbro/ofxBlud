@@ -6,6 +6,7 @@ Lunar<bludVideoPlayer>::RegType bludVideoPlayer::methods[] = {
 	method(bludVideoPlayer, load),
 	method(bludVideoPlayer, setCompletionCallback),
 	method(bludVideoPlayer, removeView),
+	method(bludVideoPlayer, log),
 	{0,0}
 };
 

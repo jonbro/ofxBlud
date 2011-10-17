@@ -28,6 +28,11 @@ public:
 		notifier = [[bludVideoPlayerNotifier alloc] init:this];
 		hasCompletionCallback = false;
 		_L = L;
+		viewLoaded = false;
+	}
+	int log(lua_State *L){
+		NSLog(@"%@", [NSString stringWithUTF8String:luaL_checkstring(L, 1)]);
+		return 1;
 	}
 	int load (lua_State *L) {
 		
@@ -39,7 +44,7 @@ public:
 		
 		theMovie = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
 		
-		[theMovie prepareToPlay];
+		[theMovie prepareToPlay];  
 		
 		// > 3.2
 		[theMovie respondsToSelector:@selector(loadState)];
@@ -68,11 +73,12 @@ public:
 		[theMovie play];
 		[ofxiPhoneGetUIWindow() addSubview:theMovie.view];
 		[ofxiPhoneGetUIWindow() makeKeyAndVisible];
-		
+		viewLoaded = true;
 		return 1;
 	}
 	int removeView(lua_State *L){
-		[theMovie.view removeFromSuperview];
+		if(viewLoaded)
+			[theMovie.view removeFromSuperview];
 		return 1;
 	}
 	int setCompletionCallback(lua_State *L){
@@ -105,4 +111,5 @@ private:
 	MPMoviePlayerController* theMovie;
 	bludVideoPlayerNotifier *notifier;
 	lua_State *_L;
+	bool viewLoaded;
 };
