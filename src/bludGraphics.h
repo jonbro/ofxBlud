@@ -33,7 +33,7 @@ public:
 	}
 	int drawRect(lua_State *L)  {ofRect(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
 	int drawCircle(lua_State *L)  {ofCircle(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
-
+    int clear(lua_State *L){ofClear(0,0,0,0); return 1;}
 	int getWidth(lua_State *L)  {lua_pushnumber(L, ofGetWidth()); return 1;}
 	int getHeight(lua_State *L)  {lua_pushnumber(L, ofGetHeight()); return 1;}
 	int getMillis(lua_State *L)  {lua_pushnumber(L, ofGetElapsedTimeMillis()); return 1;}
@@ -49,6 +49,7 @@ public:
 		}
 		return 1;
 	}
+    int enableAlpha(lua_State *L){glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);return 1;}
 	~bludGraphics() {}
 };
 
@@ -64,9 +65,11 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, setFrameRate),	
 	method(bludGraphics, drawRect),
 	method(bludGraphics, drawCircle),
+    method(bludGraphics, clear),
 	method(bludGraphics, getWidth),
 	method(bludGraphics, getHeight),
 	method(bludGraphics, getMillis),
+    method(bludGraphics, enableAlpha),
 	method(bludGraphics, noise),
 	{0,0}
 };

@@ -10,7 +10,6 @@ public:
 	bludFont(lua_State *L) {}
 
 	int load(lua_State *L){
-		printf("loading");
 		bool antiAlias = true;
 		if ( lua_isboolean( L, 3) ){
 			antiAlias = lua_toboolean( L, 3 );

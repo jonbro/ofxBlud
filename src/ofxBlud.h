@@ -52,6 +52,10 @@ class ofxBlud{
 		ofSoundMixer *mixer;
 		ofMutex *mutex;
 		ofMesh mesh;
+        ofFbo			*fbo;
+        ofTexture		texScreen;
+        ofColor         feedbackColor;
+
 };
 
 void	RegisterLuaXML (lua_State *L);

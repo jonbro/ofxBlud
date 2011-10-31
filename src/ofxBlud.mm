@@ -169,9 +169,23 @@ void ofxBlud::setup(){
 	mesh.addVertex(ofVec3f(50+xpos, 50, 0));
 	mesh.addColor(ofFloatColor(red, 1.0, 0));
 	mesh.addIndex(mesh.getNumVertices()-1);
+    ofFbo::Settings settings;    
+
+    settings.width = 1024;    
+    settings.height = 1024;    
+    settings.internalformat = GL_RGBA;    
+    settings.numSamples = 0;    
+    settings.useDepth = false;    
+    settings.useStencil = false; 
+
+    fbo = new ofFbo();  
+
+    fbo->allocate(settings);
+    texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
 }
 
 void ofxBlud::draw(ofEventArgs &e){
+    //fbo->begin();
 	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
@@ -183,6 +197,21 @@ void ofxBlud::draw(ofEventArgs &e){
 	// the numbers and the calling of the function do not need to be called because they are automatically popped off the stack
 	lua_pop(luaVM,1);
 	mutex->unlock();
+//    ofPushMatrix();
+//    ofTranslate(ofGetWidth()/2,ofGetHeight()/2);
+//    ofScale(1.1+sin(ofDegToRad(ofGetElapsedTimeMillis()/14.0))*0.1, 1.1+sin(ofDegToRad(ofGetElapsedTimeMillis()/16.0))*0.1);
+//    ofRotate(sin(ofDegToRad(ofGetElapsedTimeMillis()/14.0)), 0, 0, 1);
+//    ofTranslate(-ofGetWidth()/2,-ofGetHeight()/2);
+//    feedbackColor.setHsb(ofGetElapsedTimeMillis()/10%255, 255, 255, 100+sin(ofDegToRad(ofGetElapsedTimeMillis()/3.0))*100.0);
+//    ofSetColor(feedbackColor);
+//    ofEnableBlendMode(OF_BLENDMODE_ADD);
+//    texScreen.draw(0,0,ofGetWidth(),ofGetHeight());
+//    texScreen.loadScreenData(0,0,ofGetWidth(),ofGetHeight());
+//    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+//    ofPopMatrix();
+    //fbo->end();
+    //ofSetColor(255, 255, 255, 255);
+    //fbo->draw(0, 0);
 	//mesh.drawFaces();
 }
 void ofxBlud::exit(ofEventArgs &e){
