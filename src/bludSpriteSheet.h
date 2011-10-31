@@ -56,12 +56,28 @@ public:
 		ani.tex_y = luaL_checknumber(L, 1);
 		return 1;
 	}
+	int getTexX(lua_State *L)  {
+		lua_pushnumber(L, ani.tex_x);
+		return 1;
+	}
+	int getTexY(lua_State *L)  {
+		lua_pushnumber(L, ani.tex_y);
+		return 1;
+	}
 	int setSpriteX(lua_State *L)  {
 		ani.sprite_x = luaL_checknumber(L, 1);
 		return 1;
 	}
 	int setSpriteY(lua_State *L)  {
 		ani.sprite_y = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int getSpriteX(lua_State *L)  {
+		lua_pushnumber(L, ani.sprite_x);
+		return 1;
+	}
+	int getSpriteY(lua_State *L)  {
+		lua_pushnumber(L, ani.sprite_y);
 		return 1;
 	}
 	int setWidth(lua_State *L)  {
@@ -86,6 +102,14 @@ public:
 	}
 	int setTexHeight(lua_State *L)  {
 		ani.tex_h = luaL_checknumber(L, 1);
+		return 1;
+	}
+	int getTexWidth(lua_State *L)  {
+		lua_pushnumber(L, ani.tex_w	);
+		return 1;
+	}
+	int getTexHeight(lua_State *L)  {
+		lua_pushnumber(L, ani.tex_h	);
 		return 1;
 	}
 	int setLoops(lua_State *L)  {
