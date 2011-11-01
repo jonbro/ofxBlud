@@ -10,6 +10,7 @@
 #include "bludFont.h"
 #include "bludLine.h"
 #include "bludOsc.h"
+#include "bludAsyncCurl.h"
 #include "blud_boot.h"
 
 static void stackDump (lua_State *L) {
@@ -68,7 +69,8 @@ void ofxBlud::setup(){
 	Lunar<bludOsc>::Register(luaVM);
 	Lunar<bludOscMessage>::Register(luaVM);
 	Lunar<bludOscReceiver>::Register(luaVM);
-	
+	Lunar<bludAsycCurl>::Register(luaVM);
+    
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
 	if (error) {
@@ -253,7 +255,6 @@ string ofxBlud::execute(string code){
 
 string ofxBlud::executeFile(std::string filename){
 	mutex->lock();
-	cout << ofToDataPath(filename).c_str() << endl;
 	int error = luaL_dofile(luaVM, ofToDataPath(filename).c_str());
 	if (error) {
 		return lua_tostring(luaVM, -1);
