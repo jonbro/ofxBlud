@@ -3,6 +3,7 @@
 #include <MediaPlayer/MediaPlayer.h>
 #import "ofxiPhoneExtras.h"
 #import "lunar.h"
+#import "bludLock.h"
 
 // forward declaration
 
@@ -29,56 +30,17 @@ public:
 		hasCompletionCallback = false;
 		_L = L;
 		viewLoaded = false;
+        mutex = bludLock::getInstance();
 	}
 	int log(lua_State *L){
 		NSLog(@"%@", [NSString stringWithUTF8String:luaL_checkstring(L, 1)]);
 		return 1;
 	}
-	int load (lua_State *L) {
-		
-		CGSize size = [ofxiPhoneGetUIWindow() frame].size;
-		
-		NSURL *theURL = [NSURL fileURLWithPath:[NSString stringWithUTF8String: luaL_checkstring(L, 1)]];
-		//NSURL *theURL = [NSURL URLWithString:@"http://webapp-net.com/Demo/Media/sample_iPod.m4v"];  
-		
-		
-		theMovie = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
-		
-		[theMovie prepareToPlay];  
-		
-		// > 3.2
-		[theMovie respondsToSelector:@selector(loadState)];
-		
-		theMovie.scalingMode = MPMovieScalingModeAspectFill;
-		[theMovie setFullscreen:TRUE animated:TRUE];
-		theMovie.controlStyle = MPMovieControlStyleNone;
-		
-		theMovie.view.frame = CGRectMake(0, 0, size.height, size.width); 
-		theMovie.view.backgroundColor = [UIColor clearColor];
-		
-		// Transform
-		theMovie.view.transform = CGAffineTransformMakeRotation(-270.0f * (M_PI/180.0f));
-		theMovie.view.center = ofxiPhoneGetUIWindow().center;
-		
-		
-		
-		
-		// setup the completion callback
-		[[NSNotificationCenter defaultCenter] 
-		 addObserver:notifier
-		 selector:@selector(movieFinishedCallback:)
-		 name:MPMoviePlayerPlaybackDidFinishNotification
-		 object:nil];
-		
-		[theMovie play];
-		[ofxiPhoneGetUIWindow() addSubview:theMovie.view];
-		[ofxiPhoneGetUIWindow() makeKeyAndVisible];
-		viewLoaded = true;
-		return 1;
-	}
+	int load (lua_State *L);
 	int removeView(lua_State *L){
-		if(viewLoaded)
+		if(viewLoaded){
 			[theMovie.view removeFromSuperview];
+        }
 		return 1;
 	}
 	int setCompletionCallback(lua_State *L){
@@ -91,19 +53,22 @@ public:
 		}
 		return 1;
 	}
-	void callCompletion(){
-		if(hasCompletionCallback){
-			lua_rawgeti( _L, LUA_REGISTRYINDEX, completionCallback );
-			if(lua_pcall(_L, 0, 0, 0) != 0){
-				ofLog(OF_LOG_ERROR, "video completion callback error");
-				ofLog(OF_LOG_ERROR, lua_tostring(_L, -1));
-			}			
-		}
-	}
+	void callCompletion();
 	~bludVideoPlayer() {
 		// i suspect that to properly cleanup, I need to pop the value of the callback off the stack
 		// not going to do it now though, because how much memory could this possibly leak...
-		
+        cout << "removing the video player" << endl;
+        if(viewLoaded){
+            cout << "releasing notifier" << endl;
+            [[NSNotificationCenter defaultCenter] 
+             removeObserver:notifier
+             name:MPMoviePlayerPlaybackDidFinishNotification
+             object:theMovie];
+            [notifier release];
+            [theMovie release];
+            theMovie = nil;
+        }
+        NSLog(@"movie retain count = %i", [theMovie retainCount]);
 	}
 private:
 	int completionCallback;
@@ -112,4 +77,5 @@ private:
 	bludVideoPlayerNotifier *notifier;
 	lua_State *_L;
 	bool viewLoaded;
+    ofMutex *mutex;
 };

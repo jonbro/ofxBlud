@@ -138,7 +138,11 @@ public:
 	}
 	int loadTexture(lua_State *L)  {
 		// defaults to loading nearest neighbor style
-		spriteRenderer->loadTexture(luaL_checkstring(L, 1), luaL_checknumber(L, 2), GL_NEAREST);
+        int height = luaL_checknumber(L, 2);
+		if (lua_isnumber(L, 3)) {
+			height = luaL_checknumber(L, 3);
+		}
+		spriteRenderer->loadTexture(luaL_checkstring(L, 1), luaL_checknumber(L, 2), height, GL_NEAREST);
 		return 1;
 	}
 	int clear(lua_State *L)  {

@@ -3,7 +3,6 @@
 #include "bludImage.h"
 #include "bludGraphics.h"
 #include "bludSynth.h"
-#include "bludAudioSync.h"
 #include "bludSpriteSheet.h"
 #include "bludShapeBatch.h"
 #include "bludShapeBatch.h"
@@ -59,7 +58,6 @@ void ofxBlud::setup(){
 	Lunar<bludImage>::Register(luaVM);
 	Lunar<bludGraphics>::Register(luaVM);
 	Lunar<bludSynth>::Register(luaVM);
-	Lunar<bludAudioSync>::Register(luaVM);
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
 	Lunar<bludShapeBatch>::Register(luaVM);
@@ -117,7 +115,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.mouseDragged, this, &ofxBlud::mouseDragged);	
 	
 	// audio events
-	ofAddListener(ofEvents.audioRequested, this, &ofxBlud::audioRequested);
+	//ofAddListener(ofEvents.audioRequested, this, &ofxBlud::audioRequested);
 	
 	// sys events
 	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
@@ -406,7 +404,7 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 
 void ofxBlud::audioRequested(ofAudioEventArgs &e){
 	// getting called
-	mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
+	//mixer->audioRequested(e.buffer, e.bufferSize, e.nChannels);
 }
 
 // via http://lua-users.org/wiki/LuaXml
