@@ -68,7 +68,6 @@ public:
             [theMovie release];
             theMovie = nil;
         }
-        NSLog(@"movie retain count = %i", [theMovie retainCount]);
 	}
 private:
 	int completionCallback;

@@ -51,33 +51,21 @@ int bludVideoPlayer::load(lua_State *L){
     
     
     theMovie = [[MPMoviePlayerController alloc] initWithContentURL:theURL];
-    NSLog(@"1.url retain count = %i", [theURL retainCount]);
-
-    NSLog(@"1.movie retain count = %i", [theMovie retainCount]);
     [theMovie prepareToPlay];  
-    NSLog(@"2.movie retain count = %i", [theMovie retainCount]);
     
     // > 3.2
     [theMovie respondsToSelector:@selector(loadState)];
-    NSLog(@"3.movie retain count = %i", [theMovie retainCount]);
     
     theMovie.scalingMode = MPMovieScalingModeAspectFill;
-    NSLog(@"4.movie retain count = %i", [theMovie retainCount]);
     [theMovie setFullscreen:TRUE animated:TRUE];
-    NSLog(@"5.movie retain count = %i", [theMovie retainCount]);
     theMovie.controlStyle = MPMovieControlStyleNone;
-    NSLog(@"6.movie retain count = %i", [theMovie retainCount]);
     
     theMovie.view.frame = CGRectMake(0, 0, size.height, size.width); 
-    NSLog(@"7.movie retain count = %i", [theMovie retainCount]);
     theMovie.view.backgroundColor = [UIColor clearColor];
-    NSLog(@"8.movie retain count = %i", [theMovie retainCount]);
     
     // Transform
     theMovie.view.transform = CGAffineTransformMakeRotation(-270.0f * (M_PI/180.0f));
-    NSLog(@"9.movie retain count = %i", [theMovie retainCount]);
     theMovie.view.center = ofxiPhoneGetUIWindow().center;
-    NSLog(@"10.movie retain count = %i", [theMovie retainCount]);
     
     
     
@@ -90,11 +78,8 @@ int bludVideoPlayer::load(lua_State *L){
      object:theMovie];
     
     [theMovie play];
-    NSLog(@"11.movie retain count = %i", [theMovie retainCount]);
     [ofxiPhoneGetUIWindow() addSubview:theMovie.view];
-    NSLog(@"12.movie retain count = %i", [theMovie retainCount]);
     [ofxiPhoneGetUIWindow() makeKeyAndVisible];
-    NSLog(@"13.movie retain count = %i", [theMovie retainCount]);
     viewLoaded = true;
     return 1;
 }

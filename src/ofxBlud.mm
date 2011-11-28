@@ -9,7 +9,6 @@
 #include "bludFont.h"
 #include "bludLine.h"
 #include "bludOsc.h"
-#include "bludAsyncCurl.h"
 #include "blud_boot.h"
 
 static void stackDump (lua_State *L) {
@@ -67,7 +66,6 @@ void ofxBlud::setup(){
 	Lunar<bludOsc>::Register(luaVM);
 	Lunar<bludOscMessage>::Register(luaVM);
 	Lunar<bludOscReceiver>::Register(luaVM);
-	Lunar<bludAsycCurl>::Register(luaVM);
     
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
@@ -113,10 +111,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.mouseReleased, this, &ofxBlud::mouseReleased);
 	ofAddListener(ofEvents.mouseMoved, this, &ofxBlud::mouseMoved);
 	ofAddListener(ofEvents.mouseDragged, this, &ofxBlud::mouseDragged);	
-	
-	// audio events
-	//ofAddListener(ofEvents.audioRequested, this, &ofxBlud::audioRequested);
-	
+		
 	// sys events
 	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents.update, this, &ofxBlud::update);
