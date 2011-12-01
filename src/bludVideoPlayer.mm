@@ -60,11 +60,11 @@ int bludVideoPlayer::load(lua_State *L){
     [theMovie setFullscreen:TRUE animated:TRUE];
     theMovie.controlStyle = MPMovieControlStyleNone;
     
-    theMovie.view.frame = CGRectMake(0, 0, size.height, size.width); 
+    theMovie.view.frame = CGRectMake(0, 0, size.width, size.height); 
     theMovie.view.backgroundColor = [UIColor clearColor];
     
     // Transform
-    theMovie.view.transform = CGAffineTransformMakeRotation(-270.0f * (M_PI/180.0f));
+    theMovie.view.transform = CGAffineTransformMakeRotation(0 * (M_PI/180.0f));
     theMovie.view.center = ofxiPhoneGetUIWindow().center;
     
     
