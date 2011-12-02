@@ -134,6 +134,7 @@ public:
 	static const char className[];
 	static Lunar<bludSpriteSheet>::RegType methods[];
 	bludSpriteSheet(lua_State *L){		
+        texture = new LinearTexture();
 		spriteRenderer = new ofxSpriteSheetRenderer(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
 	}
 	int loadTexture(lua_State *L)  {
@@ -142,7 +143,8 @@ public:
 		if (lua_isnumber(L, 3)) {
 			height = luaL_checknumber(L, 3);
 		}
-		spriteRenderer->loadTexture(luaL_checkstring(L, 1), luaL_checknumber(L, 2), height, GL_LINEAR);
+        texture->loadTexture(luaL_checkstring(L, 1));
+		spriteRenderer->loadTexture(texture);
 		return 1;
 	}
 	int clear(lua_State *L)  {
@@ -310,8 +312,10 @@ public:
 	}
 	~bludSpriteSheet() {
 		delete spriteRenderer;
+        delete texture;
 		printf("deleted sprite sheet (%p)\n", this);
 	}
+    LinearTexture *texture;
 	ofxSpriteSheetRenderer * spriteRenderer;
 private:
 };
