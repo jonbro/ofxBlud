@@ -10,6 +10,7 @@
 #include "bludLine.h"
 #include "bludOsc.h"
 #include "bludAsyncCurl.h"
+#include "bludWebview.h"
 #include "blud_boot.h"
 
 static void stackDump (lua_State *L) {
@@ -68,7 +69,8 @@ void ofxBlud::setup(){
 	Lunar<bludOscMessage>::Register(luaVM);
 	Lunar<bludOscReceiver>::Register(luaVM);
     Lunar<bludAsycCurl>::Register(luaVM);
-
+    Lunar<bludWebview>::Register(luaVM);
+    
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
 	if (error) {
