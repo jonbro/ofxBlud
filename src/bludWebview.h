@@ -19,7 +19,7 @@ class bludWebview;
     @public
         bludWebview *bwv;
 }
--(id)init:(bludWebview *) _bwv;
+-(id)init:(bludWebview *) _bwv file:(NSString *)toLoad;
 @end
 
 

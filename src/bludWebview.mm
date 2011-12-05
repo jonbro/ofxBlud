@@ -9,13 +9,13 @@ Lunar<bludWebview>::RegType bludWebview::methods[] = {
 
 @implementation bludWebviewController
 
--(id)init:(bludWebview *) _bwv
+-(id)init:(bludWebview *) _bwv file:(NSString *)toLoad
 {
 	self = [super init];
     bwv = _bwv;
     CGSize size = [ofxiPhoneGetUIWindow() frame].size;
 	webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"help"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:toLoad ofType:@"html" inDirectory:@"help"];
 	NSFileHandle *readHandle = [NSFileHandle fileHandleForReadingAtPath:path];
 	NSURL *baseURL = [NSURL fileURLWithPath:path];
 	
@@ -56,7 +56,7 @@ Lunar<bludWebview>::RegType bludWebview::methods[] = {
 
 bludWebview::bludWebview(lua_State *L){
     // instance a webview controller
-    web = [[bludWebviewController alloc] init:this];
+    web = [[bludWebviewController alloc] init:this file:[NSString stringWithUTF8String:luaL_checkstring(L, 1)]];
     //        web->bwv = this;
     // attach its view to the main of view
     hasCompletionCallback = false;
