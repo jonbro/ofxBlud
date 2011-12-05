@@ -12,6 +12,7 @@
 #include "bludAsyncCurl.h"
 #include "bludWebview.h"
 #include "blud_boot.h"
+#include "FlurryAnalytics.h"
 
 static void stackDump (lua_State *L) {
 	int i;
@@ -42,6 +43,24 @@ static void stackDump (lua_State *L) {
 	printf("\n");  /* end the listing */
 }
 
+int luaErrorHandler(lua_State *L) 
+{
+    lua_getfield(L, LUA_GLOBALSINDEX, "debug");
+    if (!lua_istable(L, -1)) {
+        lua_pop(L, 1);
+        return 1;
+    }
+    lua_getfield(L, -1, "traceback");
+    if (!lua_isfunction(L, -1)) {
+        lua_pop(L, 2);
+        return 1;
+    }
+    lua_pushvalue(L, 1);
+    lua_pushinteger(L, 0);
+    lua_call(L, 2, 1);
+    return 1;
+}
+
 
 void ofxBlud::setup(){
 
@@ -54,7 +73,8 @@ void ofxBlud::setup(){
 	ofSetLogLevel(OF_LOG_ERROR);
 	// load the standard libs
 	luaL_openlibs(luaVM);
-	
+    luaopen_debug(luaVM);
+    
 	// load the wrappers
 	Lunar<bludImage>::Register(luaVM);
 	Lunar<bludGraphics>::Register(luaVM);
@@ -186,15 +206,27 @@ void ofxBlud::setup(){
 void ofxBlud::draw(ofEventArgs &e){
     //fbo->begin();
 	mutex->lock();
-	lua_getglobal(luaVM, "blud");
+    
+    lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "draw"); /* function to be called */
-	if(lua_pcall(luaVM, 0, 0, 0) != 0){
+
+    int error_index = lua_gettop(luaVM);
+    //push error handler onto stack..
+    lua_pushcfunction(luaVM, luaErrorHandler);
+    lua_insert(luaVM, error_index);
+
+    if(lua_pcall(luaVM, 0, 0, error_index) != 0){
 		ofLog(OF_LOG_ERROR, "Blud draw error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+        [FlurryAnalytics logError:@"blud draw error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
+        // pop the error message off the top of the stack
+        lua_pop(luaVM, 1);
 	}
+    
 	// need to pop once for global and once for the field.
 	// the numbers and the calling of the function do not need to be called because they are automatically popped off the stack
-	lua_pop(luaVM,1);
+    // pop again for the traceback
+	lua_pop(luaVM,2);
 	mutex->unlock();
 //    ofPushMatrix();
 //    ofTranslate(ofGetWidth()/2,ofGetHeight()/2);
@@ -218,6 +250,7 @@ void ofxBlud::exit(ofEventArgs &e){
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "exit"); /* function to be called */
 	if(lua_pcall(luaVM, 0, 0, 0) != 0){
+        
 		ofLog(OF_LOG_ERROR, "Blud exit error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 	}
@@ -231,12 +264,22 @@ void ofxBlud::update(ofEventArgs &e){
 	mutex->lock();
 	lua_getglobal(luaVM, "blud");
 	lua_getfield(luaVM, -1, "update"); /* function to be called */
+
 	lua_pushnumber(luaVM, ofGetElapsedTimeMillis());
-	if(lua_pcall(luaVM, 1, 0, 0) != 0){
+
+    int error_index = lua_gettop(luaVM) - 1; // subtract the number of params
+    //push error handler onto stack..
+    lua_pushcfunction(luaVM, luaErrorHandler);
+    lua_insert(luaVM, error_index);
+
+	if(lua_pcall(luaVM, 1, 0, error_index) != 0){
 		ofLog(OF_LOG_ERROR, "Blud update error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+        [FlurryAnalytics logError:@"blud update error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
+        // pop the error message off the top of the stack
+        lua_pop(luaVM, 1);
 	}
-	lua_pop(luaVM,1);
+	lua_pop(luaVM,2);
 	mutex->unlock();
 }
 
@@ -350,7 +393,7 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.down: %s\n", lua_tostring(luaVM, -1));
 	}
-//	lua_pop(luaVM,4);
+	lua_pop(luaVM,4);
 	mutex->unlock();
 }
 void ofxBlud::touchMoved(ofTouchEventArgs &e){
@@ -364,6 +407,7 @@ void ofxBlud::touchMoved(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.moved: %s\n", lua_tostring(luaVM, -1));
 	}
+	lua_pop(luaVM,4);
 	mutex->unlock();
 }
 void ofxBlud::touchUp(ofTouchEventArgs &e){

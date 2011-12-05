@@ -55,7 +55,7 @@ class ofxBlud{
         ofFbo			*fbo;
         ofTexture		texScreen;
         ofColor         feedbackColor;
-
+        int             errorHandle;
 };
 
 void	RegisterLuaXML (lua_State *L);
