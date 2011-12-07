@@ -60,3 +60,4 @@ class ofxBlud{
 
 void	RegisterLuaXML (lua_State *L);
 static int LuaXML_ParseFile (lua_State *L);
+static int luaErrorHandler(lua_State *L);

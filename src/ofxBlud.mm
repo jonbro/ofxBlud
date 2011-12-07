@@ -43,7 +43,7 @@ static void stackDump (lua_State *L) {
 	printf("\n");  /* end the listing */
 }
 
-int luaErrorHandler(lua_State *L) 
+static int luaErrorHandler(lua_State *L) 
 {
     lua_getfield(L, LUA_GLOBALSINDEX, "debug");
     if (!lua_istable(L, -1)) {
@@ -338,7 +338,8 @@ void ofxBlud::mousePressed(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.pressed: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex->unlock();
+    lua_pop(luaVM,2);
+    mutex->unlock();
 }
 void ofxBlud::mouseMoved(ofMouseEventArgs &e){
 	mutex->lock();
@@ -351,7 +352,8 @@ void ofxBlud::mouseMoved(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.moved: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex->unlock();
+    lua_pop(luaVM,2);
+    mutex->unlock();
 }
 void ofxBlud::mouseDragged(ofMouseEventArgs &e){
 	mutex->lock();
@@ -364,7 +366,8 @@ void ofxBlud::mouseDragged(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.dragged: %s\n", lua_tostring(luaVM, -1));
 	}
-	mutex->unlock();
+    lua_pop(luaVM,2);
+    mutex->unlock();
 }
 void ofxBlud::mouseReleased(ofMouseEventArgs &e){
 	mutex->lock();
@@ -377,7 +380,8 @@ void ofxBlud::mouseReleased(ofMouseEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in mouse.released: %s\n", lua_tostring(luaVM, -1));
 	}	
-	mutex->unlock();
+    lua_pop(luaVM,2);
+    mutex->unlock();
 }
 
 // all of the touch events
@@ -393,7 +397,7 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.down: %s\n", lua_tostring(luaVM, -1));
 	}
-	lua_pop(luaVM,4);
+	lua_pop(luaVM,2);
 	mutex->unlock();
 }
 void ofxBlud::touchMoved(ofTouchEventArgs &e){
@@ -407,7 +411,7 @@ void ofxBlud::touchMoved(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.moved: %s\n", lua_tostring(luaVM, -1));
 	}
-	lua_pop(luaVM,4);
+	lua_pop(luaVM,2);
 	mutex->unlock();
 }
 void ofxBlud::touchUp(ofTouchEventArgs &e){
@@ -421,8 +425,8 @@ void ofxBlud::touchUp(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.up: %s\n", lua_tostring(luaVM, -1));
 	}
-	lua_pop(luaVM,4);
-//	stackDump(luaVM);
+	lua_pop(luaVM,2);
+	cout << "lua stack depth: " << lua_gettop(luaVM) << endl;
 	mutex->unlock();
 }
 void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
@@ -436,6 +440,7 @@ void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
 	if(lua_pcall(luaVM, 3, 0, 0) != 0){
 		printf("error in touch.double_tap: %s\n", lua_tostring(luaVM, -1));
 	}
+	lua_pop(luaVM,2);
 	mutex->unlock();
 }
 

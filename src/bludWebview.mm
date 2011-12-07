@@ -23,6 +23,8 @@ Lunar<bludWebview>::RegType bludWebview::methods[] = {
 							[readHandle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
 	webView.delegate = self;
 	webView.scalesPageToFit = YES;
+    webView.backgroundColor = [UIColor colorWithRed:0.968 green:0.960 blue:0.935 alpha:0.000];
+    
 	[webView loadHTMLString:htmlString baseURL:baseURL];
     [ofxiPhoneGetUIWindow() addSubview:webView];
     [ofxiPhoneGetUIWindow() makeKeyAndVisible];
