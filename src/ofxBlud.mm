@@ -426,7 +426,7 @@ void ofxBlud::touchUp(ofTouchEventArgs &e){
 		printf("error in touch.up: %s\n", lua_tostring(luaVM, -1));
 	}
 	lua_pop(luaVM,2);
-	cout << "lua stack depth: " << lua_gettop(luaVM) << endl;
+//	cout << "lua stack depth: " << lua_gettop(luaVM) << endl;
 	mutex->unlock();
 }
 void ofxBlud::touchDoubleTap(ofTouchEventArgs &e){
