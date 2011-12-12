@@ -9,7 +9,9 @@
 #include "bludFont.h"
 #include "bludLine.h"
 #include "bludOsc.h"
+
 #include "bludAsyncCurl.h"
+
 #include "bludWebview.h"
 #include "blud_boot.h"
 #include "FlurryAnalytics.h"
@@ -201,6 +203,7 @@ void ofxBlud::setup(){
 
     fbo->allocate(settings);
     texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+//    glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void ofxBlud::draw(ofEventArgs &e){
@@ -218,8 +221,10 @@ void ofxBlud::draw(ofEventArgs &e){
     if(lua_pcall(luaVM, 0, 0, error_index) != 0){
 		ofLog(OF_LOG_ERROR, "Blud draw error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+        #ifdef LUAANALYTICS
         [FlurryAnalytics logError:@"blud draw error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
         // pop the error message off the top of the stack
+#endif
         lua_pop(luaVM, 1);
 	}
     
@@ -275,8 +280,10 @@ void ofxBlud::update(ofEventArgs &e){
 	if(lua_pcall(luaVM, 1, 0, error_index) != 0){
 		ofLog(OF_LOG_ERROR, "Blud update error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+#ifdef LUAANALYTICS
         [FlurryAnalytics logError:@"blud update error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
         // pop the error message off the top of the stack
+#endif
         lua_pop(luaVM, 1);
 	}
 	lua_pop(luaVM,2);
