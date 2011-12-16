@@ -302,10 +302,19 @@ string ofxBlud::execute(string code){
 
 string ofxBlud::executeFile(std::string filename){
 	mutex->lock();
-	int error = luaL_dofile(luaVM, ofToDataPath(filename).c_str());
-	if (error) {
-		return lua_tostring(luaVM, -1);
-	}
+    luaL_loadfile(luaVM, ofToDataPath(filename).c_str());
+
+    int error_index = lua_gettop(luaVM) - 1; // subtract the number of params
+    //push error handler onto stack..
+    lua_pushcfunction(luaVM, luaErrorHandler);
+    lua_insert(luaVM, error_index);
+
+    if(lua_pcall(luaVM, 0, LUA_MULTRET, error_index) != 0){
+		ofLog(OF_LOG_ERROR, "Blud execute file error");
+		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+        lua_pop(luaVM, 1);
+    }
+    lua_pop(luaVM, 1);
 	mutex->unlock();
 	return "";
 }
