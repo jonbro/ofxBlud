@@ -39,3 +39,19 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, addCornerTile),
 	{0,0}
 };
+
+bludSpriteSheet::bludSpriteSheet(lua_State *L){
+    texture = new LinearTexture();
+    spriteRenderer = new ofxSpriteSheetRenderer(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
+}
+
+int bludSpriteSheet::loadTexture(lua_State *L){
+    // defaults to loading nearest neighbor style
+    int height = luaL_checknumber(L, 2);
+    if (lua_isnumber(L, 3)) {
+        height = luaL_checknumber(L, 3);
+    }
+    texture->loadTexture(luaL_checkstring(L, 1));
+    spriteRenderer->loadTexture(texture);
+    return 1;
+}

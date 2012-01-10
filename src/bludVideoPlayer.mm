@@ -28,6 +28,13 @@ Lunar<bludVideoPlayer>::RegType bludVideoPlayer::methods[] = {
 }
 @end
 
+bludVideoPlayer::bludVideoPlayer(lua_State *L){
+    notifier = [[bludVideoPlayerNotifier alloc] init:this];
+    hasCompletionCallback = false;
+    _L = L;
+    viewLoaded = false;
+    mutex = bludLock::getInstance();
+}
 void bludVideoPlayer::callCompletion(){
     [theMovie pause];
     theMovie.initialPlaybackTime = -1.0;

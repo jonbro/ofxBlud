@@ -25,13 +25,7 @@ class bludVideoPlayer {
 public:
 	static const char className[];
 	static Lunar<bludVideoPlayer>::RegType methods[];
-	bludVideoPlayer(lua_State *L) {
-		notifier = [[bludVideoPlayerNotifier alloc] init:this];
-		hasCompletionCallback = false;
-		_L = L;
-		viewLoaded = false;
-        mutex = bludLock::getInstance();
-	}
+	bludVideoPlayer(lua_State *L);
 	int log(lua_State *L){
 		NSLog(@"%@", [NSString stringWithUTF8String:luaL_checkstring(L, 1)]);
 		return 1;
