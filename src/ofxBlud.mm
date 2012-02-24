@@ -45,7 +45,7 @@ static void stackDump (lua_State *L) {
 	printf("\n");  /* end the listing */
 }
 
-static int luaErrorHandler(lua_State *L) 
+int luaErrorHandler(lua_State *L) 
 {
     lua_getfield(L, LUA_GLOBALSINDEX, "debug");
     if (!lua_istable(L, -1)) {
@@ -142,7 +142,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents.update, this, &ofxBlud::update);
 	ofAddListener(ofEvents.exit, this, &ofxBlud::exit);
-
+    
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
 
 	mixer = bludMixer::getInstance();

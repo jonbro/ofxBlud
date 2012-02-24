@@ -49,6 +49,10 @@ public:
 		}
 		return 1;
 	}
+    int openURL(lua_State *L){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [[[[NSString alloc] initWithCString:luaL_checkstring(L, 1)] stringByAddingPercentEscapesUsingEncoding: NSASCIIStringEncoding] autorelease]]];
+        return 1;
+    }
     int enableAlpha(lua_State *L){glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);return 1;}
 	~bludGraphics() {}
 };
@@ -71,5 +75,6 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, getMillis),
     method(bludGraphics, enableAlpha),
 	method(bludGraphics, noise),
+    method(bludGraphics, openURL),
 	{0,0}
 };
