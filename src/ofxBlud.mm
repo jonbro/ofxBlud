@@ -410,10 +410,24 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 	lua_pushnumber(luaVM, e.x);
 	lua_pushnumber(luaVM, e.y);
 	lua_pushnumber(luaVM, e.id);
-	if(lua_pcall(luaVM, 3, 0, 0) != 0){
-		printf("error in touch.down: %s\n", lua_tostring(luaVM, -1));
+
+    int error_index = lua_gettop(luaVM) - 3; // subtract the number of params
+    //push error handler onto stack..
+    lua_pushcfunction(luaVM, luaErrorHandler);
+    lua_insert(luaVM, error_index);
+
+    
+	if(lua_pcall(luaVM, 3, 0, error_index) != 0){
+		ofLog(OF_LOG_ERROR, "Blud touchdown error");
+		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
+
+#ifdef LUAANALYTICS
+        [FlurryAnalytics logError:@"blud touchdown error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
+        // pop the error message off the top of the stack
+#endif
+        lua_pop(luaVM, 1);
 	}
-	lua_pop(luaVM,2);
+	lua_pop(luaVM,3);
 	mutex->unlock();
 }
 void ofxBlud::touchMoved(ofTouchEventArgs &e){
