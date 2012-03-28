@@ -18,6 +18,7 @@
 #include "bludMixer.h"
 #include "bludVideoPlayer.h"
 #import "bludLock.h"
+#include "bludRenderInstance.h"
 
 #include "tinyxml.h"
 
@@ -49,6 +50,7 @@ class ofxBlud{
 		
 		void audioRequested(ofAudioEventArgs &e);
 		lua_State* luaVM;
+        bludRenderSingleton *renderer;
 
 	private:
 		ofSoundMixer *mixer;

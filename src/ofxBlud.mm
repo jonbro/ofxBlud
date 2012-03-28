@@ -65,6 +65,7 @@ int luaErrorHandler(lua_State *L)
 
 
 void ofxBlud::setup(){
+    renderer = bludRenderInstance::getInstance();
 
 	// load the virtual machine
 	luaVM = lua_open();
@@ -92,7 +93,8 @@ void ofxBlud::setup(){
 	Lunar<bludOscReceiver>::Register(luaVM);
     Lunar<bludAsycCurl>::Register(luaVM);
     Lunar<bludWebview>::Register(luaVM);
-    
+    Lunar<bludRenderer>::Register(luaVM);
+
 	// load the bootfile, which has placeholder for all the callbacks
 	int error = luaL_dostring(luaVM, blud_boot);	
 	if (error) {
@@ -201,9 +203,9 @@ void ofxBlud::setup(){
 
     fbo = new ofFbo();  
 
-    fbo->allocate(settings);
-    texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-//    glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    //fbo->allocate(settings);
+    //texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+    glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void ofxBlud::draw(ofEventArgs &e){
@@ -249,6 +251,8 @@ void ofxBlud::draw(ofEventArgs &e){
     //ofSetColor(255, 255, 255, 255);
     //fbo->draw(0, 0);
 	//mesh.drawFaces();
+    renderer->render();
+
 }
 void ofxBlud::exit(ofEventArgs &e){
 	mutex->lock();
