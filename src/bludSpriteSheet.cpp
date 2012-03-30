@@ -30,6 +30,7 @@ Lunar<bludSprite>::RegType bludSprite::methods[] = {
 
 Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, loadTexture),
+	method(bludSpriteSheet, setupTexture),
 	method(bludSpriteSheet, clear),
 	method(bludSpriteSheet, update),
 	method(bludSpriteSheet, draw),
@@ -52,6 +53,10 @@ int bludSpriteSheet::loadTexture(lua_State *L){
         height = luaL_checknumber(L, 3);
     }
     texture->loadTexture(luaL_checkstring(L, 1));
+    spriteRenderer->loadTexture(texture);
+    return 1;
+}
+int bludSpriteSheet::setupTexture(lua_State *L){
     spriteRenderer->loadTexture(texture);
     return 1;
 }

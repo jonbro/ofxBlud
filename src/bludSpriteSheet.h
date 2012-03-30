@@ -2,6 +2,7 @@
 
 #import "ofxSpriteSheetRenderer.h"
 #import "lunar.h"
+
 // sprite
 // wrapper for a struct that contains data about the current sprite
 
@@ -136,6 +137,7 @@ public:
 	
     bludSpriteSheet(lua_State *L);
 	int loadTexture(lua_State *L);
+	int setupTexture(lua_State *L);
     
 	int clear(lua_State *L)  {
 		spriteRenderer->clear();
