@@ -242,25 +242,29 @@ public:
 		if (lua_isnumber(L, 10)) {
 			layer = luaL_checknumber(L, 10);
 		}
+		int flipDir = 0;
+		if (lua_isnumber(L,11)) {
+			flipDir = luaL_checknumber(L,11);
+		}
 		
 		int r = 255;
-		if (lua_isnumber(L, 11)) {
-			r = luaL_checknumber(L, 11);
+		if (lua_isnumber(L, 12)) {
+			r = luaL_checknumber(L, 12);
 		}
 		int g = 255;
-		if (lua_isnumber(L, 12)) {
-			g = luaL_checknumber(L, 12);
+		if (lua_isnumber(L, 13)) {
+			g = luaL_checknumber(L, 13);
 		}
 		int b = 255;
-		if (lua_isnumber(L, 13)) {
-			b = luaL_checknumber(L, 13);
+		if (lua_isnumber(L, 14)) {
+			b = luaL_checknumber(L, 14);
 		}
 		int alpha = 255;
-		if (lua_isnumber(L, 14)) {
-			alpha = luaL_checknumber(L, 14);
+		if (lua_isnumber(L, 15)) {
+			alpha = luaL_checknumber(L, 15);
 		}
 		
-		spriteRenderer->addCornerTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, r, g, b, alpha);
+		spriteRenderer->addCornerTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, r, g, b, alpha);
 
 		return 1;
 	}
