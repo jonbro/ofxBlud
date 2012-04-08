@@ -2,7 +2,6 @@
 
 #include "bludImage.h"
 #include "bludGraphics.h"
-#include "bludSynth.h"
 #include "bludSpriteSheet.h"
 #include "bludShapeBatch.h"
 #include "bludShapeBatch.h"
@@ -10,11 +9,7 @@
 #include "bludLine.h"
 #include "bludOsc.h"
 
-#include "bludAsyncCurl.h"
-
-#include "bludWebview.h"
 #include "blud_boot.h"
-#include "FlurryAnalytics.h"
 
 static void stackDump (lua_State *L) {
 	int i;
@@ -81,18 +76,14 @@ void ofxBlud::setup(){
 	// load the wrappers
 	Lunar<bludImage>::Register(luaVM);
 	Lunar<bludGraphics>::Register(luaVM);
-	Lunar<bludSynth>::Register(luaVM);
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
 	Lunar<bludShapeBatch>::Register(luaVM);
 	Lunar<bludFont>::Register(luaVM);
 	Lunar<bludLine>::Register(luaVM);
-	Lunar<bludVideoPlayer>::Register(luaVM);
 	Lunar<bludOsc>::Register(luaVM);
 	Lunar<bludOscMessage>::Register(luaVM);
 	Lunar<bludOscReceiver>::Register(luaVM);
-    Lunar<bludAsycCurl>::Register(luaVM);
-    Lunar<bludWebview>::Register(luaVM);
     Lunar<bludRenderer>::Register(luaVM);
 
 	// load the bootfile, which has placeholder for all the callbacks
@@ -126,28 +117,27 @@ void ofxBlud::setup(){
 	}	
 	
 	// touch events
-	ofAddListener(ofEvents.touchDown, this, &ofxBlud::touchDown);
-	ofAddListener(ofEvents.touchUp, this, &ofxBlud::touchUp);
-	ofAddListener(ofEvents.touchMoved, this, &ofxBlud::touchMoved);
-	ofAddListener(ofEvents.touchDoubleTap, this, &ofxBlud::touchDoubleTap);
+	ofAddListener(ofEvents().touchDown, this, &ofxBlud::touchDown);
+	ofAddListener(ofEvents().touchUp, this, &ofxBlud::touchUp);
+	ofAddListener(ofEvents().touchMoved, this, &ofxBlud::touchMoved);
+	ofAddListener(ofEvents().touchDoubleTap, this, &ofxBlud::touchDoubleTap);
 
-	ofAddListener(ofEvents.keyPressed, this, &ofxBlud::keyPressed);
-	ofAddListener(ofEvents.keyReleased, this, &ofxBlud::keyReleased);
+	ofAddListener(ofEvents().keyPressed, this, &ofxBlud::keyPressed);
+	ofAddListener(ofEvents().keyReleased, this, &ofxBlud::keyReleased);
 	
 	// mouse events
-	ofAddListener(ofEvents.mousePressed, this, &ofxBlud::mousePressed);
-	ofAddListener(ofEvents.mouseReleased, this, &ofxBlud::mouseReleased);
-	ofAddListener(ofEvents.mouseMoved, this, &ofxBlud::mouseMoved);
-	ofAddListener(ofEvents.mouseDragged, this, &ofxBlud::mouseDragged);	
+	ofAddListener(ofEvents().mousePressed, this, &ofxBlud::mousePressed);
+	ofAddListener(ofEvents().mouseReleased, this, &ofxBlud::mouseReleased);
+	ofAddListener(ofEvents().mouseMoved, this, &ofxBlud::mouseMoved);
+	ofAddListener(ofEvents().mouseDragged, this, &ofxBlud::mouseDragged);	
 		
 	// sys events
-	ofAddListener(ofEvents.draw, this, &ofxBlud::draw);
-	ofAddListener(ofEvents.update, this, &ofxBlud::update);
-	ofAddListener(ofEvents.exit, this, &ofxBlud::exit);
+	ofAddListener(ofEvents().draw, this, &ofxBlud::draw);
+	ofAddListener(ofEvents().update, this, &ofxBlud::update);
+	ofAddListener(ofEvents().exit, this, &ofxBlud::exit);
     
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
 
-	mixer = bludMixer::getInstance();
 	ofEnableAlphaBlending();
 	mutex = bludLock::getInstance();
 	
