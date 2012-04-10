@@ -17,7 +17,33 @@ public:
 	int rotate(lua_State *L)  {ofRotate(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4)); return 1;}
 	int translate(lua_State *L)  {ofTranslate(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
 	int scale(lua_State *L)  {ofScale(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3)); return 1;}
-
+    int setBlendMode(lua_State *L){
+        int blendNumber = luaL_checknumber(L, 1);
+        ofBlendMode mode;
+        switch (blendNumber) {
+            case 1:
+                mode = OF_BLENDMODE_ALPHA;
+                break;
+            case 2:
+                mode = OF_BLENDMODE_ADD;
+                break;
+            case 3:
+                mode = OF_BLENDMODE_SUBTRACT;
+                break;
+            case 4:
+                mode = OF_BLENDMODE_MULTIPLY;
+                break;
+            case 5:
+                mode = OF_BLENDMODE_SCREEN;
+                break;
+                
+            default:
+                mode = OF_BLENDMODE_DISABLED;
+                break;
+        }
+        ofEnableBlendMode(mode);
+        return 1;
+    }
 	int setColor(lua_State *L)  {
 		int alpha = 255;
 		if (lua_isnumber(L, 4)) {
@@ -74,6 +100,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, getHeight),
 	method(bludGraphics, getMillis),
     method(bludGraphics, enableAlpha),
+    method(bludGraphics, setBlendMode),
 	method(bludGraphics, noise),
     method(bludGraphics, openURL),
 	{0,0}
