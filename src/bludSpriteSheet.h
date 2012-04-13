@@ -2,6 +2,7 @@
 
 #import "ofxSpriteSheetRenderer.h"
 #import "lunar.h"
+#import "bludColor.h"
 
 // sprite
 // wrapper for a struct that contains data about the current sprite
@@ -265,6 +266,26 @@ public:
 		}
 		
 		spriteRenderer->addCornerTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, r, g, b, alpha);
+
+		return 1;
+	}
+	int addCornerColorTile(lua_State *L){
+		bludSprite *s = Lunar<bludSprite>::check(L, 1);
+        
+		float layer = -1;
+		if (lua_isnumber(L, 10)) {
+			layer = luaL_checknumber(L, 10);
+		}
+		int flipDir = 0;
+		if (lua_isnumber(L,11)) {
+			flipDir = luaL_checknumber(L,11);
+		}
+		bludColor *c1 = Lunar<bludColor>::check(L, 12);
+        bludColor *c2 = Lunar<bludColor>::check(L, 13);
+        bludColor *c3 = Lunar<bludColor>::check(L, 14);
+        bludColor *c4 = Lunar<bludColor>::check(L, 15);
+        
+		spriteRenderer->addCornerColorTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, c1->color, c2->color, c3->color, c4->color);
 
 		return 1;
 	}
