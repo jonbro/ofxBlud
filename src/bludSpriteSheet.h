@@ -139,7 +139,10 @@ public:
     bludSpriteSheet(lua_State *L);
 	int loadTexture(lua_State *L);
 	int setupTexture(lua_State *L);
-    
+    int setBlendMode(lua_State *L)  {
+        blendMode = luaL_checknumber(L, 1);
+        return 1;
+    }
 	int clear(lua_State *L)  {
 		spriteRenderer->clear();
 		return 1;
@@ -332,6 +335,7 @@ public:
         delete texture;
 		printf("deleted sprite sheet (%p)\n", this);
 	}
+    int blendMode;
     LinearTexture *texture;
 	ofxSpriteSheetRenderer * spriteRenderer;
 private:

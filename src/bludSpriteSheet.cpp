@@ -39,12 +39,14 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
 	method(bludSpriteSheet, addCenterRotatedTile),
 	method(bludSpriteSheet, addCornerTile),
     method(bludSpriteSheet, addCornerColorTile),
+    method(bludSpriteSheet, setBlendMode),
 	{0,0}
 };
 
 bludSpriteSheet::bludSpriteSheet(lua_State *L){
     texture = new LinearTexture();
     spriteRenderer = new ofxSpriteSheetRenderer(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
+    blendMode = 0;
 }
 
 int bludSpriteSheet::loadTexture(lua_State *L){
