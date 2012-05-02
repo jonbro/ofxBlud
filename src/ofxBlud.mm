@@ -105,7 +105,7 @@ void ofxBlud::setup(){
 	// set the default paths so that loading properly works
 	string s = "blud.bundle_root = '";
 	s += ofToDataPath("");
-	s += "data/'";
+	s += "'";
 	error = luaL_dostring(luaVM, s.c_str());
 	if (error) {
 		printf("%s\n", lua_tostring(luaVM, -1));
