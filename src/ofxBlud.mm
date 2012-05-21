@@ -135,7 +135,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents().draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents().update, this, &ofxBlud::update);
 	ofAddListener(ofEvents().exit, this, &ofxBlud::exit);
-    
+	
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
 
 	ofEnableAlphaBlending();
