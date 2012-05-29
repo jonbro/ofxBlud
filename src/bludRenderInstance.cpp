@@ -13,6 +13,8 @@ const char bludRenderer::className[] = "bludRenderer";
 
 Lunar<bludRenderer>::RegType bludRenderer::methods[] = {
 	method(bludRenderer, setSpriteSheet),
+    method(bludRenderer, removeSheet),
+    method(bludRenderer, addAtStart),
 	{0,0}
 };
 

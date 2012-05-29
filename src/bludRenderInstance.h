@@ -12,6 +12,11 @@ public:
         hasSpriteSheet = false;
         currentBlend = 0;
     }
+    void addAtStart(bludSpriteSheet *_sheet){
+        vector<bludSpriteSheet*>::iterator it;
+        it = sheets.begin();
+        it = sheets.insert( it , _sheet );
+    }
     void addSheet(bludSpriteSheet *_sheet){
         sheets.push_back(_sheet);
     }
@@ -64,6 +69,16 @@ public:
     int setSpriteSheet(lua_State *L){
         bludSpriteSheet *s = Lunar<bludSpriteSheet>::check(L, 1);
         renderer->addSheet(s);
+        return 1;
+    }
+    int removeSheet(lua_State *L){
+        bludSpriteSheet *s = Lunar<bludSpriteSheet>::check(L, 1);
+        renderer->removeSheet(s);
+        return 1;
+    }
+    int addAtStart(lua_State *L){
+        bludSpriteSheet *s = Lunar<bludSpriteSheet>::check(L, 1);
+        renderer->addAtStart(s);
         return 1;
     }
 private:

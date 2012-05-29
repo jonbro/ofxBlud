@@ -79,6 +79,7 @@ public:
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [[[[NSString alloc] initWithCString:luaL_checkstring(L, 1)] stringByAddingPercentEscapesUsingEncoding: NSASCIIStringEncoding] autorelease]]];
         return 1;
     }
+    int eraseMode(lua_State *L){glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_SRC_ALPHA);return 1;}
     int enableAlpha(lua_State *L){glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);return 1;}
 	~bludGraphics() {}
 };
@@ -103,5 +104,6 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
     method(bludGraphics, setBlendMode),
 	method(bludGraphics, noise),
     method(bludGraphics, openURL),
+    method(bludGraphics, eraseMode),
 	{0,0}
 };
