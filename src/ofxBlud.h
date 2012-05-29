@@ -15,8 +15,6 @@
 #include "ofLog.h"
 #include "ofUtils.h"
 #include "ofEvents.h"
-#include "bludMixer.h"
-#include "bludVideoPlayer.h"
 #import "bludLock.h"
 #include "bludRenderInstance.h"
 
@@ -53,7 +51,6 @@ class ofxBlud{
         bludRenderSingleton *renderer;
 
 	private:
-		ofSoundMixer *mixer;
 		ofMutex *mutex;
 		ofMesh mesh;
         ofFbo			*fbo;

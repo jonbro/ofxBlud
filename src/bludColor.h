@@ -11,6 +11,13 @@ public:
 	bludColor(lua_State *L) {
         set(L);
     }
+    int get(lua_State *L){
+        lua_pushnumber(L, color.r);
+        lua_pushnumber(L, color.g);
+        lua_pushnumber(L, color.b);
+        lua_pushnumber(L, color.a);
+        return 1;
+    }
     int set(lua_State *L){
         int r = luaL_checknumber(L, 1);
         int g = luaL_checknumber(L, 2);

@@ -267,7 +267,6 @@ public:
 		if (lua_isnumber(L, 15)) {
 			alpha = luaL_checknumber(L, 15);
 		}
-		
 		spriteRenderer->addCornerTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, r, g, b, alpha);
 
 		return 1;
