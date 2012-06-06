@@ -16,7 +16,7 @@ public:
         lua_pushnumber(L, color.g);
         lua_pushnumber(L, color.b);
         lua_pushnumber(L, color.a);
-        return 1;
+        return 4;
     }
     int set(lua_State *L){
         int r = luaL_checknumber(L, 1);
