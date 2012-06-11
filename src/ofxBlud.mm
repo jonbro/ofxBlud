@@ -195,7 +195,7 @@ void ofxBlud::setup(){
 
     //fbo->allocate(settings);
     //texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-    glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void ofxBlud::draw(ofEventArgs &e){

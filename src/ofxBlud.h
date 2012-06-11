@@ -17,8 +17,8 @@
 #include "ofEvents.h"
 #import "bludLock.h"
 #include "bludRenderInstance.h"
-
 #include "tinyxml.h"
+#include <Foundation/Foundation.h>
 
 int luaErrorHandler(lua_State *L);
 
