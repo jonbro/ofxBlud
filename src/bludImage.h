@@ -1,5 +1,6 @@
 #pragma once
 #include "ofImage.h"
+#include "lunar.h"
 
 class bludImage {
 public:
@@ -19,15 +20,4 @@ public:
 	int height(lua_State *L) { lua_pushnumber(L, _image.getHeight()); return 1; }
 	
 	~bludImage() { printf("deleted image (%p)\n", this); }
-};
-
-const char bludImage::className[] = "bludImage";
-
-Lunar<bludImage>::RegType bludImage::methods[] = {
-	method(bludImage, load),
-	method(bludImage, draw),
-	method(bludImage, drawScale),
-	method(bludImage, width),
-	method(bludImage, height),
-	{0,0}
 };

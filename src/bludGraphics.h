@@ -4,6 +4,7 @@
 #include "ofMath.h"
 #include "ofUtils.h"
 #include "ofAppRunner.h"
+#include "lunar.h"
 
 class bludGraphics {
 public:
@@ -82,28 +83,4 @@ public:
     int eraseMode(lua_State *L){glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_SRC_ALPHA);return 1;}
     int enableAlpha(lua_State *L){glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);return 1;}
 	~bludGraphics() {}
-};
-
-const char bludGraphics::className[] = "bludGraphics";
-
-Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
-	method(bludGraphics, push),
-	method(bludGraphics, pop),
-	method(bludGraphics, rotate),
-	method(bludGraphics, translate),
-	method(bludGraphics, scale),
-	method(bludGraphics, setColor),
-	method(bludGraphics, setFrameRate),	
-	method(bludGraphics, drawRect),
-	method(bludGraphics, drawCircle),
-    method(bludGraphics, clear),
-	method(bludGraphics, getWidth),
-	method(bludGraphics, getHeight),
-	method(bludGraphics, getMillis),
-    method(bludGraphics, enableAlpha),
-    method(bludGraphics, setBlendMode),
-	method(bludGraphics, noise),
-    method(bludGraphics, openURL),
-    method(bludGraphics, eraseMode),
-	{0,0}
 };

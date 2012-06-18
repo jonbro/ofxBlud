@@ -19,6 +19,14 @@
 #include "bludRenderInstance.h"
 #include "tinyxml.h"
 #include <Foundation/Foundation.h>
+#include "bludImage.h"
+#include "bludGraphics.h"
+#include "bludSpriteSheet.h"
+#include "bludShapeBatch.h"
+#include "bludShapeBatch.h"
+#include "bludFont.h"
+#include "bludLine.h"
+#include "bludOsc.h"
 
 int luaErrorHandler(lua_State *L);
 
@@ -49,7 +57,7 @@ class ofxBlud{
 		void audioRequested(ofAudioEventArgs &e);
 		lua_State* luaVM;
         bludRenderSingleton *renderer;
-
+        static const char *blud_boot;
 	private:
 		ofMutex *mutex;
 		ofMesh mesh;

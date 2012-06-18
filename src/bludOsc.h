@@ -1,5 +1,6 @@
 #pragma once
 #include "ofxOsc.h"
+#include "lunar.h"
 
 class bludOscMessage{
 public:
@@ -53,22 +54,6 @@ public:
 	ofxOscMessage message;
 };
 
-const char bludOscMessage::className[] = "bludOscMessage";
-
-Lunar<bludOscMessage>::RegType bludOscMessage::methods[] = {
-	method(bludOscMessage, setAddress),
-	method(bludOscMessage, addIntArg),
-	method(bludOscMessage, addFloatArg),
-	method(bludOscMessage, addStringArg),
-	method(bludOscMessage, getAddress),
-	method(bludOscMessage, getNumArgs),
-	method(bludOscMessage, getArgTypeName),
-	method(bludOscMessage, getArgAsInt),
-	method(bludOscMessage, getArgAsFloat),
-	method(bludOscMessage, getArgAsString),
-	{0,0}
-};
-
 class bludOsc{
 public:
 	static const char className[];
@@ -92,14 +77,6 @@ private:
 	ofxOscSender sender;
 };
 
-const char bludOsc::className[] = "bludOsc";
-
-Lunar<bludOsc>::RegType bludOsc::methods[] = {
-	method(bludOsc, setup),
-	method(bludOsc, sendMessage),
-	{0,0}
-};
-
 class bludOscReceiver{
 public:
 	static const char className[];
@@ -121,12 +98,4 @@ public:
 	}	
 private:
 	ofxOscReceiver receiver;
-};
-const char bludOscReceiver::className[] = "bludOscReceiver";
-
-Lunar<bludOscReceiver>::RegType bludOscReceiver::methods[] = {
-	method(bludOscReceiver, setup),
-	method(bludOscReceiver, hasWaitingMessages),
-	method(bludOscReceiver, getNextMessage),
-	{0,0}
 };

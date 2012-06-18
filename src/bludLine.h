@@ -18,6 +18,7 @@
 #pragma once
 
 #include "bludImage.h"
+#include "lunar.h"
 
 class BrushedLine {
 public: 
@@ -140,11 +141,4 @@ public:
 		_line.drawLine(a, b); return 0;
 	}
 	~bludLine() { printf("deleted line (%p)\n", this); }
-};
-
-const char bludLine::className[] = "bludLine";
-
-Lunar<bludLine>::RegType bludLine::methods[] = {
-	method(bludLine, drawLine),
-	{0,0}
 };

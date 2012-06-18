@@ -1,16 +1,5 @@
 #include "ofxBlud.h"
 
-#include "bludImage.h"
-#include "bludGraphics.h"
-#include "bludSpriteSheet.h"
-#include "bludShapeBatch.h"
-#include "bludShapeBatch.h"
-#include "bludFont.h"
-#include "bludLine.h"
-#include "bludOsc.h"
-
-#include "blud_boot.h"
-
 static void stackDump (lua_State *L) {
 	int i;
 	int top = lua_gettop(L);
@@ -87,7 +76,7 @@ void ofxBlud::setup(){
     Lunar<bludRenderer>::Register(luaVM);
 
 	// load the bootfile, which has placeholder for all the callbacks
-	int error = luaL_dostring(luaVM, blud_boot);	
+	int error = luaL_dostring(luaVM, ofxBlud::blud_boot);	
 	if (error) {
 		ofLog(OF_LOG_ERROR, "Blud Bootload failed");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
@@ -553,3 +542,64 @@ static int LuaXML_ParseFile (lua_State *L) {
 	LuaXML_ParseNode(L,&doc);
 	return 1;
 }
+const char *ofxBlud::blud_boot = 
+"-- Make sure love table exists.\n"
+"if not blud then blud = {} end\n"
+"-- Used for setup:\n"
+"blud.path = {}\n"
+"blud.arg = {}\n"
+"blud.mouse = {}\n"
+"blud.touch = {}\n"
+"blud.key = {}\n"
+"-- Unparsed arguments:\n"
+"argv = {}\n"
+"function blud.update(dt)\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.draw()\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.exit()\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.key.pressed(key)\n"
+"	print(\"key pressed\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.key.released(key)\n"
+"	print(\"key released\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.moved(x, y)\n"
+"	-- print(\"mouse moved\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.dragged(x, y, button)\n"
+"	-- print(\"mouse dragged\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.pressed(x, y, button)\n"
+"	-- print(\"mouse pressed\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.released(x, y, button)\n"
+"	-- print(\"mouse released\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.down(x, y, id)\n"
+"	print(\"touch down\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.moved(x, y, id)\n"
+"	-- print(\"touch moved\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.up(x, y, id)\n"
+"	print(\"touch up\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.double_tap(x, y, id)\n"
+"	-- print(\"touch double tap\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"print('blud loaded')\n";
