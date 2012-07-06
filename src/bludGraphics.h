@@ -53,6 +53,11 @@ public:
 		ofSetColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), alpha);
 		return 1;
 	}
+	int setBackground(lua_State *L)  {
+        ofBackgroundGradient(<#const ofColor &start#>, <#const ofColor &end#>);
+		ofBackground(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3));
+		return 1;
+	}
 	int setFrameRate(lua_State *L){
 		ofSetFrameRate(luaL_checknumber(L, 1));
 		cout << "current framerate: " << ofGetFrameRate() << endl;

@@ -9,6 +9,30 @@
 
 #include "bludRenderInstance.h"
 
+void bludRenderSingleton::render(){
+    for(int i=0; i < sheets.size(); i++)
+    {
+        if(currentBlend != sheets[i]->blendMode){
+            if(sheets[i]->blendMode == 0){
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            }else if(sheets[i]->blendMode == 1){
+                glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+            }
+            //                glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+            currentBlend = sheets[i]->blendMode;
+        }
+        if(alpha != sheets[i]->alpha){
+            alpha = sheets[i]->alpha;
+            if(alpha){
+                glEnable(GL_BLEND);
+            }else{
+                glDisable(GL_BLEND);
+            }
+        }
+        sheets[i]->spriteRenderer->draw();
+    }
+}
+
 const char bludRenderer::className[] = "bludRenderer";
 
 Lunar<bludRenderer>::RegType bludRenderer::methods[] = {

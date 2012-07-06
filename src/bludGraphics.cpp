@@ -9,6 +9,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, translate),
 	method(bludGraphics, scale),
 	method(bludGraphics, setColor),
+	method(bludGraphics, setBackground),
 	method(bludGraphics, setFrameRate),	
 	method(bludGraphics, drawRect),
 	method(bludGraphics, drawCircle),

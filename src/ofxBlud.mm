@@ -180,7 +180,7 @@ void ofxBlud::setup(){
     settings.useDepth = false;    
     settings.useStencil = false; 
 
-    fbo = new ofFbo();  
+//    fbo = new ofFbo();  
 
     //fbo->allocate(settings);
     //texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);

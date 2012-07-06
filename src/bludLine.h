@@ -56,10 +56,10 @@ public:
 		ofVec2f NW = N - E;
 		ofVec2f SW = -NE;
 		ofVec2f SE = -NW;
-		coords[0] = (a + SW);
-		coords[1] = (a + NW);
-		coords[2] = (a + S);
-		coords[3] = (a + N);
+		coords[0] = (a + SW); // 1 
+		coords[1] = (a + NW); // 3
+		coords[2] = (a + S); // 2
+		coords[3] = (a + N); // 4
 		coords[4] = (b + S);
 		coords[5] = (b + N);
 		coords[6] = (b + SE);
