@@ -27,6 +27,7 @@
 #include "bludFont.h"
 #include "bludLine.h"
 #include "bludOsc.h"
+#include "bhComponentManager.h"
 
 int luaErrorHandler(lua_State *L);
 

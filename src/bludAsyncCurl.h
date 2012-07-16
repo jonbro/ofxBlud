@@ -85,7 +85,6 @@ public:
                 // todo: should probably lock lua, so that things don't blow up here
                 mutex->lock();
                 numReturns = lua_gettop(luaVM) - startStack;
-                cout << "number of returns: " << numReturns << endl;
                 lua_rawgeti(mainVM, LUA_REGISTRYINDEX, callbackFunc );
                 lua_pushstring(mainVM, luaL_checkstring(luaVM, -1*numReturns));                
                 if(lua_pcall(mainVM, numReturns, 0, 0) != 0){
