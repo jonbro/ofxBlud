@@ -36,16 +36,20 @@ Lunar<bludWebview>::RegType bludWebview::methods[] = {
 {
 	NSString *requestString = [[request URL] absoluteString];
 	NSArray *components = [requestString componentsSeparatedByString:@":"];
-	if ([components count] > 1 && 
-		[(NSString *)[components objectAtIndex:0] isEqualToString:@"plb"]) {
-		// strip out the slashes
-		NSArray *functionComponents = [[(NSString *)[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/"]] componentsSeparatedByString:@"/"];		
-		if([(NSString *)[functionComponents objectAtIndex:0] isEqualToString:@"exitBrowser"]) 
-		{
-            [self->webView removeFromSuperview];
-            bwv->callCompletion();
-            return NO;
-		}
+	if ([components count] > 1){
+        if([(NSString *)[components objectAtIndex:0] isEqualToString:@"plb"]){
+            // strip out the slashes
+            NSArray *functionComponents = [[(NSString *)[components objectAtIndex:1] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/"]] componentsSeparatedByString:@"/"];		
+            if([(NSString *)[functionComponents objectAtIndex:0] isEqualToString:@"exitBrowser"]) 
+            {
+                [self->webView removeFromSuperview];
+                bwv->callCompletion();
+                return NO;
+            }
+        }else if([(NSString *)[components objectAtIndex:0] isEqualToString:@"safari"]){
+            NSString *correctUrl = [NSString stringWithFormat:@"http:%@", [components objectAtIndex:1]];
+            return ![[UIApplication sharedApplication] openURL:[NSURL URLWithString:correctUrl]]; 
+        }
 	}
 	return YES; // Return YES to make sure regular navigation works as expected.
 }
