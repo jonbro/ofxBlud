@@ -160,7 +160,7 @@ public:
 		return 1;
 	}
 	int draw(lua_State *L)  {
-		spriteRenderer->draw();
+//		spriteRenderer->draw();
 		return 1;
 	}
 	// TODO: extend this to support all of the different features (rotation, tinting, etc)

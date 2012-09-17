@@ -5,12 +5,44 @@
 
 #include "bludSpriteSheet.h"
 #include "ofGraphics.h"
-
+#include "ofShader.h"
+#include <OpenGLES/ES2/gl.h>
+#include <OpenGLES/ES2/glext.h>
+#define GL_CHECK(x) {                       \
+    (x);                                    \
+    GLenum error = glGetError();            \
+    if (GL_NO_ERROR != error) {             \
+        printf("%s\n", gluErrorString(error));\
+    }                                       \
+}
 class bludRenderSingleton{
 public:
     bludRenderSingleton(){
+        mainShader.load("Shader");
+        fboShader.load("FBOShader");
+        fboTex = new ofTexture();
+        fboTex->allocate(ofNextPow2(ofGetWidth()), ofNextPow2(ofGetHeight()), GL_RGBA);
+        GL_CHECK(glGenFramebuffers(1, &framebuffer));
+        GL_CHECK(glBindFramebuffer(GL_FRAMEBUFFER, framebuffer));
+        glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fboTex->getTextureData().textureID, 0);
+        GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER) ;
+        if(status != GL_FRAMEBUFFER_COMPLETE) {
+            printf("failed to make complete framebuffer object %x", status);
+        }else{
+            printf("framebuffer creation worked %x\n", status);
+        }
+         
+
+        glEnableVertexAttribArray(glGetAttribLocation(fboShader.getProgram(), "position"));
+        glEnableVertexAttribArray(glGetAttribLocation(fboShader.getProgram(), "color"));
+        glEnableVertexAttribArray(glGetAttribLocation(fboShader.getProgram(), "TexCoordIn"));
+
         hasSpriteSheet = false;
         currentBlend = 0;
+        glEnableVertexAttribArray(glGetAttribLocation(mainShader.getProgram(), "position"));
+        glEnableVertexAttribArray(glGetAttribLocation(mainShader.getProgram(), "color"));
+        glEnableVertexAttribArray(glGetAttribLocation(mainShader.getProgram(), "TexCoordIn"));
+        // just for fun, lets render everything into an fbo
     }
     void addAtStart(bludSpriteSheet *_sheet){
         vector<bludSpriteSheet*>::iterator it;
@@ -31,6 +63,12 @@ public:
             }
         }
     }
+    GLuint framebuffer;
+    GLint baseFramebuffer;
+    ofImage             testImg;
+    ofTexture       *fboTex;
+    ofShader        fboShader;
+    ofShader mainShader;
     void render();
     vector<bludSpriteSheet*> sheets;
     bool hasSpriteSheet;
