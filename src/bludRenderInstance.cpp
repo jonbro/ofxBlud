@@ -21,7 +21,6 @@ void bludRenderSingleton::render(){
     glDisable(GL_DEPTH_TEST);
 	ofViewport(0, 0, fboTex->getWidth(), fboTex->getHeight(), false);
     ofSetupScreenPerspective(fboTex->getWidth(), fboTex->getHeight(), OF_ORIENTATION_DEFAULT, false);
-	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_BLEND);
 
@@ -60,7 +59,6 @@ void bludRenderSingleton::render(){
     glBindFramebuffer(GL_FRAMEBUFFER, 1);
 	ofViewport(0, 0, h,w, false);
     ofSetupScreenPerspective(h, w, OF_ORIENTATION_DEFAULT, false);
-    glClearColor(1.0, 0.0, 0.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
      /**/
