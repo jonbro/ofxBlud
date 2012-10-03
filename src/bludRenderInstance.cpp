@@ -22,8 +22,8 @@ void bludRenderSingleton::render(){
 	ofViewport(0, 0, fboTex->getWidth(), fboTex->getHeight(), false);
     ofSetupScreenPerspective(fboTex->getWidth(), fboTex->getHeight(), OF_ORIENTATION_DEFAULT, false);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_BLEND);
-
+    // glBlend should be disabled at this point
+    glDisable(GL_BLEND);
     for(int i=0; i < sheets.size(); i++)
     {
         if(currentBlend != sheets[i]->blendMode){
@@ -48,7 +48,7 @@ void bludRenderSingleton::render(){
      
     fboShader.begin();
 
-
+    alpha = false;
     glDisable(GL_BLEND);
     int h = ofGetHeight();
     int w = ofGetWidth();

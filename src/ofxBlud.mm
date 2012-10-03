@@ -126,6 +126,7 @@ void ofxBlud::setup(){
 	ofAddListener(ofEvents().exit, this, &ofxBlud::exit);
 	
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
+	lua_register(luaVM,"LuaXML_ParseString",LuaXML_ParseString);
 
 	ofEnableAlphaBlending();
 	mutex = bludLock::getInstance();
@@ -527,7 +528,16 @@ static int LuaXML_ParseFile (lua_State *L) {
 	LuaXML_ParseNode(L,&doc);
 	return 1;
 }
-const char *ofxBlud::blud_boot = 
+static int LuaXML_ParseString (lua_State *L){
+	const char* xmlString = luaL_checkstring(L,1);
+    TiXmlDocument doc;
+    doc.Parse(xmlString, 0, TIXML_ENCODING_UTF8);
+	lua_newtable(L);
+	LuaXML_ParseNode(L,&doc);
+	return 1;
+}
+
+const char *ofxBlud::blud_boot =
 "-- Make sure love table exists.\n"
 "if not blud then blud = {} end\n"
 "-- Used for setup:\n"
