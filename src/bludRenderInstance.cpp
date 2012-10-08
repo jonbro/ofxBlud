@@ -12,11 +12,12 @@ void bludRenderSingleton::render(){
     // make sure we are using the right shader
     /*
 //    fboTex.unbind();
-     */
-    mainShader.begin();
+    */
+#if defined TARGET_OF_IPHONE
     mainShader.setUniform1f("width", ofGetWidth());
     mainShader.setUniform1f("height", ofGetHeight());
-    
+    noTexShader.setUniform1f("width", ofGetWidth());
+    noTexShader.setUniform1f("height", ofGetHeight());
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
     glDisable(GL_DEPTH_TEST);
 	ofViewport(0, 0, fboTex->getWidth(), fboTex->getHeight(), false);
@@ -24,13 +25,29 @@ void bludRenderSingleton::render(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // glBlend should be disabled at this point
     glDisable(GL_BLEND);
+#endif
     for(int i=0; i < sheets.size(); i++)
     {
+#if defined TARGET_OF_IPHONE
+        if(sheets[i]->hasTexture && currentShader != &mainShader){
+            currentShader->end();
+            mainShader.begin();
+            currentShader = &mainShader;
+        }else if (!sheets[i]->hasTexture && currentShader != &noTexShader){
+            currentShader->end();
+            noTexShader.begin();
+            currentShader = &noTexShader;
+        }
+        currentShader->setUniform1f("width", ofGetWidth());
+        currentShader->setUniform1f("height", ofGetHeight());
+#endif    
         if(currentBlend != sheets[i]->blendMode){
             if(sheets[i]->blendMode == 0){
                 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             }else if(sheets[i]->blendMode == 1){
                 glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+            }else if(sheets[i]->blendMode == 2){
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE);
             }
             currentBlend = sheets[i]->blendMode;
         }
@@ -42,53 +59,36 @@ void bludRenderSingleton::render(){
                 glDisable(GL_BLEND);
             }
         }
-        sheets[i]->spriteRenderer->draw(&mainShader);
+        sheets[i]->spriteRenderer->draw(currentShader);
+        sheets[i]->spriteRenderer->clear();
     }
-    mainShader.end();
-     
-    fboShader.begin();
+#if defined TARGET_OF_IPHONE
+    currentShader->end();
+    currentShader = fboShader;
+    fboShader->begin();
 
     alpha = false;
     glDisable(GL_BLEND);
     int h = ofGetHeight();
     int w = ofGetWidth();
-    fboShader.setUniform1f("width", w);
-    fboShader.setUniform1f("height", h);
+    fboShader->setUniform1f("width", w);
+    fboShader->setUniform1f("height", h);
 
     // this should rebind the root renderbuffer
     glBindFramebuffer(GL_FRAMEBUFFER, 1);
 	ofViewport(0, 0, h,w, false);
     ofSetupScreenPerspective(h, w, OF_ORIENTATION_DEFAULT, false);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
-     /**/
-    // NOTHING IS EVER EASY
-    GLfloat tex_coords[] = {
-		0,0,
-		1.0,0,
-		1.0,1.0,
-		0,1.0
-	};
-    GLfloat color_coords[] = {
-		1.0,1.0,1.0,1.0, // w
-		0.0,0.0,1.0,1.0, // b
-		1.0,0.0,0.0,1.0, // r
-		0.0,1.0,0.0,1.0, // g
-	};
-	GLfloat verts[] = {
-		0,0,
-		w,0,
-		w,h,
-		0,h,
-	};
-    // NOTHING IS EVER EASY
-    //fboShader.setUniformTexture("Texture", *sheets[0]->texture, sheets[0]->texture->getTextureData().textureID);
-    fboShader.setUniformTexture("Texture", *fboTex, fboTex->getTextureData().textureID);
-    glVertexAttribPointer(glGetAttribLocation(fboShader.getProgram(), "position"), 2, GL_FLOAT, GL_FALSE, 0, verts);
-    glVertexAttribPointer(glGetAttribLocation(fboShader.getProgram(), "color"), 4, GL_FLOAT, GL_FALSE, 0, color_coords);
-    glVertexAttribPointer(glGetAttribLocation(fboShader.getProgram(), "TexCoordIn"), 2, GL_FLOAT, GL_FALSE, 0, tex_coords);
-	glDrawArrays( GL_TRIANGLE_FAN, 0, 4 );
-    fboShader.end();
+
+     // NOTHING IS EVER EASY
+    fboShader->setUniformTexture("Texture", *fboTex, fboTex->getTextureData().textureID);
+    fboShader->setUniform1f("t", ofGetElapsedTimef());
+    glVertexAttribPointer(glGetAttribLocation(fboShader->getProgram(), "position"), 3, GL_SHORT, GL_FALSE, sizeof(vertexStruct), &points[0].position);
+    glVertexAttribPointer(glGetAttribLocation(fboShader->getProgram(), "color"), 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(vertexStruct), &points[0].color);
+    glVertexAttribPointer(glGetAttribLocation(fboShader->getProgram(), "TexCoordIn"), 2, GL_FLOAT, GL_TRUE, sizeof(vertexStruct), &points[0].texCoord);
+    glDrawArrays(GL_TRIANGLE_FAN, 0, pointCount);
+    fboShader->end();
+#endif 
 }
 
 const char bludRenderer::className[] = "bludRenderer";
@@ -97,6 +97,7 @@ Lunar<bludRenderer>::RegType bludRenderer::methods[] = {
 	method(bludRenderer, setSpriteSheet),
     method(bludRenderer, removeSheet),
     method(bludRenderer, addAtStart),
+    method(bludRenderer, loadFboPixelShader),
 	{0,0}
 };
 

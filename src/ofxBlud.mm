@@ -185,7 +185,9 @@ void ofxBlud::setup(){
 
     //fbo->allocate(settings);
     //texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-    glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    #ifdef TARGET_OF_IPHONE
+        glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    #endif
 }
 
 void ofxBlud::draw(ofEventArgs &e){
@@ -272,7 +274,7 @@ string ofxBlud::execute(string code){
 string ofxBlud::executeFile(std::string filename){
 	mutex->lock();
     luaL_loadfile(luaVM, ofToDataPath(filename).c_str());
-
+    printf("loading file: %s", ofToDataPath(filename).c_str());
     int error_index = lua_gettop(luaVM) - 1; // subtract the number of params
     //push error handler onto stack..
     lua_pushcfunction(luaVM, luaErrorHandler);

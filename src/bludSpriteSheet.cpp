@@ -41,6 +41,7 @@ Lunar<bludSpriteSheet>::RegType bludSpriteSheet::methods[] = {
     method(bludSpriteSheet, addCornerColorTile),
     method(bludSpriteSheet, setBlendMode),
     method(bludSpriteSheet, setAlpha),
+    method(bludSpriteSheet, setHasTexture),
     method(bludSpriteSheet, setSpriteLookupCallback),
 	{0,0}
 };
@@ -50,6 +51,7 @@ bludSpriteSheet::bludSpriteSheet(lua_State *L){
     spriteRenderer = new ofxSpriteSheetRenderer(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), luaL_checknumber(L, 4));
     blendMode = 0;
     alpha = true;
+    hasTexture = true;
 }
 
 int bludSpriteSheet::loadTexture(lua_State *L){
@@ -58,6 +60,7 @@ int bludSpriteSheet::loadTexture(lua_State *L){
     if (lua_isnumber(L, 3)) {
         height = luaL_checknumber(L, 3);
     }
+//    texture->loadTexture(luaL_checkstring(L, 1));
     texture->loadTextureFromPFS(luaL_checkstring(L, 1));
     spriteRenderer->loadTexture(texture);
     return 1;

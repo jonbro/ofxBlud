@@ -84,7 +84,17 @@ public:
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [[[[NSString alloc] initWithCString:luaL_checkstring(L, 1)] stringByAddingPercentEscapesUsingEncoding: NSASCIIStringEncoding] autorelease]]];
         return 1;
     }
-    int eraseMode(lua_State *L){glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_SRC_ALPHA);return 1;}
-    int enableAlpha(lua_State *L){glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);return 1;}
+    int eraseMode(lua_State *L){
+        #if defined TARGET_OF_IPHONE
+                glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_SRC_ALPHA);
+        #endif
+        return 1;
+    }
+    int enableAlpha(lua_State *L){
+        #if defined TARGET_OF_IPHONE
+                glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+        #endif
+        return 1;
+    }
 	~bludGraphics() {}
 };

@@ -147,6 +147,10 @@ public:
         alpha = lua_toboolean(L, 1);
         return 0;
     }
+    int setHasTexture(lua_State *L)  {
+        hasTexture = lua_toboolean(L, 1);
+        return 0;
+    }
     int setBlendMode(lua_State *L)  {
         blendMode = luaL_checknumber(L, 1);
         return 1;
@@ -323,7 +327,7 @@ public:
     int lookupCallback;
     lua_State *callbackState;
     int blendMode;
-    bool alpha;
+    bool alpha, hasTexture;
     LinearTexture *texture;
 	ofxSpriteSheetRenderer * spriteRenderer;
 private:
