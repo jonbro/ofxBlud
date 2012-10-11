@@ -105,21 +105,23 @@ void ofxBlud::setup(){
 		printf("%s\n", lua_tostring(luaVM, -1));
 	}	
 	
+
+	ofAddListener(ofEvents().keyPressed, this, &ofxBlud::keyPressed);
+	ofAddListener(ofEvents().keyReleased, this, &ofxBlud::keyReleased);
+
 	// touch events
+#if defined TARGET_OF_IPHONE
 	ofAddListener(ofEvents().touchDown, this, &ofxBlud::touchDown);
 	ofAddListener(ofEvents().touchUp, this, &ofxBlud::touchUp);
 	ofAddListener(ofEvents().touchMoved, this, &ofxBlud::touchMoved);
 	ofAddListener(ofEvents().touchDoubleTap, this, &ofxBlud::touchDoubleTap);
-
-	ofAddListener(ofEvents().keyPressed, this, &ofxBlud::keyPressed);
-	ofAddListener(ofEvents().keyReleased, this, &ofxBlud::keyReleased);
-	
+#else
 	// mouse events
 	ofAddListener(ofEvents().mousePressed, this, &ofxBlud::mousePressed);
 	ofAddListener(ofEvents().mouseReleased, this, &ofxBlud::mouseReleased);
 	ofAddListener(ofEvents().mouseMoved, this, &ofxBlud::mouseMoved);
 	ofAddListener(ofEvents().mouseDragged, this, &ofxBlud::mouseDragged);	
-		
+#endif
 	// sys events
 	ofAddListener(ofEvents().draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents().update, this, &ofxBlud::update);
