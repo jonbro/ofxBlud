@@ -21,7 +21,7 @@ void bludRenderSingleton::render(){
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
     glDisable(GL_DEPTH_TEST);
 	ofViewport(0, 0, fboTex->getWidth(), fboTex->getHeight(), false);
-    ofSetupScreenPerspective(fboTex->getWidth(), fboTex->getHeight(), OF_ORIENTATION_DEFAULT, false);
+//    ofSetupScreenPerspective(fboTex->getWidth(), fboTex->getHeight(), OF_ORIENTATION_DEFAULT, false);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // glBlend should be disabled at this point
     glDisable(GL_BLEND);
@@ -65,19 +65,22 @@ void bludRenderSingleton::render(){
 #if defined TARGET_OF_IPHONE
     currentShader->end();
     currentShader = fboShader;
-    fboShader->begin();
-
-    alpha = false;
-    glDisable(GL_BLEND);
     int h = ofGetHeight();
     int w = ofGetWidth();
+    fboShader->begin();
     fboShader->setUniform1f("width", w);
     fboShader->setUniform1f("height", h);
-
+    if(ofGetOrientation() == OF_ORIENTATION_90_LEFT){
+        fboShader->setUniform1f("flipAmt", 1);
+    }else{
+        fboShader->setUniform1f("flipAmt", -1);
+    }
+    alpha = false;
+    glDisable(GL_BLEND);
     // this should rebind the root renderbuffer
     glBindFramebuffer(GL_FRAMEBUFFER, 1);
-	ofViewport(0, 0, h,w, false);
-    ofSetupScreenPerspective(h, w, OF_ORIENTATION_DEFAULT, false);
+	ofViewport(0, 0, h,w, true);
+//    ofSetupScreenPerspective(h, w, OF_ORIENTATION_DEFAULT, true);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
      // NOTHING IS EVER EASY

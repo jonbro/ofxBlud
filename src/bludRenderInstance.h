@@ -48,25 +48,28 @@ public:
         float w = ofGetWidth();
         for (int y=0; y<DISTORTIONMESH;y++) {
             for (int x=0; x<DISTORTIONMESH; x++) {
+                //tl
                 points[pointCount].position[0] = (float)x/(float)DISTORTIONMESH*w;
                 points[pointCount].position[1] = (float)y/(float)DISTORTIONMESH*h;
                 points[pointCount].texCoord[0] = (float)x/(float)DISTORTIONMESH;
                 points[pointCount].texCoord[1] = (float)y/(float)DISTORTIONMESH;
                 pointCount++;
                 
-                // put in the bottom point
+                // tr
                 points[pointCount].position[0] = (float)(x+1)/(float)DISTORTIONMESH*w;
                 points[pointCount].position[1] = (float)(y)/(float)DISTORTIONMESH*h;
                 points[pointCount].texCoord[0] = (float)(x+1)/(float)DISTORTIONMESH;
                 points[pointCount].texCoord[1] = (float)(y)/(float)DISTORTIONMESH;
                 pointCount++;
-
+                
+                //br
                 points[pointCount].position[0] = (float)(x+1)/(float)DISTORTIONMESH*w;
                 points[pointCount].position[1] = (float)(y+1)/(float)DISTORTIONMESH*h;
                 points[pointCount].texCoord[0] = (float)(x+1)/(float)DISTORTIONMESH;
                 points[pointCount].texCoord[1] = (float)(y+1)/(float)DISTORTIONMESH;
                 pointCount++;
                 
+                //bl
                 points[pointCount].position[0] = (float)(x)/(float)DISTORTIONMESH*w;
                 points[pointCount].position[1] = (float)(y+1)/(float)DISTORTIONMESH*h;
                 points[pointCount].texCoord[0] = (float)(x)/(float)DISTORTIONMESH;
