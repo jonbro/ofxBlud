@@ -60,8 +60,11 @@ int bludSpriteSheet::loadTexture(lua_State *L){
     if (lua_isnumber(L, 3)) {
         height = luaL_checknumber(L, 3);
     }
-//    texture->loadTexture(luaL_checkstring(L, 1));
-    texture->loadTextureFromPFS(luaL_checkstring(L, 1));
+    if(!lua_toboolean(L, 4)){
+        texture->loadTextureFromPFS(luaL_checkstring(L, 1));
+    }else{
+        texture->loadTexture(luaL_checkstring(L, 1));
+    }
     spriteRenderer->loadTexture(texture);
     return 1;
 }

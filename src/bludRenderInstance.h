@@ -23,13 +23,13 @@
 class bludRenderSingleton{
 public:
     bludRenderSingleton(){
-        
+        pointCount = 0;
         mainShader.load("Shader");
         noTexShader.load("NoTexShader");
         fboShader = new ofShader();
         fboShader->load("FBOShader");
 #if defined TARGET_OF_IPHONE
-         fboTex = new ofTexture();
+        fboTex = new ofTexture();
         fboTex->allocate(ofNextPow2(ofGetWidth()), ofNextPow2(ofGetHeight()), GL_RGBA);
         GL_CHECK(glGenFramebuffers(1, &framebuffer));
         GL_CHECK(glBindFramebuffer(GL_FRAMEBUFFER, framebuffer));
@@ -147,7 +147,7 @@ public:
     bool hasSpriteSheet;
     bool alpha;
     int currentBlend;
-    int pointCount = 0;
+    int pointCount;
 };
 
 class bludRenderInstance {
