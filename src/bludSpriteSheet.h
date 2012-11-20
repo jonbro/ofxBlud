@@ -321,7 +321,9 @@ public:
     }
 	~bludSpriteSheet() {
 		delete spriteRenderer;
-        delete texture;
+        if(hasTexture){
+            delete texture;
+        }
 		printf("deleted sprite sheet (%p)\n", this);
 	}
     int lookupCallback;
