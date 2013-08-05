@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofTrueTypeFont.h"
+#include "lunar.h"
 
 class bludFont{
 public:
@@ -127,13 +128,4 @@ public:
 		}
 		return 1;		
 	}
-};
-const char bludFont::className[] = "bludFont";
-Lunar<bludFont>::RegType bludFont::methods[] = {
-	method(bludFont, load),
-	method(bludFont, draw),
-	method(bludFont, getHeightWrap),
-	method(bludFont, getWidth),
-	method(bludFont, getHeight),
-	{0,0}
 };

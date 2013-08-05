@@ -3,7 +3,7 @@
 #include "lunar.h"
 #include "ofSoundUnit.h"
 #include "bludMixer.h"
-#include "bludLock.h"
+#include "bludlock.h"
 #include "ofTypes.h"
 
 /**

@@ -1,16 +1,5 @@
 #include "ofxBlud.h"
 
-#include "bludImage.h"
-#include "bludGraphics.h"
-#include "bludSpriteSheet.h"
-#include "bludShapeBatch.h"
-#include "bludShapeBatch.h"
-#include "bludFont.h"
-#include "bludLine.h"
-#include "bludOsc.h"
-
-#include "blud_boot.h"
-
 static void stackDump (lua_State *L) {
 	int i;
 	int top = lua_gettop(L);
@@ -87,7 +76,7 @@ void ofxBlud::setup(){
     Lunar<bludRenderer>::Register(luaVM);
 
 	// load the bootfile, which has placeholder for all the callbacks
-	int error = luaL_dostring(luaVM, blud_boot);	
+	int error = luaL_dostring(luaVM, ofxBlud::blud_boot);	
 	if (error) {
 		ofLog(OF_LOG_ERROR, "Blud Bootload failed");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
@@ -116,27 +105,30 @@ void ofxBlud::setup(){
 		printf("%s\n", lua_tostring(luaVM, -1));
 	}	
 	
+
+	ofAddListener(ofEvents().keyPressed, this, &ofxBlud::keyPressed);
+	ofAddListener(ofEvents().keyReleased, this, &ofxBlud::keyReleased);
+
 	// touch events
+#if defined TARGET_OF_IPHONE
 	ofAddListener(ofEvents().touchDown, this, &ofxBlud::touchDown);
 	ofAddListener(ofEvents().touchUp, this, &ofxBlud::touchUp);
 	ofAddListener(ofEvents().touchMoved, this, &ofxBlud::touchMoved);
 	ofAddListener(ofEvents().touchDoubleTap, this, &ofxBlud::touchDoubleTap);
-
-	ofAddListener(ofEvents().keyPressed, this, &ofxBlud::keyPressed);
-	ofAddListener(ofEvents().keyReleased, this, &ofxBlud::keyReleased);
-	
+#else
 	// mouse events
 	ofAddListener(ofEvents().mousePressed, this, &ofxBlud::mousePressed);
 	ofAddListener(ofEvents().mouseReleased, this, &ofxBlud::mouseReleased);
 	ofAddListener(ofEvents().mouseMoved, this, &ofxBlud::mouseMoved);
 	ofAddListener(ofEvents().mouseDragged, this, &ofxBlud::mouseDragged);	
-		
+#endif
 	// sys events
 	ofAddListener(ofEvents().draw, this, &ofxBlud::draw);
 	ofAddListener(ofEvents().update, this, &ofxBlud::update);
 	ofAddListener(ofEvents().exit, this, &ofxBlud::exit);
 	
 	lua_register(luaVM,"LuaXML_ParseFile",LuaXML_ParseFile);
+	lua_register(luaVM,"LuaXML_ParseString",LuaXML_ParseString);
 
 	ofEnableAlphaBlending();
 	mutex = bludLock::getInstance();
@@ -191,11 +183,13 @@ void ofxBlud::setup(){
     settings.useDepth = false;    
     settings.useStencil = false; 
 
-    fbo = new ofFbo();  
+//    fbo = new ofFbo();  
 
     //fbo->allocate(settings);
     //texScreen.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-    glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    #ifdef TARGET_OF_IPHONE
+        glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
+    #endif
 }
 
 void ofxBlud::draw(ofEventArgs &e){
@@ -225,22 +219,6 @@ void ofxBlud::draw(ofEventArgs &e){
     // pop again for the traceback
 	lua_pop(luaVM,2);
 	mutex->unlock();
-//    ofPushMatrix();
-//    ofTranslate(ofGetWidth()/2,ofGetHeight()/2);
-//    ofScale(1.1+sin(ofDegToRad(ofGetElapsedTimeMillis()/14.0))*0.1, 1.1+sin(ofDegToRad(ofGetElapsedTimeMillis()/16.0))*0.1);
-//    ofRotate(sin(ofDegToRad(ofGetElapsedTimeMillis()/14.0)), 0, 0, 1);
-//    ofTranslate(-ofGetWidth()/2,-ofGetHeight()/2);
-//    feedbackColor.setHsb(ofGetElapsedTimeMillis()/10%255, 255, 255, 100+sin(ofDegToRad(ofGetElapsedTimeMillis()/3.0))*100.0);
-//    ofSetColor(feedbackColor);
-//    ofEnableBlendMode(OF_BLENDMODE_ADD);
-//    texScreen.draw(0,0,ofGetWidth(),ofGetHeight());
-//    texScreen.loadScreenData(0,0,ofGetWidth(),ofGetHeight());
-//    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
-//    ofPopMatrix();
-    //fbo->end();
-    //ofSetColor(255, 255, 255, 255);
-    //fbo->draw(0, 0);
-	//mesh.drawFaces();
     renderer->render();
 
 }
@@ -282,6 +260,7 @@ void ofxBlud::update(ofEventArgs &e){
 	}
 	lua_pop(luaVM,2);
 	mutex->unlock();
+    bludComponentInstance::getInstance()->update();
 }
 
 string ofxBlud::execute(string code){
@@ -297,7 +276,7 @@ string ofxBlud::execute(string code){
 string ofxBlud::executeFile(std::string filename){
 	mutex->lock();
     luaL_loadfile(luaVM, ofToDataPath(filename).c_str());
-
+    printf("loading file: %s", ofToDataPath(filename).c_str());
     int error_index = lua_gettop(luaVM) - 1; // subtract the number of params
     //push error handler onto stack..
     lua_pushcfunction(luaVM, luaErrorHandler);
@@ -553,3 +532,73 @@ static int LuaXML_ParseFile (lua_State *L) {
 	LuaXML_ParseNode(L,&doc);
 	return 1;
 }
+static int LuaXML_ParseString (lua_State *L){
+	const char* xmlString = luaL_checkstring(L,1);
+    TiXmlDocument doc;
+    doc.Parse(xmlString, 0, TIXML_ENCODING_UTF8);
+	lua_newtable(L);
+	LuaXML_ParseNode(L,&doc);
+	return 1;
+}
+
+const char *ofxBlud::blud_boot =
+"-- Make sure love table exists.\n"
+"if not blud then blud = {} end\n"
+"-- Used for setup:\n"
+"blud.path = {}\n"
+"blud.arg = {}\n"
+"blud.mouse = {}\n"
+"blud.touch = {}\n"
+"blud.key = {}\n"
+"-- Unparsed arguments:\n"
+"argv = {}\n"
+"function blud.update(dt)\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.draw()\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.exit()\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.key.pressed(key)\n"
+"	print(\"key pressed\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.key.released(key)\n"
+"	print(\"key released\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.moved(x, y)\n"
+"	-- print(\"mouse moved\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.dragged(x, y, button)\n"
+"	-- print(\"mouse dragged\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.pressed(x, y, button)\n"
+"	-- print(\"mouse pressed\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.mouse.released(x, y, button)\n"
+"	-- print(\"mouse released\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.down(x, y, id)\n"
+"	print(\"touch down\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.moved(x, y, id)\n"
+"	-- print(\"touch moved\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.up(x, y, id)\n"
+"	print(\"touch up\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"function blud.touch.double_tap(x, y, id)\n"
+"	-- print(\"touch double tap\")\n"
+"	-- do nothing when initially launching\n"
+"end\n"
+"print('blud loaded')\n";

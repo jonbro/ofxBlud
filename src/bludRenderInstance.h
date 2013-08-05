@@ -31,23 +31,10 @@ public:
             }
         }
     }
-    void render(){
-        for(int i=0; i < sheets.size(); i++)
-        {
-            if(currentBlend != sheets[i]->blendMode){
-                if(sheets[i]->blendMode == 0){
-                    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-                }else if(sheets[i]->blendMode == 1){
-                    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-                }
-//                glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-                currentBlend = sheets[i]->blendMode;
-            }
-            sheets[i]->spriteRenderer->draw();
-        }
-    }
+    void render();
     vector<bludSpriteSheet*> sheets;
     bool hasSpriteSheet;
+    bool alpha;
     int currentBlend;
 };
 

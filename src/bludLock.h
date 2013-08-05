@@ -1,5 +1,5 @@
 #pragma once
-#import "ofTypes.h"
+#include "ofTypes.h"
 class bludLock{
 public:
 	static ofMutex* getInstance();

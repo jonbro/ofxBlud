@@ -1,9 +1,10 @@
 #pragma once
 
+#include "ofxBlud.h"
 #include "Lua-cURL.h"
 #include "ofThread.h"
 #include "lua.hpp"
-#include "blud_boot.h"
+#include "lunar.h"
 
 /**
  * maybe just maintain a internal lua state that we can call over to from the main lua thread :D
@@ -25,7 +26,7 @@ public:
         luaopen_cURL(luaVM);
         
         // load the bootfile, which has placeholder for all the callbacks
-        int error = luaL_dostring(luaVM, blud_boot);	
+        int error = luaL_dostring(luaVM, ofxBlud::blud_boot);	
         if (error) {
             ofLog(OF_LOG_ERROR, "Blud Bootload failed");
             ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
@@ -84,7 +85,6 @@ public:
                 // todo: should probably lock lua, so that things don't blow up here
                 mutex->lock();
                 numReturns = lua_gettop(luaVM) - startStack;
-                cout << "number of returns: " << numReturns << endl;
                 lua_rawgeti(mainVM, LUA_REGISTRYINDEX, callbackFunc );
                 lua_pushstring(mainVM, luaL_checkstring(luaVM, -1*numReturns));                
                 if(lua_pcall(mainVM, numReturns, 0, 0) != 0){
@@ -122,14 +122,4 @@ private:
     std::string execute;
     std::string returnVal;
     ofMutex* mutex;
-};
-
-
-const char bludAsycCurl::className[] = "bludAsycCurl";
-
-Lunar<bludAsycCurl>::RegType bludAsycCurl::methods[] = {
-	method(bludAsycCurl, process),
-	method(bludAsycCurl, isComplete),
-    method(bludAsycCurl, getReturnValue),
-	{0,0}
 };

@@ -18,6 +18,7 @@
 #pragma once
 
 #include "bludImage.h"
+#include "lunar.h"
 
 class BrushedLine {
 public: 
@@ -55,10 +56,10 @@ public:
 		ofVec2f NW = N - E;
 		ofVec2f SW = -NE;
 		ofVec2f SE = -NW;
-		coords[0] = (a + SW);
-		coords[1] = (a + NW);
-		coords[2] = (a + S);
-		coords[3] = (a + N);
+		coords[0] = (a + SW); // 1 
+		coords[1] = (a + NW); // 3
+		coords[2] = (a + S); // 2
+		coords[3] = (a + N); // 4
 		coords[4] = (b + S);
 		coords[5] = (b + N);
 		coords[6] = (b + SE);
@@ -70,8 +71,8 @@ public:
 		glTexCoordPointer(2, GL_FLOAT, 0, &texCoords[0]);
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, 8);
 		
-		glDisableClientState(GL_VERTEX_ARRAY);
-		glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+		glDisable(GL_VERTEX_ARRAY);
+		glDisable(GL_TEXTURE_COORD_ARRAY);
 		if(mustUnbind) unbindImage();
 		
 	}
@@ -140,11 +141,4 @@ public:
 		_line.drawLine(a, b); return 0;
 	}
 	~bludLine() { printf("deleted line (%p)\n", this); }
-};
-
-const char bludLine::className[] = "bludLine";
-
-Lunar<bludLine>::RegType bludLine::methods[] = {
-	method(bludLine, drawLine),
-	{0,0}
 };

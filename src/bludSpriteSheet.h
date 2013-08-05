@@ -1,9 +1,9 @@
 #pragma once
 
-#import "ofxSpriteSheetRenderer.h"
-#import "lunar.h"
-#import "bludColor.h"
-
+#include "ofxSpriteSheetRenderer.h"
+#include "lunar.h"
+#include "bludColor.h"
+#include "bludLock.h"
 // sprite
 // wrapper for a struct that contains data about the current sprite
 
@@ -35,6 +35,10 @@ public:
 		ani.spritesource_h = 0;			// used for doing rotations around the center of the sprite (maybe, used for nothing for now)		
 		
 	}
+    // I think I need a copy constructor
+    bludSprite(bludSprite &other){
+        cout << "copying" << endl;
+    }
 	bludSprite(lua_State *L){
 		bludSprite();
 	}
@@ -139,6 +143,14 @@ public:
     bludSpriteSheet(lua_State *L);
 	int loadTexture(lua_State *L);
 	int setupTexture(lua_State *L);
+    int setAlpha(lua_State *L)  {
+        alpha = lua_toboolean(L, 1);
+        return 0;
+    }
+    int setHasTexture(lua_State *L)  {
+        hasTexture = lua_toboolean(L, 1);
+        return 0;
+    }
     int setBlendMode(lua_State *L)  {
         blendMode = luaL_checknumber(L, 1);
         return 1;
@@ -152,7 +164,7 @@ public:
 		return 1;
 	}
 	int draw(lua_State *L)  {
-		spriteRenderer->draw();
+//		spriteRenderer->draw();
 		return 1;
 	}
 	// TODO: extend this to support all of the different features (rotation, tinting, etc)
@@ -271,70 +283,53 @@ public:
 
 		return 1;
 	}
-	int addCornerColorTile(lua_State *L){
-		bludSprite *s = Lunar<bludSprite>::check(L, 1);
-        
-		float layer = -1;
-		if (lua_isnumber(L, 10)) {
-			layer = luaL_checknumber(L, 10);
-		}
-		int flipDir = 0;
-		if (lua_isnumber(L,11)) {
-			flipDir = luaL_checknumber(L,11);
-		}
-		bludColor *c1 = Lunar<bludColor>::check(L, 12);
-        bludColor *c2 = Lunar<bludColor>::check(L, 13);
-        bludColor *c3 = Lunar<bludColor>::check(L, 14);
-        bludColor *c4 = Lunar<bludColor>::check(L, 15);
-        
-		spriteRenderer->addCornerColorTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, c1->color, c2->color, c3->color, c4->color);
-
-		return 1;
-	}
-	int addTile(lua_State *L)  {
-		// need to pull out the user data that was passed in on the first parameter
-		bludSprite *s = Lunar<bludSprite>::check(L, 1);
-		float x = luaL_checknumber(L, 2);
-		float y = luaL_checknumber(L, 3);
-		
-		float layer = -1;
-		if (lua_isnumber(L, 4)) {
-			layer = luaL_checknumber(L, 4);
-		}
-		
-		int flipDir = 0;
-		if (lua_isnumber(L, 5)) {
-			flipDir = luaL_checknumber(L, 5);
-		}
-		int r = 255;
-		if (lua_isnumber(L, 6)) {
-			r = luaL_checknumber(L, 6);
-		}
-		int g = 255;
-		if (lua_isnumber(L, 7)) {
-			g = luaL_checknumber(L, 7);
-		}
-		int b = 255;
-		if (lua_isnumber(L, 8)) {
-			b = luaL_checknumber(L, 8);
-		}
-		int alpha = 255;
-		if (lua_isnumber(L, 9)) {
-			alpha = luaL_checknumber(L, 9);
-		}
-		
-		//bool ofxSpriteSheetRenderer::addTile(animation_t* sprite, float x, float y, int layer, flipDirection f, int r, int g, int b, int alpha) {
-		//bool addTile             (animation_t* sprite, float x, float y, int layer = -1, flipDirection f = F_NONE, int r=255, int g=255, int b=255, int alpha=255);
-
-		spriteRenderer->addTile(&s->ani, x, y, layer, (flipDirection)flipDir, r, g, b, alpha);
-		return 1;
-	}
+	int addCornerColorTile(lua_State *L);
+	int addTile(lua_State *L);
+    bool hasSprite(string key){
+        lua_rawgeti(callbackState, LUA_REGISTRYINDEX, lookupCallback);
+        lua_pushstring(callbackState, key.c_str());
+        if(lua_pcall(callbackState, 1, 1, 0) != 0){
+            ofLog(OF_LOG_ERROR, "sprite lookup error");
+            ofLog(OF_LOG_ERROR, lua_tostring(callbackState, -1));
+            return false;
+        }
+        bool rVal = lua_toboolean(callbackState, -1);
+        lua_pop(callbackState, 1);
+        return rVal;
+    }
+    bludSprite* getSprite(string key){
+        lua_rawgeti(callbackState, LUA_REGISTRYINDEX, lookupCallback);
+        lua_pushstring(callbackState, key.c_str());
+        if(lua_pcall(callbackState, 1, 1, 0) != 0){
+            ofLog(OF_LOG_ERROR, "sprite lookup error");
+            ofLog(OF_LOG_ERROR, lua_tostring(callbackState, -1));
+            return NULL;
+        }
+        bludSprite *rVal = Lunar<bludSprite>::check(callbackState, -1);
+        lua_pop(callbackState, 1);
+        return rVal;
+    }
+    int setSpriteLookupCallback(lua_State *l){
+        if(lua_isfunction(l, 1)){
+            // push the value of the function (that is at position 1), onto the top of the stack
+            lua_pushvalue(l, 1);
+            // store this stack position in the registry index
+            lookupCallback = luaL_ref(l, LUA_REGISTRYINDEX);
+            callbackState = l;
+        }
+        return 0;
+    }
 	~bludSpriteSheet() {
 		delete spriteRenderer;
-        delete texture;
+        if(hasTexture){
+            delete texture;
+        }
 		printf("deleted sprite sheet (%p)\n", this);
 	}
+    int lookupCallback;
+    lua_State *callbackState;
     int blendMode;
+    bool alpha, hasTexture;
     LinearTexture *texture;
 	ofxSpriteSheetRenderer * spriteRenderer;
 private:
