@@ -1,8 +1,8 @@
 #pragma once
 
-#import "ofxSpriteSheetRenderer.h"
-#import "lunar.h"
-#import "bludColor.h"
+#include "ofxSpriteSheetRenderer.h"
+#include "lunar.h"
+#include "bludColor.h"
 #include "bludLock.h"
 // sprite
 // wrapper for a struct that contains data about the current sprite

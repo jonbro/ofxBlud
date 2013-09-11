@@ -60,11 +60,9 @@ int bludSpriteSheet::loadTexture(lua_State *L){
     if (lua_isnumber(L, 3)) {
         height = luaL_checknumber(L, 3);
     }
-    if(!lua_toboolean(L, 4)){
-        texture->loadTextureFromPFS(luaL_checkstring(L, 1));
-    }else{
-        texture->loadTexture(luaL_checkstring(L, 1));
-    }
+    cout << "loading texture bludspritesheet" << endl;
+    texture->loadTexture(luaL_checkstring(L, 1));
+    cout << "after loading" << endl;
     spriteRenderer->loadTexture(texture);
     return 1;
 }
@@ -77,12 +75,12 @@ int bludSpriteSheet::addTile(lua_State *L)  {
     bludSprite *s = Lunar<bludSprite>::check(L, 1);
     float x = luaL_checknumber(L, 2);
     float y = luaL_checknumber(L, 3);
-    
+
     float layer = -1;
     if (lua_isnumber(L, 4)) {
         layer = luaL_checknumber(L, 4);
     }
-    
+
     int flipDir = 0;
     if (lua_isnumber(L, 5)) {
         flipDir = luaL_checknumber(L, 5);
@@ -103,17 +101,17 @@ int bludSpriteSheet::addTile(lua_State *L)  {
     if (lua_isnumber(L, 9)) {
         alpha = luaL_checknumber(L, 9);
     }
-    
+
     //bool ofxSpriteSheetRenderer::addTile(animation_t* sprite, float x, float y, int layer, flipDirection f, int r, int g, int b, int alpha) {
     //bool addTile             (animation_t* sprite, float x, float y, int layer = -1, flipDirection f = F_NONE, int r=255, int g=255, int b=255, int alpha=255);
-    
+
     spriteRenderer->addTile(&s->ani, x, y, layer, (flipDirection)flipDir, r, g, b, alpha);
     return 1;
 }
 
 int bludSpriteSheet::addCornerColorTile(lua_State *L){
     bludSprite *s = Lunar<bludSprite>::check(L, 1);
-    
+
     float layer = -1;
     if (lua_isnumber(L, 10)) {
         layer = luaL_checknumber(L, 10);
@@ -126,7 +124,7 @@ int bludSpriteSheet::addCornerColorTile(lua_State *L){
     bludColor *c2 = Lunar<bludColor>::check(L, 13);
     bludColor *c3 = Lunar<bludColor>::check(L, 14);
     bludColor *c4 = Lunar<bludColor>::check(L, 15);
-    
+
     spriteRenderer->addCornerColorTile(&s->ani, ofPoint(luaL_checknumber(L, 2), luaL_checknumber(L, 3)), ofPoint(luaL_checknumber(L, 4), luaL_checknumber(L, 5)), ofPoint(luaL_checknumber(L, 6), luaL_checknumber(L, 7)), ofPoint(luaL_checknumber(L, 8), luaL_checknumber(L, 9)), layer, (flipDirection)flipDir, c1->color, c2->color, c3->color, c4->color);
     return 1;
 }

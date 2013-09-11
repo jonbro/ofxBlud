@@ -8,7 +8,7 @@
  */
 
 
-#include "bludLock.h"
+#include "bludlock.h"
 
 ofMutex* bludLock::instance = NULL; 
 
