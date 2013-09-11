@@ -45,13 +45,14 @@ class ofxBlud{
 		void touchMoved(ofTouchEventArgs &e);
 		void touchUp(ofTouchEventArgs &e);
 		void touchDoubleTap(ofTouchEventArgs &e);
-
+        void windowResized(ofResizeEventArgs &e);
+        void windowResized(int w, int h);
 		void audioRequested(ofAudioEventArgs &e);
 		lua_State* luaVM;
         bludRenderSingleton *renderer;
         static const char *blud_boot;
+        ofMutex *mutex;
 	private:
-		ofMutex *mutex;
 		ofMesh mesh;
         ofFbo			*fbo;
         ofTexture		texScreen;

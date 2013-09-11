@@ -12,7 +12,8 @@
 void bludRenderSingleton::render(){
     for(int i=0; i < sheets.size(); i++)
     {
-        if(currentBlend != sheets[i]->blendMode){
+        /**/
+        if(sheets[i] && currentBlend != sheets[i]->blendMode){
             if(sheets[i]->blendMode == 0){
                 glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             }else if(sheets[i]->blendMode == 1){
@@ -29,6 +30,7 @@ void bludRenderSingleton::render(){
                 glDisable(GL_BLEND);
             }
         }
+         
         sheets[i]->spriteRenderer->draw();
     }
 }
