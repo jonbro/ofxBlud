@@ -67,12 +67,8 @@ void ofxBlud::setup(){
 	Lunar<bludGraphics>::Register(luaVM);
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
-	Lunar<bludShapeBatch>::Register(luaVM);
 	Lunar<bludFont>::Register(luaVM);
 	Lunar<bludLine>::Register(luaVM);
-	Lunar<bludOsc>::Register(luaVM);
-	Lunar<bludOscMessage>::Register(luaVM);
-	Lunar<bludOscReceiver>::Register(luaVM);
     Lunar<bludRenderer>::Register(luaVM);
 
 	// load the bootfile, which has placeholder for all the callbacks
@@ -89,16 +85,15 @@ void ofxBlud::setup(){
 	error = luaL_dostring(luaVM, s.c_str());
 	if (error) {
 		printf("%s\n", lua_tostring(luaVM, -1));
-	}	
-	
+	}		
 	// document directory for writing to the file system
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"/"];
-
-	// set the default paths so that loading properly works
 	s = "blud.doc_root = '";
-	s += [filePath cString];
+#ifdef TARGET_OF_IOS
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    s+= [documentsDirectory cStringUsingEncoding:NSASCIIStringEncoding];
+#else
+#endif
 	s += "'";
 	error = luaL_dostring(luaVM, s.c_str());
 	if (error) {

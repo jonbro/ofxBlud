@@ -3,6 +3,7 @@ build/*
 *.pbxuser
 *.mode1v3
 
+badHotel
 # osx noise
 .DS_Store
 profile

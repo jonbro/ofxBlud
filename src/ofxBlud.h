@@ -18,6 +18,10 @@
 #include "bludLine.h"
 #include "bhComponentManager.h"
 
+#ifdef TARGET_OF_IOS
+#include <Foundation/Foundation.h>
+#endif
+
 int luaErrorHandler(lua_State *L);
 
 class ofxBlud{
