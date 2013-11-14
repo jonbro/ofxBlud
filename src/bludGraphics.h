@@ -5,6 +5,7 @@
 #include "ofUtils.h"
 #include "ofAppRunner.h"
 #include "lunar.h"
+#include "bludLock.h"
 
 class bludGraphics {
 public:
@@ -94,6 +95,12 @@ public:
     }
     int setFullscreen(lua_State *L){
         ofSetFullscreen(lua_toboolean(L, 1));
+        return 0;
+    }
+    int exit(lua_State *L){
+        // release the mutex and
+        bludLock::getInstance()->unlock();
+        ofExit();
         return 0;
     }
     int openURL(lua_State *L){

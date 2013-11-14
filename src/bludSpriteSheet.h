@@ -139,9 +139,10 @@ class bludSpriteSheet {
 public:
 	static const char className[];
 	static Lunar<bludSpriteSheet>::RegType methods[];
-	
+	string textureFilename;
     bludSpriteSheet(lua_State *L);
 	int loadTexture(lua_State *L);
+	void reloadTexture();
 	int setupTexture(lua_State *L);
     int setAlpha(lua_State *L)  {
         alpha = lua_toboolean(L, 1);

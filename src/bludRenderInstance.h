@@ -12,6 +12,16 @@ public:
         hasSpriteSheet = false;
         currentBlend = 0;
     }
+    // necessary on android to deal with losing gl context
+    void reloadAllTextures(){
+        for(int i=0; i < sheets.size(); i++)
+        {
+            /**/
+            if(sheets[i]){
+            	sheets[i]->reloadTexture();
+            }
+        }
+    }
     void addAtStart(bludSpriteSheet *_sheet){
         vector<bludSpriteSheet*>::iterator it;
         it = sheets.begin();

@@ -62,9 +62,14 @@ int bludSpriteSheet::loadTexture(lua_State *L){
     }
     cout << "loading texture bludspritesheet" << endl;
     texture->loadTexture(luaL_checkstring(L, 1));
+    textureFilename = luaL_checkstring(L, 1);
     cout << "after loading" << endl;
     spriteRenderer->loadTexture(texture);
     return 1;
+}
+void bludSpriteSheet::reloadTexture(){
+	texture->loadTexture(textureFilename);
+	spriteRenderer->loadTexture(texture);
 }
 int bludSpriteSheet::setupTexture(lua_State *L){
     spriteRenderer->loadTexture(texture);

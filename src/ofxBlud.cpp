@@ -80,7 +80,7 @@ void ofxBlud::setup(){
 
 	// set the default paths so that loading properly works
 	string s = "blud.bundle_root = \"";
-	s += ofToDataPath("");
+	s += ofToDataPath("", true);
 	s += "\"";
 	ofStringReplace(s, "\\", "\\\\");
 	error = luaL_dostring(luaVM, s.c_str());
@@ -90,7 +90,6 @@ void ofxBlud::setup(){
     
 	// set the default paths so that loading properly works
 	s = "blud.doc_root = '";
-
 	s += "'";
 
 	error = luaL_dostring(luaVM, s.c_str());
@@ -196,7 +195,7 @@ void ofxBlud::draw(){
 		ofLog(OF_LOG_ERROR, "Blud draw error");
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
         #ifdef LUAANALYTICS
-        [FlurryAnalytics logError:@"blud draw error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
+        //[FlurryAnalytics logError:@"blud draw error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
         // pop the error message off the top of the stack
 #endif
         lua_pop(luaVM, 1);
@@ -396,7 +395,7 @@ void ofxBlud::touchDown(ofTouchEventArgs &e){
 		ofLog(OF_LOG_ERROR, lua_tostring(luaVM, -1));
 
 #ifdef LUAANALYTICS
-        [FlurryAnalytics logError:@"blud touchdown error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
+        //[FlurryAnalytics logError:@"blud touchdown error" message:[NSString stringWithUTF8String:lua_tostring(luaVM, -1)] exception:nil];
         // pop the error message off the top of the stack
 #endif
         lua_pop(luaVM, 1);

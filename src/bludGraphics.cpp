@@ -26,5 +26,6 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
     method(bludGraphics, eraseMode),
     method(bludGraphics, setWindowShape),
     method(bludGraphics, setFullscreen),
+    method(bludGraphics, exit),
 	{0,0}
 };
