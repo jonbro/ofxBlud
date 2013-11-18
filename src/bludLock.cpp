@@ -8,9 +8,9 @@
  */
 
 
-#include "bludlock.h"
+#include "bludLock.h"
 
-ofMutex* bludLock::instance = NULL; 
+ofMutex* bludLock::instance = NULL;
 
 ofMutex* bludLock::getInstance(){
 	if (!instance)   // Only allow one instance of class to be generated.

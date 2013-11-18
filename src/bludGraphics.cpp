@@ -1,7 +1,9 @@
 #include "bludGraphics.h"
 
 const char bludGraphics::className[] = "bludGraphics";
-
+int bludGraphics::width = 800;
+int bludGraphics::height = 600;
+bool bludGraphics::needsFixRes = false;
 Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, push),
 	method(bludGraphics, pop),
@@ -10,7 +12,7 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, scale),
 	method(bludGraphics, setColor),
 	method(bludGraphics, setBackground),
-	method(bludGraphics, setFrameRate),	
+	method(bludGraphics, setFrameRate),
 	method(bludGraphics, drawRect),
 	method(bludGraphics, drawCircle),
     method(bludGraphics, clear),
@@ -22,5 +24,8 @@ Lunar<bludGraphics>::RegType bludGraphics::methods[] = {
 	method(bludGraphics, noise),
     method(bludGraphics, openURL),
     method(bludGraphics, eraseMode),
+    method(bludGraphics, setWindowShape),
+    method(bludGraphics, setFullscreen),
+    method(bludGraphics, exit),
 	{0,0}
 };

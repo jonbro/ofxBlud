@@ -60,15 +60,15 @@ int bludSpriteSheet::loadTexture(lua_State *L){
     if (lua_isnumber(L, 3)) {
         height = luaL_checknumber(L, 3);
     }
-    cout << "loading texture bludspritesheet" << endl;
+    cout << "loading texture bludspritesheet: " << luaL_checkstring(L, 1) << endl;
     texture->loadTexture(luaL_checkstring(L, 1));
-    cout << "after loading" << endl;
     spriteRenderer->loadTexture(texture);
-    return 1;
+    cout << "after loading" << endl;
+    return 0;
 }
 int bludSpriteSheet::setupTexture(lua_State *L){
-    spriteRenderer->loadTexture(texture);
-    return 1;
+    //spriteRenderer->loadTexture(texture);
+    return 0;
 }
 int bludSpriteSheet::addTile(lua_State *L)  {
     // need to pull out the user data that was passed in on the first parameter

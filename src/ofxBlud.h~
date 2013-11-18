@@ -8,7 +8,7 @@
 #include "ofLog.h"
 #include "ofUtils.h"
 #include "ofEvents.h"
-#include "bludLock.h"
+#include "bludlock.h"
 #include "bludRenderInstance.h"
 #include "tinyxml.h"
 #include "bludImage.h"

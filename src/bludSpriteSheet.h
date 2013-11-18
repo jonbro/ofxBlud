@@ -23,17 +23,17 @@ public:
 		ani.loops			= -1;
 		ani.final_index		= -1;
 		ani.frame_skip		= 1;
-		
+
 		ani.tex_y = 0;					// how much offset from the top left of the sheet the texture is (no longer using the index for lookups)
 		ani.tex_x = 0;					// doing it this way so that we can have differently sized textures
 		ani.tex_w = 0;					// how big the texture is (on the sheet)
 		ani.tex_h = 0;
-		
+
 		ani.sprite_x = 0;					// how far offset the display of the sprite should be from the requested display position (how much alpha got trimmed when packing the sprite)
 		ani.sprite_y = 0;
 		ani.spritesource_w = 0;			// the size of the sprite before the alpha trimming took place
-		ani.spritesource_h = 0;			// used for doing rotations around the center of the sprite (maybe, used for nothing for now)		
-		
+		ani.spritesource_h = 0;			// used for doing rotations around the center of the sprite (maybe, used for nothing for now)
+
 	}
     // I think I need a copy constructor
     bludSprite(bludSprite &other){
@@ -135,11 +135,11 @@ public:
 
 /// spriteSheet renderer. Only partially implemented
 class bludSpriteSheet {
-	
+
 public:
 	static const char className[];
 	static Lunar<bludSpriteSheet>::RegType methods[];
-	
+
     bludSpriteSheet(lua_State *L);
 	int loadTexture(lua_State *L);
 	int setupTexture(lua_State *L);
@@ -153,19 +153,19 @@ public:
     }
     int setBlendMode(lua_State *L)  {
         blendMode = luaL_checknumber(L, 1);
-        return 1;
+        return 0;
     }
 	int clear(lua_State *L)  {
 		spriteRenderer->clear();
-		return 1;
+		return 0;
 	}
 	int update(lua_State *L)  {
 		spriteRenderer->update(luaL_checknumber(L, 1));
-		return 1;
+		return 0;
 	}
 	int draw(lua_State *L)  {
 //		spriteRenderer->draw();
-		return 1;
+		return 0;
 	}
 	// TODO: extend this to support all of the different features (rotation, tinting, etc)
 	int addCenteredTile(lua_State *L)  {
@@ -178,7 +178,7 @@ public:
 		if (lua_isnumber(L, 4)) {
 			layer = luaL_checknumber(L, 4);
 		}
-		
+
 		int flipDir = 0;
 		if (lua_isnumber(L, 5)) {
 			flipDir = luaL_checknumber(L, 5);
@@ -204,7 +204,7 @@ public:
 		if (lua_isnumber(L, 10)) {
 			alpha = luaL_checknumber(L, 10);
 		}
-		
+
 		spriteRenderer->addCenteredTile(&s->ani, x, y, layer, (flipDirection)flipDir, scale, r, g, b, alpha);
 		return 1;
 	}
@@ -213,17 +213,17 @@ public:
 		bludSprite *s = Lunar<bludSprite>::check(L, 1);
 		float x = luaL_checknumber(L, 2);
 		float y = luaL_checknumber(L, 3);
-		
+
 		float layer = -1;
 		if (lua_isnumber(L, 4)) {
 			layer = luaL_checknumber(L, 4);
 		}
-		
+
 		int flipDir = 0;
 		if (lua_isnumber(L, 5)) {
 			flipDir = luaL_checknumber(L, 5);
 		}
-		
+
 		float scale = 1;
 		if (lua_isnumber(L, 6)) {
 			scale = luaL_checknumber(L, 6);
@@ -262,7 +262,7 @@ public:
 		if (lua_isnumber(L,11)) {
 			flipDir = luaL_checknumber(L,11);
 		}
-		
+
 		int r = 255;
 		if (lua_isnumber(L, 12)) {
 			r = luaL_checknumber(L, 12);

@@ -3,7 +3,7 @@
 #include "lunar.h"
 #include "ofSoundUnit.h"
 #include "bludMixer.h"
-#include "bludlock.h"
+#include "bludLock.h"
 #include "ofTypes.h"
 
 /**
@@ -37,7 +37,7 @@ private:
 			callback = c;
 		}
 	};
-	vector<Trigger*> triggers;	
+	vector<Trigger*> triggers;
 	int counter;
 	lua_State *L;
 	ofMutex *mutex;
@@ -45,7 +45,7 @@ private:
 
 /**
  * interface to do sample accurate audio timing
- * 
+ *
  * allows for a callback to be called with sample accurate timing
  * don't exactly know how to manage the thread safety of this... tdb
  */

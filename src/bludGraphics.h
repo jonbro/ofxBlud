@@ -5,13 +5,16 @@
 #include "ofUtils.h"
 #include "ofAppRunner.h"
 #include "lunar.h"
+#include "bludLock.h"
 
 class bludGraphics {
 public:
 	static const char className[];
 	static Lunar<bludGraphics>::RegType methods[];
+    static bool needsFixRes;
+    static int width;
+    static int height;
 	bludGraphics(lua_State *L) {}
-
 	int push (lua_State *L) {ofPushMatrix(); return 1;}
 	int pop(lua_State *L)  {ofPopMatrix(); return 1;}
 
@@ -37,7 +40,7 @@ public:
             case 5:
                 mode = OF_BLENDMODE_SCREEN;
                 break;
-                
+
             default:
                 mode = OF_BLENDMODE_DISABLED;
                 break;
@@ -49,7 +52,7 @@ public:
 		int alpha = 255;
 		if (lua_isnumber(L, 4)) {
 			alpha = luaL_checknumber(L, 4);
-		}				
+		}
 		ofSetColor(luaL_checknumber(L, 1), luaL_checknumber(L, 2), luaL_checknumber(L, 3), alpha);
 		return 1;
 	}
@@ -80,21 +83,41 @@ public:
 		}
 		return 1;
 	}
+    int setWindowShape(lua_State *L){
+        int w = luaL_checkinteger(L, 1);
+        int h = luaL_checkinteger(L, 2);
+        ofSetWindowShape(w, h);
+
+//        width = luaL_checknumber(L, 1);
+//        height = luaL_checknumber(L, 2);
+//        needsFixRes = true;
+        return 0;
+    }
+    int setFullscreen(lua_State *L){
+        ofSetFullscreen(lua_toboolean(L, 1));
+        return 0;
+    }
+    int exit(lua_State *L){
+        // release the mutex and
+        bludLock::getInstance()->unlock();
+        ofExit();
+        return 0;
+    }
     int openURL(lua_State *L){
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [[[[NSString alloc] initWithCString:luaL_checkstring(L, 1)] stringByAddingPercentEscapesUsingEncoding: NSASCIIStringEncoding] autorelease]]];
-        return 1;
+        ofLaunchBrowser(luaL_checkstring(L, 1));
+        return 0;
     }
     int eraseMode(lua_State *L){
         #if defined TARGET_OF_IPHONE
                 glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_SRC_ALPHA);
         #endif
-        return 1;
+        return 0;
     }
     int enableAlpha(lua_State *L){
         #if defined TARGET_OF_IPHONE
                 glBlendFuncSeparateOES(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
         #endif
-        return 1;
+        return 0;
     }
 	~bludGraphics() {}
 };
