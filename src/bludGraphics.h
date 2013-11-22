@@ -87,10 +87,6 @@ public:
         int w = luaL_checkinteger(L, 1);
         int h = luaL_checkinteger(L, 2);
         ofSetWindowShape(w, h);
-
-//        width = luaL_checknumber(L, 1);
-//        height = luaL_checknumber(L, 2);
-//        needsFixRes = true;
         return 0;
     }
     int setFullscreen(lua_State *L){

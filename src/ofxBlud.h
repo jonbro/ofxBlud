@@ -14,7 +14,6 @@
 #include "bludImage.h"
 #include "bludGraphics.h"
 #include "bludSpriteSheet.h"
-#include "bludFont.h"
 #include "bludLine.h"
 #include "bhComponentManager.h"
 

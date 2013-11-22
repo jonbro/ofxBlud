@@ -67,7 +67,6 @@ void ofxBlud::setup(){
 	Lunar<bludGraphics>::Register(luaVM);
 	Lunar<bludSprite>::Register(luaVM);
 	Lunar<bludSpriteSheet>::Register(luaVM);
-	Lunar<bludFont>::Register(luaVM);
 	Lunar<bludLine>::Register(luaVM);
     Lunar<bludRenderer>::Register(luaVM);
 
