@@ -1,3 +1,5 @@
+Except where otherwise marked, code is:
+
 MIT License
 
 Copyright (c) Lucky Frame 2014 
